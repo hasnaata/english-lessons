@@ -1,18 +1,554 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">gTlAPdSg8cMpdx5NVSwyO8yV64tB3zr8pOTv2ZDH3tfcxhhKDBG9bo4NILNOHbqwVAtcUMtVl/qGB8K/xsYJ+qA+QoR09/52UYyY2rr2ESEx71BkEwR7IccC6bq8/fCLS+FYNDtploVRY79T4q2jmKOsp8hp6GMApQa9VqlpzU1QIoJSYp6w3ldkJNsZi6oYqTcEdZj/wqTAktc2phLemHJi2u24gRpwLj7Gx77ooOoWmiFntnLga1Jwb/qkUhL0MZ0E0GbFY4emMAHBX9OV5WzRPEADPGk9RYoCXns8+QMmfadTLmkibS0HBiASNMi82LeifGqbrTPrHm6fz3RcB/ga5viVXqIYxvUNLTcIbg6nX/Jwgg25v50ekCPT6DqjJbMzdUDZN3Yttsw2ZDi0qQIJWuNaPDIB1+h77DegId2gHNwlqWqwwanMP6Z+zyOY5UXQMT4GaFzw7+2YhtqAuZOGAwnzNzqZC1W12kwF6zup45SvBcVh8sFqIM4KQe/i0+fFu2B1YpAmwHBlk/QWnmkymtcW3Zg+PkNep4w1/8fYAwgEfV7mQ4+A9Fp7C22I5yomUh35T7anpbewXL7o/zq53sCfOy+Rt8QUNhSiNPyW6eS4TlYUIBreFAwmPlXbgn0kM+abPFbJnEq8hfOUXT7CCRL1OQWQ/4Z8BlZHtljr5pvaTHQU0IjySZecg6oRbdIUaUI0S0g6lgvwooAYZtjBvypnzjKsAdqk8Q83D4a4rS3yRC741sB7im0KW8fjJe5d4V7aJUTL4v9zxIzD6myRTBL6KRdlHjoJuZhqR3iEkYZQCR0Vf8g93f2fIQOFtyd/7Zv2eI4QuIPlYHVCVnIppoPCwtI/vfs+9HQXTEogZ2t7IXQERTMMT1sJxVeXtBSdUFgTnSWlrJmjfihOhOxp+TV0Ce32d91dwD2IEJR+S5GGfzzJwDf7NEfcOAG/PLN0IjOdpIzljlS/+Z2LXVD3yLEA2RqsJKq6b7gDYWjQevP5TtXPrE4s8AORDTN/geofrXp4Jlf79LoZgfMgm1psCY7giGy7sJjEX0Cb2YLNzmygwYqEU9dZ1+jKbekgP/GUDt3M3VHoYURoPRiRUMWE75Opd3sCuo5JuWn3Tm8MoG4cw3FUdbLidXUEP7ebnTivNOdQVNfyq696A+X8UuONzZ6FYKJ0TDhlNKE/1ahoHJQZExxPqjwZVboJc4eQVAoXtOG9u9cQc/TA3+jHGEke9wQDWnpevAoKEn1hDkpoYcVbiYi/S0SdIjIrdTKotmU5J7F5gXRVe2hi0z3WADbQ8C9behU+I+p2rmRo8UHy+9EIz/VQ5loD7Oj4z4UiU8dTbPLqiHcBRc5slLyDUBHUaupSWnsWQ+1q+3JD6/85d9D9yKtj6d638iMdMmMEj16cgjxow1cQcW3p1JiIDP+2rZQZ5LtkPYuMzCucZScMjof1TWWVcjmWLhMOFiQ+d6SIrf9CRJVsM/bhQUWA+qulKLttFNsYhlZWESjxl06lzjAppinSkeSWZZVtqc9a3Vy+xQpw46zyGQh5Qs8JYyLYiidEZ3W7mfPbTATA72ad9ohLnnwtj+DjZTioni1LzlAJwu6b83v+1wCqMD6baVcu6pu2oWTE3zeUuhiMxi2ct+0x5808aRBT0r1Zr231T54TXyFJObvFw+DqDmneMopkTOx205n0XgzvYULKYpAjXU1JpTLCGUchiFOnXZJD6UWOHcc8QTyNySBo75f2hrU7T30UBdt8Rl+hazAuA35ev9iUL1a456UbIvYk+e7pRtOpFfdXOH481GAsCw3rl/jCJk5g+rsc5AnwVikqeD4QNF3wBn/FaijzuJhONMt0ru6mEvJMgK7r1GAi1zG902U9Rx9VSu0811cxfcs3mToUg/r4MShWS5m4nyzpD80dFeosFLhPsMdPKFIDX/vKqJxuraWGlPgtz3nr1ISmaB/Hvn5qd4Qsk2HY/nBR98sZSlMpI8OAOjMtnkzXKeFp+nP2OLfiZfC2F8JK0VLCUJJQyxnlbxE4LWnG4ohs2pfoNoFrw6KzjUCllAY9ZO/jI+6Jmrs7UQKhC/V/eAk9/eDTyxRokZoYfR9mb3wIX0gB/Ojci27+ieuJhXmO5OFiR6lVlMNtul/39Pu//O05h4R3+CIjmzmnbFW5ylUqBZLMeFdGAQ9kKkmVge7VTG2UocAqkfCj7P8AT+GOSrN3iDvw9LFgNcXRUNvKK9dSMrR9yxe8N99JjVWTcZjJSW2k+LI8DHLzN4VUt5VaAvw7fRsLzWVxQxfF/S96zD5NvOhrdglBLJad26F3C1MQDaFmBcjmr88qsLYmMe921Fx2kL4i1l5i757ztPXwDXNzXXmCvNoAtM80CWTRb/ZvJXPqgcag/xCiQhWXq5+4R6OTHELAZ1GEcuurV7qudXdVZ/iermnX03apE0GqlKQ8qp18ram98YFvqsfk54RE6hKMJsldbMH4+cfWTpyuPoKVK8pB5h+aSZwKfjfQak28rfB4Bp9nBf9ynG5LbpFfpOcYfshUTslkqbv64Fpc7sCPixuo+0+T2AcYVnS95gvmtophdXmTE/tFQgMSgJbivAsAb7v8X41+o7b0OR64jn6CTLofGDLCrDzEb1aTM3EdkXHVTLDphM4+Dzef4ZqGe8w0DMnPeTXiLMIQLDuezCSxdPZ1laIGjf0ebnPLxH0fJf57NOEcmn/cmhWltDDDK4pGeCizeRzWr5KLiF6iPTZs+rAABl7HRj1FHMy5D8n8P/3ZdZzH4Q0iqPVVSAAWcZu2UaRowBXrfizKG1WnnZe2PoeKSCFM0qH7zGr7vOXxUuyPBjJKAnzrr5c+kB5UgCAbIh3Q4omcpaxlOYmM9myKAqTb1a1MtOx9UI1Ciqe7R9EiVTzrCd398Ger7Dbn6nz49Ukdn6Tg+xedko5Em5tdyw9FznZGqf85zmCKMiFKsyvRs3tzFE57w3LoY4NOoervycgu284IUTL1yEhKefvw9jenxMjgaxoy8MtdyYbFcfabNtnAQkk1r7ztneykfMvgYH6BOZw2lLDZ3KjLAzjg6uFqMcrmEcgvkzcbUfU8dXeSKZkYqV6xIzRCUP1dutWae3b1WWkKqoiginsiTEf1YARKO6wUxPyPrCi/TKGJ7xvlXi/zXgsyHEk1xR+zL7Cax+VzvYpf6oluvDBC68Gjk7oqdcVZkdtnEe1j+raKWzmBmHLqPUgV/pDrgdPKN7OxpCxZSdSRyuo8W9ISlqmHGj0BSF9z/hbPwdpdSKqsrbF/uQgxqazsELaYLATyyWAJ1ohuEVGMndDO+9tz453dVsPtSCntWn95fTBijBugWU0/zFf9SBTtsti4iN79KDhLw6zdlkjmNvh+EMAbl3gWTup8ZeFxKuOGL82jsQhedm+gy/FUI2er30w/+6K8gd0nPLjNmds3bvw5H2Y6GEbEZaTqWGpciOMx9ZRaFlgqHnmqWaxYsnwDR3wq7huIjAsYu25BsetIio/pFNkmXzy22sIatVHP+IG7vmOetE+28ZP/oMqfLNd0oLNrZ5nb2b5nlkVptNoyCOSpVWR7fxP3kGkpuhTWSyWyIAasJua38lKasFFhPQyc1pN+AFw4wZ6ibN+ZtEsdVEtCdhKYKu7TF3puJDmOc6z/fO8qX38MOPQaB/ubLbwuLrlFv5fDyKLGenWIZo3v2mspoDqYzu/EOV7D6yVK7WfdfB7DtCX5UPk4jsXPdMUEy7pjd8DQOVXfhaN7bsiL5+FQURnQIW8q3RX9wcwwpwkElzSYSMpR/GbGmhVUQUcVT+iaxQp+yBze0lgjwddeZZ/a9IImpDHKrmDcG2lgUFM7nctVNtIetzgORR3S83SS6iy4iAzuMN8gfvALZDeO5JXn5U1demAOE16Jg651528I1RdiAqlY9HcDSFq9EAmx6leyMV69r6jvShfbJALjehRrFN7MlZUhHGSkMyCxdWOiWe3CPJYmPGRvyobWf1hQWpgFYYPmZI5/I4UyE+9nmeJ+FVkF24jysLt3m33dfV+/0sYKcGy/dvQAAf3Q5doEHKtmAelKwa8UWVf5V8czTs/VrIIIg7/nSM2gLaAy0oeCZMybvYN6py5Dd6uKPLQ08fjU7ApI3wO2+DOxjCtpB+v9S42RlX/KsxyjkTxee9lx2mDwubqMMvINaeLfEz0s59Y1QnRkSZvRwGROi3dDsvrYMTE02HtYHh30yXqhEAdOyETnAVwVZr0vfE+c96HnfgkVjogKPBfPiqeYW9ioNUSEgTEmbjmBKugLchSRxb3jxKgAwaphZplVY+5l4ALVwp+v0MFc7GVzk61RbqOn1D1Yyao6FJGBsHkKRfrU2SRNzQqGWNMR2dG8mZANLSP4rOyPLqvQbEEjzDg+HGq+PWr5nOsScMIQ6XTvLuU3piXN2rpePomaMAAL4UrcIxwYLPEFqfgNFsqK921Nhl+9PYeywMvj6GUgHtuVJR6og34nCArDzg6FsrAxdiLqlquSTuI4PSNpyD2v8nRZHeVJ0t3rl/TImppjsZ0Et5T7tdVlfYCAD1MRniEftBDEmmdGGEryJAD5ejoNoaqYGhVckbBz8f7TfF6bQw16RQYA/4HKIEDRxyEeL2KXWzfmz+za5T4S5pWNNu70dD9HXQYLbL4NXfYY+cH6R/9SOADsad2IzlgTltn98OqkmXwpjx60p8JabWFbcV62Cak/XiOqQn7duiByBjYHL4k7Z5kRJpM9qNzz1PktaGXn6F1qNoHwlXDPhO2jn4fhUnWHu6tHmyN2b1T5dLdMPQVv5nIeGyfjHLGkPu33sJzSyffXFwboj0U0Nk4vH+/qseL2NavAUxSueUBfvWuQUygJl+YouFYiY/b79dSG2uAlhf12qb7YShhDzJmTeBLdAPm2T8t4tQYiEJ59TrHFvEY/mKTQZivsVleZd5p+9KP7bm38k/0VlAXIqvI8vJUdznV0CIeyYq9VRYkjpE4jm3znCpi+bnH/em7K76xnK5pmcjMWXHM/5hYHjGBWX5jG4ZQ1F1DtnbQcOrBDvYzWGUfQ5ELCNwa+mWOfJnJAS++wISFq4buCcIYaX4V0f0Hd9vu5dK0+b6L+Dpsyx+/5h0mjvU5eo5orYRVY5P2jQTga+WTO2GJz3X9sR5nP8EdQMvkThdQven9ogsKF62RFoHjJnRbshdj8qOARFupfZy/1cJD51WKoDpBijZyEBbckIm9b+uwkV+EVk7qj3+uqKxC4s4e91vxuws0IopnZfnMoxpmkBF0Y6j5T0aoCmXzwbAJEwFzFNtj2+1gV64Nv/sx8FPjJBdjihMwSsMlCEY35peVrCfz9vaEqM0zsE1wtv5RqQDmdJVqwoEp1j194LDZbgbi2NtQSdStX39gFsuYK7KoiHsNqF0x1M/solmBunClnBz/imgN2TIPKQLHHvCOsMATiVNGURlsDwUJD++yY1t4xmSBm9D53eTShjlRG+brUPz1Yh0IN0aFOQPlhkXN1Wi4Mjhd+eF3KW8RRFytaz1fFw9bH5OQQ9geQkEO443t1BRKYLNedhzn47Ppv/Q27gKvxZZ3bCyYs1Ft0iDgXe8rp3suBkpS09dm6SM8+0qbulczh/XbZDz+rvzN6GGkxKs9FOgob4Jlod/j2JUABB8U6hDstoamAe3Elq+k5Sa95ae8ntBauQPYvqq6NUD6BPcUAgCbpE4+qTjpX1IJwIaQ8B5Ahwyz2HIUSyiMiWKUnyJMGMIZof0IcBthhYotX69hC7hnSvMdcJQWNBimJDvlZfm470wusy3K5wt8rKHBT4qXSUlU3xwtPiizVSEeVLAc3WBrN481R6HtIEOIwNDiCifGMReF3EVD05S2XM7JWqdSxKeMJV/8fj0HnOWBzdyo+64wyhad/BKuc5+c6cha0UfigfaLdX79jQ6USdJvkkS9ZlFRHuqsXktSNbfJrRnFSRa1cTHhNZbsl5pzXWfS9NXpO6kbzL6rPUZJEI15SOWxT956bV47+sT/nPRhLWM8P5M1iK9jsASR3Uvn5NKcHFxX7fdFQdiAfwSg7FiNjLOs9QtlhjG7q26i+HkU42U7pEJg9dHJhb+qbsRdxAV5aQhPHd7Ovdzn38omRagaq4hI1OKYBr6swYb6Ok2q5AzTLqHEnbfDzAcDp6YY786LOJN5P1mE029WXuOIPC2mfITipDWmbua6Bm75wWD7YuYOekRwO8Y05AZBfH5BECpOOch3IrC5oUBh/yL8njZxevlsVhwDaVG5WkMs7xSeUtWtrkm6Z34su9C8boT3Na0UlIwNVtJB7d8qcYIgIl1BT+CrS4UFzf5/um1sZ1b8kfup9H/LC68u1vjAVBUD6g9Md9F1AUTOZFb5etzyI6LLO+SsPubf9PwJ8q3tnv3PfleZeCIVHtBWgvPbI16kjOJA+7wA9kywRm1fv9c+XgzeDKDhNCsMM5tQnxhU/piHlzYbzvp7ovXpXXR12gaBs367MqhCMTXwQ83H42OhXHefP+EDgyaAgJ6/TR7PKVxMOsto4H8fcVwqnFP0gjyVpOEU6TZcPe9NnRbHWUx5YP6BbGQmfgxOWm+YwkkJPzcdhtX1jcGDdIyYh4pqtBGzmtt3rcmzLLZsRfd1ESKUtFXbGEbPZrKxyc55SzCPjszH9fcYrrCRMmrqZp3mSZSTmMIFjoDpg1pnAvO/M2LY+LuZOk/vvoFM3oCzxXtLNGbYbOFc+ylNd+O5dKH0SeMOeckTx6d+TSwoBJGnIjSzQ/WSr1Nwu3zaz779GtTw4qvdku8gwd6G3dw/nqd8eNi6zt6fduVHdCWbK3k4lTuxWKrq95fzWHeDVt7qSfE2xhpLBXHRV1lkgl9nZ3XwsQr4OeSna8mniAHn4Mg4nUTwmFZaO3HTQrh6XtLgLgkn2kz440YZkvEWseGh1vEzrW9B8VJOB0Dh7BQjO2Hxvgme4YY4SzDyTDu2PQ8EpyAqOlSYzWXAkRvNZcXegksr5HFDWp6GDVssft4Xviq+GnFBGfj1B2374i7ecorGVel44Tw8UvXNUhHqLQTpYKHp9aGqgbCyV//BFrbdkDw9yvS2lkvFJ2sKRQyHjHhj9yH9C6YlFC2QzzUguC4J5RDaKYz3oZVBFFjdqz3s9v/b+v+oW92/OybJkKW7322kjAY/nVWm6UR39gd4jObjScwgeTm8TKazKyMh4yUyBrFrY1p/OnCAoHlDc6nV5zC7fXqipM6abxtyMUjDfavUmCiEYVp99EGXu46fWv1aGXq9YP1cn2SwoD72a9//4WTe6fsMOv4AOgynaIP3XFFbLQYKHHI+E3SdWJisJxYv7g/Q+RxAaHiwyvcKDSTDe+OG7FhrWZ416V13SRzl9Xj4ty/5nDbCoc7I8GydS14Sc4ex+i+sDn/JCUjuLHVjdwrgIXxBat8CBg5FAeFv+o3wFq2kfEqdGPjN5oQzWRTobofLc96J/ySOwzNsWEIRxY4wJHk2h5X90IK82vrIIT8FMXu567yWQjVI0gIFmwpwLXRQRj7bgJP9RVNtjA0u13Q3hNE4rE+/A9GM0ARnFLnvxuI3vdBd38OP5ZF2KtSK9eJnjP/gnC/TVcy3a5mN6zeHSyKr2wRDsRNJjWgRyBoSnEUCLaecjVIvfvM7kss96V0CMtOuGXO1SI0AhHrWUASnY85RwVQM7/hswwq5loJGHak5olpoxVVzOPg+TNsDPtf6a/WwsCYR7WNxu5DcsgPNULhIHUIzfyLj7VVPuoo/cymKWHS/a6ESOvi3YFrGJswsVh1P2x3cvtieM3z1dLaQUyJWweV1c8aVf56H5t1ch1o3x6qS1zBa1kEfH4/+pD2OkvBjr5lSgwD+pDQB3trkUyFPygzk64spIFFYoXfMcjCKpWvKPRhf1mhCg+85PHBHTzg8JrqjLol7m0ivUx6JKyScQl22/CEqxHPFV2nzwEzoGkiTq8hKDUPnw/7JnjUusDuhAEYFbOcYT5ZIlZgqKnG+0evyc4KX6vmJZw+qbUK76tOTVXGMS87ykH5BA+I6iLrxNzhBKjN+Kk/VRvw1ECu5Xx/YaLVQrl91flFgTxM4vFmgoYF8iz9LQiD58uQ4NgY7qvIhpZeXxs2KNGYGXLrCXo8XYjsWbSbFdd2y9K+ZxWxAL6BJlViEIPh/K0JDNCPhC8HHV6sy7r6MXPGWLNEpT456Rj73wVT6e3svUxSjZjApW6x9ebGTTXNjqjObwmyFagHwnUSi3rijh2C9u59tatauuF0QJOFIRspaqDxBDXfJVmWo3a6Zub0uwz25AW449L6srLn497U/YjDYU4XFq+hWPbiJLqFN9vmRn3E4sajV+PCOefXEGC3sLM5OS3p4LSkMdO5uUkjK43xiBWCaC513mLqZlhMLC97gUhq9fDVN1HTQuzMW+kVTMIrS/RF8RooncaVVMkyIF4ONUW5KiCWY/tYvkEX/X3KbGf67UwKcEs0d2aLwpZgpWRoJmghIeIuivrJiYd2n9QI3BhJ5sqR5WI7k62sPl41xZo9bbjqeVutyTl9JBsGbeq5lzqf7qKuJGaqy34y2zI7idk8vP2Uh69nuybBMXvPlbEf52oOIBQQVrtyt72bk95Nj9HTNwbrwk5z1h///8yWAyhTm9hrSL1xy2BFiks1RMViu6LjWLK2VqVNiICv3ug/t/4BzKSjfU/XAQLkU21eQuFGtS4ixOxbgQ7qHemQfXVW/GylklbQHuQU7oBRq5GQ3ZA3MwsZRQbEZm4dgcjmjIYGaix7Q2jMt2aVsTL9fay0VHCLM6KYRT29HA4YjcRxvgR9jgc06H+ihDLKjzidmfjYdblIvgHDUzYAe6u8T1wPb2STicSVKkzcfXv8/gEENLAYFlnLKtDQb6abNE/Gxv/Ct9bTui7RiJMoDYz9oXD3b6wo/mS9QhYoMnmqnhbG0odjiXwhbNtipe5KeB4omOo6sB5ZmihoXf4f3UMTYBqLl4pgCC9RKjsNRZOR/uUTVipbFnzMq8C8jGc9pipucAQDkp0p8FYYRqRALLp3ZtW8OY7nSRoHu33mrcbRhfUumkXOhg/QQqOa5Lbr70nXOf3s2/GXFOCJzAXm2QIt9B0sY5luqlXUWTsqKA8gkBrBVUEi+KLkTCVTHs2Kl7cd7PP7RCOFdKaEqzx1acS3FbSC7BCs3A5i6czOyIslbDEeFCMBCOjnLur+H6QE1ccncYaRzRMqCjMiHGjLcQJlypKpzHG6l/FJkxVGliT33BuA2MgnCaxRcpM1dFiNO951/G/YLU6gHEqLJfTFXiM3VgKV1a+PQ87/nMaeoP+77mJDGShCW1HJz+j2Q9bceDDliGEc78guMtVq15ew608tfa6CYmnKMKzLbEr+veMH0/tOGaC4bZlLX2v27FmiE/Ka5e55yQ05OWzFo5RvA/QI1leCu+7cL8BW59L1INCJDSIZKN/cagSOAWnz41GRJn8vRAYbGZ4WxfZU7YtNLJixlyeXqmp1W8x6A0fZHO7C7UMYBH3ydpX9U7vEkame+tc+v3L1KXqOKoBlguhO1hQoL48SYJ80raMaPuTavIkke0x5CQqDrJgfJAxV14lybdtuacRuTxeUTYwIK+5ZRnKDZek0fPYNjVeXcXIpdof0CYBj01Bdr5yHpznNKmcgTj5oGVjqDD9aUwHAccxN3kCWuWcEuhjCuHpGGZy2TOYlWXMgXevxTI0zjyq8gUyasp3VPZLGSmVAXnXWhK4WLZo2aIQV1izLvGP0eGXxIxA7C4K8xfebDfxmUHXcdjCQ7WmdFZucMJM7cOsPVDAvmSH+1wRge5hDR9Hk9s+DOcr/QxdaGc3qNx/qx7xDhN740p/MVrtbQcz/OMObGfpwVCTWltr9lcS6AQLl9bSIOVgtWVJViGscntnB2U0bE8olmFPZSCVe5ZSuWyIXdFq2EgHXaSbEwUlAjalosetwnHf5y2vatIYa1ecqCxb31Ao6wrlDuotjL827Sp0bG6JXhgewSTBcdWmbcaDx2SuRVzYJNg9deIqmZL0myedmLQe+ouihoq5quHLy5kqryM/sZmUAXPwcrH/fJwdfZdL1hy18ukofGSEuDdza5kI7I49/EfJBfwjB60WfIzhAZc+xYeVf7Su3b9CJR2kn9bI6OSDbeEf8UR7f9cj/zHSipGW49caF1G1JMH2tSRy0QSqt0gckFFV80RhuLNOPqXAAO2n5W6/LkR3RHSN/03fmMZM81Eexc6c7HHN6uiW90AB4bRnfh9lrerO6gRMk28ZACcCa8bZElozXJyzSOYd8Xg12JSQk4EH9rD4enrq5ce6aCOE81yATgR5LR3St8MAthXbGhgNT8GrwG27Kbo+obr8T9gIso93F71f0M3CH+ICKa9J6JPOpKKVrQDA8RsrRHpJR46u2hUw8Zx5+VMCshYUBYqzkwxNJj5ZkNmP/i5vwD6+N0mgZ5Th3eEPRnsR+vn1dEDQPeRskJbSKGgIzT6iD9pNorsLvvGG83Qo2ub7PYWJiUTcNQKpIL8PqZkCd5r/4MJOftBhsSBpFiWAUpIIR18tdhP3OkeU8oOAmW7CoY+GGPAQYK5Z2DB4bVWtQ3i1kWaUafwtbl+Em7QCktAtyBtcVRVO0Tg2dgAZwDjM/k9FtMcNSNNWAK7QXzW4/bpKEDcz4WvgQOWmhuHoUlsNXvCbO/atsLlHUMLHUfpvreJDJVsFQvsRYDSG9R1UPSwfiJQoohoFjbGx3u3kLJIV5s+gm66jojxcblRYji9ZP2jvcttG/mC3SPbOSzGNBq2wN1stn4A2d1oP3JYSAz9sytrSrC39vwDABZIyOW3xHleOd6sCQ3UePPwewRb4DzF9tioWYuND+f7ndbocQDbOo0BGI4xucZz3o+e/+lMMSMZJ17fLdpyOpuXPDSwlX67wq4UZT6+ynlDJ9s1c0suQ5hs5GkPfuyDq6L0qgsU9rU5K8WzpZfJoeiM0PAtFPA2voxqZUJeEH8nPJPz/I28gfxRlXmUg93Pz4VvzKNVSWlX/TUfYAsITPuYxPW+dI1JOXkXHZ0P98cx60AsaJuV6siVeCnYfKUJvPAuzhkQdAROcfUIhvgQVYmQY6aerioPjnKQEPFbgJn1zaAP0xvghhohxOvBFjYKc0PaM/LV0/BqOMnGMOMhVn/KGmDKtQ2M0gV+adI0JU91gP0TmOoADQR9dzPx3+rCi0gXOvCsLZJLoIkV43KpxpqhQLAbsFqK6+egJzFYdGk2TfIrbOfVRCXx355znNIdmAfFe5Gnx2iIUkexaseAtxEBDZy8EMlUkA1EyAPs+VioqkcGWRVwj20jKDAi5OFbjKUwZ8l1R6+OolueDhMnDgDdmeyZgqbhrCsNNmHvmBh0UzaSs2sjJACruSuxbC1tWT/y7dcMmACWi7oSMIjKCVJvq5DJaz16kj2WCGCLjN464GkPUUjjhcUSdn0ji22fPwNxtKiEXtCh9cTsA3cEstQQXVE2MI/DnD+6aJj1rDb9Jsvx+BodBFj2nnMK94UUcp18JDsRGwmngh0N91CFZGwXRNkxnpnCDn8b8okk20uU0xYne83kKe1qRJW5gka+5yBttTO7GmKWOenCKLYlai6x3M8xbTZgKhuifmIVGlMuwZuw4Dlg42x0IiPc9QCWSrfcEAejNkBNsciG0vgUyrTG/wLYGH5yNrugEFSKH08Ft2yanvr+/bM72iWytyTVleTWnm28bWz6pvpGjrMIwDX+H6TuDZs3IpWux+hiGhGK3oUbWGEDXQ/5yH7vrmIOSfMNULlJI709urhJYrO60PcsoLPK8Q84KJoU/VJJ0Z65TrwoFlib/sDaU+qFGYxACxxYDz9Wt3lyjg/eomGS6DR3HAvMyNCjZMb0SCil2Fem/CjX2Grn8hFOz61Wli3fMHjdarRmo0dNzV8w1mXgMJkmOa8Jaaj5A8lWkMFplQ2ARV5slnPFDPHGwgbbCZbXHh4pZKKDCCZvi4QTFBCx9Ax+FAjuurVWme94yOz1FV/Ee6PribBP45YoC5Nxq6qrfrWM1i6J7Si/xZr/CBxh88JrbHr4XuZF8plZRE133aL+oUTW40huA4QHLIWiOkNxyLMh71Odv6C6W1eDAlBjPpgYW0rLpQf4DM5Own69S6O1NRLXbha6BhXRo1Dt+NS7vlL9blGsPRurpR77xrUY0RgCE3F2EPj35L7rPDGlrf96Ur/sORdS/P5xo05HVvID7ygG4or1E12jAvIxoV5fq7o3soxmY55CHpoCWtKfsWJRVJMg7tNvMeWTuI7/bLaxh93+V2jPvnuGtYdDl4W62Q+HU7peIloUTX9w3CnRoe4v/5RL0NSWItfg4y1HjTvqOltMSbp5ASW23P67tP9fgq/B95+vi7+tGKjk9YZPBpuTkcUk0erbB3zW+21tboXPlN+b8xFfku9P9wmzb9mQL0YaWCOz5yr4cCBKdPzcgtq1Typ9Yx+KH8hctf/W6iHbiWOzTg62jh8FBf+1uJPMahCQp1ckwZQqMK4ZTtjKY4AL9j6HIkv7x4ErghypJB8+Iw5RP2S0SNY943LWnMipyjXfW1kn3Hu5HpqE3T+YHYzawwWhctV+tE6JnCt4/MPzLivgDKd11LSEV9pnXeLi1viJSICAyUB+aXFMtRygidj90oTqsC2JUzmQ0GFwy5aglREWBJSoq5CHnCZrmONRaVg3Zw7s+YOjPPtX72BNqAT2FGCi2eAIGR/Nu2XcgRmfJucKVOaaUweww0skWmXAHetR9yDttaBpApFdcK+mFxS+bwMMmnKAlR1DdProm5GFquHM6oZluXNQmM2KPmutQ02gDQ2BaztPF/9Tp9IsVgGjKGIAp8QyHyAH+vUxzConQTRyHxa7ALfEWE+1q7aadME+BPzd9KITUrEQVMnQOaG2AosHuOkze3DCxFLNoa8+kzxEoGjHV5bJ3P1a27b2GXEnNaAOvFWChY7lIQbCREvHEes+PRTFQRmPXTYW+o/m5j6QGfcHtkbUfMDEzT35qp6c2X0OCvG77JliVtkNFLYKGMDfn6jSqh0tyyJ1xIEW1j9GW13v1PKKyIvP9Utw7/u8wIKv3er8yOKH55EGz7TGOyrmj81Qi0Xz39R2tEt9+K5+ah0DEXHs9n/vbpcc0OqsDCj9eB/c9OrzfV0pifDfpgBkimCVmQVGBy7VkDOnb3JL07VSOjeCKqjxJ1RekaptVDLF/v523nKCUYkHf2rzAA104x9Qcoqx8Pcoq0TyL56FH/YULlB6KbbUhMwOYnFce7+Ev40OrEXAD4tqGp6/UYr08jmzAWZn/y4WZbTbZUMfyHZjDy9EAzsHYJj/m668NHqe5JzZwgY2zRviW0RmOey1MoWgas141PTszXTGYpsbfKTQ840l5CbZxihRQvY2d6U3SbCjdI5lYwEtjxJB06Sq0/VvDVkevKHMSGBtBXj4iQAJJ60AjRfkOUFdru6JlysBBbykC4nAG/Q+Bsmy6M4XDoMTQ+IpwyQlowc7OURxicuHEbImy20mKOTPTjvbNWli2na0RDfXqAm6mWzDIjSfRAOnIjwH1+rpT1UR33gU8QIzLXpUt0ZLUQuzMirYfTNGB6KOyxiUBpVDG/vxLhQoSUTJnOY6xZTlMShaN+PM5DPrN9/lfrJLDpWiaJ5kj39D+yAy98e2SXBww2PUss7LJhoQW2h+94AZhXOfPXUuQAPticX32zrJHFH9fBiQrvCiagoyQTb4hut/jv7q9UVnfJMxNRY2EOAvsQqDXWmXkKdUjtt2hNnuL9ityQjg3hKx6z5v9JrBmC3Tj9uqT56C05Zq6GjAqWizEgdK1vKIJQ0C5wZjUhETPI/G7h30EUXpznLvOeGpK2FkJvq+8l7wTLCvqPhFJ85q6OIHHFBkzZIJFIqJ6f+aJMBsBVL3BP6afzDWkyBSh/be3eidg30o6eWOJyDSOMsYvKKuam3ReXH49rUiELed4pROt9jbhIB1Xvze35zI/DyKRZBaFA28FSV0rIY1RrHWt5Xh8JavOAC7MA/Wq0BJ0PCtDErY7de0h6OaRDp/VFLGLvpFQXBj8RH5iGJ+jX8vxj8+EFJ8cYmlB8vfxuLbWGdjAxps3sntIDqPmF79xFIwy3Mm9fl0RwCRjHSwvSjMXas2Lc+dF1fQVKnz1ms/LFc883EQ09kUhC2O7WCETMXSrRSd/sHaxMu757AMP/digPLEFSOcWI20PTC4bEGMkocaMf/Ex6ALEE7Ge2ekZcOVSMCxwKYU96MQC+a37zGBiJti7KWnPvwOfdeWceOIaL5fp9MUcOeRlu0pK+YrLnql7LSY2c/ohbMWzw/7lmSgvYtPAIW/Uht6gYF/cbL+NT/RrSb5Tb/w2cFGg1VKJjq0oioIa/Ex6H/CRiPF0XWhZFgTWrYYXx61OHSYSOrIxpQcVh0ecAyiNGO9DOMFj9W9dXpZZW/2wqobB46EKQkaXUS8BFzert7W6zxY67jOux29VCYTTYX4AnLqBdc31hmjXvU65ROEqcz0Zu/a3QbaQZf2e4cMLqwsolhK2xAADLqNXkG2YfmeiUdsv7+/Qojcm0u7BfGCwOi+vJKkB4oAs7BpAoAaGSN5S57XNTUay6gyMNnt2zlfL+qhGafs3hRAUh5HNy+L17cruEI5hoyRhK8CFi/w21mPTw4Mc1HmlTr4eXscHMXo7xbiNRB312TNWkMuMFYyNkxy4QB2WSTLw6rhydXo7+pZ2uS63qtFlwT0KmzXpqcwXYrQyP5mIoYZdggHJElrKrgdsVa2iDB7q/aTkkKOzPmDmZHGc//EWqarUHPqjJf32tfhMbZFID8tJIJspV5cdHmKX5hPSy3mLQc3oYe6Wwytj49owq6oTAETmFKPRFajgCvANAPSFtQgwCPGi3RpQ0oVDF2JggCVhZjMaYVRAfbUsp3vuh+9dietfaAfX4UYq8lCa/00xv3jIwhAQWWmfmFzAy61ioqV4Y7AP0bzMFRaDn/J6eql0U8lNNdoeBzIF3J9f9Uef7jzfyLP8DKGBcZuXlbmnuqOxlAsFVlAkz75AD+wUaz6whHaeH8DUV+MUlgxwYXv2JQdodB06yOzjs+bdONHOGKazXYFq1VLdgBsV1tpTBfgHd8lvE0FNWjZGCZMsmAyEVYpZiuFZwQvdpD34L9ANQRhLuCE3Qb0knnikthsP8l7F2+zaP6AxX/wz//75dkisxvUk7XGygXf8LrhSRNO/9dNF7xMrEzT63QjMiEM9bDcW3YrwBhgd6loEjSYXJUS/b+WZBfdZcyzTd6nZqSO3Mel3ptqPb7ipZ/dBmccwjYDUJu0nOiMOdVZBJxB5Z3enAuAjsjUm+k+6Ml2L4irFxFbjlPFlTwNtBhcJsmYkfKHnio1ySxKFmuSBiieydf5tv6DzSultaAHzwbineS/EIHkhqMAQbch4w+hrZRETJZ93BIT7aiMYwxrTtRSFyv4esKRLfr39nKJxj5n+4bBf+nVyvp8fnRak5M3Px2XBdorLXhKoH/cf6jy2VPAaSyAmabqkTGIQlJ+kmRaq8dvOwXHhhaLvzpjma6PqbMLwKbMqb0R57HVjN7rZ4+Uq6w3ANkfWoVVCLjQ7w3oj+s91pxwLy/0BEhbVwWTLXUZz0iVXeg+NryOqHSFmoKmND6yi/X+KOcxkKEcKEKaxRqyUUBvgh48ZR2UwpumozwhWyz0fN4UmY8YC7/EAB4CVhY8qwtSR7JpN/8KEawoqIJ5oBHEGozwXdjHz4tQLzhKPXPVNdoP/yCYR7HPCmJIXc3ECtNWaOMpS+3sZGrUXUOFnctcUVskOJMcrntx6CdK/uHKtU0QODqyGAfKdrK9EgnLfwePrhCw4ZVHybPVCaK4gsxHnYVV+A2XXkiNNZ2x7LAPKATme2lMYjIIQ+PNVNUZg7s7satgxqHtarY18DoNReZRiITyzM8jBAGxr4QCn7ZXMXbsmKtRynglG+E/lYCOXtQhdBdoIMeCOQF2Jr9v1rp+7CYdfSYVd3BRLCk4pAxzV9y+7w1oS7Wh0OH3k1sdfhHIAsoqEMsAbJi7QdCeMSDbZoGvyM/1IdR69xEpW2O0i1mHCGdeBRwyQ4TokUSgfK7eoR2lPDAb3Jcxx1XH9NB2yg0Qc4sRbAHo9rTmBuSifJszgOuEiVunyc6V+mYVhT+7pYe9laHulwO0h82amc7hg5yppGUZoLrb3s5IEcFNVf0SF9+Sov+kYYxdFlt/jAP4WnxdEGSW1TDcas8bbFCSgapi5PIz/9nG3I7jJRrPZUSfwNa9gkXW67mnyz+E7EQ2v0oWJekFPipks7YBSjxsIFyXP2/r8ojZNH5+CNFfIVbVXqhpyLE6O0g0fie9fMh1Ka3gX4JiyE2frOqXOMKH4co0qsDZTf6EYyIGrs8aOuuhXbVSitYK0UmahLND2a19vQ/8xLRdlULTLysxsLM/xAldG5goRYbVRLTrPC76893CbSXnjc4A/NkIky6szHgPGiV56D9l0GXiK5Xqhf2KZezx4CrbldGYZbLWMEKvpc6dE5itgCRI2Kg7x07M/ll68C0/CeFxFpaN1yi5Ltt/pEi4bj4ScNCJYHa10vAW+xciWiAmtjudFOgKv8BipMtqORcgoTkwcSbXJYCtRWxMxuCIpHcbqzJ89tshEh1BdB3gVpxFuWEzb61v8XRBsQE7mtROF2bD2Br/wQzo4J+OpQQbhJmJzz+ipFGs1AFzaFWQV+j8gv8Dhl8T2CPdpwQWBF5KCtPCLK5EXrM5i/YfYAckgFNC9cOJqHRWazWK5ItP4nryBhesfFsg7vEJb95tMOvFq8Vwfn96khweeIKPb/KeuaD8HWzt5iNh4eys9i391kMpgpXw4/8hFr3jAwh3Ych0XScr1Ex05KUMkjYz2rQysB0mW9NKyDI4f2mndhACl/dwK04VHUrI/wz5I5l99Di8</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G1-L27 · Short i — There is / There are</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G1-L27",
+ "group": "g1",
+ "lesson": 27,
+ "week": 14,
+ "month": 4,
+ "unit": "Food & Numbers",
+ "title": "Short i — There is / There are",
+ "emoji": "🐷",
+ "minutes": 45,
+ "kid_goals": [
+  "🐷 Read short i words: pig, pin, zip",
+  "❤️ Learn heart words work and keep",
+  "🍎 Say: There is an apple. There are two bananas.",
+  "✍️ Write 3 sentences about a picture"
+ ],
+ "objectives": [
+  "Can hear and read short i in CVC words (pig, bin, sit, lip, zip, six).",
+  "Can read the sight words work and keep, and earlier words find, there, help.",
+  "Can describe a simple picture with There is a/an ___ and There are + number + plural (Pre-A1 spoken production).",
+  "Can write 3 short sentences with There is / There are using a frame."
+ ],
+ "focus": {
+  "sounds": [
+   "i",
+   "-it",
+   "-ig",
+   "-in",
+   "-ip",
+   "-id"
+  ],
+  "sight_words": [
+   "work",
+   "keep"
+  ],
+  "language": "There is a/an ___. There are two ___s.",
+  "vocabulary": [
+   "pig",
+   "bin",
+   "lid",
+   "pin",
+   "zip",
+   "six",
+   "apple",
+   "banana",
+   "egg"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics: blend sound by sound, then read decodable text",
+  "Heart words / orthographic mapping (Dolch) with spaced review",
+  "PPP: present the language in a picture, practise in games, produce in talk and writing",
+  "TPR: actions and pointing on camera",
+  "Gradual release: I do → we do → you do"
+ ],
+ "sources": [
+  "Oxford Phonics World 1 (review): short i words",
+  "Start Reading 2 — short i decodable text",
+  "My First Grammar 1, Lesson: There is / There are",
+  "Peach sight-word flashcards (work, keep)"
+ ],
+ "teacher_notes": "Short i (/ɪ/) is often confused with long 'ee' by Arabic speakers (ship / sheep). Keep the mouth relaxed and the sound short: 'i' like a quick hiccup. For There are, insist on the plural -s: two pig-s, three egg-s. Last lesson taught numbers 11–20 and 'there' as a heart word — use them in the picture talk.",
+ "differentiation": "Need help: point at the picture and give the first word: 'There is…'. Stretch: add a colour — There are two red apples.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Hello and count!",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Sing hello. Then count with me and clap!",
+   "tip": "Hello song as always. Then count to 20 with claps (review of last lesson). Ask: How many fingers? How many eyes? Children show with fingers on camera (TPR).",
+   "lines": [
+    "Hello, hello, how are you?",
+    "I'm fine, thank you. How are you?",
+    "One, two, three, four, five!",
+    "Eleven, twelve, thirteen, fourteen, fifteen!",
+    "How many apples? Ten apples!"
+   ],
+   "questions": [
+    "How many fingers have you got?",
+    "Can you find something red?",
+    "Do you like apples?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Short i: i, i, pig",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Say the sound i. Point your finger up for every i!",
+   "tip": "Children point a finger up (like the letter i) each time they hear /ɪ/. Blend slowly with the buttons, then fast. Watch for 'peeg' — keep it short: pig.",
+   "focus": "i",
+   "sound": "/ɪ/",
+   "say_sound": "i, i, pig. i, i, six.",
+   "chant": "A pig in a wig can dig, dig, dig! Six pins in a tin, sit, sit, sit!",
+   "words": [
+    {
+     "w": "pig",
+     "e": "🐷",
+     "ar": "خنزير"
+    },
+    {
+     "w": "wig",
+     "e": "💇",
+     "ar": "شعر مستعار"
+    },
+    {
+     "w": "bin",
+     "e": "🗑️",
+     "ar": "سلة مهملات"
+    },
+    {
+     "w": "pin",
+     "e": "📌",
+     "ar": "دبوس"
+    },
+    {
+     "w": "tin",
+     "e": "🥫",
+     "ar": "علبة"
+    },
+    {
+     "w": "zip",
+     "e": "🤐",
+     "ar": "سحّاب"
+    },
+    {
+     "w": "lip",
+     "e": "👄",
+     "ar": "شفة"
+    },
+    {
+     "w": "six",
+     "e": "6️⃣",
+     "ar": "ستة"
+    },
+    {
+     "w": "lid",
+     "e": "🫙",
+     "ar": "غطاء"
+    },
+    {
+     "w": "kid",
+     "e": "🧒",
+     "ar": "طفل"
+    }
+   ],
+   "blend": [
+    "pig",
+    "dig",
+    "wig",
+    "bin",
+    "pin",
+    "win",
+    "sit",
+    "hit",
+    "lip",
+    "zip",
+    "lid",
+    "six"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the heart word. Then hear it in a sentence.",
+   "tip": "New: work, keep. In 'work' the 'or' says /ɜː/ — that is the tricky (heart) part. In 'keep' the 'ee' is long. Then quick-fire the review words.",
+   "cards": [
+    {
+     "w": "work",
+     "s": "I work at school."
+    },
+    {
+     "w": "keep",
+     "s": "Keep the pig in the pen."
+    },
+    {
+     "w": "there",
+     "s": "There is a pig."
+    },
+    {
+     "w": "find",
+     "s": "Can you find six pins?"
+    },
+    {
+     "w": "help",
+     "s": "Help me, please!"
+    },
+    {
+     "w": "ride",
+     "s": "I ride a bike."
+    }
+   ],
+   "review": [
+    "the",
+    "is",
+    "big",
+    "little",
+    "see",
+    "said",
+    "come"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "There is / There are",
+   "minutes": 5,
+   "skills": [
+    "Speaking",
+    "Writing"
+   ],
+   "text": "One thing: There is. Two or more: There are + s.",
+   "tip": "Present with real objects: hold up one pen — 'There is a pen.' Hold up two — 'There are two pens.' Children show 1 or 2+ fingers when they hear is / are (TPR). Remind: an before a, e, i, o, u sounds — an apple, an egg.",
+   "rule": "1 ➜ There is a/an ___.   2, 3, 4… ➜ There are ___s.",
+   "table": [
+    [
+     "How many?",
+     "Sentence"
+    ],
+    [
+     "1 🍎",
+     "There is an apple."
+    ],
+    [
+     "1 🐷",
+     "There is a pig."
+    ],
+    [
+     "2 🍌🍌",
+     "There are two bananas."
+    ],
+    [
+     "6 📌",
+     "There are six pins."
+    ]
+   ],
+   "examples": [
+    "There is an egg.",
+    "There is a big pig.",
+    "There are three apples.",
+    "There are ten pins in the tin."
+   ],
+   "ar": "There is = يوجد (لشيء واحد). There are = يوجد (لأكثر من شيء) ونضيف s للجمع."
+  },
+  {
+   "type": "reading",
+   "title": "Pip the Pig",
+   "minutes": 7,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "I do: read and point. We do: read together. You do: Jana, Yusuf and Ibrahim read 2 lines each. Ask them to find every short i word and every 'there'.",
+   "story_title": "Pip the Pig",
+   "pic": "🐷🗑️📌6️⃣",
+   "text_intro": "Pip is a big pig. Let's see what Pip can find!",
+   "highlight": [
+    "there",
+    "is",
+    "are",
+    "a",
+    "the",
+    "in",
+    "can",
+    "find",
+    "keep",
+    "work",
+    "and"
+   ],
+   "text": [
+    "There is a big pig. It is Pip.",
+    "Pip can dig and dig.",
+    "There is a bin. There is a lid on the bin.",
+    "Pip can find six pins in the bin!",
+    "There are six pins and a tin.",
+    "Pip is a big pig. Pip can work!",
+    "Keep the pins, Pip!"
+   ],
+   "questions": [
+    {
+     "q": "What is Pip?",
+     "a": "Pip is a pig."
+    },
+    {
+     "q": "What is on the bin?",
+     "a": "There is a lid on the bin."
+    },
+    {
+     "q": "How many pins are there?",
+     "a": "There are six pins."
+    },
+    {
+     "q": "Can Pip dig?",
+     "a": "Yes, Pip can dig."
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "One or more?",
+   "minutes": 3,
+   "skills": [
+    "Listening"
+   ],
+   "text": "Listen. Click the right picture.",
+   "tip": "Listening for is/are and the plural -s. Let children tell you 'A, B or C' and you click.",
+   "items": [
+    {
+     "say": "There are three apples.",
+     "options": [
+      "🍎",
+      "🍎🍎",
+      "🍎🍎🍎"
+     ],
+     "answer": 2
+    },
+    {
+     "say": "There is a pig.",
+     "options": [
+      "🐷",
+      "🐷🐷"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "There are two eggs.",
+     "options": [
+      "🥚",
+      "🥚🥚"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "There are six pins.",
+     "options": [
+      "📌📌📌📌📌📌",
+      "📌📌📌",
+      "📌"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "There is a banana.",
+     "options": [
+      "🍌",
+      "🍌🍌",
+      "🍌🍌🍌🍌"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "There ___ two pigs.",
+     "options": [
+      "is",
+      "are"
+     ],
+     "answer": 1
+    }
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Build short i words",
+   "minutes": 3,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Listen. Click the letters to build the word.",
+   "tip": "Say each sound as they click: p-i-g. One extra letter is a trap!",
+   "items": [
+    {
+     "word": "pig",
+     "e": "🐷",
+     "letters": [
+      "p",
+      "i",
+      "g",
+      "a"
+     ]
+    },
+    {
+     "word": "zip",
+     "e": "🤐",
+     "letters": [
+      "z",
+      "i",
+      "p",
+      "o"
+     ]
+    },
+    {
+     "word": "six",
+     "e": "6️⃣",
+     "letters": [
+      "s",
+      "i",
+      "x",
+      "e"
+     ]
+    },
+    {
+     "word": "bin",
+     "e": "🗑️",
+     "letters": [
+      "b",
+      "i",
+      "n",
+      "d"
+     ]
+    },
+    {
+     "word": "lid",
+     "e": "🫙",
+     "letters": [
+      "l",
+      "i",
+      "d",
+      "t"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "What can you see?",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to the talk. Then look at your room and tell me!",
+   "tip": "Model with Ibrahim. Then each child looks around their room on camera and says 2 sentences (There is a lamp. There are two books.). Others clap if the sentence is right.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Look at the picture. What can you see?"
+    },
+    {
+     "who": "B",
+     "name": "Ibrahim",
+     "line": "There is a pig."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Good! How many apples are there?"
+    },
+    {
+     "who": "B",
+     "name": "Ibrahim",
+     "line": "There are three apples."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Is there a banana?"
+    },
+    {
+     "who": "B",
+     "name": "Ibrahim",
+     "line": "Yes. There is a big banana."
+    }
+   ],
+   "frames": [
+    "There is a ___.",
+    "There is an ___.",
+    "There are ___ ___s."
+   ],
+   "prompts": [
+    "What can you see in your room?",
+    "How many pencils are there on your desk?",
+    "Is there a cat in your house?",
+    "How many windows are there?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "My picture",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Draw a picture with food or animals. Write 3 sentences about it.",
+   "tip": "Shared writing first: Hasna writes one sentence on the pad with the children's help. Then they write. Check the plural -s on There are.",
+   "model": "There is a big pig. There is an apple. There are two bananas.",
+   "frames": [
+    "There is a ________.",
+    "There is an ________.",
+    "There are ________ ________s."
+   ],
+   "task": "Draw 1 big thing and some little things. Write 3 sentences. Show the camera!",
+   "checklist": [
+    "Capital T at the start",
+    "is for one, are for two or more",
+    "-s at the end for two or more",
+    "Full stop ."
+   ],
+   "pad": "There is a"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "read pig, six, zip, lid",
+    "read work and keep",
+    "say There is… and There are…"
+   ],
+   "homework": [
+    "Read 'Pip the Pig' to someone at home.",
+    "Find 3 things in your kitchen. Say: There is a ___. There are ___.",
+    "Write 2 sentences: There is… / There are…"
+   ],
+   "goodbye": "Goodbye, goodbye! Keep up the good work! See you soon!"
+  }
+ ],
+ "nav": {
+  "prev": "L26.html",
+  "next": "L28.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g1', name: 'Group 1', students: ['Jana', 'Yusuf', 'Ibrahim'], color: '#f26b4f', soft: '#ffe5dd' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

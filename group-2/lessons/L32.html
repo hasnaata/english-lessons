@@ -1,18 +1,437 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G2-L32 · Month 4 check</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G2-L32",
+ "group": "g2",
+ "lesson": 32,
+ "week": 16,
+ "month": 4,
+ "unit": "Wild Animals",
+ "title": "Month 4 check",
+ "emoji": "✅",
+ "minutes": 45,
+ "kid_goals": [
+  "👂 Listen and choose",
+  "📖 Read a story and answer",
+  "✍️ Write about an animal",
+  "🗣️ Talk about animals and me"
+ ],
+ "objectives": [
+  "Can recognise month-4 vowel-team words and sentences when heard (Listening /25).",
+  "Can read a short text about animals and answer questions; can complete gapped sentences (Reading /25).",
+  "Can order words into correct sentences and write a 5-sentence paragraph about an animal (Writing /25).",
+  "Can answer personal and animal questions using present simple/continuous, can and comparatives (Speaking /25)."
+ ],
+ "focus": {
+  "sounds": [
+   "oa",
+   "ow",
+   "oo",
+   "igh",
+   "y",
+   "ee",
+   "ea",
+   "ai",
+   "ay"
+  ],
+  "sight_words": [
+   "goes",
+   "green",
+   "its",
+   "made",
+   "many",
+   "off",
+   "or",
+   "pull",
+   "read",
+   "right",
+   "sing",
+   "sit",
+   "sleep",
+   "tell",
+   "their",
+   "these",
+   "those",
+   "upon",
+   "us",
+   "use"
+  ],
+  "language": "present simple vs continuous, can/can't + adverbs, comparatives"
+ },
+ "frameworks": [
+  "Formative assessment: 4-skill check scored /25 per skill",
+  "Cambridge A1 Movers style tasks (listen & choose, read & answer, order words, talk about a picture)",
+  "Spaced retrieval of month 4"
+ ],
+ "sources": [
+  "Cambridge A1 Movers sample tasks (format adapted)",
+  "Group 2 curriculum map, month 4 (lessons 25–31)"
+ ],
+ "teacher_notes": "Make this friendly: 'It's a game to show what you know.' Don't help during the scored parts, but you can repeat audio twice. Record the four scores (/25) in the student page and the Google Sheet. Give a reward at the end (a digital certificate or sticker). Note errors for month-5 review.",
+ "differentiation": "If Duha is anxious, start with the speaking part (she is strongest there). If she finishes early, ask extra speaking questions for bonus stars (not counted).",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Ready, steady, go!",
+   "minutes": 3,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Hello! Today is our check. Let's warm up with a few easy questions.",
+   "tip": "Not scored. Relax her: explain the 4 parts and the reward.",
+   "lines": [
+    "Hello, Duha! How are you today?",
+    "Today we have a check. It's like a game!",
+    "There are four parts: listening, reading, writing and speaking.",
+    "Do your best. Ready? Let's go!"
+   ],
+   "questions": [
+    "What's your favourite animal?",
+    "What are you doing now?"
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Part 1 — Listening",
+   "minutes": 7,
+   "skills": [
+    "Listening"
+   ],
+   "text": "Listen. Choose the right answer. You can listen two times.",
+   "tip": "SCORE Listening /25: 8 items × 3 points = 24 + 1 point if she listened carefully without guessing. Play each item twice. Note which sounds she misses.",
+   "items": [
+    {
+     "say": "boat",
+     "options": [
+      "🚤",
+      "🐐",
+      "🧥"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "moon",
+     "options": [
+      "📖",
+      "🌙",
+      "🥄"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "night",
+     "options": [
+      "💡",
+      "🌃",
+      "🌌"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "The goat is eating grass now.",
+     "options": [
+      "🐐 eating",
+      "🐐 sleeping",
+      "🐐 jumping"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "Penguins can't fly, but they can swim very well.",
+     "options": [
+      "🐧 flies",
+      "🐧 swims",
+      "🐧 runs fast"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "An elephant is bigger than a horse.",
+     "options": [
+      "🐘 > 🐴",
+      "🐴 > 🐘",
+      "🐘 = 🐴"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "My brother usually plays football on Fridays.",
+     "options": [
+      "every Friday",
+      "now",
+      "never"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "Look! The owl is flying in the sky.",
+     "options": [
+      "🦉 now",
+      "🦉 every day",
+      "🦉 can't fly"
+     ],
+     "answer": 0
+    }
+   ]
+  },
+  {
+   "type": "reading",
+   "title": "Part 2 — Reading",
+   "minutes": 8,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "SCORE Reading /25: questions 5 × 3 = 15 (full answer 3, short correct answer 2, try 1) + Part 2b gaps 5 × 2 = 10. Duha reads silently first, then answers. Don't read the text to her.",
+   "story_title": "A Day at the Wildlife Park",
+   "pic": "🐐🦭🐅🦉",
+   "text_intro": "Read the text. Then answer the questions.",
+   "text": [
+    "Every year, Duha's school goes on a trip to the wildlife park. Today Duha is there with her class. It is a bright, sunny day.",
+    "First, they see the goats. The goats are eating green grass near the road. A baby goat is pulling its mother's ear!",
+    "Next, they go to the big pool. A seal is swimming fast. Seals can't walk well, but they can swim very well.",
+    "Then they see two tigers. The tigers are sleeping under a tree. \"Tigers sleep for many hours every day,\" says the teacher. \"They are bigger and heavier than lions.\"",
+    "At the end of the day, Duha buys a book about owls. \"Owls are my favourite,\" she says. \"They can see at night!\""
+   ],
+   "highlight": [],
+   "questions": [
+    {
+     "q": "Where does Duha go today?",
+     "a": "She goes to the wildlife park with her class."
+    },
+    {
+     "q": "What are the goats doing?",
+     "a": "They are eating green grass."
+    },
+    {
+     "q": "What can seals do well?",
+     "a": "They can swim very well."
+    },
+    {
+     "q": "Which are bigger: tigers or lions?",
+     "a": "Tigers are bigger than lions."
+    },
+    {
+     "q": "What does Duha buy? Why?",
+     "a": "She buys a book about owls because owls are her favourite."
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "Part 2b — Reading: complete",
+   "minutes": 5,
+   "skills": [
+    "Reading"
+   ],
+   "text": "Choose the right word.",
+   "tip": "Part of the Reading score: 5 × 2 points.",
+   "items": [
+    {
+     "text": "A cheetah can run very ___.",
+     "answer": "fast",
+     "options": [
+      "fast",
+      "slow",
+      "high"
+     ]
+    },
+    {
+     "text": "Listen! The birds ___ singing.",
+     "answer": "are",
+     "options": [
+      "is",
+      "are",
+      "am"
+     ]
+    },
+    {
+     "text": "A giraffe is ___ than a zebra.",
+     "answer": "taller",
+     "options": [
+      "tall",
+      "taller",
+      "more tall"
+     ]
+    },
+    {
+     "text": "Owls ___ in the day.",
+     "answer": "sleep",
+     "options": [
+      "sleep",
+      "sleeps",
+      "sleeping"
+     ]
+    },
+    {
+     "text": "The crow has cheese in ___ beak.",
+     "answer": "its",
+     "options": [
+      "it's",
+      "its",
+      "their"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "Part 3a — Writing: make sentences",
+   "minutes": 4,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Put the words in the right order.",
+   "tip": "Writing score part A: 5 sentences × 2 = 10 points (1 if one word is in the wrong place).",
+   "items": [
+    [
+     "The",
+     "monkey",
+     "is",
+     "climbing",
+     "a",
+     "tree."
+    ],
+    [
+     "Kangaroos",
+     "can",
+     "jump",
+     "very",
+     "high."
+    ],
+    [
+     "A",
+     "horse",
+     "is",
+     "faster",
+     "than",
+     "a",
+     "goat."
+    ],
+    [
+     "Duha",
+     "usually",
+     "reads",
+     "before",
+     "bed."
+    ],
+    [
+     "Penguins",
+     "can't",
+     "fly."
+    ]
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Part 3b — Writing: my animal",
+   "minutes": 8,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 5 sentences about an animal. Say where it lives, what it looks like, what it can do, and compare it.",
+   "tip": "Writing score part B /15: ideas (5 sentences, 4 topics) 5 · grammar (present simple -s, can, -er than) 5 · spelling & punctuation 5. No help with words — she can draw a word she can't spell.",
+   "frames": [
+    "The ________ lives in ________.",
+    "It has ________.",
+    "It can ________.",
+    "It is ________er than ________.",
+    "I like it because ________."
+   ],
+   "task": "Choose any animal (not the camel!). Write 5 sentences.",
+   "checklist": [
+    "5 sentences",
+    "where it lives",
+    "what it looks like",
+    "what it can do",
+    "a comparison with than"
+   ],
+   "pad": true
+  },
+  {
+   "type": "speaking",
+   "title": "Part 4 — Speaking",
+   "minutes": 9,
+   "skills": [
+    "Speaking"
+   ],
+   "text": "Answer Hasna's questions. Talk as much as you can!",
+   "tip": "SCORE Speaking /25: 5 prompts × 5 points (2 = understands and answers, +1 full sentence, +1 correct grammar, +1 adds more information). The short dialogue is a model only (not scored).",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Duha, what's your favourite animal?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "My favourite animal is the dolphin."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Why?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Because it is clever and it can swim very fast."
+    }
+   ],
+   "frames": [
+    "My favourite animal is ___ because ___.",
+    "I usually ___. Now I am ___ing.",
+    "A ___ is ___er than a ___.",
+    "I can ___ well, but I can't ___."
+   ],
+   "prompts": [
+    "Tell me about your favourite animal (where it lives, what it eats, what it can do).",
+    "What do you usually do after school? What are you doing now?",
+    "Compare a cat and an elephant. Say 2 sentences.",
+    "What can you do very well? What can't you do?",
+    "Look: 🐒🍌🌴 — What is the monkey doing? Where does it live?"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "I did my best in all four parts",
+    "I know my strong skill",
+    "I know what to practise"
+   ],
+   "homework": [
+    "Read your favourite story from this month again.",
+    "Write 3 sentences: What was easy in the check? What was difficult?"
+   ],
+   "goodbye": "You finished Month 4! I'm so proud of you, Duha. Here is your reward! Goodbye!",
+   "tip": "Tell Duha one strength and one thing to practise. Share the scores with her parents."
+  }
+ ],
+ "nav": {
+  "prev": "L31.html",
+  "next": "L33.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g2', name: 'Group 2', students: ['Duha'], color: '#159a8c', soft: '#d8f2ee' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

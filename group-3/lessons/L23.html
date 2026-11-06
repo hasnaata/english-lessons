@@ -1,18 +1,519 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L23 · Writing: the &quot;hamburger&quot; paragraph</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L23",
+ "group": "g3",
+ "lesson": 23,
+ "week": 12,
+ "month": 3,
+ "unit": "Food & Shopping",
+ "title": "Writing: the \"hamburger\" paragraph",
+ "emoji": "🍔",
+ "minutes": 45,
+ "kid_goals": [
+  "🍔 Learn the hamburger paragraph",
+  "🔤 Review vowel teams in food words",
+  "📖 Read a model paragraph",
+  "✍️ Plan and write: My favourite food"
+ ],
+ "objectives": [
+  "Can recognise the parts of a paragraph: topic sentence, supporting details, closing sentence (A2 writing).",
+  "Can plan a paragraph with a simple organiser before writing.",
+  "Can write a 6–7 sentence paragraph about a favourite food using linking words (First, Also, Another thing, because).",
+  "Can read and use the key words kind, hand, picture, again."
+ ],
+ "focus": {
+  "sounds": [
+   "review: ee/ea, oo, ai/ay, oa/ow"
+  ],
+  "sight_words": [
+   "kind",
+   "hand",
+   "picture",
+   "again"
+  ],
+  "language": "Paragraph: topic sentence → 3 details (First, … Also, … Another thing is …) → closing sentence · because"
+ },
+ "frameworks": [
+  "CEFR A1 → A2 can-do statements (Cambridge A2 Flyers topics)",
+  "PPP: present → practise → produce",
+  "Writing: \"hamburger\" paragraph (modelled → shared → guided → independent)",
+  "Graphic organiser for planning",
+  "Spaced retrieval of month 3 food language"
+ ],
+ "sources": [
+  "Hamburger paragraph model (writing framework used from month 3)",
+  "Coursebook unit 3 style: writing about favourite food",
+  "Fry high-frequency words 226–250 (kind, hand, picture, again)"
+ ],
+ "teacher_notes": "This is a writing workshop. Draw a hamburger on the pad: top bun = topic sentence, 3 fillings = details, bottom bun = closing. Show the model, then plan together (shared), then Saja writes alone (independent). From now on every writing task uses this checklist. Maqluba is used in the model (a family rice dish many Arabic-speaking families know) — she may write about any food.",
+ "differentiation": "Support: give the organiser with sentence starters for every part. Stretch: add a reason with because to each detail, and use a different closing sentence (That's why…).",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Shop talk",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Quick role-play!",
+   "tip": "Short shop role-play from last lesson. Then the topic: favourite food (have her recipe from lesson 21 ready).",
+   "lines": [
+    "Good morning! Can I help you?",
+    "How much is a bottle of water in your shop?",
+    "Would you like a bag?",
+    "What's your favourite food?"
+   ],
+   "questions": [
+    "Read me your price list.",
+    "Who makes your favourite food?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 5,
+   "skills": [
+    "Listening",
+    "Reading",
+    "Speaking"
+   ],
+   "text": "All the vowel teams from this month in one place! Read each word and say the pattern: ee, ea, oo, ai, ay, oa or ow? (plate and rice are magic e from month 1!)",
+   "tip": "Speed round: 30 seconds to read all 10. Then spelling: Hasna says 4 words, Saja writes them on the pad — she needs them in her paragraph.",
+   "focus": "food words",
+   "sound": "review: ee/ea /iː/ · oo /uː/ · ai/ay /eɪ/ · oa/ow /əʊ/",
+   "say_sound": "meat, spoon, tray, toast, bowl",
+   "words": [
+    {
+     "w": "meat",
+     "e": "🥩",
+     "ar": "لحم"
+    },
+    {
+     "w": "cheese",
+     "e": "🧀",
+     "ar": "جبن"
+    },
+    {
+     "w": "food",
+     "e": "🍲",
+     "ar": "طعام"
+    },
+    {
+     "w": "spoon",
+     "e": "🥄",
+     "ar": "ملعقة"
+    },
+    {
+     "w": "plate",
+     "e": "🍽️",
+     "ar": "طبق"
+    },
+    {
+     "w": "tray",
+     "e": "🫓",
+     "ar": "صينية"
+    },
+    {
+     "w": "toast",
+     "e": "🍞",
+     "ar": "خبز محمص"
+    },
+    {
+     "w": "bowl",
+     "e": "🥣",
+     "ar": "وعاء"
+    },
+    {
+     "w": "rice",
+     "e": "🍚",
+     "ar": "أرز"
+    },
+    {
+     "w": "sweet",
+     "e": "🍬",
+     "ar": "حلو"
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word. Click 💬 to hear it in a sentence. Then say your own sentence with it.",
+   "tip": "\"A kind of\" = a type of. \"Kind\" also = nice (a kind man, lesson 7). \"Again and again\" = many times.",
+   "cards": [
+    {
+     "w": "kind",
+     "s": "Maqluba is a kind of rice dish."
+    },
+    {
+     "w": "hand",
+     "s": "My grandma makes it by hand."
+    },
+    {
+     "w": "picture",
+     "s": "I always take a picture of the food."
+    },
+    {
+     "w": "again",
+     "s": "I want to eat it again and again!"
+    }
+   ],
+   "review": [
+    "home",
+    "us",
+    "move",
+    "try",
+    "need",
+    "different"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "The hamburger paragraph",
+   "minutes": 6,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "tip": "Draw the hamburger on the pad and label it. Ask: \"Which sentence is the top bun? Which is the bottom bun? Are they the same words?\" (No — same idea, different words.)",
+   "rule": "A good paragraph is like a hamburger. 🍞 Top bun: the topic sentence (what the paragraph is about). 🥬🍅🥩 Fillings: 3 details with reasons. 🍞 Bottom bun: the closing sentence (say the main idea again in a different way).",
+   "table": [
+    [
+     "Part",
+     "Job",
+     "Useful words"
+    ],
+    [
+     "🍞 Topic sentence",
+     "Say the main idea",
+     "My favourite food is …"
+    ],
+    [
+     "🥬 Detail 1",
+     "First reason / fact",
+     "First, … because …"
+    ],
+    [
+     "🍅 Detail 2",
+     "Second reason / fact",
+     "Also, …"
+    ],
+    [
+     "🥩 Detail 3",
+     "Third reason / fact",
+     "Another thing is …"
+    ],
+    [
+     "🍞 Closing sentence",
+     "Main idea again",
+     "That's why … / I really love …"
+    ]
+   ],
+   "examples": [
+    "My favourite food is my grandma's maqluba.",
+    "First, it is delicious because it has rice, chicken and vegetables.",
+    "Also, we eat it together as a family.",
+    "Another thing is the big moment when Grandma turns it over!",
+    "That's why maqluba is the best food in the world for me."
+   ],
+   "ar": "الفقرة مثل الهمبرغر: جملة رئيسية في البداية، ثم ثلاث تفاصيل، ثم جملة ختامية تعيد الفكرة الرئيسية بكلمات أخرى. نستخدم First و Also و Another thing is للربط."
+  },
+  {
+   "type": "reading",
+   "title": "My Favourite Food",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "tip": "Read it twice. Then Saja colours (or labels) each part on the pad: top bun, 3 fillings, bottom bun. Ask: \"Which words show a new detail?\" (First, Also, Another thing).",
+   "story_title": "My Favourite Food",
+   "pic": "🍲👵📸",
+   "text_intro": "Listen first. Then read with me. Then you read alone!",
+   "text": [
+    "My favourite food is my grandma's maqluba. It is a kind of rice dish from our part of the world, and the name means \"upside down\".",
+    "First, it is delicious because it has rice, chicken, potatoes and aubergines. Grandma makes everything by hand, and the kitchen smells amazing.",
+    "Also, we always eat it together on Fridays, so it feels like a party. Everybody talks and laughs.",
+    "Another thing is the big moment at the end. Grandma puts a large tray on the pot and turns it over. Everyone claps, and I always take a picture!",
+    "That's why maqluba is the best food in the world for me. I want to eat it again and again."
+   ],
+   "highlight": [
+    "kind",
+    "hand",
+    "picture",
+    "again",
+    "first",
+    "also",
+    "another"
+   ],
+   "questions": [
+    {
+     "q": "What is the topic sentence?",
+     "a": "My favourite food is my grandma's maqluba."
+    },
+    {
+     "q": "What is in maqluba?",
+     "a": "Rice, chicken, potatoes and aubergines."
+    },
+    {
+     "q": "When does the family eat it?",
+     "a": "On Fridays, together."
+    },
+    {
+     "q": "What happens at the end?",
+     "a": "Grandma turns the pot over and everyone claps."
+    },
+    {
+     "q": "What is the closing sentence?",
+     "a": "That's why maqluba is the best food in the world for me."
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Which part of the hamburger?",
+   "minutes": 3,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Read the sentence. Which part is it?",
+   "tip": "Ask her to explain the difference between a detail and a closing sentence.",
+   "items": [
+    {
+     "q": "\"My favourite food is pizza.\"",
+     "options": [
+      "🍞 topic sentence",
+      "🥬 detail",
+      "🍞 closing sentence"
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "q": "\"Also, it is quick to make.\"",
+     "options": [
+      "🍞 topic sentence",
+      "🥬 detail",
+      "🍞 closing sentence"
+     ],
+     "answer": 1,
+     "keep_order": true
+    },
+    {
+     "q": "\"That's why I love pizza so much.\"",
+     "options": [
+      "🍞 topic sentence",
+      "🥬 detail",
+      "🍞 closing sentence"
+     ],
+     "answer": 2,
+     "keep_order": true
+    },
+    {
+     "q": "\"First, it has lots of cheese.\"",
+     "options": [
+      "🍞 topic sentence",
+      "🥬 detail",
+      "🍞 closing sentence"
+     ],
+     "answer": 1,
+     "keep_order": true
+    },
+    {
+     "q": "Which is the best closing sentence for a paragraph about soup?",
+     "options": [
+      "Soup is hot.",
+      "That's why soup is my favourite winter food.",
+      "Also, it has carrots."
+     ],
+     "answer": 1
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "Build the paragraph sentences",
+   "minutes": 3,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Click the words in the right order.",
+   "tip": "Then read the 4 sentences in order: is it a full hamburger? (No — it needs a third detail!)",
+   "items": [
+    [
+     "My",
+     "favourite",
+     "food",
+     "is",
+     "pasta."
+    ],
+    [
+     "First,",
+     "it",
+     "is",
+     "easy",
+     "to",
+     "cook."
+    ],
+    [
+     "Also,",
+     "I",
+     "love",
+     "tomato",
+     "sauce."
+    ],
+    [
+     "That's",
+     "why",
+     "pasta",
+     "is",
+     "the",
+     "best!"
+    ]
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Plan out loud",
+   "minutes": 5,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Plan your paragraph by talking first.",
+   "tip": "Hasna writes Saja's ideas in the hamburger organiser on the pad (shared writing). She uses these notes in the writing step.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "What's your favourite food, Saja?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "My favourite food is pizza."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Why? Give me a first detail."
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "First, it has lots of cheese, and I love cheese."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Good! What else?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Also, my dad makes it at home on Fridays. Another thing is that I can choose the toppings."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "And your closing sentence?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "That's why pizza is my favourite food!"
+    }
+   ],
+   "frames": [
+    "My favourite food is ___.",
+    "First, ___ because ___.",
+    "Also, ___.",
+    "Another thing is ___.",
+    "That's why ___."
+   ],
+   "prompts": [
+    "Tell me your favourite food and 3 details: taste, who makes it, when you eat it.",
+    "Say your topic sentence and your closing sentence. Are they different?",
+    "What is your second favourite food? Why?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Plan & write: My favourite food",
+   "minutes": 7,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Use your plan from the speaking step. Write ONE paragraph.",
+   "tip": "Independent writing: do not help during writing. Then go through the checklist together, and Saja improves one sentence. Save it for her portfolio.",
+   "model": "My favourite food is my grandma's maqluba. First, it is delicious because it has rice, chicken and vegetables. Also, we always eat it together on Fridays. Another thing is the big moment when Grandma turns it over. That's why maqluba is the best food in the world for me.",
+   "frames": [
+    "🍞 My favourite food is ___.",
+    "🥬 First, ___ because ___.",
+    "🍅 Also, ___.",
+    "🥩 Another thing is ___.",
+    "🍞 That's why ___."
+   ],
+   "task": "Write a hamburger paragraph (5–7 sentences) about your favourite food. Use your plan.",
+   "checklist": [
+    "🍞 Top bun: a topic sentence that says what the paragraph is about",
+    "🥬 Three details (First, … Also, … Another thing is …)",
+    "🍞 Bottom bun: a closing sentence that says the main idea again",
+    "Capital letters and full stops in every sentence",
+    "I read it again and checked the spelling of my key words"
+   ],
+   "pad": "🍞 Topic sentence / 🥬 Detail 1 / 🍅 Detail 2 / 🥩 Detail 3 / 🍞 Closing"
+  },
+  {
+   "type": "wrapup",
+   "title": "Stars, exit ticket & homework",
+   "minutes": 1,
+   "exit": [
+    "I know the 5 parts of a hamburger paragraph",
+    "I can plan before I write",
+    "I can write a paragraph about my favourite food",
+    "I can read kind, hand, picture, again"
+   ],
+   "homework": [
+    "Type your paragraph neatly. Read it aloud to your family.",
+    "Write a second hamburger paragraph: My least favourite food.",
+    "Study for the Month 3 check: countable, some/any, how much/many."
+   ],
+   "goodbye": "That's why you are a great writer, Saja! See you next time!"
+  }
+ ],
+ "nav": {
+  "prev": "L22.html",
+  "next": "L24.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

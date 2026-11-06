@@ -1,18 +1,559 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">dHSGVUOUgwFSn4cdlI1hzg+U2B7eP4DQd/T5Ag8aOitBKA4RStOwq81ozU47fhXBUYyBK8knB2NYbguJDcSG41gmO/Q9Cq0yfAPdH+BS284u4jM2zc3NcfVdgmUB3WN9ylTPwVah8MiuW3l7ZOWvNtg95fC//BIdy1e1mQUhHLtJBPSQHe8Eo9pZ52N/6Hk1MJey0t9LdhXWdpqkYJREkLIqXlG20yB0rP/9d4vaj4g0negN5oYGqxNliqB5MBucUaG5h+8dDQ8sj8ro3TLXLxodtcoaWXEUAu9GG+hjkDteCpLkSsdjgMSBurmeBoS55uXQE8+9bwea1u01EwDr94nhyttCksJa30AdsxEmedsL7mp4YwnBR5p900oEiXjrUNCeSjQ5+mJzVv0SMoKhomFu2cpQg1y3qOreSTT0zcQoO7cBFa51zQcpUAEkB9k4cM3Za2SWfX0BG3TVjzr+BnE3qocQcjDb/2qc7eScBRzm2bHMoxFY4eM0VlF87wWABrEP/ZqyJRA0TKw4mcoLLM0JScyZijkkMR+4WgrvsCuhG7JFMvCbUWfOcHgzZArSNALiGTdp41yIxU9jubsEeTWuHQ74iUzzshnQxncbykikDKdHCYdL4lTs/h0CiVfAyysuZhAATwkr3rrwpOdwwKqS6FhS68Em0QsSpVtAGwbKVhcBweJlc4+YycfmheOpOeVWCOIakMVHj8i+LGL+eNZmYIqq3VLPg3i8Vwbdx8LANY8Ngy3g7DCxhEHm7QG3l1HiWJKQUe5CPETyyMm+e2uydPMNyHdKcR74akLpeL5Plrh3V0Y3iMK/vXD7Jx6N1cajx0coAmieAj1lIF1mNPYvbhZdNCXTfLEgDZl4jq6ly4o/XtpRRAOlAOvEcLNi2x3FN8Kq0JqzTp5FW075OnESFhO/CjQ7UiZApjFI+aTgxsleYi3KYcJAjDU1g4baQNio8P+TlwhCMrjb6N+TNaWV9Kd4zIw6AT2MPrBgAVQtU61XOMKBb32sDkp6m9kPyh44SuxDk/O0d2LOTuXVEyKr+MgvEj1+f/Xelbu0eKGR5xwWmtuX0tIpaV84f6y2hM9c0j+kyl0V4LcCJo+bvRFlBxk4uBmf3CtroQNJOhFd3YsH0ikQayFqI04aL30GPrBHpvTum/RX/ymmb77Xfs1kVnliBIJa8AfZfsQElq13EgyiYHPeQpSuBoZI0htSZj08YubcqmOVKbpOFttOtV4oUyvXLDBDADn9i+J2HNdQle0nQ5W122Q3PhFg08DTNaY4ai+8hwSbbMqHktAWUnVOq1yX82tcodiU82kz+fwpcUBrR/1OrEt8RUty23q0J3hCG3K8h1ON4TB4FVc6ZnpU2ZxS8tNpH8+8rkje/hUgFlINwnVL/JPzhoKYIbgTxpO4bxlH2ApeHG+AZSMCheMPrR4OmzDVKOB3GyKok3FUc2BHK92Xw/avWq83hDpE0LhxJJeGL4YkCpQfvhfps8Dy30GPVX92oYWiUjHTlG775vuBBAs3HVG7EhnpfyIS+fgcYFNj4I9q4Kd8f1KBl8UeydbHjdRtf/K84ePevzXm8TdRzEwM4X5dKUgt/K6LSqGjAyg1fSbB0GIzdfxI0rhB/px8CBwPmOb17V7w4ks6m2DisUOBiRbWFAqgz2OIT/SOFiptNdb7kpAi9Z6xJhCIiXUwwXF64i4//yGOurAyQ/O1CG0Ckz2Coe4dlMBvZ0lUUxDMB/muunRBnk/evJAqK1+xCAAdkYPkyuz/wNTz++30g3+Mdf8bH4o0M9DqgYvX9wFyctwGvElCFb27v+7lXihVf5TTVFCxDb40haOdegPxC4eoDw76tZ4RvIdRmY1SLMjgj4/iZcfmY+kF+2D+8oIaBJWZJlwI1pnytYiJBDDfVouRx/yNxsh3a/j0CjTXCW4LdXRzcsTIj+w9ChEkbhkYOMuz/xEiVQyolZg85bOyC5QS7CQ4t57Oj2LmHykVk9V4b2lkcExtUG0CPJ8b6vo64KUB/WPLFsK5fl2qCI9TtUrt85aMECyzXGBTibXKZptxU+S+qidDRxNCajV4vXs+dM0qXqCmsMA56/0AnRaZBCAyNJqrjBeX4CuUtI/8einAmUrqOjSkWcvG8xLlK+rOLa3yghXiDPzXa4UUevwSDGt9mL68MzxYi66zc2eRvMytIHr1gzVeqz29Xy3PnhduoqbcvKjYSybOskEC/vePIUkwgtqAZjOBCwOhLQwSm0/Yh5gzhk+STjLuCkyD8eefJk5H/CX99VW+IGUucp50GXk5+Gbw6Tg2pzNdqTvrT3BlC3Hv/ccI5CFN/iTUwIJBMFlP7jbOhlZFKGiMT6NM85XT5p9m0dFCc2pdBmfbaxBQexGlym7bOdHKGlVtnBRDcafq+bdqFmkatAFr5WcV1Q+fyHtIYc/ghpCxBvV5uIowmtxCzGPl+zJX78weGKP4rOvouE/LSSyhZIhFcCAwEB4Jh2u1BMk+0TKIL/L9uMCDCH9al9gIwYR6GunCVuLTolhyU5TxTsvM6frpAYhBIctLBcnbm59dhyvDBLGHjC0IMKBXWlSJgfypq6RgXWHSUCs1YSbM40TgjUFEZIrGRINeQdbpz8wBfCXfNFHg1mwwZfAhmCwo6IOolxY4chtGXTXyhr15HEbkyP4KtzsCE89JbCCEOhJ7CitC9VxLb/PPyUyiQP+6Mu1Sc3BloVXatT/N0kPULVzGvYtdK+6Mn2rD1eE1nFmAGbOvfmad+44Hy2EL3Vu6Y2y8uMafqY4x1JLXoozqsaGshx/5anRHCwTHTC4i5T+D4NsD9KAuWYgp+4nNbbf4UB9kRTMiDnTKxKSrZv7YfbmVA6nYuqgQIy8Hrt5LXVm5nyFrTnR4c+FEWP7F5RQqrraH5j9UfNkiVhyREvzFwuEHZ5MFxhzwbDMR4tvLMWdZwXsE+YGvfdR2LGJPEPH0rQzW11Mfmg+OmBUz7x/gMwLng1emF5u3oEm9vZVHooxxJ6CkjASztTAqWYpzhWvmjugiUM8898ev+4LWg1gwGr6J5YZaXGb1HoOP8k7AIdHS5pJiVv0no1hTR+cHYfsKYc+jI/x6EcWqAMMkHGClVZrOZOXvLcP/lfxXzI++R2TCtJMHDfs7X3yxQtUs8b4zJVqR686YGMcFSyqaw+c+sJHCJSU/L+rnn7jGTutYqcOPVgStBjR7RCXfQ4um5nkwu140B1hSNYkS2LrqVHXwQjxR75F94Wg0TKc+a23QsLIjCMnnH9vGk49j7HtGyNMq/q6Igk5LhY0Ojwh+qy4FE7ciZFlGuU04sbUk34wKAF6/uFQ6Z58pr7sLJiJSEbAvSYYqS99LaJNXOSuO6vBjaudEJHNsFWtrfEIZuXJIU4HbPo6Rm5FjY6nUDdvP8y2ymO6mY8Ew7vqdg6M8IvmofqXROctH/SBdMz8zPI64VhjBREf/8ngvv+lftV2+9jX/JaoHCJbxli2r9Q/lr9yIxeRkVCYeh9Iv4erwdBoeZMNlRsUBVK5zPfJEyaQQ2vQ73SP3gQ1VlYrjDCvcquY/GZWEqHYccxnWDGzqm+Jmxg0xBMz3No3OKq21sjYTZjVJt7wZNRVxRS9NxG2FRInCEuZQDFK29LfSB1lHLFqiKSJIIAOb9yFyy+iDdAT0FT5Qy4flbqgcJU+PRwZyH48Dbv8cwdgjPlAF18YxO3DD3BYy5hZXJaz1jYU6OmoNDhrfZxjAoPSjDDGjoXdbt2FkQ6isnD/kwXF4ZOq7lGrQEkYaRIaQ0yqHpaEti5+bqwr8vzsyYa1AGRI8oG3vXNvCO5ujvVh2Yg5YHmiCYOj0UJVZaHuNlCje1rveAudt9XRhqt8KbERWXeSYpBR+vOPEa7OT2CF8bUpqhYCqXxvRfRBN9C++z/3St5Tswm8vgFK7WIqIy8u3sVnhuzeibLreXTKkNrZCZBNdg7EM5KbHtbEp6T/dYQDwI9fyDF2RA+a+5DGYInovk8T/wK6ukdVj+Vi5hNnVRqm9SVwiaACSb3lJ5/mRaaJEQpXaKPas5KoD6x0Olaa0Ehr+21f8DOmBjzLn+urGJs/4g92sj7irzah97umbt+Kz6gMTuPaTgG6KotnZo4JhzXvQptYOVeFPS6ys+8e+M6Slw4MYaET5hac03SixIn2+ynVeONCzV1IDlG5KFvCGUhqLWG6alP2LPVJ6U+VC+hvWWmw5G49fEcXBq6zIOFKJrcIjLADyqMMbQgoYmEpGzvBn/h4Zb7WVqBEFpk7Jwp9IbxURTnJMw3F6rwFg+PRiUTbwxGA+eaw1a1FCtBPamuZRh+KyjqMhePhlt8antHbxz4RcRnKkYTalrRStv7I4jp4T249NmB7NTpNnMRO2YKI9PZQMvbbAUZlddGpeGDler1NV8vXbs4Rn+byi7lJlMzYN2tr+5Jmo6MA8bkkhOoV0JP2osBn/61niFdgFnHv7ATT127Krzw9OnJ7Xb3AVJFLXSA0dXhttl7lRhWUDCDAveZRPn4/wlKGGD8lszCqVFic6okZHbgkDnLjpVPago3YLeMPCxJ9ycY+0rZ8O/pZjmwfXKU/bdYsBeSznfLvta1kubWzPl52D5efjebyHKTjJ2iBHjLoTS5r4GtHflhrI0YVQxBFx8NHRGRHUrGh4n0kYWL1fqBpThRKN9TKE5oRSFKh0rRyTb0JOVt2X9ieaS0yr99O5gQMb6bxX7/4H1xLCX8+5lW89R5SeEDSbLqvuzLqJoZwgLSmGukpAbSLr461hqkWlK0sNYgNFaDIzlg/+4aIUMK0tRtrpCjwgFLj4lbJXgOHl17We2vUMyefnmnDNEjL7hmRQJeXdLWqDmQN+Vci9kaBHgN6ObjBYQEuhHuY/ZECsH5Wjp7fIcHaiGOlGEBsELbSTLEoNhvYtIJOdqZe8h847yJhxbmMQ4x5gKBxOMQvUDFo/bXzhhOHcyZ/lA65goJatsI7rpFwfXsMmYcUu3WzFcIlAJ4FdzBjUQmVBjhvlBrdWg1C1weLN6s9/23rP9km6SI/cz1lG7Oebj0E+iTXMNaYX1noy2LnAeOp8BT8NC4qgMPer6GgQWd6rAC/hn34XgH6WIHoliCoNowU63WYN3HhcH2RWBui1Vh3Fw8InEeWwgPQWZhAdloHegXnSbVuyTTYsecMuhtprsGt/E9Ix9mOsYptSkpq/Y7KK6wUlFWZL5LxnWa+steAlGxZfeMe3Xq02PFRumr+J2ZMYx/1RYcr8o5MJExdmpHaUwTSBsf7SWL6mKTcx61zoR0cjhzYTbfXS83QX8yQNNJgQGiGzgnSnbRBvi/TTtrXI/PdaKpC9eK/3cqjkpeJ3nEMBIe2M551GMDpzAi6HulS6V1OTkShpVBO8HgPwVCvpFoRom0ZmIi6s1cUYvSCjwMbGkBprcKIQMi1yfxegM/mC2EZLhLxfTfyP5ogumcu5E7OWsphz95loNIO7/sorN+IWi3lmzol3iQ+MzwZ3XBZSqkMpYu4iyFGWiRCIe8BkKdqzxxopGjBFn0ehQJRm9kw3G74i9k4DLVdTrDAgljUujj/sXfY+kttTkD0QmdAR73n2eeqD9f6Hr3LKLDuYGYXgtaeZibHRzhuW0wYZiTjJ6mKe2vE/91cEzE/GfLsMIBaLS0NSZGJQmZPpRuCalJ5bGywGMOQY6CzqLJZQPapUNt80/BXtTHrOSHWVZdYP0pn3zK9UfZ5jAtjnBuHTpdY1feJxL7GZWj9EjEoFEA7X6xUIvRmyQKMzU7cULhm54vpENBFWwdvZVx+F0+UUtcW+wBKgVIWevlLKBn1vx321wLAqY+FNdjafFOzGElHo+e0NW281jgdevW7vlzrNH3TpSLqLv/dy0PNolAVvyo9liuRHJ17+Hs+1dNnrlb4/UDpyP5iBWv2T0ghWRiC2jXQwe+U5Yy3wI2N6qWVWlc8hRO5mFsmcGcQwt77Ztf5tiETUZNKEJ7MWoYWskGogZr+3z0x2XY4GAGwDfLB1Lehy9QpHIm8LnZV+HtyP/Zo12YzCHi4uIjzxTi1Pg6F7B5AYNpBKUCzQ7rVvYP/iPjDB/pYbgyU5pingpqZrhJHR/IvlE4npLYoNZBzBYmtxBk0GwFdZNDK2eY1AtOHpLfNHoI8PxxdVev+Nz401kB8wJvCoPW2ogRFXvFHoGmwbl7tVBZR309evra912859kphYj/9cJy6fVGkdTXABqmnGhdW90MdQ1T76WvpJThjNxxKHTIxSGP/kUlCxqKe1vQt26JIrTWBg+OO+i1269xS7O4odHPKbyYsxXoAbx+yTYyd+EugItBePXct6ehGLKc/+x4t1lq6l4FRHIDQQl7bIb35Cxz2PdMCqksgUnhaZ3o1kEZYxHmPNDFKGzhh0/+ALhyb8Gfn5G7zWtvoeDdnl/ec1RjUS1wLNz4oVRCtKwmMKuyi7oUjv4oSa+eureNQv6u3LtJf6+uxTO18d9X3At6JVBc3cILepPCTmdL+gi5v3lCORN37thl05pK6lvPysPEiKBi3SNJIG+p0PPPJlGUv7KasWHcEfCk1lwxG4DwG5tGnmeEVj4SjpNbv+5fZtFCkB9vChNgjI6+2MDHkmfaHwPiYRaMNxVpNQdLiqLTSkc9wt+JbngIAYzq/YXPaQUJmEtNk7+jXBq6K0bQoxX1yk9f7DrLQcJEVjMPbh6/IFPo7xz5U6+6Rbk+JRiKfxlYXrkOqEd1IuWCYGb66E4nJIVkiauwG3nKy9ZS4/ouz/fsjUW0i8HfUNkJAu4CN/P1dFzyoYlM29epSZuS9nBAZoJ/83Xwp7/03XDAkGxD+jLlED0WAzphuYyE+qWZKDXMNq9QWp5gp4Wi2MBe8BTSW+UE6BkkBeeHJP30+Tw/76UkmYkcT6wmpanMwGOjUhhG/q9hjvrb3zcwgZVvMFc3kMWRdnvVux4TCtRLLD32SOYaz3iVOFcjxo4FXsSIcjV7lCmx9QrpRdiaD1FtCiW89/L8GkyhqTRfxiVr26FJ/YCIFxFlADv2C6iF/m833bxR/yTX5Z/bzdCqSHvu06g3sojLtpYQpf6IXvhsvHHZgGwkXJwqUa+LIPcg6/EKAftcd/T0Xjtyb25KTVw9kwWX+11uu4/wgeth4+ZO1CqQ3dlYXZWz4dBMcFXUBvaa0cvG+VLixQAAuRrAysAEkmVenOcKcbNKyt2y/o2fZJCWLv4s9PbRsWIrDryeMw9jsI7Zk+ct651HAQqcACpYCFjBmrzpJ4LBtUy0Rug413XCfnbeiy2jMynGsQAApwOZKF/2XhYm+Qg1JVtWO0R08OK6VzAm3an10fpffzSS8gut3Oneh5J/BbdLgd4mf9nZP29+hslevNK4EItAqgvQvbTSUikWbwpXkfbfrC4zDvmkhkPIURQ3Gzttbz8ejN/o6auX4+bFE5XFiOf26Du1hSPbUrVqLKNctHHcZpBuS11eFPseUTT9EJJIBToXHXhSEvHIK5umsyMwGpU3ygd+l5a4eF4ulBfNKXFvDa5gMFJsR3IBz4acc4u4/xWlR/HRcg7A6eD8wiU2e2OPYSEm0Yv/2AU+CgWWGhLXqfLCYaDOQVWml28AoCXa0YyKvXUS49OCiS4ez7BtS2AL8L43tKfJ4qSstTHbOAyxozrVWwlz2pvbDI8m/yD9kBEWjTmknUxmNmBYwSx4PJ/BNz7UJbQBDKaGwnbudp9HNr9L4C/1Wp1Rtzfz6zA0nIVnQ4JsmHfzZkYjdpdd88klJ87J3oAzu7a4SjKlLZLykgrjOx+hS2RfIFUk7elXk0LG0b0oE2QGxUaVZ2/Cb+uEH2ONK8EarF5hYxPP5zBCl2TuDkNV5/kFsghTcEjEONuYf22GAwM5XmtzN4bDCm0DZLo1MU5Tr2Sq5LzrICzUpAASOrWzHSKA5eSE3BaLLbOv4K42+uyQ/MSFte5hdlxBZ/xTHUow8nvrg79JfB4pVysBvudn/12TDJlwPP0u2x2NGsYmoiEiDGcNtIv/JlCPAeg1u8xJsGwB1PX5t7avU0ZiQA4e3wshKxTD7i1l8sIueL6GfxB9idX9oupy68DkZcf7xHz3gwZ8D0mZXhTmBZTyk2bQvD9tB4aGC/WpJagHPonf9eHaxGrG6Ar2RThHzwGhMk/DJkMxOAz87LbO8aSlXKeIjal6cBZE9zi4T+6HGz8Ny0A5YmfwPaMG10emxNC6EjrQ9eJKHGC7fKTuGbxr+mLs3GUDW+AbHJtFuMeQf1Za8Ch/dHMZi0J21NcZYtkPsHhm52g5odQbWAPGhrb/TDG/NGCgUggtjaFD0Y6eo3kF6u8aZZX+/czQ3FftF2q3tUR0gCj4i5xF+0zDHUTXxAV7jpFGreZ0lEXRRR/n8t1yhTKnwW8n5UbnVvtiXlTydlLYtoWWpAbGmZjEdBty+W9euvXW11q7jqjUmNjZJs+GFtcsh9dwyHDHpaxwTwp3TGrLm5DBdTx/XEe1GWqJD9zJZDsKqWmT4sCSre7XJ9AHKZ3sAt/m3XbmAaAEJ9Co/2rYphSZMq/BeDBpPIhJ35qfyGN0cE1XdEZ8KKShFQBGxqJEsTp7kIoUPTnUb9BN4BZ8aBVOK3rlPz9ZWN/E2jncKuqAGL0S78l/EsBrYpwszj3A/TbhgoBgju5aDMtTHAd1WwN/GrTfBcfG22qBSpYCWv9Tz1V37pL0+624+mj1RhYqsn2h8n+XkWkmxWQ+GI4A7I2TRXQ2vNGaOiMB8q4xW9Y5awulqi2ruiJBbFhbxrefAcYufJylalORhk2AZ+p2o44irDccc/kE2fUNp/w+ZqIFS9EZxe6HTu2JXNOd9XqYWJRAIeva2MC0DSfxkJVX7ioqTTtOTdDnmPvV/XHOtVbY5TrzwOvo9bcjOWVHdmFGxTFS7v/ayzm/biZ6x0PoFwuLZRDzHNO8axLnGAqlIl6AsqlPDmHfoEYaPx6eEPb0tZzuhb2kTO83t7ihlhy+6e9IWyaevy7frSH/qqacPxuf0Q2FgtkGUV/LsVimRvND1oU5bRVr0/IPLf042GbiZkitAvcr0r23hMGk9siYTHY0Jlb2oxXUuHWceWlStJ3y813f4TgtB7qL9yb7L5i34szY2KYi3yAscJnaaUyhETxgPzHMLw/dbTYXt+8BP1EpuFFPTf4P/u+sXhqj3Ryoj9ADRimMQyZK4f0Gd+wd+72yCF6OLcBbsuE3gkhwQTQ9iaCW0bCH0QpweE4/PbGwFq2PGFlnorGopBZRBAk0ND9O4hC/wdEWji5+0hoRu8y7/5pp7rayXEgqW8AVes9aWpp3zDbN21qD3b7SfyIqlp0OS8vWEigo794usalS0haGX+3d17WHXitxkiIPOst/hwBZzRJmghnHG6mV2UX7byJQ8z/0vYd2G6ZdZynCNZzIvvcqX3/+S8HLN9i0C0bKfmAyrVq6Lfj/xLVrnzMgq9AVwi+cM2pkP85AZzDaXCCN508/UEZ2Pw21QQMUea4+Dheh1W3FihRy9dF7pM2jA0p8DIovYF2jFKonX4RKidaQ3BF9OwCVjv7lKml0jt6uULKcK9SXfF/jJwVyNk6hs3B4Zqtpt1qGj9gY51bZnn6mPh0GJICx9hRkmivfSvvk7GPByuEHJQsFdwhv3OkwbvMF9VTLLRudGAQo3f1XZz1xgESbqZ09wvlMdgx8H5tkH6v4OiamhHjcYGIlUi4u6HQ3MRvuw0eRXDucTQnJBo7Dm9hwwYp83gIebdC7CbN4+JNyIaHizf/FjXDTBMbUsKGKDKdVEXm+lfbyGgXV+OZCjHwfy6a2Sl7VadQEX1/nX/laEnGFiEsPeW4NuDqFcQtL7qpX2pDGMJ/HbQFMRZpZQM2rCbA1EX5WNUroKkhtubT1Hx5eLRH0aiCXHOosOIFKc8dmyupH2Hsb0bcY8nwrSav93/ghy2LX209nzU9ya2BBelKUgA5TkCzljeUgUyFcPfD19KVcILzv9JHg7FB0m7KV4Hhb8UwdcuGqheRXHFWsN0my4r4/gWfhXH+9jKIqEVjW06JkL2kb+5xhEt3LzH+dr2Hn0Q5iYXcW9UWwadaFSjdfkcd1lzerR3fv6c268MhEtzF/oF8gTm4g7jcDzJJ/Lom26TdcZuZ39A0am1bH17rBpE/Ktt0Nk7MLVPhaLTMsxwZtZvMy5xN+Ug061VdFvzei2Fx6nzMY+o/vGDa/77ajJcybPibfIaC4t5Y7bUj0FqZFkPqr9QzAnrXamQa4FeUbPurXdeX7q0Hj7B84oa1vxFNBbrfwdWpG7RNCjfxd0PxtPhS1PtlirnEKaakERVnZsT4HdBfX6EC0gYkiXUet+mAnQnv17Lt2oGAHBp+2Xaz+qtilfu3y3zfntjy/5RZYZVpGCRMPJ7c6eU2oLmpVuEgUdyLfnV8TSRHR8ngto6L0ocjhGrt/lrrVGWP9wmjyPqKRMf+MuJ5kPqBCZYpNWboYYSwzBz6Ij/+IRgNB5xAZgSdhLowbxB/GAf5Fu+3uK97aX47xVValYe402kHWTWJnPQuf9UdIcxqEL9PljsHwVyFkqYrhn3TY75fqoOFlum2Wr4MBby/XvtLwvch089Yvifu2w5e18P6HC9cHSBJd7F3YBP44dStcF/DvKXwKZMrmaOneOKfv1I8QaZOUH5KXSbj/yeP+d01cH3IsE3qdvSsCRQ8IxW886P0YvePIbVcclarZceaMjVzTPGZPXBdzsKkrkLv63DZz3Q/tlfct92z7cHYyP25O8sr+EmjyPOTnQMwxtTSBppFVVb9SobLRn9xYvurQOHaKAq7ejhz+Kzkq95ujOoLwUsJsC5SV42NjFJAo/0oPE3E6/Ub9pxPHay1r5StJdl9RQGZdrsUOk3tupwYHHS7yHHk6GD20F7REOikfEwoQLldbOxkKw5IqTl9Uy9Tw23lptpm3rUUg5dskfv6oyrxqdvoCvBPVbh4s8uMCN8eSBkKgcY6AHZHUh8wg9x1wbLQu5RHS+tx9CZq8AGXj1yaRJX6AkepqePWsl//zZFX3KiTaKHy9f1WDipDYpOB2zoo0LR/RIogzA3gD55xfrnA9CFbWFnL5QTHXLg6n6ID/vhtIeEuLEmayX9P+9PQqSlFoMc+rV6XLwa9Gn2VzZmDVlRF+R5dIuucsdYQwSrwbR0gFOWjQkzMGfvwrDk8R0KECy6Sv0iCZ5C6H9Ra7PeQ3c7xWeJC6NdQSsQhOlBjr36DiPDV+bzdACand1/WZA+Vy4jWzEqJPXBXwKcnJ8ctJFsgWa2koXwWG08o2bdL0+q+uAqN2+AdActg6cUK6i/dWbITmwxaAbOo57s6HDnKxT/AW/eIxQ79hp9Yoyu0AWERriNVetRdwhjFm+fTFiv/7duoJ3ksIWaoUdyki08pqQtU8+1OLX4x3WFhJaECxfGZ41vPt2dL0icelJE6phkq4I3IrXTPJXRl/+HYREcjXJUpn1k1zQZyx8gnpdHVJX+ScLyOGDtA2JDWYeWfmMoJQf81lgFWUU6N+E/qrsXTD9feOJJcJ6TXUkYDj+scjV0VpF6EstXSJIEbp90ErR58lsp80gw8O40FwnwAK3q1t4WpCzZP6gViwU/Uo/AhRmakWGfCEjnV1H1BnsYW7kPFLtyiTgCxB36GM/vKVMuKSqKgg+7LCYFlWKiopbG5lBAhpgB4j4IUCAdst3ocU5M4vMQ84SmZ1P/kMM11bdrB51r3FPgmnmzkUqfTMoyuPh56uCHK2A3/a2HxvhtNVeK30LVgzgYCT/1PmpixjUBjm9Z1paTwutIuO3N7IZbL9Gb0Jp1R15aYAfB7dw23Ux+KVFFfcYG1GdK3dWv3lCZ7oprRJWlbgdsjpNt9yyGTt1DW9eyMKMKwGoD058ddcqQeQVH9/oCFFR24Qpg/+JDaAQ4XT7MXv6SQyg8SYzI6VuQUIwUMAbrh6l+mtcI4A2WpuSqDe975/WXetduT3dS8mpiROvOo9ZUmQmwT10QHyRqpXwIbSIMW7ZfLrITcygG1tSIrCicC5FMosLUzPHu6pEJD5hVCpowS5BwWKIeu/33rKQWIh5kB4rExKdZ5g751u5C+n2eWd2O2j5M8sn06Fp0YroAX5o7Sqz7bEmrkblUSkBzdghj/D8XgQvxDl6GABfQPJdJQHEeZhTbplVx/+iq0lSTVjA+jNLqTnAPudT8MZno5tBuoEJxXTPCNwyy9QzfQiYsjiOhRs4VKuKYdyazLZJX1+d9ATyWjDmzz/cXYfLVMJhU31Vc3USQ8E6BIphLJA+5znOjyNB+pVCNJ5rDA810Rh6B6WRjsx5Ktdnfo/o8WYbU6tzRs/DwxiBAHn+LxQQ6y2CAfHk1zRqsJRDxmfGnTOi6aTDthWYeQ2rkecQfh+MvSAw0cZK+ilWvmjcflLde1VCHzhbyyWxuqSsGXlZG6Y1ZZoAlzrgfXfpPndaVkXExgKxH3l3/r5buQQnYT+QNfEGaEb8PWQiJT+6RIeuImxuURvkakC/r7YMTQyqoDm1Tp3rtze8UzBck7GRN7kImsHvOCHyIHB0mQbNE3HMCmG3V6s6ZMfhdLDIXQsDebBF9btFPxhPaZURitr9tPqxwYfVdMAUPVnGoUGV4gnQk2Z47C+bt0gt8Ou2JxoeieXg0JEuyA5GKDC66uwIlGjFRtiODBp/HfHCuf0iUS/xPsrZlGs0hGT6yWNRhg2Ej0g/Xy3xF/soCpNUNb2/9URyQPd8HKC/APejzqrczqJsoVMZbogTLfDywyZVHFAhFsCTDSALGBl1MD2jtQz+YYkCo+XPDtK+P16k158svfcvCr5xDAtsmosN4sjngAT/bAVAij6meyyGfJ4S9oLrIPr3QRhQ+FW7FCv82AOQSOEte5sDZ2cWSC0o8vkI+MB7EdXDbUuWbJmIOxETjjg2y6LOTOWlMM1ZwbG9mIPjvcKmu2hogT3jMgofnD6KOLpFmCm0Bu5jLJEXhFDCPSODxRbY/0uSKJFwrzfUnAYftV/fKOCCN06jWRVJiPqTTTn2F/EmJGxE8xYfaqpoUivA3ShVYph8l/lubaS8BFIT35829GcsNVVsW6TCKKyvDOfe6cmh1ojFejfl7lqq5719Ac5BQn5OSWV4mNJiL49heHgQprIdHE8ayI2QKLJAw4rzcMlkKCBrC4zxFRPAzat+6dfiZbEcLAjeISgamHtwaVHb4JDTDgr8Re/YQLev0Ac7F4DdkjoUzzAZV6SnCsFB6blKjOfhVpBSDQ4/7oeVgiMFdFFEPjl6GARhrSEWkQ5mBVyZ/J5+MP/oyrBcKb+J36Ob9zH/6za5+ZmtUa6drSTrXUO9/bU5UUwG9VKceVpmr2SG3YUMjupKKxVPRgsUU6nmfdpG5Ol3va8WMdMJhLEpAKXywEKKZldRlxLNMKPAKhNlO84eaX4ZzcMt5LBXRSITB5W0iqgMcH+HLuwshDDZoB5sBr4pV9Nnb/91JYb5ZgSt5urRHelGyZhIhI0AIteoF+jonp8tBkJEi0JhHVl68Mej198o7/r1Peh0lShiSBYsrUOJ8o6YS4DeOMnlZFVs25bgGcYS9GrW0vQFL35P6LNcokGSD+1rhiurLdFQDPvonY5yx9JZ8f/SJBgP9gOa3X2NOyTM2IwXd9SptEvjPnV7d39XYSI1uR9aXv2hbdX0BJkTH6UgOq7LFeyW5xGq7V30HZNBLtEOQANqeqDPbj4IFqLoCJoa36rTBRjrrO4aIWW+89hNqIR4/G1v7B57bQNSEkwDo3Y1JkW+hkwkMDRVjqnu4D71362UTRs+Jn+SsC6n/++K8zTch9d/pmTC3r9VPc0fjXW+3B8DOZUskS/YPTFOdfH68ldCzxITOPfSdbHDNbYq+pRs7ZAWqVcUxxdnwSB3mgozt7e9Txpo0l+ourvd/vV7XE2IP9PNr7h61veqrZ9MLo3mTMoVrRVNxJV+riNkLHfa9z4BVgsb/wjMbSrb78ynPwOmtRFfAvkICy0ekMJ86xvKARnN0tjBnFFYad9t4l2NZQjJWlkR+U88RyBfnLxVWP5jJglgL4rPeuSor6j1uHDC/qJaF3DN75Mkvu7bhW8iLKUcKZg4+Jg9mhmrDBvf5G57VHYeBhM9qBuGxVJ7BtbjF0HYeIrlJJZzE4m6qAdv2TabaHKtaG0MyI0SxKLb8cMmoNhnUKOQWn427OYIueFQl1ZKlr+q0RE4Nh3BRyPrFA2BmPV976wt+kFOwY3EyKIQ4zP7ywnsXi9K0E1amxolXpVnco+lHX7f6/QRHthe2II+WB98Hy1FfLCqRiXgQKmkpdC3voAQwOIyHIs8lEJeTGJJDGY627amhsPRD2Z77NN8Wy8Gv8J97I0IEZ/9r07f/ljFI1+FV5b7e85VKolEB2jpV7pimyggK1PUqxzsPqru8AvdQ/kxkNHwwF/F8Vj4RnA3zqKjgmHN6kJCZsDgtZcwH4emnshGor8DOspB00Vt20k26eccQ7pazoH9Lwt6qQlqQb6m+p36dZgaou1r1yq2GBCD2OaPrV7BDZW6z6zNiKHfFTTN8PSLoPeViZlK3/BNJfvH7gi1JO8NLaUiM7Bs1zc00Nj/lKS/4Pz9vmLtZniGRFZxfob+ZeTB/Ga0FufTCDaGqi0pB1TfZCo9P5ehO+EJDdzZqzqYyoMahwGRios/ba106l8+l5lSz2RfsLxPwKtx5Hyqi1XoGmGFPtFFdYj+P8hmW1rQPAmOCiCWvVM9pBz9Wag+eBDhyytRI33cvqBukIC8hUvUGcEyTFu75l8g4qby0zPnZRRYHwHdTh63ncoflbSYJ5dPBokhNB/xlqSj5D2M+U8wQg8kchs77OdY1WRG4WX5M70C9VHJnUhwZEzOjsWr2+0epajbm3MPLM8CJIbeVq4a65MakH+swlugHjD2bzqSvFl/9tAROtpyCAsX9AO2EDFcNlPdxMu+V0Hq3KuTjdco+kCz99c9I8sNePGCug+re9tT98PZ+Lm3nshXhRfr6qTEAEZH+LwKNX4o7MQC37PC4JDBDmXZ4EGIxBn6L8oX69kSaL3dloC+Rxu0ExWXsbAtpuV+jI++bolvv+E41dN2uhuA5volzn8+WnSvxIzl7udEvcOmxD98OiW5niognqWPDbi+6iK7cNhdd6Z2YUhQ/D+rBCu0TuqKStlnkr8/VdHUl22bWj0gzD7ltLS/6GpFzgK8963Yo/EhmebMW8aUe5aoomlyPTNXn6Q5F3ty0qDpteLNtkVYyKIwxWg0x74h0sxvYHkriHY7DEhuM3i8VMI4zNWZ7G+EuT+Mg0MAwTjWeNXudUu+1R20280QFW9C72TtHMrWym8MC8AbiZeEKWNnLO90rXaVzsPMv7Y7JhkNyMzR/jDVH+FFYAJEygcArSiiF6CDrXuDqUFW+4Ht7VJAK10AXtjahDKxuSIunJ0FmizlRh3RVvyrTIN22x1ur0m0UsPC/1TI++1CgIESHCS+DctkCPNsOxfA3oqnXC+G5aSOBxCcIErHYcKOGdI3y3bR7M3rrP3BYTLh19BE1tQuET9Nt/6RVHObz3A9TLVuEc20CYFaiIUFZEmq391Vjtqpx6Wlax6GkEz5rvEoWaOKrXNbM8Y7YB7X46BzJ2/Wqqf6epEhc75AjGjAJdJaSdR3+wyLrAQTdovB0D98gGSpEwhLLz9OtM8dPsvzIHOqxX44oB/N9Rq7Lg4OviGE2EQR6G53Ma7oQssl3VH/H/w0YHjAckMUKfwlGWzTdzoyCYoC/GHkoCjDDjGWA0yl5RIdOoiYRgqK7hco04DgEL7WCAXtirZdOGmfR/M0d6knn6oXFSI/9G/M09iEdDMn4G4tAcdxsEVRLF2xgq+zZDEpLf464s16qWGtz3GmLtjoakXN5bNbiIWVQUQP148hBp39pEytWU05wA9HXvIJOSQqWEtojNmOAZ5ysueJdqFJnrQyPAHN7e9+cjL0hwtyqa576NKo78w9HpzDsckVO4PimRw1nkG4brYoJJ5eP4WMeUneBEmno0cnJiDrSPS2cILLzQMCY4KL6qPfQ9pYNnSdou7yiT4Q5dEHb1KDUVvVL3cUdtM1QUXH6JZi5m9EpScr3juDZmFWCtf9nHoVof+xHjMGW2yHdSVVDZCBoS3d884/gq+4+4x7FL/Wm+qXIY56quCthpYPR7aSwUDCx/usSGQld7lC2YaU41n0QXlb0MmTpSWR7iaPJfSCto7ybfSEqHAYS+YO97kgPpoiP4t9H+YY+8ZAW8rYmkOrT4ZWWJ9JYLtUpbDReUQomehYDDFSbQoOAmOJoWBa78VOCbEt+lj3aAWc9xF6o11AmalihKFedvtT/J01tgcM6XCjsueMg6kM2g3YDB8pVuXTJYfYV1AmoVGULfouw6RrHfMUt8koo1gff08o+8qRCuDHbYJxlOjfHr5LqE/jpQmd9C0Zix6tRHUzDxQOzWJZUeICvfiNW/+GxAJrxopZFIQCmAj7glyg0zXRzfVydN56er2ffeWxVMggHBwxlqaVv9m4nzesRu3YnT5D+OxAtbfp7KO5MS6UimSCu4OjyOzGPGX8dh0AT8X32MEYKC9xML3I8zPKN2xc4dW5aNlYqxjHIOyop2vq7gU3HCtBlScxFJ8TrPqLXtAeOYdOI3O8FqLGXlzg0TQE2pkOmrqHLEAhqJ06tc/zLqxzbUvBO+GVlQ1kKdyskK1o0pvOioVz6NO63WK8gQbhX9wSy2dZ/V83g222uX0ZUtgz7lBkWrFN1MR/eSe6SZzItSndjaUHUFAFVt3gFkh9du7cvs7JFNwKzAMDaZTHT58l64XD+KcyvjrYD+FIa4K5kZm++mHZDpULK1Cn+2JfLZOtubmNpfHT3rmA07pUhnruR/eY8yPZ6o3vLNQsb7WmdYJKRX5X6TG+YE7z2R78kHtnlbh48XAZuEZAhHU/9k51oS56b84ZQTetK3mRsfwitOhXA7Mx+n7rGpRD6b2XcMzZg8PM982VIojLD8x8l8ViaPdKnh8pfbPnGAfBTRfpDc62I4di96LUigPF0F2Slm1VLqZbPCRD4fAjn9LnFr1CKXYBRF1Q4rwo6RD9UufGeZf8V1TMlrXd6DMq4zhSilPXCkQgd1KQYSg/C77dTr5lhYUAGy3msRkrfGogJ8mAYNisk4a1lchU8+jqPP+Jipxs144SExMKOH+fLhHX/wkq3TupM7Kuz5aKcVkQtRvCCeQcbxpdv9ZmTiT65qVmmVsiZwEbdqMbvHx2lSl9hILB5NxI8ATUHBxeMcG/nsLCu72ANx0qCcWmldZZwDaBS5v+4okFtxlE8rIwy3QSYyBkBlbPGHs6mlbGwwJuAH4lRCGcuO2lH4s+dLuRc3v50aXA4Xej6ClY6bYKbni1fqj4KQJ5zUsEKuL8Sjvs8pCzpwS+vuvutN54rxdzxkw0MvBTPuRGN+k4BroqRUIrKLALvhwGFWIw2Slf+fgt9FgEdxQXPOl9AQwjAl7LSF1CFwGX6I/erTZsVwQmbJt8lfJAcYThDh/wA+Qj2Szo8gybcm4PNW4PWOUBCMTvT8cLkBqOMUyNnV+QyXb+eX/Ym1C/5q5zeaSrb32PXMe1Z5bnZbqUpDQU+sg0rctm0yx4+TJuZNfnCVNU5c9q5iXrA/vt+3qnlxqbpbt2jHgP5zooF7daAsUm0OGlE2E+QWcZEXOb6WpimaSeTv302rva4lVgQOWgCOd4hBZxi6ZDDi3FtUO+LIGrtng0b7k6/O6gc7xgrMSMn/mmnA9w8kinykxlQ2i1QgZxfw/1eo5VgryeZAKD6PdUdyGEc/0/IjqKmZHBrVs48Bc3Y2qYIcP/13AtMM6uzr+WJF5gTC8X3shGgHXPxWX7031bnflrUvvi8+uT4IdWALaw5F3FZc5BP+0spuvCtw+fcRN3oT43azcX/ChEVUlc9SZHQxRudu1iqAMqUvmaatf+2ieDzQ1wAXFaHg1vWwgEo0sSktL57I1Uk4PoC6XRusYYtBS2rWBOOm9FfKieYTTe/fsULYY+w2u1K2zDsE7cW2t23Uai/y7JyPdDdjmdunFrXmVbG75gdSbuUKdhP1s3nYzNQHuQEnHW1lhHavyRwVhDS7lZfB6tZ7qVU0K9NkmAA5nTLTKh+9JShcwIJAX3cqjDI9JkvmhDiF0KyEJCEbJdlV5elfqAaelKE9yAZ/g2MuQOcyfm7r0WI5N4yIvKWdgOQ53BfRiIlzBY12sV+Jk2soCy3Zgw8vuonsFqMp0Iy/r+z3voDdupXAAC5ESXq4GrTp4D3PhYTC+PFz5pG+TuyULPXTjwoI9LQDfdjTVpYP+07x/p4Rcd/op1UcypJ30mNHvu+9HM3Urq8fYIM2NQFW6645J4VJMkhcqHjuzJnp1Wryb6wNk2rIQOmjSt7E9lvhOvAAEY96R8Z42gGYbs2yWa+/lAEcugdYYr3xIYkF656y+WgBqOCQ4N7wxy6xA0XHUypFKdvdLHYDtNoWRaminURdAsad+iLT/9LCW/JKKE1proEZbxxUqV83fhjOy4AUBDHDnWkysHWlOFbkpvqNIwB9PYRY0C1VqNag+9atFGqYpQIIlKyuIBW4wG5JUAM21OVQj3sPBHNIaMap2C4koVLa+FWJnTSAo74Vdwg2F/zu+XmqSYhUObSSUeKg2hmtn1vw7Mch3M5jJYcmY1t7ahuZLYN9FLYDylAZSIKhmRWLn+U/FWoBkCPAYDnTz1TyhHz/N43LHOlIO/yK7vIG5h4Lw87/+9E1lIw8QzuZJIKM+0sIqvktCJIJV1AqlSGi/Y2X1oQCqIjVvgW8oqJVFOy/kFbKEYduVTM3LuDqX9zSLsgB4T2uLf1ai7sUKqSj7mqMCA9eFy3wzxsxCxh3Lrg22KdaRAdHcPl0pgbw1OrP0vOJ/WXRxKmF+KJIV96UnpggGEiLaA7tPTdJ+VlqK2m3b1w8KC2vVRLq356h4vBoPR/xUqKDwT8uuy7Jl4J5+tUHdfA8Yrt5HhXJ+yD5l8kVUlgeJtgyJ48DeFq9i/6rqkGopmpzUtVAI9PK6BuNlH6zC+MYq74iiOn3nTkQ41XTJvEQfJg4vGhB7pkTxLu41Azei0xRugCTngSkvV5JCwXeuH7cr74avrzLmUbbLT65Ewd6pX8WKrSpnOJhX5+hOcoAK1gVvdE7EXpy8/Ojx8HRIBFurmInlKoOeeh8aNV1KTjiX4HO8Snn6iO/q/yanQNQDOg+o0fQz7E+u0NKuKv80A3spcdsRfRJAPYaEZ+6Xw6+OwnwVhObRiDod5yNa55S5yMIYuH22aQDCd/LMFUEb7OuEK4QyupQF/WBVE0+gOGbFZ3Y81QC0cf+73Qz/PTFtxyAqAQXVbXAjOjZdRYEvoO44U75qqZlyWRaiM52KELkXefYOtjLgnUGelDnjzdwgm99o86fO9P1XdQZhAG8pR7T7NaNd4KWK4socMan35hiD7BR+1x0f+BZCyVLHhF1CugbEQqFMr9D1n7u9D+GiHUbRy0TPPE6juYyeVnnXtdDhJKDUiGknIJJWVkspridjZBMOuBzBpzGv7CKdJ/8LPKqcKVS2u+lFusBxkfLh3yMrBmD8CnnD/tFLt7+PrH//C/Dvmyc9ejidwywim9qJzHpCWVBBo3CPyszNqkI2hcu9m6HUxmHJnxBVGTZPNr2QPA9a9PN0SIOR33qSFfm6s0zN7tSYuftl3XAaYlgqh3rqR7gzIPWoRxkn9SbgZn6vorLPtK2uyZpfJ5VABrlA9hCm5uSaDlY2HV3J2nZ/eRh03HfsyWII2lwATlJ53H+vXSYlOlCJFP8epttSiR8FEzV/0fk5Hw5pWStvSdIC1DGjG/i0H/XQtUoRAVhpZEkDopb7Kq0nxbJNElxrg2BSWMMC1TPb9DDN6OBX/zdqiRNAFJoI2tq8dUxFNbS32C04KD19jq4bvEDMC/0lDgrJrUl9FniI9e116tf+MpFflxDVoB6eyVC3a0rr3EGCr4txSN7ojqSDyLbANaMs5S6uC/e7FAuAzkafYMq8vlq3YGik64vL6APaXJ8sNmlyaszJHL2fJmggcQ29cLRpdfZuA2rF7vPtYxVyN6dfvt2+cHryAx7gWASdFNnM32gkGMOJxTE7mvH1boVwjuJ+4Whn3SBlbRqAfFCWev5filFdVLgbtjbYZhKHIxGX/quig86sEEDqPkdmFR2pczWWe8KpjfFLSssV65495/NI0l5Nrr3XX6nVHZwwRxsSks6yUd/W9rY1I5vztIinuPRiWYjzPCnaXDk1io22ZaMA0SrIni4EsWixiKsE3TRRKUGO0pgrLYREd6d9t7bHWei8flyBm4+EhQycJJ2NKBHJOkuN19Be/BHVn7JaSHU8/JWc1Vca6PES0ndVBosFCk702oCFHKRmk1kkkA/KhCjXj5u22S3X/XzLFMa/CeK35U2lcZxahkoCHEVtTHv9+Ts2POBicgtezGQMVZIMW8Xigaba9kdvYyngIiv1RGuCbUHPFWijN9iXJheO/eXoOKxVxkd7oxVyKrsLpI+HVrhZjSPoc2StNWbnoA94cxdolXGszh2PuxOFzHIAXzQKHsWKNr/5oje8VxDPUgDZ48RuZd2CrSyxb1uvstaEXzLv4eN9ur2Ig8UhalvQhDL3192bXRgy1p/vGeK6Hs6MDifTyA3ekJl1hDz4tmdvizCggS08vvgeGNBWbEWGShDOOBWgFCGYekJKSxLcm0N7xIOwkJy20FNKoXG71g2U2jcioAb7sl+qvzemVlvhbrV7o6zl+YvZCFcWcIjpH3GUNNymd+fBpI50cC1JoqPKCH9L+Ejvdl/swZdaQPWGA5k22ngeSvmoHMHrXQz30q2YVuJc2P7Qh3/cWda2QxliGBkquW4exMJQOeflj2xQ==</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L29 · Giving directions</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L29",
+ "group": "g3",
+ "lesson": 29,
+ "week": 15,
+ "month": 4,
+ "unit": "Home, Town & Right Now",
+ "title": "Giving directions",
+ "emoji": "🧭",
+ "minutes": 45,
+ "kid_goals": [
+  "🧭 Ask the way politely",
+  "⬅️ Give directions: go straight on, turn left…",
+  "🔊 Stress the important words",
+  "✍️ Write directions to my favourite place"
+ ],
+ "objectives": [
+  "Can ask for and give simple directions (A1+/A2).",
+  "Can understand short spoken directions and follow them on a map (A2 Key for Schools listening style).",
+  "Can stress the key words in direction phrases (turn LEFT, go STRAIGHT on).",
+  "Can write simple directions from home to a place.",
+  "Can read and use the key words learn, should, America, world."
+ ],
+ "focus": {
+  "sounds": [
+   "stress in phrases"
+  ],
+  "sight_words": [
+   "learn",
+   "should",
+   "America",
+   "world"
+  ],
+  "language": "Excuse me, how do I get to…? Go straight on. Turn left/right. Take the second street on the left. Go past the bank. It's next to / opposite…",
+  "vocabulary": [
+   "turn left",
+   "turn right",
+   "go straight on",
+   "corner",
+   "traffic lights",
+   "cross the road",
+   "go past"
+  ]
+ },
+ "frameworks": [
+  "PPP: present → practise → produce",
+  "Comprehensible input: emoji pictures + short Arabic hints",
+  "Spaced retrieval: key words and older words come back in the reading",
+  "Writing: modelled → guided → independent, hamburger paragraph",
+  "CEFR A1 → A2 can-do objectives",
+  "TPR: Saja shows each direction with her hands"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Units 123–125 — in/at/on (position)",
+  "Imperatives recycled from lesson 21 (recipes)",
+  "Fry high-frequency words 101–300: learn, should, America, world",
+  "Cambridge A2 Key for Schools — listening/speaking: asking the way (original practice)"
+ ],
+ "teacher_notes": "Directions are imperatives (lesson 21), so the grammar is easy — the challenge is listening and fast speaking. Stress: in phrases we stress the \"information\" word (LEFT, RIGHT, STRAIGHT, BANK). Use a simple grid map on paper or the whiteboard.",
+ "differentiation": "Support: give Saja the arrows ⬅️ ➡️ ⬆️ as a visual key. Stretch: let her give directions with no map from her home to school, while Hasna draws them.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Warm-up chat",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Listen, then answer in full sentences.",
+   "tip": "TPR first (Saja stands and turns). Then 2 quick questions recycling lesson 28 places and there is/are.",
+   "lines": [
+    "Hello, Saja!",
+    "Stand up! Turn left. Turn right. Point straight ahead.",
+    "Well done! Now sit down.",
+    "How do you go to school?",
+    "Is your school far from your home?"
+   ],
+   "questions": [
+    "How do you go to school — on foot, by car or by bus?",
+    "Is there a park near your house?",
+    "What is opposite your building?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Speaking",
+    "Reading"
+   ],
+   "text": "Listen and repeat. Clap on the BIG word: turn LEFT, go STRAIGHT on.",
+   "tip": "In English phrases, small words (the, to, at, on) are quick and weak; the IMPORTANT word is long and loud: turn LEFT, at the TRAFFIC lights. Clap only on the stressed word. Saja repeats each phrase like a \"sat-nav\".",
+   "focus": "stress in phrases",
+   "sound": "● strong  ○ weak",
+   "say_sound": "turn left, go straight on, it is next to the bank",
+   "chant": "Turn LEFT, turn RIGHT, go STRAIGHT on — it is NEXT to the BANK, so come ALONG!",
+   "words": [
+    {
+     "w": "turn left",
+     "e": "⬅️",
+     "ar": "انعطف يسارًا"
+    },
+    {
+     "w": "turn right",
+     "e": "➡️",
+     "ar": "انعطف يمينًا"
+    },
+    {
+     "w": "go straight on",
+     "e": "⬆️",
+     "ar": "امشِ على طول"
+    },
+    {
+     "w": "on the corner",
+     "e": "📐",
+     "ar": "على الناصية"
+    },
+    {
+     "w": "at the traffic lights",
+     "e": "🚦",
+     "ar": "عند الإشارة"
+    },
+    {
+     "w": "cross the road",
+     "e": "🚸",
+     "ar": "اعبر الطريق"
+    },
+    {
+     "w": "go past the bank",
+     "e": "🏦",
+     "ar": "امشِ بعد البنك"
+    },
+    {
+     "w": "on your left",
+     "e": "👈",
+     "ar": "على يسارك"
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word, hear it, say it. Click 💬 for the sentence.",
+   "tip": "Should = good advice (\"You should take the bus\"). America has a capital A — it is a name. Ask: \"Which city in the world do you want to visit?\" (link to the dream trip project later).",
+   "cards": [
+    {
+     "w": "learn",
+     "s": "I want to learn the way to the new mall."
+    },
+    {
+     "w": "should",
+     "s": "You should turn left at the bank."
+    },
+    {
+     "w": "America",
+     "s": "My uncle lives in America."
+    },
+    {
+     "w": "world",
+     "s": "Cairo is one of the biggest cities in the world."
+    }
+   ],
+   "review": [
+    "answer",
+    "found",
+    "study",
+    "still",
+    "near",
+    "home"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "How do I get to…?",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read the rule and the table. Listen to the examples.",
+   "tip": "Draw a simple grid map. Hasna gives one instruction at a time; Saja moves her finger on the map and says where she is.",
+   "rule": "To give directions, use the imperative (the verb with no subject): Go, Turn, Take, Cross. Then say where the place is with a preposition. To ask politely, start with \"Excuse me\".",
+   "table": [
+    [
+     "ask",
+     "Excuse me, how do I get to the library?",
+     "Excuse me, where is the bank?"
+    ],
+    [
+     "go",
+     "Go straight on.",
+     "Go past the bank."
+    ],
+    [
+     "turn",
+     "Turn left at the traffic lights.",
+     "Turn right at the corner."
+    ],
+    [
+     "take",
+     "Take the first street on the left.",
+     "Take the second street on the right."
+    ],
+    [
+     "cross",
+     "Cross the road.",
+     "Cross the bridge."
+    ],
+    [
+     "it is…",
+     "It's on your left.",
+     "It's next to / opposite / between…"
+    ]
+   ],
+   "examples": [
+    "Excuse me, how do I get to the museum?",
+    "Go straight on and turn left at the traffic lights.",
+    "Take the second street on the right. It's opposite the park."
+   ],
+   "ar": "نعطي الاتجاهات بفعل الأمر بدون فاعل: Go / Turn / Take / Cross. ونبدأ السؤال بأدب بكلمة Excuse me (لو سمحت)."
+  },
+  {
+   "type": "reading",
+   "title": "Come to My Party!",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": [
+    "Hi Mariam! I'm so happy you're coming to my party on Friday. Our flat is easy to find, but you should read these directions carefully.",
+    "Get off the bus at the stop in front of the big mall. Go straight on for two minutes. Go past the bank and the pharmacy.",
+    "At the traffic lights, turn left. You are now on Garden Street. Take the second street on the right. It is a quiet street with a lot of trees.",
+    "My building is the white one at the end of the street. It is between a small park and a bakery, and it is opposite a school. There is a blue car in front of it.",
+    "If you get lost, don't worry. Just call me and I can come and meet you. You can also ask someone — our neighbours are from America, and they say this is the friendliest street in the world! You can learn the way in no time!",
+    "See you on Friday! Saja"
+   ],
+   "tip": "While Hasna reads, Saja draws the route on a blank sheet. Compare the drawing with the text. Then she reads it aloud, stressing the direction words.",
+   "story_title": "Come to My Party!",
+   "pic": "🗺️🎉🏞️🏦",
+   "text_intro": "Listen first. Then read it aloud with Hasna. Then answer the questions.",
+   "highlight": [
+    "learn",
+    "should",
+    "opposite",
+    "between",
+    "straight",
+    "left",
+    "right"
+   ],
+   "questions": [
+    {
+     "q": "Where does Mariam get off the bus?",
+     "a": "At the stop in front of the big mall."
+    },
+    {
+     "q": "What does she do at the traffic lights?",
+     "a": "She turns left."
+    },
+    {
+     "q": "Which street does she take?",
+     "a": "The second street on the right."
+    },
+    {
+     "q": "What is opposite Saja's building?",
+     "a": "A school."
+    },
+    {
+     "q": "What should Mariam do if she gets lost?",
+     "a": "Call Saja or ask someone."
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Listen and follow",
+   "minutes": 3,
+   "skills": [
+    "Listening"
+   ],
+   "text": "Listen to the directions. Choose the right picture.",
+   "tip": "A2 Key-style listening: play each item once, then once more. Score out of 4.",
+   "items": [
+    {
+     "say": "Go straight on and turn right at the corner.",
+     "options": [
+      "⬆️ then ➡️",
+      "⬆️ then ⬅️",
+      "➡️ then ⬆️"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "Turn left at the traffic lights.",
+     "options": [
+      "➡️ 🚦",
+      "⬅️ 🚦",
+      "⬆️ 🚦"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "Take the second street on the left.",
+     "options": [
+      "1st street ⬅️",
+      "2nd street ➡️",
+      "2nd street ⬅️"
+     ],
+     "answer": 2
+    },
+    {
+     "say": "The café is opposite the bank.",
+     "options": [
+      "☕ opposite 🏦",
+      "☕ next to 🏦",
+      "☕ behind 🏦"
+     ],
+     "answer": 0
+    }
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Spell the direction words",
+   "minutes": 3,
+   "skills": [
+    "Listening",
+    "Writing"
+   ],
+   "text": "Listen. Click the letters to spell the word.",
+   "tip": "Watch the silent letters: rIGHt, straIGHt (gh is silent).",
+   "items": [
+    {
+     "word": "left",
+     "e": "⬅️",
+     "letters": [
+      "l",
+      "e",
+      "f",
+      "t",
+      "a",
+      "o"
+     ]
+    },
+    {
+     "word": "right",
+     "e": "➡️",
+     "letters": [
+      "r",
+      "i",
+      "g",
+      "h",
+      "t",
+      "e",
+      "u"
+     ]
+    },
+    {
+     "word": "straight",
+     "e": "⬆️",
+     "letters": [
+      "s",
+      "t",
+      "r",
+      "a",
+      "i",
+      "g",
+      "h",
+      "t",
+      "i",
+      "s"
+     ]
+    },
+    {
+     "word": "corner",
+     "e": "📐",
+     "letters": [
+      "c",
+      "o",
+      "r",
+      "n",
+      "e",
+      "r",
+      "o",
+      "t"
+     ]
+    },
+    {
+     "word": "cross",
+     "e": "🚸",
+     "letters": [
+      "c",
+      "r",
+      "o",
+      "s",
+      "s",
+      "u",
+      "r"
+     ]
+    },
+    {
+     "word": "past",
+     "e": "🏦",
+     "letters": [
+      "p",
+      "a",
+      "s",
+      "t",
+      "s",
+      "a"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Excuse me, how do I get to…?",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to the dialogue. Then take a part. Then answer about YOU.",
+   "tip": "Role-play twice (swap). Then a map game: Hasna secretly chooses a place on the grid map and gives directions; Saja says where she arrives. Swap.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Tourist",
+     "line": "Excuse me. I'm from America and I'm a bit lost. How do I get to the museum?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Sure! Go straight on and turn left at the traffic lights."
+    },
+    {
+     "who": "A",
+     "name": "Tourist",
+     "line": "Turn left at the traffic lights. OK. And then?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Take the first street on the right. The museum is on your left. It's opposite a big park."
+    },
+    {
+     "who": "A",
+     "name": "Tourist",
+     "line": "Is it far?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "No, it isn't. It's about five minutes on foot."
+    },
+    {
+     "who": "A",
+     "name": "Tourist",
+     "line": "Thank you so much!"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "You're welcome. Enjoy the museum!"
+    }
+   ],
+   "frames": [
+    "Excuse me, how do I get to ___?",
+    "Go straight on and ___.",
+    "Turn left / right at ___.",
+    "It's on your left / right. It's next to / opposite ___."
+   ],
+   "prompts": [
+    "How do I get from your house to the nearest shop?",
+    "How do I get from your bedroom to the kitchen? (fun!)",
+    "Is your school far from your home?",
+    "Which city in the world has really difficult streets, do you think?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Directions to my favourite place",
+   "minutes": 6,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Read the model. Plan with the frames. Then write your own.",
+   "tip": "Hasna \"follows\" Saja's directions on a quick sketch — if Hasna gets lost, Saja fixes the text. This shows why order and detail matter.",
+   "model": "Leave my building and turn right. Go straight on for three minutes. Go past the supermarket and cross the road at the traffic lights. Turn left. The park is on your right. It is next to a big mosque. You should go there in the evening — it is beautiful!",
+   "frames": [
+    "Leave my house / building and turn ___.",
+    "Go straight on and go past the ___.",
+    "At the ___, turn ___.",
+    "The ___ is on your ___. It is next to / opposite ___.",
+    "You should ___."
+   ],
+   "task": "Write directions (5–6 sentences) from your home to your favourite place near you.",
+   "checklist": [
+    "🧭 Directions in order",
+    "⬅️ At least 3 direction verbs: go, turn, take, cross",
+    "📍 Say where the place is (next to / opposite)",
+    "✅ Capital letters and full stops"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Wrap-up",
+   "minutes": 1,
+   "tip": "Count the stars together. Saja ticks the exit list honestly — anything not ticked goes into the next warm-up.",
+   "exit": [
+    "I can ask the way politely.",
+    "I can give directions with go, turn, take, cross.",
+    "I can stress the important word in a phrase.",
+    "I can write directions to a place."
+   ],
+   "homework": [
+    "Write directions from your home to your school (or to a friend's house).",
+    "Practise the dialogue \"Excuse me, how do I get to…?\" with someone at home.",
+    "Spell: left, right, straight, corner, cross, past."
+   ],
+   "goodbye": "Turn left, turn right, go straight on — and come back next lesson! Bye, Saja!"
+  }
+ ],
+ "nav": {
+  "prev": "L28.html",
+  "next": "L30.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

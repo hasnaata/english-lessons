@@ -1,18 +1,588 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G1-L25 · Short a — Yummy food</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G1-L25",
+ "group": "g1",
+ "lesson": 25,
+ "week": 13,
+ "month": 4,
+ "unit": "Food & Numbers",
+ "title": "Short a — Yummy food",
+ "emoji": "🍎",
+ "minutes": 45,
+ "kid_goals": [
+  "🍓 Read -ad -ag -am words",
+  "❤️ Read help and ride",
+  "🍌 Name 6 foods",
+  "😋 Ask: Do you like rice?"
+ ],
+ "objectives": [
+  "Can read and spell short a words in the families -ad, -ag, -am (dad, bag, jam, ham).",
+  "Can read the sight words help and ride.",
+  "Can name foods (apple, banana, bread, milk, rice, egg) and ask and answer Do you like ___? Yes, I do. / No, I don't.",
+  "Can write 3 sentences about food likes and dislikes."
+ ],
+ "focus": {
+  "sounds": [
+   "-ad",
+   "-ag",
+   "-am"
+  ],
+  "sight_words": [
+   "help",
+   "ride"
+  ],
+  "language": "Do you like ___? Yes, I do. / No, I don't. I like / I don't like ___.",
+  "vocabulary": [
+   "apple",
+   "banana",
+   "bread",
+   "milk",
+   "rice",
+   "egg",
+   "jam"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics (sound first, then letter name) — short a word families",
+  "Heart words / orthographic mapping (Peach sight-word order)",
+  "PPP: present → practise → produce",
+  "TPR: actions for sounds and words (yummy tummy rub / yuck face)",
+  "Spaced retrieval: old heart words come back in stories and games (I like from lesson 14)"
+ ],
+ "sources": [
+  "Oxford Phonics World 2 (Short Vowels), short a: -ad, -ag, -am",
+  "Peach sight-word flashcards (help, ride)",
+  "My First Grammar 1 — Do you like…? short answers",
+  "Cambridge Pre A1 Starters topic: food and drink"
+ ],
+ "teacher_notes": "New month: food and numbers. Short /æ/ — Arabic speakers often say it like /e/ or /ʌ/; open the mouth wide (like a big smile with jaw down). Grammar point: with foods we can't count (rice, bread, milk) we say 'I like rice' — no -s; with foods we count (apples, bananas, eggs) we use the plural. Ask children to have a fruit or snack near the camera.",
+ "differentiation": "Need help: answer with thumbs + 'Yes, I do.' / 'No, I don't.' only. Fast finishers: add 'but': 'I like rice but I don't like eggs.'",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Hello + What do you see?",
+   "minutes": 4,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Sing hello. Then show your snack — what is it?",
+   "tip": "New month! Children show food from home (fruit, bread…). Hasna names it; children repeat. Review 'I like / I don't like' from lesson 14.",
+   "lines": [
+    "Hello, hello, how are you?",
+    "I'm fine, thank you. How are you?",
+    "I like cats.",
+    "I don't like spiders.",
+    "Mmm — yummy!"
+   ],
+   "questions": [
+    "What's this? (a fruit)",
+    "Do you like cats?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Short a families: -ad -ag -am",
+   "minutes": 6,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Open wide: a, a, a! Then add the family ending.",
+   "tip": "Mouth wide open for /æ/ (not 'e'). Families: d-ad, b-ag, j-am. Change the first sound to make new words. TPR: open your arms wide for every /æ/.",
+   "focus": "a",
+   "sound": "/æ/",
+   "say_sound": "a, a, apple. j-am, jam!",
+   "chant": "Dad, sad, mad! Bag, tag, flag! Jam, ham, yam — yummy, yum, yum!",
+   "words": [
+    {
+     "w": "dad",
+     "e": "👨",
+     "ar": "أب"
+    },
+    {
+     "w": "sad",
+     "e": "😢",
+     "ar": "حزين"
+    },
+    {
+     "w": "bag",
+     "e": "👜",
+     "ar": "حقيبة"
+    },
+    {
+     "w": "flag",
+     "e": "🚩",
+     "ar": "علم"
+    },
+    {
+     "w": "jam",
+     "e": "🍓",
+     "ar": "مربى"
+    },
+    {
+     "w": "ham",
+     "e": "🍖",
+     "ar": "لحم"
+    },
+    {
+     "w": "yam",
+     "e": "🍠",
+     "ar": "بطاطا حلوة"
+    },
+    {
+     "w": "ram",
+     "e": "🐏",
+     "ar": "كبش"
+    }
+   ],
+   "blend": [
+    "dad",
+    "sad",
+    "mad",
+    "had",
+    "bag",
+    "rag",
+    "tag",
+    "wag",
+    "jam",
+    "ham",
+    "yam",
+    "ram"
+   ],
+   "trace": "dad bag jam"
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words: help, ride",
+   "minutes": 3,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the heart words. Click 💬 for a sentence.",
+   "tip": "'help' can be sounded out: h-e-l-p. 'ride' — magic e makes i say its name. TPR: ride a bike.",
+   "cards": [
+    {
+     "w": "help",
+     "s": "Can you help me?"
+    },
+    {
+     "w": "ride",
+     "s": "I can ride a bike."
+    },
+    {
+     "w": "help",
+     "s": "Help Mum make a cake."
+    },
+    {
+     "w": "ride",
+     "s": "Let's ride to Nan's house."
+    },
+    {
+     "w": "come",
+     "s": "Come and eat!"
+    },
+    {
+     "w": "in",
+     "s": "Jam is in the bag."
+    }
+   ],
+   "review": [
+    "in",
+    "come",
+    "no",
+    "let",
+    "house",
+    "said",
+    "see",
+    "jump"
+   ]
+  },
+  {
+   "type": "vocab",
+   "title": "Yummy food",
+   "minutes": 5,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Click and say. Rub your tummy if you like it!",
+   "tip": "Present with real food if children have it. TPR: rub tummy 'yummy!' or make a 'yuck' face.",
+   "words": [
+    {
+     "w": "apple",
+     "e": "🍎",
+     "ar": "تفاحة",
+     "s": "I like apples."
+    },
+    {
+     "w": "banana",
+     "e": "🍌",
+     "ar": "موزة",
+     "s": "I like bananas."
+    },
+    {
+     "w": "bread",
+     "e": "🍞",
+     "ar": "خبز",
+     "s": "I like bread."
+    },
+    {
+     "w": "milk",
+     "e": "🥛",
+     "ar": "حليب",
+     "s": "I like milk."
+    },
+    {
+     "w": "rice",
+     "e": "🍚",
+     "ar": "أرز",
+     "s": "I like rice."
+    },
+    {
+     "w": "egg",
+     "e": "🥚",
+     "ar": "بيضة",
+     "s": "I don't like eggs."
+    },
+    {
+     "w": "jam",
+     "e": "🍓",
+     "ar": "مربى",
+     "s": "I like jam."
+    }
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Do you like…?",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Ask: Do you like rice? Answer: Yes, I do. 😋 / No, I don't. 😖",
+   "tip": "Recycle lesson 14. New: rice, bread, milk, jam → no -s. Apples, bananas, eggs → -s. Children ask Hasna first!",
+   "rule": "❓ Do you like rice?  😋 Yes, I do.  😖 No, I don't.",
+   "ar": "Do you like …? = هل تحب …؟   rice, bread, milk (بدون s)   apples, bananas (مع s)",
+   "table": [
+    [
+     "Question",
+     "😋",
+     "😖"
+    ],
+    [
+     "Do you like rice? 🍚",
+     "Yes, I do.",
+     "No, I don't."
+    ],
+    [
+     "Do you like bread? 🍞",
+     "Yes, I do.",
+     "No, I don't."
+    ],
+    [
+     "Do you like apples? 🍎",
+     "Yes, I do.",
+     "No, I don't."
+    ],
+    [
+     "Do you like eggs? 🥚",
+     "Yes, I do.",
+     "No, I don't."
+    ]
+   ],
+   "examples": [
+    "Do you like rice?",
+    "Yes, I do. I like rice.",
+    "Do you like eggs?",
+    "No, I don't. I don't like eggs."
+   ]
+  },
+  {
+   "type": "reading",
+   "title": "Dad's Big Bag",
+   "minutes": 7,
+   "skills": [
+    "Reading"
+   ],
+   "text": [
+    "Dad has got a big bag.",
+    "\"What is in the bag, Dad?\" said Pam.",
+    "Jam, ham, milk and an apple!",
+    "\"Can I help?\" said Pam.",
+    "\"Yes! Let us ride to Nan's house.\"",
+    "Nan is glad. Nan likes jam!",
+    "\"Do you like jam, Pam?\" \"Yes, I do!\""
+   ],
+   "tip": "Blend Dad, bag, jam, ham, Pam, glad. Find the -ad, -ag, -am words. Two voices: A = narrator, B = Pam and Dad. Then ask: Do YOU like jam?",
+   "story_title": "Dad's Big Bag",
+   "pic": "👨👜🍓👧",
+   "text_intro": "Dad has got a big bag. What is in it?",
+   "highlight": [
+    "what",
+    "is",
+    "in",
+    "the",
+    "said",
+    "help",
+    "let",
+    "us",
+    "ride",
+    "house",
+    "do",
+    "you",
+    "like",
+    "big",
+    "can"
+   ],
+   "voices": [
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B"
+   ],
+   "questions": [
+    {
+     "q": "What is in the bag?",
+     "a": "Jam, ham, milk and an apple."
+    },
+    {
+     "q": "Where will they ride?",
+     "a": "To Nan's house."
+    },
+    {
+     "q": "Does Nan like jam?",
+     "a": "Yes, she does."
+    },
+    {
+     "q": "Do you like jam?",
+     "a": "Yes, I do. / No, I don't."
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "What do they like?",
+   "minutes": 3,
+   "skills": [
+    "Listening"
+   ],
+   "text": "Listen. Click the food.",
+   "tip": "Listen for like / don't like too — ask: 'Does she like it?' after each.",
+   "items": [
+    {
+     "say": "I like bananas.",
+     "options": [
+      "🍌",
+      "🍞",
+      "🍚"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "I don't like eggs.",
+     "options": [
+      "🍎",
+      "🥚",
+      "🥛"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "I like rice.",
+     "options": [
+      "🍞",
+      "🍌",
+      "🍚"
+     ],
+     "answer": 2
+    },
+    {
+     "say": "Do you like milk?",
+     "options": [
+      "🥛",
+      "🍓",
+      "🍎"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "I like bread and jam.",
+     "options": [
+      "🍚🥚",
+      "🍞🍓",
+      "🍌🥛"
+     ],
+     "answer": 1
+    }
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Build the a words",
+   "minutes": 3,
+   "skills": [
+    "Writing",
+    "Reading"
+   ],
+   "text": "Listen. Say the sounds. Click the letters.",
+   "tip": "flag has 4 sounds: f-l-a-g. Ask: which family is it in?",
+   "items": [
+    {
+     "word": "dad",
+     "e": "👨",
+     "letters": "dadb"
+    },
+    {
+     "word": "bag",
+     "e": "👜",
+     "letters": "bagd"
+    },
+    {
+     "word": "jam",
+     "e": "🍓",
+     "letters": "jamh"
+    },
+    {
+     "word": "ham",
+     "e": "🍖",
+     "letters": "hamj"
+    },
+    {
+     "word": "flag",
+     "e": "🚩",
+     "letters": "flage"
+    },
+    {
+     "word": "yam",
+     "e": "🍠",
+     "letters": "yamb"
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Food survey",
+   "minutes": 5,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to Ibrahim and Yusuf. Then ask your friends about food!",
+   "tip": "Survey on the pad: foods across the top, names down the side. Each child asks 2 friends 2 questions. Finish: 'Everyone likes bananas!'",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Ibrahim",
+     "line": "Yusuf, do you like rice?"
+    },
+    {
+     "who": "B",
+     "name": "Yusuf",
+     "line": "Yes, I do. I like rice."
+    },
+    {
+     "who": "A",
+     "name": "Ibrahim",
+     "line": "Do you like eggs?"
+    },
+    {
+     "who": "B",
+     "name": "Yusuf",
+     "line": "No, I don't. I don't like eggs."
+    },
+    {
+     "who": "A",
+     "name": "Ibrahim",
+     "line": "Do you like bananas?"
+    },
+    {
+     "who": "B",
+     "name": "Yusuf",
+     "line": "Yes, I do! Yummy!"
+    }
+   ],
+   "frames": [
+    "Do you like ___?",
+    "Yes, I do. I like ___.",
+    "No, I don't. I don't like ___."
+   ],
+   "prompts": [
+    "Do you like rice?",
+    "Do you like eggs?",
+    "Do you like bread and jam?",
+    "What food do you like?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "I like… I don't like…",
+   "minutes": 4,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 3 sentences about food. Draw 😋 or 😖.",
+   "tip": "Guided: use the frames. Check: rice / bread / milk with no -s; apples / bananas / eggs with -s.",
+   "model": "I like rice.\nI like bananas.\nI don't like eggs.",
+   "frames": [
+    "I like ________.",
+    "I like ________.",
+    "I don't like ________."
+   ],
+   "task": "Write 3 food sentences and draw the food.",
+   "checklist": [
+    "Capital letter at the start",
+    "Full stop at the end",
+    "Finger spaces between words",
+    "-s for apples, bananas, eggs"
+   ],
+   "pad": "I like"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "read dad, bag, jam, ham",
+    "read 'help' and 'ride'",
+    "ask: Do you like ___?"
+   ],
+   "homework": [
+    "Ask your family: Do you like rice? Do you like eggs?",
+    "Help at home with dinner and name 3 foods in English.",
+    "Write 3 sentences: I like / I don't like ___."
+   ],
+   "goodbye": "Goodbye, goodbye! Yummy, yummy — see you soon!"
+  }
+ ],
+ "nav": {
+  "prev": "L24.html",
+  "next": "L26.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g1', name: 'Group 1', students: ['Jana', 'Yusuf', 'Ibrahim'], color: '#f26b4f', soft: '#ffe5dd' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

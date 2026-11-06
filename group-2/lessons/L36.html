@@ -1,18 +1,603 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G2-L36 · Transport</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G2-L36",
+ "group": "g2",
+ "lesson": 36,
+ "week": 18,
+ "month": 5,
+ "unit": "My Town",
+ "title": "Transport",
+ "emoji": "🚌",
+ "minutes": 45,
+ "kid_goals": [
+  "🚗 Review ar, or, er, ir, ur words",
+  "🚲 Learn 12 transport words",
+  "🗣️ Ask and answer: How do you go to school?",
+  "✍️ Write about how my family travels"
+ ],
+ "objectives": [
+  "Can read r-controlled vowel words (ar, or, er, ir, ur) in a mixed review.",
+  "Can name common kinds of transport (Cambridge A1 Movers topic: transport).",
+  "Can ask and answer How do you go to…? I go by bus / on foot. How long does it take? (A1)",
+  "Can understand a short text about how children travel to school.",
+  "Can write a 5-sentence paragraph about transport in my family."
+ ],
+ "focus": {
+  "sounds": [
+   "review: ar, or, er, ir, ur"
+  ],
+  "sight_words": [
+   "review: very, which, why, would, write, your, around, because"
+  ],
+  "language": "by bus / by car / on foot. How do you go to school? I go by bus. How long does it take? It takes ten minutes.",
+  "vocabulary": [
+   "bus",
+   "car",
+   "bike",
+   "train",
+   "plane",
+   "taxi",
+   "boat",
+   "motorbike",
+   "metro",
+   "ship",
+   "helicopter",
+   "on foot"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics: r-controlled review (sorting)",
+  "Comprehensible input: transport words with emoji pictures",
+  "PPP: present (text) → practise (fill) → produce (survey)",
+  "Spaced retrieval: sight words from L33–35; present simple he/she -s (month 2)"
+ ],
+ "sources": [
+  "Cambridge A1 Movers topic list: transport",
+  "My First Grammar 1 — present simple questions (review)",
+  "English Conversation Made Natural (situation adapted: chatting with a classmate about the way to school)",
+  "Group 2 sight-word review (L33–35)"
+ ],
+ "teacher_notes": "A lighter lesson after three new phonics patterns. The grammar is a set of chunks: by + transport (no 'the': by bus, NOT by the bus) but on foot. Arabic speakers often say 'by walking' or 'by foot' — model 'on foot' / 'I walk'. Revise he/she + -s: My dad goes to work by car.",
+ "differentiation": "Support: practise only I go… by bus / by car / on foot. Stretch: add How long does it take? and because (I go by car because it's far).",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Guess the sound",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Hasna makes a transport sound. What is it?",
+   "tip": "Make sounds: brrrm (car), ding ding (bike bell), choo choo (train), neeeow (plane). Fun opener — Duha makes one too.",
+   "lines": [
+    "Brrrm, brrrm!",
+    "Ring, ring!",
+    "Choo, choo!",
+    "Neeeeow!"
+   ],
+   "questions": [
+    "Is it a car or a bike?",
+    "How do you go to school?",
+    "Do you like planes?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Bossy r review",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read the words. Which bossy-r team is in each word: ar, or, er, ir or ur?",
+   "tip": "Sorting review of L33–35. Duha reads; Hasna types the team. The transport words car, port and turn link to today's topic.",
+   "focus": "ar · or · er · ir · ur",
+   "sound": "/ɑː/ · /ɔː/ · /ɜː/",
+   "say_sound": "Turn the car to the port in the morning.",
+   "chant": "ar in car, or in port, er, ir, ur — turn, turn, turn!",
+   "words": [
+    {
+     "w": "car",
+     "e": "🚗",
+     "ar": "سيارة"
+    },
+    {
+     "w": "cart",
+     "e": "🛒",
+     "ar": "عربة"
+    },
+    {
+     "w": "port",
+     "e": "⚓",
+     "ar": "ميناء"
+    },
+    {
+     "w": "north",
+     "e": "🧭",
+     "ar": "شمال"
+    },
+    {
+     "w": "morning",
+     "e": "🌅",
+     "ar": "صباح"
+    },
+    {
+     "w": "turn",
+     "e": "↪️",
+     "ar": "ينعطف"
+    },
+    {
+     "w": "first",
+     "e": "🥇",
+     "ar": "أول"
+    },
+    {
+     "w": "bird",
+     "e": "🐦",
+     "ar": "طائر"
+    },
+    {
+     "w": "her",
+     "e": "👩",
+     "ar": "لها"
+    },
+    {
+     "w": "park",
+     "e": "🅿️",
+     "ar": "موقف / حديقة"
+    }
+   ],
+   "blend": [
+    "car",
+    "port",
+    "turn",
+    "first",
+    "her"
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Spell it!",
+   "minutes": 3,
+   "skills": [
+    "Writing",
+    "Listening"
+   ],
+   "text": "Listen and spell. Watch out for the bossy r!",
+   "tip": "If she chooses the wrong vowel team, say the word next to its 'family' word (turn — burger).",
+   "items": [
+    {
+     "word": "car",
+     "e": "🚗",
+     "letters": [
+      "c",
+      "a",
+      "r",
+      "o"
+     ]
+    },
+    {
+     "word": "port",
+     "e": "⚓",
+     "letters": [
+      "p",
+      "o",
+      "r",
+      "t",
+      "a"
+     ]
+    },
+    {
+     "word": "turn",
+     "e": "↪️",
+     "letters": [
+      "t",
+      "u",
+      "r",
+      "n",
+      "i"
+     ]
+    },
+    {
+     "word": "first",
+     "e": "🥇",
+     "letters": [
+      "f",
+      "i",
+      "r",
+      "s",
+      "t",
+      "u"
+     ]
+    },
+    {
+     "word": "morning",
+     "e": "🌅",
+     "letters": [
+      "m",
+      "o",
+      "r",
+      "n",
+      "i",
+      "n",
+      "g",
+      "a"
+     ]
+    },
+    {
+     "word": "short",
+     "e": "📏",
+     "letters": [
+      "s",
+      "h",
+      "o",
+      "r",
+      "t",
+      "a"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart word review",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Review time! Read each word fast. Then say the sentence.",
+   "tip": "Spaced review of L33–35 words. Flash each card for 2 seconds. Put any slow words in the homework.",
+   "cards": [
+    {
+     "w": "very",
+     "s": "The train is very fast."
+    },
+    {
+     "w": "which",
+     "s": "Which bus goes to the park?"
+    },
+    {
+     "w": "why",
+     "s": "Why do you go by car?"
+    },
+    {
+     "w": "would",
+     "s": "Would you like to go by plane?"
+    },
+    {
+     "w": "write",
+     "s": "Write the bus number."
+    },
+    {
+     "w": "your",
+     "s": "Is that your bike?"
+    },
+    {
+     "w": "around",
+     "s": "The bus goes around the town."
+    },
+    {
+     "w": "because",
+     "s": "I walk because my school is near."
+    }
+   ],
+   "review": [
+    "wash",
+    "wish",
+    "work",
+    "always"
+   ]
+  },
+  {
+   "type": "vocab",
+   "title": "Transport words",
+   "minutes": 5,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Click each picture. Listen and say.",
+   "tip": "After the words: Which ones go on water? In the sky? On the road? Which is the fastest?",
+   "words": [
+    {
+     "w": "bus",
+     "e": "🚌",
+     "ar": "حافلة",
+     "s": "I go to school by bus."
+    },
+    {
+     "w": "car",
+     "e": "🚗",
+     "ar": "سيارة",
+     "s": "Dad goes to work by car."
+    },
+    {
+     "w": "bike",
+     "e": "🚲",
+     "ar": "دراجة",
+     "s": "I ride my bike in the park."
+    },
+    {
+     "w": "train",
+     "e": "🚆",
+     "ar": "قطار",
+     "s": "The train is faster than the bus."
+    },
+    {
+     "w": "plane",
+     "e": "✈️",
+     "ar": "طائرة",
+     "s": "We go to Grandma's by plane."
+    },
+    {
+     "w": "taxi",
+     "e": "🚕",
+     "ar": "سيارة أجرة",
+     "s": "Take a taxi to the airport."
+    },
+    {
+     "w": "boat",
+     "e": "⛵",
+     "ar": "قارب",
+     "s": "The boat is on the river."
+    },
+    {
+     "w": "motorbike",
+     "e": "🏍️",
+     "ar": "دراجة نارية",
+     "s": "A motorbike is very loud."
+    },
+    {
+     "w": "metro",
+     "e": "🚇",
+     "ar": "مترو",
+     "s": "The metro goes under the city."
+    },
+    {
+     "w": "ship",
+     "e": "🚢",
+     "ar": "سفينة",
+     "s": "The ship is at the port."
+    },
+    {
+     "w": "helicopter",
+     "e": "🚁",
+     "ar": "مروحية",
+     "s": "A helicopter can fly up and down."
+    },
+    {
+     "w": "on foot",
+     "e": "🚶",
+     "ar": "مشياً على الأقدام",
+     "s": "I go to the shop on foot."
+    }
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "How do you go to school?",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "by + transport. But: on foot!",
+   "tip": "Write the two common errors on the screen and cross them out: 'by the bus' ✗, 'by foot / by walking' ✗. Practise he/she + goes.",
+   "rule": "Use by + transport (no a / the): by bus, by car, by train. Walking = on foot. Ask: How do you go to school? How long does it take?",
+   "table": [
+    [
+     "Question",
+     "Answer"
+    ],
+    [
+     "How do you go to school?",
+     "I go to school by bus. / I walk. / I go on foot."
+    ],
+    [
+     "How does your dad go to work?",
+     "He goes to work by car."
+    ],
+    [
+     "How do they go to Grandma's?",
+     "They go by train."
+    ],
+    [
+     "How long does it take?",
+     "It takes ten minutes. / It takes an hour."
+    ]
+   ],
+   "examples": [
+    "I go to school by bus. It takes twenty minutes.",
+    "My mum goes to work on foot.",
+    "How does your brother go to school? — He goes by bike.",
+    "We go to the city by metro because it's fast."
+   ],
+   "ar": "by + وسيلة النقل بدون a أو the (by bus). المشي: on foot. How long does it take = كم يستغرق؟"
+  },
+  {
+   "type": "reading",
+   "title": "How Do Children Go to School?",
+   "minutes": 7,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "I do → we do → you do. After reading, Duha makes a quick table: name · transport · time.",
+   "story_title": "How Do Children Go to School?",
+   "pic": "🚇🚲⛵🚌🚶",
+   "text_intro": "Children around the world go to school in different ways. Read about five children.",
+   "text": [
+    "Children around the world go to school in many different ways.",
+    "Rami lives in a very big city. He goes to school by metro. It is fast, and it takes fifteen minutes.",
+    "Anna lives in a city with many bikes. She goes to school by bike with her mum. She always wears a helmet.",
+    "Leo lives near a wide river. There isn't a bridge near his home, so he goes to school by boat! The boat is small, but it is safe.",
+    "Mira lives on a farm in the mountains. Her school is very far, so she goes by bus. It takes one hour!",
+    "And Duha? She lives near her school, so she walks there with her friends. \"I go on foot,\" she says. \"It takes ten minutes, and we talk all the way!\""
+   ],
+   "highlight": [
+    "very",
+    "which",
+    "always",
+    "around",
+    "because",
+    "your"
+   ],
+   "questions": [
+    {
+     "q": "How does Rami go to school?",
+     "a": "He goes by metro."
+    },
+    {
+     "q": "What does Anna always wear?",
+     "a": "She always wears a helmet."
+    },
+    {
+     "q": "Why does Leo go to school by boat?",
+     "a": "Because there isn't a bridge near his home."
+    },
+    {
+     "q": "How long does Mira's bus take?",
+     "a": "It takes one hour."
+    },
+    {
+     "q": "How does Duha go to school? How long does it take?",
+     "a": "She goes on foot. It takes ten minutes."
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Transport survey",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to the survey. Then answer for you and your family.",
+   "tip": "Duha interviews Hasna with the same questions (she makes a mini table), then answers about her family.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Duha, how do you go to school?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "I usually go by bus, but sometimes my dad takes me by car."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "How long does it take?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "By bus, it takes twenty minutes. By car, it takes ten minutes."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "And how does your mum go to work?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "She goes by taxi because her office is far."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Which transport do you like best?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "I like planes best because they're very fast and I can see the clouds!"
+    }
+   ],
+   "frames": [
+    "I go to school by ___ / on foot.",
+    "It takes ___ minutes.",
+    "My ___ goes to work by ___.",
+    "I like ___ best because ___."
+   ],
+   "prompts": [
+    "How do you go to school?",
+    "How long does it take?",
+    "How does your dad / mum go to work?",
+    "Which transport do you like best? Why?",
+    "Which transport is better for the city: a bike or a car? Why?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "How my family travels",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 5 sentences about how you and your family travel. Use and, but, because.",
+   "tip": "Guided writing; use the survey answers. Check by + transport and he/she goes.",
+   "model": "I go to school by bus, and it takes twenty minutes. My dad goes to work by car because his office is far. My mum works at home, so she doesn't travel every day. At the weekend we sometimes go to the city by train. I like the train best because it is fast, but planes are faster!",
+   "frames": [
+    "I go to school by ________, and it takes ________.",
+    "My dad / mum goes to work by ________ because ________.",
+    "My ________ goes ________.",
+    "At the weekend we ________.",
+    "I like ________ best because ________."
+   ],
+   "task": "Write 5 sentences in your notebook. Draw your favourite transport.",
+   "checklist": [
+    "by + transport / on foot",
+    "he / she goes",
+    "how long it takes",
+    "and / but / because"
+   ],
+   "pad": "I go to school by"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "read bossy-r words",
+    "name 10 kinds of transport",
+    "say how I go to school"
+   ],
+   "homework": [
+    "Ask 3 family members: How do you go to work/school? Write their answers.",
+    "Write 4 sentences: My uncle goes to work by…",
+    "Read the heart-word cards again."
+   ],
+   "goodbye": "Have a good trip home — by bus, by car or on foot! Goodbye, Duha!"
+  }
+ ],
+ "nav": {
+  "prev": "L35.html",
+  "next": "L37.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g2', name: 'Group 2', students: ['Duha'], color: '#159a8c', soft: '#d8f2ee' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

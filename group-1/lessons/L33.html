@@ -1,18 +1,505 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G1-L33 · Short u — My home</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G1-L33",
+ "group": "g1",
+ "lesson": 33,
+ "week": 17,
+ "month": 5,
+ "unit": "My Home & Toys",
+ "title": "Short u — My home",
+ "emoji": "🏠",
+ "minutes": 45,
+ "kid_goals": [
+  "🐛 Read short u words: bug, sun, cup",
+  "❤️ Learn heart words good and any",
+  "🏠 Say the rooms: kitchen, bedroom…",
+  "🏷️ Label the rooms in my home"
+ ],
+ "objectives": [
+  "Can hear and read short u in CVC words with -ug, -un, -ut, -up (bug, rug, sun, nut, cup, pup).",
+  "Can read the sight words good and any.",
+  "Can name rooms in a home and say where someone is: Where's Mum? She's in the kitchen. (Pre-A1)",
+  "Can label rooms and write 2 sentences about where family members are."
+ ],
+ "focus": {
+  "sounds": [
+   "u",
+   "-ug",
+   "-un",
+   "-ut",
+   "-up"
+  ],
+  "sight_words": [
+   "good",
+   "any"
+  ],
+  "language": "Where's Mum? She's in the kitchen. He's in the bedroom.",
+  "vocabulary": [
+   "kitchen",
+   "bedroom",
+   "bathroom",
+   "living room",
+   "garden",
+   "house"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics: blend sound by sound, then read decodable text",
+  "Heart words / orthographic mapping (Dolch) with spaced review",
+  "PPP: present the language in a picture, practise in games, produce in talk and writing",
+  "TPR: actions and pointing on camera",
+  "Gradual release: I do → we do → you do"
+ ],
+ "sources": [
+  "Oxford Phonics World 1 (review): short u",
+  "Start Reading 2 — short u decodable text",
+  "Cambridge Pre A1 Starters topic: the home",
+  "Peach sight-word flashcards (good, any)"
+ ],
+ "teacher_notes": "New month: My Home & Toys. Short u (/ʌ/) is close to Arabic fatha in many words — but children often write 'a' for u (sun → san). Push the jaw down and say 'uh' like a surprise. Rooms: draw a simple house with 4 boxes on the pad; children tell you what to draw in each.",
+ "differentiation": "Need help: answer with the room only (kitchen). Stretch: add an action — She's in the kitchen. She can cook.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Hello + house tour",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Sing hello. Show me something in your home!",
+   "tip": "Each child picks up one thing near them and says 'This is my ___.' (review). Then act: open the door, close the window, sit on the sofa (TPR).",
+   "lines": [
+    "Hello, hello, how are you?",
+    "I'm fine, thank you. How are you?",
+    "This is my house.",
+    "Open the door! Close the door!",
+    "Sit down. Stand up!"
+   ],
+   "questions": [
+    "Where are you now?",
+    "Is your house big or little?",
+    "How many windows are there?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Short u: u, u, up!",
+   "minutes": 7,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Say the sound u. Point up for every u word!",
+   "tip": "TPR: children point up (u for up) each time they hear /ʌ/. Blend the families -ug, -un, -ut, -up. Contrast cat/cut, bag/bug, cap/cup to stop the a/u mix-up.",
+   "focus": "u",
+   "sound": "/ʌ/",
+   "say_sound": "u, u, up. u, u, sun.",
+   "chant": "A bug on a rug! A pup in a cup! Run, run, run in the sun! Cut, cut, a nut!",
+   "words": [
+    {
+     "w": "bug",
+     "e": "🐛",
+     "ar": "حشرة"
+    },
+    {
+     "w": "rug",
+     "e": "🟫",
+     "ar": "سجادة"
+    },
+    {
+     "w": "mug",
+     "e": "☕",
+     "ar": "كوب"
+    },
+    {
+     "w": "sun",
+     "e": "☀️",
+     "ar": "شمس"
+    },
+    {
+     "w": "bun",
+     "e": "🍞",
+     "ar": "كعكة صغيرة"
+    },
+    {
+     "w": "nut",
+     "e": "🥜",
+     "ar": "جوزة"
+    },
+    {
+     "w": "hut",
+     "e": "🛖",
+     "ar": "كوخ"
+    },
+    {
+     "w": "cup",
+     "e": "🥤",
+     "ar": "كوب"
+    },
+    {
+     "w": "pup",
+     "e": "🐶",
+     "ar": "جرو"
+    },
+    {
+     "w": "hug",
+     "e": "🤗",
+     "ar": "عناق"
+    }
+   ],
+   "blend": [
+    "bug",
+    "rug",
+    "mug",
+    "hug",
+    "sun",
+    "run",
+    "bun",
+    "fun",
+    "nut",
+    "hut",
+    "cut",
+    "cup",
+    "pup",
+    "up"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the heart word. Then hear it in a sentence.",
+   "tip": "New: good, any. In 'good' the oo is short; in 'any' the a says /e/ — both are heart parts. Then review month 4 words quickly.",
+   "cards": [
+    {
+     "w": "good",
+     "s": "Good pup!"
+    },
+    {
+     "w": "any",
+     "s": "Is there any milk?"
+    },
+    {
+     "w": "this",
+     "s": "This is my bedroom."
+    },
+    {
+     "w": "on",
+     "s": "The bug is on the rug."
+    },
+    {
+     "w": "away",
+     "s": "The pup ran away."
+    },
+    {
+     "w": "find",
+     "s": "I can't find the pup."
+    }
+   ],
+   "review": [
+    "can't",
+    "keep",
+    "work",
+    "there",
+    "ran",
+    "house",
+    "come"
+   ]
+  },
+  {
+   "type": "vocab",
+   "title": "Rooms in my home",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Click to hear. Where do you sleep? Where do you cook?",
+   "tip": "Present with actions: kitchen = stir a pot, bedroom = sleep, bathroom = wash hands, living room = watch TV, garden = smell a flower (TPR). Then Hasna mimes, children say the room.",
+   "words": [
+    {
+     "w": "house",
+     "e": "🏠",
+     "ar": "بيت",
+     "s": "This is my house."
+    },
+    {
+     "w": "kitchen",
+     "e": "🍳",
+     "ar": "مطبخ",
+     "s": "Mum is in the kitchen."
+    },
+    {
+     "w": "bedroom",
+     "e": "🛏️",
+     "ar": "غرفة النوم",
+     "s": "I sleep in the bedroom."
+    },
+    {
+     "w": "bathroom",
+     "e": "🛁",
+     "ar": "حمّام",
+     "s": "The tub is in the bathroom."
+    },
+    {
+     "w": "living room",
+     "e": "🛋️",
+     "ar": "غرفة المعيشة",
+     "s": "Dad is in the living room."
+    },
+    {
+     "w": "garden",
+     "e": "🌳",
+     "ar": "حديقة",
+     "s": "The pup is in the garden."
+    }
+   ]
+  },
+  {
+   "type": "reading",
+   "title": "Where Is the Pup?",
+   "minutes": 7,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "I do / we do / you do. Children find all short u words (pup, mug, bun, tub, rug, bug, hug). At the end ask: Where is the pup?",
+   "story_title": "Where Is the Pup?",
+   "pic": "🐶🏠🍳🛁🛏️",
+   "text_intro": "Jana can't find her pup. Let's help!",
+   "highlight": [
+    "where",
+    "is",
+    "the",
+    "in",
+    "there",
+    "a",
+    "can't",
+    "find",
+    "any",
+    "good",
+    "on",
+    "and",
+    "no"
+   ],
+   "text": [
+    "Jana can't find the pup.",
+    "Is the pup in the kitchen? No. There is a mug and a bun.",
+    "Is there any bun? No! The pup had it!",
+    "Is the pup in the bathroom? No. There is a tub.",
+    "Is the pup in the living room? No. There is a rug.",
+    "Is the pup in the bedroom? Yes!",
+    "The pup is on the bed with a bug!",
+    "'Good pup!' said Jana. Hug, hug!"
+   ],
+   "questions": [
+    {
+     "q": "Who can't find the pup?",
+     "a": "Jana."
+    },
+    {
+     "q": "What is in the kitchen?",
+     "a": "A mug and a bun."
+    },
+    {
+     "q": "Where is the pup?",
+     "a": "In the bedroom, on the bed."
+    },
+    {
+     "q": "What is on the bed with the pup?",
+     "a": "A bug."
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Where is it?",
+   "minutes": 4,
+   "skills": [
+    "Listening"
+   ],
+   "text": "Listen. Click the right room.",
+   "tip": "Listening for room words. After each, children say the full sentence: She's in the kitchen.",
+   "items": [
+    {
+     "say": "Mum is in the kitchen.",
+     "options": [
+      "🍳",
+      "🛏️",
+      "🛁"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "The tub is in the bathroom.",
+     "options": [
+      "🌳",
+      "🛋️",
+      "🛁"
+     ],
+     "answer": 2
+    },
+    {
+     "say": "Yusuf is in the bedroom.",
+     "options": [
+      "🛏️",
+      "🍳",
+      "🌳"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "The pup is in the garden.",
+     "options": [
+      "🛋️",
+      "🌳",
+      "🍳"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "bug",
+     "options": [
+      "🐛",
+      "☀️",
+      "🥜"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "cup",
+     "options": [
+      "cup",
+      "cap",
+      "cop"
+     ],
+     "answer": 0
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Where's Mum?",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then ask about your family!",
+   "tip": "Model with Yusuf. Then children ask each other about their own family right now (Where's your dad? He's in the living room.). Teach She's / He's with a girl/boy gesture.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Where's your mum, Yusuf?"
+    },
+    {
+     "who": "B",
+     "name": "Yusuf",
+     "line": "She's in the kitchen."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Where's your dad?"
+    },
+    {
+     "who": "B",
+     "name": "Yusuf",
+     "line": "He's in the living room."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "And where are you?"
+    },
+    {
+     "who": "B",
+     "name": "Yusuf",
+     "line": "I'm in my bedroom!"
+    }
+   ],
+   "frames": [
+    "Where's your ___?",
+    "She's in the ___.",
+    "He's in the ___.",
+    "I'm in the ___."
+   ],
+   "prompts": [
+    "Where's your mum now?",
+    "Where's your dad?",
+    "Where do you sleep?",
+    "Where do you eat?",
+    "Is there a garden in your house?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Label my home",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Draw your home with rooms. Label each room. Write 2 sentences.",
+   "tip": "Draw a house with 4 boxes on the pad; children copy. Labels first (copy from vocab), then 2 sentences with She's / He's.",
+   "model": "kitchen · bedroom · bathroom · living room. Mum is in the kitchen. Dad is in the garden.",
+   "frames": [
+    "___ is in the kitchen.",
+    "She's in the ___.",
+    "He's in the ___."
+   ],
+   "task": "Draw and label 4 rooms. Write 2 sentences. Show the camera!",
+   "checklist": [
+    "4 room labels",
+    "Capital letter for names",
+    "Full stops"
+   ],
+   "pad": "My home"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "read bug, sun, cup, pup",
+    "read good and any",
+    "say 4 rooms"
+   ],
+   "homework": [
+    "Give your family a house tour in English: This is the kitchen…",
+    "Read 'Where Is the Pup?'.",
+    "Find 3 things with short u in your home (cup, mug, rug…)."
+   ],
+   "goodbye": "Goodbye, goodbye! Good work! See you soon!"
+  }
+ ],
+ "nav": {
+  "prev": "L32.html",
+  "next": "L34.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g1', name: 'Group 1', students: ['Jana', 'Yusuf', 'Ibrahim'], color: '#f26b4f', soft: '#ffe5dd' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

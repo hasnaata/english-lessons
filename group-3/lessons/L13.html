@@ -1,18 +1,514 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L13 · How often?</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L13",
+ "group": "g3",
+ "lesson": 13,
+ "week": 7,
+ "month": 2,
+ "unit": "Daily Life & Routines",
+ "title": "How often?",
+ "emoji": "📅",
+ "minutes": 45,
+ "kid_goals": [
+  "📅 Say how often I do things",
+  "🔤 Stress the right part: ALways, SOMEtimes",
+  "📖 Read about a boy's week",
+  "✍️ Write 5 sentences about my habits"
+ ],
+ "objectives": [
+  "Can talk about habits using adverbs of frequency and expressions like every day / once a week (A1).",
+  "Can put adverbs of frequency in the right place (before the main verb, after be).",
+  "Can stress adverbs of frequency correctly (ALways, USually, OFten, SOMEtimes, NEver).",
+  "Can read and use the key words boy, follow, came, want."
+ ],
+ "focus": {
+  "sounds": [
+   "ALways",
+   "USually",
+   "OFten",
+   "SOMEtimes",
+   "NEver"
+  ],
+  "sight_words": [
+   "boy",
+   "follow",
+   "came",
+   "want"
+  ],
+  "language": "always / usually / often / sometimes / never + verb · after be: I'm always late · How often do you…? once / twice a week"
+ },
+ "frameworks": [
+  "CEFR A1 → A2 can-do statements (Cambridge A2 Flyers topics)",
+  "PPP: present → practise → produce",
+  "Pronunciation: word stress",
+  "Survey task (habits)",
+  "Spaced retrieval: present simple questions (lesson 12)"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Unit 110 (always / usually / often — simplified)",
+  "Coursebook unit 2 style: adverbs of frequency",
+  "Fry high-frequency words 151–175 (boy, follow, came, want)"
+ ],
+ "teacher_notes": "Word order is the main problem: \"I go always\" ✗ → \"I always go\" ✓; \"I always am late\" ✗ → \"I'm always late\" ✓. \"Came\" is the past of come — just teach it as a word (past simple comes in month 5). \"Never\" already means not: no \"don't never\".",
+ "differentiation": "Support: use only always / sometimes / never first. Stretch: add every day, once a week, twice a month and \"How often…?\" questions.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Survey results",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Tell me about your homework survey.",
+   "tip": "Check survey homework (do/does questions). The last line previews \"never\".",
+   "lines": [
+    "Who did you ask?",
+    "Do they have any pets?",
+    "Does anyone play a sport?",
+    "Do you play games every day?",
+    "I never eat breakfast in bed!"
+   ],
+   "questions": [
+    "What do you do every day?",
+    "What do you do on Fridays?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Clap the strong part of each word: AL-ways, U-sual-ly, OF-ten, SOME-times, NE-ver. \"Often\": the t is usually silent!",
+   "tip": "Draw a line from 100% to 0% on the pad and place each adverb. Then stress drill: she claps on the stressed syllable.",
+   "focus": "ALways",
+   "sound": "word stress on the FIRST syllable: ALways, USually, OFten, SOMEtimes, NEver",
+   "say_sound": "I ALways walk. I NEver run!",
+   "chant": "ALways a hundred, USually ninety, OFten seventy, SOMEtimes fifty, NEver zero!",
+   "words": [
+    {
+     "w": "always",
+     "e": "💯",
+     "ar": "دائمًا",
+     "s": "I always brush my teeth."
+    },
+    {
+     "w": "usually",
+     "e": "✅",
+     "ar": "عادةً",
+     "s": "I usually walk to school."
+    },
+    {
+     "w": "often",
+     "e": "👍",
+     "ar": "غالبًا",
+     "s": "We often eat pizza."
+    },
+    {
+     "w": "sometimes",
+     "e": "🤷",
+     "ar": "أحيانًا",
+     "s": "I sometimes play chess."
+    },
+    {
+     "w": "never",
+     "e": "❌",
+     "ar": "أبدًا",
+     "s": "I never drink coffee."
+    },
+    {
+     "w": "every day",
+     "e": "📅",
+     "ar": "كل يوم"
+    },
+    {
+     "w": "once a week",
+     "e": "1️⃣",
+     "ar": "مرة في الأسبوع"
+    },
+    {
+     "w": "twice a week",
+     "e": "2️⃣",
+     "ar": "مرتين في الأسبوع"
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word. Click 💬 to hear it in a sentence. Then say your own sentence with it.",
+   "tip": "\"Came\" = past of \"come\" (just as a word for now). \"Follow\" — on social media and in real life (\"Follow me!\").",
+   "cards": [
+    {
+     "w": "boy",
+     "s": "The boy next door plays the guitar."
+    },
+    {
+     "w": "follow",
+     "s": "I follow my favourite artist online."
+    },
+    {
+     "w": "came",
+     "s": "My cousin came to our house last week."
+    },
+    {
+     "w": "want",
+     "s": "I want a new sketchbook."
+    }
+   ],
+   "review": [
+    "old",
+    "any",
+    "same",
+    "tell",
+    "line",
+    "right"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Adverbs of frequency",
+   "minutes": 6,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "tip": "Error hunt: \"I go always to school\", \"She never doesn't eat meat\", \"I always am late\". Saja fixes them.",
+   "rule": "Adverb BEFORE the main verb: I always walk to school. Adverb AFTER be: I'm always tired on Mondays. Ask: How often do you…? Answer: every day / once a week / twice a month.",
+   "table": [
+    [
+     "100%",
+     "always",
+     "I always do my homework."
+    ],
+    [
+     "90%",
+     "usually",
+     "She usually walks to school."
+    ],
+    [
+     "70%",
+     "often",
+     "We often play games."
+    ],
+    [
+     "50%",
+     "sometimes",
+     "He sometimes cooks dinner."
+    ],
+    [
+     "0%",
+     "never",
+     "They never watch the news."
+    ],
+    [
+     "with be",
+     "is always / is never",
+     "He's never late."
+    ]
+   ],
+   "examples": [
+    "I usually get up at seven.",
+    "My brother is always hungry!",
+    "We sometimes go to the park on Friday.",
+    "How often do you play football? Twice a week.",
+    "She never drinks coffee."
+   ],
+   "ar": "ظروف التكرار (always دائمًا، never أبدًا) تأتي قبل الفعل الأساسي: I always walk، لكنها تأتي بعد فعل be: I'm always late. لا نستخدم don't مع never."
+  },
+  {
+   "type": "reading",
+   "title": "Hamza's Week",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "tip": "Saja underlines all frequency words. Then: \"Are you like Hamza? What do you always / never do?\"",
+   "story_title": "Hamza's Week",
+   "pic": "🧒🎮🏀",
+   "text_intro": "Listen first. Then read with me. Then you read alone!",
+   "text": [
+    "Hamza is a boy in my class. He is thirteen and he is very busy!",
+    "He always gets up at six, and he usually goes for a run with his dad. He never misses breakfast.",
+    "After school, he often plays basketball. He plays in a team twice a week, on Mondays and Wednesdays.",
+    "Hamza loves gaming too, but his mum says, \"Only on Fridays!\" So he sometimes plays online with his cousins on Friday evenings. He likes to follow two gaming channels. \"I want to make my own videos one day,\" he says.",
+    "Last month, a famous player came to our school, and Hamza asked him ten questions! He is never shy."
+   ],
+   "highlight": [
+    "boy",
+    "follow",
+    "came",
+    "want"
+   ],
+   "questions": [
+    {
+     "q": "How often does Hamza go for a run?",
+     "a": "He usually goes for a run with his dad."
+    },
+    {
+     "q": "When does he play in a basketball team?",
+     "a": "Twice a week, on Mondays and Wednesdays."
+    },
+    {
+     "q": "When does he play online?",
+     "a": "Sometimes, on Friday evenings."
+    },
+    {
+     "q": "What does he want to do one day?",
+     "a": "Make his own videos."
+    },
+    {
+     "q": "Who came to the school?",
+     "a": "A famous player."
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "Put the adverb in the right place",
+   "minutes": 3,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Click the words in the right order.",
+   "tip": "Remind her: before the verb, after be.",
+   "items": [
+    [
+     "I",
+     "always",
+     "do",
+     "my",
+     "homework."
+    ],
+    [
+     "She",
+     "is",
+     "never",
+     "late."
+    ],
+    [
+     "We",
+     "sometimes",
+     "play",
+     "chess."
+    ],
+    [
+     "He",
+     "usually",
+     "walks",
+     "to",
+     "school."
+    ],
+    [
+     "They",
+     "often",
+     "eat",
+     "pizza",
+     "on",
+     "Friday."
+    ]
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "How often?",
+   "minutes": 3,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Read and choose.",
+   "tip": "Ask her to read the right sentence aloud with the correct stress.",
+   "items": [
+    {
+     "q": "💯 I ___ brush my teeth.",
+     "options": [
+      "always",
+      "never",
+      "sometimes"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "❌ My dad ___ drinks tea. He hates it!",
+     "options": [
+      "usually",
+      "never",
+      "often"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Which is correct?",
+     "options": [
+      "I go always to bed at ten.",
+      "I always go to bed at ten.",
+      "Always I go to bed at ten."
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Which is correct?",
+     "options": [
+      "She's always happy.",
+      "She always is happy.",
+      "Always she is happy."
+     ],
+     "answer": 0
+    },
+    {
+     "q": "How often do you play tennis?",
+     "options": [
+      "On Monday.",
+      "Twice a week.",
+      "At six."
+     ],
+     "answer": 1
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Habits survey",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then ask and answer How often…? questions.",
+   "tip": "Survey grid: 4 activities × 2 people (Saja, Hasna). Saja asks and notes the answers — good preparation for writing.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "How often do you play video games, Saja?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Sometimes. Usually on Friday."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Do you ever cook?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "No, never! But I often help my mum."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "How often do you draw?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "I draw every day. I always have my sketchbook with me."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Wow! And are you ever late for school?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "No, I'm never late!"
+    }
+   ],
+   "frames": [
+    "How often do you ___?",
+    "I always / usually / often / sometimes / never ___.",
+    "I ___ every day / once a week / twice a week.",
+    "I'm always / never ___."
+   ],
+   "prompts": [
+    "How often do you: read a book / eat fast food / go to the cinema / help at home?",
+    "Ask me 4 How often…? questions.",
+    "Tell me 2 things you never do."
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "My habits",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Read the example. Then write about you.",
+   "tip": "Ask her to rank her sentences from 100% to 0% — a quick self-check of meaning.",
+   "model": "I always get up at quarter to seven. I usually walk to school with Mariam. I often draw in the evening. I sometimes play games on Friday. I never drink coffee!",
+   "frames": [
+    "I always ___.",
+    "I usually ___.",
+    "I often ___.",
+    "I sometimes ___.",
+    "I never ___."
+   ],
+   "task": "Write 5 true sentences about your habits. Use 5 different frequency words.",
+   "checklist": [
+    "5 different frequency words",
+    "Adverb before the verb (after be)",
+    "No \"don't\" with never",
+    "Capital letters and full stops"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Stars, exit ticket & homework",
+   "minutes": 1,
+   "exit": [
+    "I can say how often I do things",
+    "I can put the adverb in the right place",
+    "I can read boy, follow, came, want",
+    "I can stress ALways, SOMEtimes"
+   ],
+   "homework": [
+    "Ask 2 people at home \"How often do you…?\" (3 questions). Write their answers.",
+    "Write 3 sentences about a famous person's habits (guess!).",
+    "Read \"Hamza's Week\" aloud."
+   ],
+   "goodbye": "You always work hard, Saja! See you soon!"
+  }
+ ],
+ "nav": {
+  "prev": "L12.html",
+  "next": "L14.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

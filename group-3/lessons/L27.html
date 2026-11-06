@@ -1,18 +1,629 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L27 · My room</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L27",
+ "group": "g3",
+ "lesson": 27,
+ "week": 14,
+ "month": 4,
+ "unit": "Home, Town & Right Now",
+ "title": "My room",
+ "emoji": "🛏️",
+ "minutes": 45,
+ "kid_goals": [
+  "🛏️ Name the things in my room",
+  "🔤 Hear and spell ar and or",
+  "📍 Say where things are with in, on, under, next to…",
+  "✍️ Write a paragraph about my room"
+ ],
+ "objectives": [
+  "Can name common furniture and objects in a bedroom (A1).",
+  "Can describe where things are using prepositions of place: in, on, under, next to, between, behind, in front of, above, opposite (A1+).",
+  "Can read a short description of a room and answer detail questions (A1/A2).",
+  "Can write a short \"hamburger\" paragraph describing her room (A2 first steps).",
+  "Can read and use the key words point, page, letter, mother."
+ ],
+ "focus": {
+  "sounds": [
+   "ar /ɑː/",
+   "or /ɔː/"
+  ],
+  "sight_words": [
+   "point",
+   "page",
+   "letter",
+   "mother"
+  ],
+  "language": "prepositions of place review + furniture: There is a lamp on the desk. My bag is under the bed.",
+  "vocabulary": [
+   "bed",
+   "chair",
+   "lamp",
+   "desk",
+   "wardrobe",
+   "shelf",
+   "mirror",
+   "window"
+  ]
+ },
+ "frameworks": [
+  "PPP: present → practise → produce",
+  "Comprehensible input: emoji pictures + short Arabic hints",
+  "Spaced retrieval: key words and older words come back in the reading",
+  "Writing: modelled → guided → independent, hamburger paragraph",
+  "CEFR A1 → A2 can-do objectives",
+  "TPR: Saja points to and moves real things in her room on camera"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Units 123–125 — in/at/on (position)",
+  "Fry high-frequency words 101–300: point, page, letter, mother",
+  "Cambridge A2 Flyers topic list: the home"
+ ],
+ "teacher_notes": "Saja knows the basic prepositions from the starter unit, so move fast through in/on/under and spend time on between, in front of, above and opposite. Arabic speakers often say \"in the wall\" — correct to \"on the wall\". Ask her to carry the laptop/camera round her room for the speaking part if she is happy to; otherwise use the picture in the reading.",
+ "differentiation": "Support: give the preposition table on screen during speaking and writing. Stretch: ask for 2 sentences with \"between … and …\" and one with \"opposite\", and a closing sentence with \"because\".",
+ "arabic": [
+  {
+   "en": "cosy",
+   "ar": "مريح ودافئ"
+  },
+  {
+   "en": "a mess",
+   "ar": "فوضى"
+  },
+  {
+   "en": "poster",
+   "ar": "ملصق كبير"
+  }
+ ],
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Warm-up chat",
+   "minutes": 3,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Listen, then answer in full sentences.",
+   "tip": "Retrieval from lessons 25–26: push for present continuous (\"I'm sitting…\", \"My brother is playing…\"). Then lead in: \"Today we talk about your room!\"",
+   "lines": [
+    "Hi Saja! How are you today?",
+    "Where are you right now?",
+    "I am in my living room. I am sitting on the sofa.",
+    "What are you doing at the moment?",
+    "Look around you. What can you see?"
+   ],
+   "questions": [
+    "Where are you sitting right now?",
+    "What is on your desk at the moment?",
+    "Are you in your bedroom or another room?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 5,
+   "skills": [
+    "Listening",
+    "Speaking",
+    "Reading"
+   ],
+   "text": "Listen, repeat and notice the pattern. Click a word to hear it.",
+   "tip": "British English: the r is silent — car = /kɑː/, fork = /fɔːk/. Arabic speakers tend to roll the r; model a long, open vowel instead. Bonus pattern: after w, ar sounds like or — warm, wardrobe. Ask Saja to sort the 10 words into two columns in her notebook.",
+   "focus": "ar / or",
+   "sound": "/ɑː/ and /ɔː/",
+   "say_sound": "ar as in car, or as in fork",
+   "chant": "A star in the dark, a car in the park. A fork and a horse — a short sport, of course!",
+   "words": [
+    {
+     "w": "car",
+     "e": "🚗",
+     "ar": "سيارة"
+    },
+    {
+     "w": "star",
+     "e": "⭐",
+     "ar": "نجمة"
+    },
+    {
+     "w": "jar",
+     "e": "🫙",
+     "ar": "برطمان"
+    },
+    {
+     "w": "scarf",
+     "e": "🧣",
+     "ar": "وشاح"
+    },
+    {
+     "w": "garden",
+     "e": "🌷",
+     "ar": "حديقة"
+    },
+    {
+     "w": "fork",
+     "e": "🍴",
+     "ar": "شوكة"
+    },
+    {
+     "w": "horse",
+     "e": "🐴",
+     "ar": "حصان"
+    },
+    {
+     "w": "storm",
+     "e": "⛈️",
+     "ar": "عاصفة"
+    },
+    {
+     "w": "shorts",
+     "e": "🩳",
+     "ar": "شورت"
+    },
+    {
+     "w": "sport",
+     "e": "⚽",
+     "ar": "رياضة"
+    }
+   ],
+   "blend": [
+    "car",
+    "star",
+    "fork",
+    "short"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word, hear it, say it. Click 💬 for the sentence.",
+   "tip": "Show each card, Saja reads it, then makes her OWN sentence about her room with the word (\"I can point to my lamp\"). Note: letter = a message on paper AND a, b, c — ask her which one the card means.",
+   "cards": [
+    {
+     "w": "point",
+     "s": "Point to the window, please."
+    },
+    {
+     "w": "page",
+     "s": "Open your book at page twenty."
+    },
+    {
+     "w": "letter",
+     "s": "I am writing a letter to my grandmother."
+    },
+    {
+     "w": "mother",
+     "s": "My mother says my room is a mess!"
+    }
+   ],
+   "review": [
+    "house",
+    "animal",
+    "away",
+    "picture",
+    "again",
+    "home"
+   ]
+  },
+  {
+   "type": "vocab",
+   "title": "Things in my room",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Click each picture to hear the word and the sentence. Press ع for Arabic.",
+   "tip": "Quick: Hasna says a word, Saja points to the real thing in her room (TPR). Then reverse — Saja points, Hasna names it. Plural check: shelf → shelves.",
+   "words": [
+    {
+     "w": "bed",
+     "e": "🛏️",
+     "ar": "سرير",
+     "s": "My bed is next to the window."
+    },
+    {
+     "w": "chair",
+     "e": "🪑",
+     "ar": "كرسي",
+     "s": "There is a chair in front of my desk."
+    },
+    {
+     "w": "lamp",
+     "e": "💡",
+     "ar": "مصباح",
+     "s": "The lamp is on the desk."
+    },
+    {
+     "w": "desk",
+     "e": "🖥️",
+     "ar": "مكتب",
+     "s": "I do my homework at my desk."
+    },
+    {
+     "w": "wardrobe",
+     "e": "🚪",
+     "ar": "خزانة ملابس",
+     "s": "My clothes are in the wardrobe."
+    },
+    {
+     "w": "shelf",
+     "e": "📚",
+     "ar": "رف",
+     "s": "My books are on the shelf."
+    },
+    {
+     "w": "mirror",
+     "e": "🪞",
+     "ar": "مرآة",
+     "s": "There is a mirror behind the door."
+    },
+    {
+     "w": "window",
+     "e": "🪟",
+     "ar": "نافذة",
+     "s": "I can see the street from my window."
+    }
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Where is it? Prepositions of place",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read the rule and the table. Listen to the examples.",
+   "tip": "Use real objects: put a pen in a cup, on a book, between two books. Saja says the sentence. Watch for \"in front of\" without \"of\".",
+   "rule": "Prepositions tell us WHERE something is. Use them after be or after there is / there are: The lamp is on the desk. There is a rug under the bed. Some have two or three words: next to, in front of. Between needs two things: between the bed AND the wardrobe.",
+   "table": [
+    [
+     "preposition",
+     "example"
+    ],
+    [
+     "in",
+     "My clothes are in the wardrobe."
+    ],
+    [
+     "on",
+     "The poster is on the wall."
+    ],
+    [
+     "under",
+     "My bag is under the desk."
+    ],
+    [
+     "next to",
+     "The bed is next to the window."
+    ],
+    [
+     "between",
+     "The desk is between the bed and the door."
+    ],
+    [
+     "behind",
+     "The mirror is behind the door."
+    ],
+    [
+     "in front of",
+     "The chair is in front of the desk."
+    ],
+    [
+     "above",
+     "The shelf is above my bed."
+    ],
+    [
+     "opposite",
+     "The wardrobe is opposite the window."
+    ]
+   ],
+   "examples": [
+    "There is a lamp on my desk.",
+    "There are two pillows on the bed.",
+    "My shoes are under the bed.",
+    "Is the mirror behind the door? Yes, it is."
+   ],
+   "ar": "حروف الجر تبين مكان الشيء: in = داخل، on = على، under = تحت، next to = بجانب، between = بين، behind = خلف، in front of = أمام، above = فوق (بدون لمس)، opposite = مقابل. نقول on the wall وليس in the wall."
+  },
+  {
+   "type": "reading",
+   "title": "Saja's Room",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": [
+    "My room is small, but I love it. It is my favourite place in our flat.",
+    "There is a bed next to the window. Above the bed, there is a big poster of my favourite singer. My headphones are on the bed right now.",
+    "Between the bed and the wardrobe, there is a small desk. On the desk, there are some books, a lamp and my laptop. My school bag is under the desk.",
+    "There is a shelf on the wall opposite the bed. I keep my comics, my sketchbook and a photo of my cousin Lina there.",
+    "My mother often says, \"Saja, your room is a mess!\" Then she starts to point at the floor. She is right. There are clothes in front of the wardrobe!",
+    "Today I am writing a letter to my grandmother. I am on page two already. My room is the perfect place to think and write."
+   ],
+   "tip": "I do: Hasna reads, Saja listens and draws a quick plan of the room. We do: read together. You do: Saja reads paragraphs 3–5 alone. Then she checks her drawing against the text.",
+   "story_title": "Saja's Room",
+   "pic": "🛏️🪟📚💡",
+   "text_intro": "Listen first. Then read it aloud with Hasna. Then answer the questions.",
+   "highlight": [
+    "point",
+    "page",
+    "letter",
+    "mother",
+    "there",
+    "between",
+    "opposite"
+   ],
+   "questions": [
+    {
+     "q": "Where is the bed?",
+     "a": "It is next to the window."
+    },
+    {
+     "q": "What is on the desk?",
+     "a": "There are some books, a lamp and a laptop."
+    },
+    {
+     "q": "What does Saja's mother often say?",
+     "a": "\"Saja, your room is a mess!\""
+    },
+    {
+     "q": "What is Saja doing today?",
+     "a": "She is writing a letter to her grandmother."
+    },
+    {
+     "q": "Why does Saja love her room? Find two reasons.",
+     "a": "It is her favourite place; it is perfect to think and write."
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "Where is it?",
+   "minutes": 3,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Choose the right word for each gap.",
+   "tip": "All answers come from the reading. If she hesitates, send her back to the text to find the sentence (scanning practice).",
+   "items": [
+    {
+     "text": "There is a bed ___ to the window.",
+     "answer": "next",
+     "options": [
+      "next",
+      "between",
+      "under"
+     ]
+    },
+    {
+     "text": "The desk is ___ the bed and the wardrobe.",
+     "answer": "between",
+     "options": [
+      "between",
+      "next",
+      "on"
+     ]
+    },
+    {
+     "text": "The poster is ___ the bed.",
+     "answer": "above",
+     "options": [
+      "above",
+      "in",
+      "opposite"
+     ]
+    },
+    {
+     "text": "Her school bag is ___ the desk.",
+     "answer": "under",
+     "options": [
+      "under",
+      "in",
+      "between"
+     ]
+    },
+    {
+     "text": "There are clothes in front ___ the wardrobe.",
+     "answer": "of",
+     "options": [
+      "of",
+      "to",
+      "at"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Listen and choose",
+   "minutes": 3,
+   "skills": [
+    "Listening"
+   ],
+   "text": "Listen to the sentence. Choose what you hear.",
+   "tip": "Listening only: hide the screen text if possible and let Saja choose from the audio.",
+   "items": [
+    {
+     "say": "The cat is under the chair.",
+     "options": [
+      "under the chair",
+      "on the chair",
+      "next to the chair"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "My phone is between the books.",
+     "options": [
+      "behind the books",
+      "between the books",
+      "on the books"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "The mirror is opposite the door.",
+     "options": [
+      "next to the door",
+      "behind the door",
+      "opposite the door"
+     ],
+     "answer": 2
+    },
+    {
+     "say": "There are two pillows on the bed.",
+     "options": [
+      "2 pillows on the bed",
+      "3 pillows on the bed",
+      "2 pillows under the bed"
+     ],
+     "answer": 0
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Room tour",
+   "minutes": 5,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to the dialogue. Then take a part. Then answer about YOU.",
+   "tip": "Read once each, then swap roles. Then Saja gives Hasna a real \"room tour\" on camera (or describes it from memory) using at least 5 prepositions. Count them on your fingers together.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Lina",
+     "line": "Hi Saja! Is that your room? It looks really cool!"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Thanks! Do you want a tour?"
+    },
+    {
+     "who": "A",
+     "name": "Lina",
+     "line": "Yes, please! What is that on the wall?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "It is a poster of my favourite singer. It is above my bed."
+    },
+    {
+     "who": "A",
+     "name": "Lina",
+     "line": "Nice! And where do you study?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "At my desk. It is between my bed and the wardrobe."
+    },
+    {
+     "who": "A",
+     "name": "Lina",
+     "line": "And what is that next to your laptop?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "It is my sketchbook. I draw every day!"
+    }
+   ],
+   "frames": [
+    "There is a ___ next to my ___.",
+    "My ___ is on / under / above the ___.",
+    "I study at / on ___.",
+    "My favourite thing in my room is ___ because ___."
+   ],
+   "prompts": [
+    "What is next to your bed?",
+    "Where do you study?",
+    "What is on your wall?",
+    "What is under your bed? (Be honest!)",
+    "What is your favourite thing in your room? Why?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "My room — a hamburger paragraph",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Read the model. Plan with the frames. Then write your own.",
+   "tip": "Shared writing: write the topic sentence together, then Saja writes the details alone. She can finish at home if time runs out.",
+   "model": "My room is small but cosy. There is a bed next to the window and a desk between the bed and the wardrobe. On the wall, there is a poster of my favourite singer. I keep my books on a shelf above the desk. I love my room because it is quiet and I can read there.",
+   "frames": [
+    "🍞 My room is ___ and ___.",
+    "🥬 There is a ___ next to / between ___.",
+    "🥬 On the wall, there is / there are ___.",
+    "🥬 I keep my ___ in / on ___.",
+    "🍞 I love my room because ___."
+   ],
+   "task": "Write 5–6 sentences about your room: a topic sentence, 3–4 details with prepositions, and a closing sentence.",
+   "checklist": [
+    "🍞 Topic sentence: tells the main idea",
+    "🥬 3–4 detail sentences",
+    "🍞 Closing sentence: says the idea again in a new way",
+    "📍 At least 4 different prepositions",
+    "✅ Capital letters and full stops"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Wrap-up",
+   "minutes": 1,
+   "tip": "Count the stars together. Saja ticks the exit list honestly — anything not ticked goes into the next warm-up.",
+   "exit": [
+    "I can name 8 things in a room.",
+    "I can use 6 prepositions of place.",
+    "I can hear the difference between ar and or.",
+    "I can write a paragraph about my room."
+   ],
+   "homework": [
+    "Draw a plan of your room. Label 8 things.",
+    "Finish your paragraph \"My Room\" (6 sentences).",
+    "Find 3 ar words and 3 or words in a book or on a box at home."
+   ],
+   "goodbye": "Great work today, Saja! Enjoy your room and see you next lesson!"
+  }
+ ],
+ "nav": {
+  "prev": "L26.html",
+  "next": "L28.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

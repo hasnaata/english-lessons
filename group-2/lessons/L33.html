@@ -1,18 +1,601 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G2-L33 · ar — Places in town</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G2-L33",
+ "group": "g2",
+ "lesson": 33,
+ "week": 17,
+ "month": 5,
+ "unit": "My Town",
+ "title": "ar — Places in town",
+ "emoji": "🏞️",
+ "minutes": 45,
+ "kid_goals": [
+  "⭐ Read ar words: park, car, farm, star",
+  "❤️ Learn 4 heart words: very, wash, which, why",
+  "🏦 Name 12 places in town",
+  "🗺️ Draw and label a map of my street"
+ ],
+ "objectives": [
+  "Can read and spell words with the r-controlled vowel ar (park, car, farm, star).",
+  "Can read the sight words very, wash, which, why.",
+  "Can name common places in town (Cambridge A1 Movers topic: the world around us).",
+  "Can say what there is / isn't near home: There's a park near my house. Is there a bank? (A1)",
+  "Can label a simple map and write 5 sentences about my town."
+ ],
+ "focus": {
+  "sounds": [
+   "ar"
+  ],
+  "sight_words": [
+   "very",
+   "wash",
+   "which",
+   "why"
+  ],
+  "language": "There's a park near my house. There isn't a cinema. Is there a bank near your house? near / far from",
+  "vocabulary": [
+   "park",
+   "bank",
+   "café",
+   "hospital",
+   "school",
+   "supermarket",
+   "library",
+   "mosque",
+   "cinema",
+   "pharmacy",
+   "post office",
+   "restaurant"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics: r-controlled vowel ar",
+  "Comprehensible input: places with emoji pictures and Arabic support",
+  "PPP: present (email text) → practise (fill) → produce (my town talk & map)",
+  "Heart words / orthographic mapping",
+  "Spaced retrieval: there is / there are (L2–3) in a new topic"
+ ],
+ "sources": [
+  "Cambridge A1 Movers topic list: places in town",
+  "My First Grammar 1 — there is / there are (review)",
+  "English Conversation Made Natural (situation adapted: telling a friend about your neighbourhood)",
+  "Dolch first-grade list: very, wash, which, why"
+ ],
+ "teacher_notes": "New month, new theme: My Town. Duha knows there is / there are from month 1 — today it comes back with places. Explain that r changes the vowel: a + r = /ɑː/ (park), not /æ/ (pack). Arabic speakers may roll the r strongly; in British English we do not pronounce the r in 'park', but either accent is fine. Ask about Duha's real town — personal content helps memory.",
+ "differentiation": "Support: use only 6 places and the frame There's a ___ near my house. Stretch: add far from and adjectives (a very big supermarket, a quiet library).",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Where do you go?",
+   "minutes": 4,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Hasna says a sentence. Say the place!",
+   "tip": "Quick guessing game to open the topic; accept Arabic words, then give the English. Recycle 'every day' from month 4.",
+   "lines": [
+    "I buy medicine there.",
+    "I read books there.",
+    "I see a film there.",
+    "I play and run there.",
+    "I buy food there every week."
+   ],
+   "questions": [
+    "(pharmacy, library, cinema, park, supermarket)",
+    "Where do you go every day?",
+    "Which place do you like best?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "ar says /ɑː/",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "a + r = /ɑː/ — open your mouth like at the doctor: 'aaah'!",
+   "tip": "Compare pairs: cat → cart, pack → park, ham → harm. The r is 'bossy' — it changes the a sound.",
+   "focus": "ar",
+   "sound": "/ɑː/",
+   "say_sound": "A car in the park in the dark.",
+   "chant": "ar, ar, car and star. ar, ar, park and farm. Drive the car to the farm in the dark!",
+   "words": [
+    {
+     "w": "park",
+     "e": "🏞️",
+     "ar": "حديقة عامة"
+    },
+    {
+     "w": "car",
+     "e": "🚗",
+     "ar": "سيارة"
+    },
+    {
+     "w": "farm",
+     "e": "🚜",
+     "ar": "مزرعة"
+    },
+    {
+     "w": "star",
+     "e": "⭐",
+     "ar": "نجمة"
+    },
+    {
+     "w": "market",
+     "e": "🛒",
+     "ar": "سوق"
+    },
+    {
+     "w": "garden",
+     "e": "🌷",
+     "ar": "حديقة منزل"
+    },
+    {
+     "w": "shark",
+     "e": "🦈",
+     "ar": "قرش"
+    },
+    {
+     "w": "jar",
+     "e": "🫙",
+     "ar": "برطمان"
+    },
+    {
+     "w": "arm",
+     "e": "💪",
+     "ar": "ذراع"
+    },
+    {
+     "w": "dark",
+     "e": "🌑",
+     "ar": "مظلم"
+    }
+   ],
+   "blend": [
+    "park",
+    "car",
+    "farm",
+    "star",
+    "dark",
+    "jar"
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Spell the ar word",
+   "minutes": 3,
+   "skills": [
+    "Writing",
+    "Listening"
+   ],
+   "text": "Listen. Click the letters.",
+   "tip": "Ask her to say the word slowly first: p–ar–k (3 sounds, 4 letters).",
+   "items": [
+    {
+     "word": "park",
+     "e": "🏞️",
+     "letters": [
+      "p",
+      "a",
+      "r",
+      "k",
+      "e"
+     ]
+    },
+    {
+     "word": "star",
+     "e": "⭐",
+     "letters": [
+      "s",
+      "t",
+      "a",
+      "r",
+      "o"
+     ]
+    },
+    {
+     "word": "farm",
+     "e": "🚜",
+     "letters": [
+      "f",
+      "a",
+      "r",
+      "m",
+      "e"
+     ]
+    },
+    {
+     "word": "shark",
+     "e": "🦈",
+     "letters": [
+      "s",
+      "h",
+      "a",
+      "r",
+      "k",
+      "o"
+     ]
+    },
+    {
+     "word": "dark",
+     "e": "🌑",
+     "letters": [
+      "d",
+      "a",
+      "r",
+      "k",
+      "e"
+     ]
+    },
+    {
+     "word": "garden",
+     "e": "🌷",
+     "letters": [
+      "g",
+      "a",
+      "r",
+      "d",
+      "e",
+      "n",
+      "o"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read, spell, find the tricky part, say the sentence.",
+   "tip": "very (y says /i/), wash (a says /ɒ/ after w), which / why (wh = /w/, L6). Ask: Which place do you like? Why?",
+   "cards": [
+    {
+     "w": "very",
+     "s": "The park is very big."
+    },
+    {
+     "w": "wash",
+     "s": "Dad washes the car at the car wash."
+    },
+    {
+     "w": "which",
+     "s": "Which shop do you like?"
+    },
+    {
+     "w": "why",
+     "s": "Why is the library quiet?"
+    }
+   ],
+   "review": [
+    "those",
+    "upon",
+    "us",
+    "use",
+    "their",
+    "these"
+   ]
+  },
+  {
+   "type": "vocab",
+   "title": "Places in town",
+   "minutes": 5,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Click each place. Listen and say. Press ع for Arabic.",
+   "tip": "After the words, ask: Is there a ___ near your house? (Yes, there is. / No, there isn't.)",
+   "words": [
+    {
+     "w": "bank",
+     "e": "🏦",
+     "ar": "بنك",
+     "s": "My dad goes to the bank."
+    },
+    {
+     "w": "café",
+     "e": "☕",
+     "ar": "مقهى",
+     "s": "We drink juice at the café."
+    },
+    {
+     "w": "hospital",
+     "e": "🏥",
+     "ar": "مستشفى",
+     "s": "Doctors work in the hospital."
+    },
+    {
+     "w": "school",
+     "e": "🏫",
+     "ar": "مدرسة",
+     "s": "I go to school every day."
+    },
+    {
+     "w": "supermarket",
+     "e": "🛒",
+     "ar": "سوبرماركت",
+     "s": "We buy food at the supermarket."
+    },
+    {
+     "w": "library",
+     "e": "📚",
+     "ar": "مكتبة",
+     "s": "I read books at the library."
+    },
+    {
+     "w": "mosque",
+     "e": "🕌",
+     "ar": "مسجد",
+     "s": "There's a big mosque near my house."
+    },
+    {
+     "w": "cinema",
+     "e": "🎬",
+     "ar": "سينما",
+     "s": "We watch films at the cinema."
+    },
+    {
+     "w": "pharmacy",
+     "e": "💊",
+     "ar": "صيدلية",
+     "s": "You buy medicine at the pharmacy."
+    },
+    {
+     "w": "post office",
+     "e": "🏤",
+     "ar": "مكتب البريد",
+     "s": "Send a letter at the post office."
+    },
+    {
+     "w": "restaurant",
+     "e": "🍽️",
+     "ar": "مطعم",
+     "s": "We eat dinner at the restaurant."
+    },
+    {
+     "w": "bus stop",
+     "e": "🚏",
+     "ar": "موقف الحافلات",
+     "s": "Wait for the bus at the bus stop."
+    }
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "There's a park near my house",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Use there is / there are to say what is in your town.",
+   "tip": "Review from month 1, new topic. Point at near (قريب من) and far from (بعيد عن). Ask 3 real questions about her town.",
+   "rule": "There's (= there is) + one thing. There are + two or more. Ask: Is there a…? Are there any…? Add near / far from to say where.",
+   "table": [
+    [
+     "",
+     "One",
+     "Two or more"
+    ],
+    [
+     "✅",
+     "There's a park near my house.",
+     "There are two cafés in my street."
+    ],
+    [
+     "❌",
+     "There isn't a cinema in my town.",
+     "There aren't any farms near here."
+    ],
+    [
+     "❓",
+     "Is there a bank near your house?",
+     "Are there any shops in your street?"
+    ],
+    [
+     "Answer",
+     "Yes, there is. / No, there isn't.",
+     "Yes, there are. / No, there aren't."
+    ]
+   ],
+   "examples": [
+    "There's a big supermarket near my school.",
+    "There are three mosques in my town.",
+    "Is there a library near your house? — Yes, there is.",
+    "The hospital is very far from my house."
+   ],
+   "ar": "There is لشيء واحد وThere are لأكثر من شيء (يوجد). near = قريب من، far from = بعيد عن."
+  },
+  {
+   "type": "reading",
+   "title": "An email from Duha",
+   "minutes": 8,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "I do: read the email. We do: read again; Duha clicks every place word. You do: Duha reads paragraphs 3 and 4. Ask her to find all the ar words (park, dark, stars, market, car).",
+   "story_title": "My Town — an email to Mariam",
+   "pic": "📧🏞️🛒📚",
+   "text_intro": "Duha's cousin Mariam lives in another city. Duha writes her an email about her town.",
+   "text": [
+    "Hi Mariam!",
+    "I want to tell you about my town. It isn't very big, but I like it.",
+    "There's a small park near my house. There are tall trees and a garden with flowers in it. I walk there with my dad in the evening, and we look at the stars when it is dark.",
+    "There's a market at the end of my street. My mum buys fruit there on Saturdays. There's also a car wash next to the market. Dad washes his car there every week.",
+    "Which places do I like best? The library and the café! The library is very quiet, and I can read there for hours. The café makes the best hot chocolate.",
+    "There isn't a cinema in my town. Why? I don't know! We go to the city for films.",
+    "Write soon! Love, Duha"
+   ],
+   "highlight": [
+    "very",
+    "wash",
+    "which",
+    "why",
+    "those",
+    "use",
+    "their"
+   ],
+   "questions": [
+    {
+     "q": "Is Duha's town very big?",
+     "a": "No, it isn't, but she likes it."
+    },
+    {
+     "q": "What does Duha do in the park?",
+     "a": "She walks with her dad and they look at the stars."
+    },
+    {
+     "q": "What is next to the market?",
+     "a": "A car wash."
+    },
+    {
+     "q": "Which places does Duha like best?",
+     "a": "The library and the café."
+    },
+    {
+     "q": "Is there a cinema in Duha's town?",
+     "a": "No, there isn't. They go to the city for films."
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "My town",
+   "minutes": 5,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to Hasna and Duha. Then tell Hasna about YOUR town.",
+   "tip": "Read once, swap roles, then ask the prompts. Push for 'because' in the 'which place' answer.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Duha, is there a park near your house?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Yes, there is. It's very near. I can walk there."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Is there a library?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "No, there isn't. But there's a library at my school."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Which place do you like best in your town?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "I like the market because it's busy and the fruit is very fresh."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Why do you go there?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "I go there with my mum on Saturdays."
+    }
+   ],
+   "frames": [
+    "There's a ___ near my house.",
+    "There are ___ in my street.",
+    "There isn't a ___ in my town.",
+    "I like the ___ because ___."
+   ],
+   "prompts": [
+    "What's near your house?",
+    "Is there a hospital in your town?",
+    "Which place do you like best? Why?",
+    "Which place is far from your house?",
+    "What do you do at the market / supermarket?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Map of my street",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Draw a simple map of your street. Label 4 places. Then write 5 sentences.",
+   "tip": "Use the pad: Duha draws boxes and labels them. Then she writes. Check There's / There are and capital letters for place names.",
+   "model": "I live in a quiet street. There's a mosque near my house, and there are two small shops. There's a park at the end of the street, but there isn't a library. I like the park because I can play there. My school is very far from my house.",
+   "frames": [
+    "I live in a ________ street.",
+    "There's a ________ near my house, and there are ________.",
+    "There's a ________, but there isn't a ________.",
+    "I like the ________ because ________.",
+    "My ________ is very far from / near my house."
+   ],
+   "task": "Draw and label your map, then write 5 sentences under it.",
+   "checklist": [
+    "4 labelled places",
+    "There's / There are / There isn't",
+    "near or far from",
+    "and / but / because"
+   ],
+   "pad": "Draw your street: 🏠 + 4 places"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "read ar words",
+    "name 10 places in town",
+    "say what is near my house"
+   ],
+   "homework": [
+    "Finish your street map and show it to your family.",
+    "Write 4 ar words and 4 place words in your notebook.",
+    "Answer in writing: Which place in your town do you like best? Why?"
+   ],
+   "goodbye": "Great job, Duha! Your town sounds lovely. Goodbye!"
+  }
+ ],
+ "nav": {
+  "prev": "L32.html",
+  "next": "L34.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g2', name: 'Group 2', students: ['Duha'], color: '#159a8c', soft: '#d8f2ee' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

@@ -1,18 +1,479 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G1-L37 · sh — This and that</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G1-L37",
+ "group": "g1",
+ "lesson": 37,
+ "week": 19,
+ "month": 5,
+ "unit": "My Home & Toys",
+ "title": "sh — This and that",
+ "emoji": "🚢",
+ "minutes": 45,
+ "kid_goals": [
+  "🐟 Read sh words: ship, shop, fish",
+  "❤️ Learn heart words that and was",
+  "👉 Say: This is a ship. That is a shop.",
+  "✍️ Write this and that sentences"
+ ],
+ "objectives": [
+  "Can hear and read the digraph sh at the start and end of words (ship, shop, shell, fish, dish, wish).",
+  "Can read the sight words that and was.",
+  "Can use this (near) and that (far) with a pointing gesture: This is a fish. That is a ship. (Pre-A1)",
+  "Can write 2–3 this/that sentences."
+ ],
+ "focus": {
+  "sounds": [
+   "sh"
+  ],
+  "sight_words": [
+   "that",
+   "was"
+  ],
+  "language": "This is a ship. That is a shop. What's this? What's that?",
+  "vocabulary": [
+   "ship",
+   "shop",
+   "fish",
+   "dish",
+   "shell",
+   "shed",
+   "wish"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics: blend sound by sound, then read decodable text",
+  "Heart words / orthographic mapping (Dolch) with spaced review",
+  "PPP: present the language in a picture, practise in games, produce in talk and writing",
+  "TPR: actions and pointing on camera",
+  "Gradual release: I do → we do → you do"
+ ],
+ "sources": [
+  "Oxford Phonics World 2 (preview): digraph sh",
+  "Start Reading 2 — sh decodable text",
+  "My First Grammar 1, Lesson: this / that",
+  "Peach sight-word flashcards (that, was)"
+ ],
+ "teacher_notes": "First digraph! Two letters, ONE sound: s + h = sh (finger on lips, 'shhh'). The blend buttons say every letter — before clicking, tell the children: 'Listen, s and h make sh!' Arabic ش is the same sound — easy for them. this = near (hand on the object), that = far (point far away).",
+ "differentiation": "Need help: point only to near/far and say this or that. Stretch: add colours and plurals preview — This is a big red ship.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Hello + shhh!",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Sing hello. Then a quiet game: shhh!",
+   "tip": "Whisper-and-shout game: Hasna shouts a word, children whisper it back; when they hear a word with 'sh', they put a finger on lips and say shhh. Review: Whose is it? (hold up a pen).",
+   "lines": [
+    "Hello, hello, how are you?",
+    "I'm fine, thank you. How are you?",
+    "Shhh! The baby is in bed.",
+    "Whose is it? It's Hasna's pen."
+   ],
+   "questions": [
+    "Have you got a pet fish?",
+    "Do you like the sea?",
+    "Whose bag is it?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "sh says shhh",
+   "minutes": 7,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Two letters, one sound: s + h = sh. Finger on lips!",
+   "tip": "Say /ʃ/ with a finger on lips (TPR). Sort: sh at the START (ship, shop, shell, shed) and at the END (fish, dish, wish, cash). Blend, saying 'sh' as one sound.",
+   "focus": "sh",
+   "sound": "/ʃ/",
+   "say_sound": "sh, sh, ship. sh, sh, fish.",
+   "chant": "Shh, shh, ship! Shh, shh, shop! A fish on a dish — make a wish! Shh, shh, stop!",
+   "words": [
+    {
+     "w": "ship",
+     "e": "🚢",
+     "ar": "سفينة"
+    },
+    {
+     "w": "shop",
+     "e": "🏪",
+     "ar": "متجر"
+    },
+    {
+     "w": "shell",
+     "e": "🐚",
+     "ar": "صدفة"
+    },
+    {
+     "w": "shed",
+     "e": "🛖",
+     "ar": "سقيفة"
+    },
+    {
+     "w": "fish",
+     "e": "🐟",
+     "ar": "سمكة"
+    },
+    {
+     "w": "dish",
+     "e": "🍽️",
+     "ar": "طبق"
+    },
+    {
+     "w": "wish",
+     "e": "🌠",
+     "ar": "أمنية"
+    },
+    {
+     "w": "cash",
+     "e": "💵",
+     "ar": "نقود"
+    },
+    {
+     "w": "shut",
+     "e": "🚪",
+     "ar": "يغلق"
+    }
+   ],
+   "blend": [
+    "ship",
+    "shop",
+    "shed",
+    "shut",
+    "shell",
+    "fish",
+    "dish",
+    "wish",
+    "cash",
+    "rush",
+    "she"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the heart word. Then hear it in a sentence.",
+   "tip": "New: that, was. 'that' has th (we learn it soon). 'was' sounds like 'woz' — a heart word. was = is in the past: Today it is hot. Yesterday it was hot.",
+   "cards": [
+    {
+     "w": "that",
+     "s": "That is a ship."
+    },
+    {
+     "w": "was",
+     "s": "The fish was in a dish."
+    },
+    {
+     "w": "this",
+     "s": "This is a shell."
+    },
+    {
+     "w": "they",
+     "s": "They are fish."
+    },
+    {
+     "w": "too",
+     "s": "I want a shell too!"
+    },
+    {
+     "w": "have",
+     "s": "I have a fish."
+    }
+   ],
+   "review": [
+    "did",
+    "good",
+    "or",
+    "any",
+    "she",
+    "said",
+    "see"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "This and that",
+   "minutes": 5,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "This = near me 🤚. That = far from me 👉.",
+   "tip": "TPR: hold a pen close — 'This is a pen.' Point at the door — 'That is a door.' Children copy with their own objects on camera.",
+   "rule": "🤚 near ➜ This is a ___.     👉 far ➜ That is a ___.",
+   "table": [
+    [
+     "Near 🤚",
+     "Far 👉"
+    ],
+    [
+     "This is a fish.",
+     "That is a ship."
+    ],
+    [
+     "This is a shell.",
+     "That is a shop."
+    ],
+    [
+     "What's this?",
+     "What's that?"
+    ]
+   ],
+   "examples": [
+    "What's this? This is a shell.",
+    "What's that? That is a ship.",
+    "This is my dish.",
+    "That is a big shop."
+   ],
+   "ar": "this = هذا/هذه (قريب)، that = ذلك/تلك (بعيد)."
+  },
+  {
+   "type": "reading",
+   "title": "Fish for Dinner",
+   "minutes": 7,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "I do / we do / you do. Children point near (this) and far (that) every time they read the words. Find every sh word.",
+   "story_title": "Fish for Dinner",
+   "pic": "🚢🏪🐟🍽️🐚",
+   "text_intro": "Yusuf and Dad go to the shop by the sea.",
+   "highlight": [
+    "this",
+    "that",
+    "was",
+    "is",
+    "a",
+    "the",
+    "can",
+    "I",
+    "have",
+    "said",
+    "she",
+    "in",
+    "on"
+   ],
+   "text": [
+    "Yusuf and Dad ran to the shop.",
+    "'That is a big ship!' said Yusuf.",
+    "In the shop, there was a lot of fish.",
+    "'Can I have that fish, please?' said Dad.",
+    "'This fish?' said the man.",
+    "'No, that fish!' said Dad.",
+    "Yusuf got a shell. 'This is my shell!'",
+    "The fish was on a dish for dinner. Yum!"
+   ],
+   "questions": [
+    {
+     "q": "What did Yusuf see?",
+     "a": "A big ship."
+    },
+    {
+     "q": "What was in the shop?",
+     "a": "A lot of fish."
+    },
+    {
+     "q": "What did Yusuf get?",
+     "a": "A shell."
+    },
+    {
+     "q": "Where was the fish for dinner?",
+     "a": "On a dish."
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "sh or not?",
+   "minutes": 4,
+   "skills": [
+    "Listening"
+   ],
+   "text": "Listen. Click the right picture or word.",
+   "tip": "Listening for sh at the start or end. Then near/far: Hasna points near or far and children pick this/that.",
+   "items": [
+    {
+     "say": "ship",
+     "options": [
+      "🚢",
+      "🐟",
+      "🏪"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "dish",
+     "options": [
+      "🐚",
+      "🍽️",
+      "🌠"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "shell",
+     "options": [
+      "🛖",
+      "🐚",
+      "💵"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "fish",
+     "q": "What sound is at the end?",
+     "options": [
+      "sh",
+      "s",
+      "h"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "🤚🐟 ___ is a fish.",
+     "options": [
+      "This",
+      "That"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "👉🚢 ___ is a ship.",
+     "options": [
+      "This",
+      "That"
+     ],
+     "answer": 1
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Point and say",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then point and ask your friends!",
+   "tip": "Children use things in their room: hold one close (this), point at one far (that). Partner asks What's this? What's that?",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Ibrahim",
+     "line": "What's this?"
+    },
+    {
+     "who": "B",
+     "name": "Jana",
+     "line": "This is my shell."
+    },
+    {
+     "who": "A",
+     "name": "Ibrahim",
+     "line": "What's that?"
+    },
+    {
+     "who": "B",
+     "name": "Jana",
+     "line": "That is my fish. It's in a dish!"
+    },
+    {
+     "who": "A",
+     "name": "Ibrahim",
+     "line": "Wow! I have a fish too."
+    },
+    {
+     "who": "B",
+     "name": "Jana",
+     "line": "Shhh! It's asleep!"
+    }
+   ],
+   "frames": [
+    "What's this?",
+    "What's that?",
+    "This is a ___.",
+    "That is a ___."
+   ],
+   "prompts": [
+    "What's this? (hold up something)",
+    "What's that? (point to the door)",
+    "Have you got a shell?",
+    "Do you like fish?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "This and that",
+   "minutes": 6,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Draw a near thing and a far thing. Write about them.",
+   "tip": "Shared then guided writing. Model on the pad: draw a big shell (near) and a little ship (far).",
+   "model": "This is a shell. That is a ship. The ship was in the sea.",
+   "frames": [
+    "This is a ________.",
+    "That is a ________.",
+    "The ________ was ________."
+   ],
+   "task": "Draw and write 2–3 sentences. Show the camera!",
+   "checklist": [
+    "sh written as 2 letters",
+    "This (near) and That (far)",
+    "Capital letters and full stops"
+   ],
+   "pad": "This is a"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "read ship, shop, fish, dish",
+    "read that and was",
+    "say This is… / That is…"
+   ],
+   "homework": [
+    "Point at things at home: This is a… That is a… (5 times).",
+    "Read 'Fish for Dinner'.",
+    "Write 4 sh words and draw them."
+   ],
+   "goodbye": "Shhh… goodbye, goodbye! See you soon!"
+  }
+ ],
+ "nav": {
+  "prev": "L36.html",
+  "next": "L38.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g1', name: 'Group 1', students: ['Jana', 'Yusuf', 'Ibrahim'], color: '#f26b4f', soft: '#ffe5dd' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

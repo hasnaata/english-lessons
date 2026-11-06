@@ -1,18 +1,505 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G1-L44 · wh and qu — My week</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G1-L44",
+ "group": "g1",
+ "lesson": 44,
+ "week": 22,
+ "month": 6,
+ "unit": "School, Weather & My Week",
+ "title": "wh and qu — My week",
+ "emoji": "📅",
+ "minutes": 45,
+ "kid_goals": [
+  "🐳 Read wh and qu words: when, which, quick, quiz",
+  "❤️ Learn heart words soon and went",
+  "📅 Say the days: Monday to Sunday",
+  "✍️ Write my week"
+ ],
+ "objectives": [
+  "Can read words with wh (when, which, whip, whiz) and qu (quick, quiz, quit, quack).",
+  "Can read the sight words soon and went.",
+  "Can say the days of the week and one activity per day: On Monday I ___. (Pre-A1)",
+  "Can write 3–4 sentences about own week with On ___ I ___."
+ ],
+ "focus": {
+  "sounds": [
+   "wh",
+   "qu"
+  ],
+  "sight_words": [
+   "soon",
+   "went"
+  ],
+  "language": "On Monday I go to school. When is your English lesson? On Monday.",
+  "vocabulary": [
+   "Monday",
+   "Tuesday",
+   "Wednesday",
+   "Thursday",
+   "Friday",
+   "Saturday",
+   "Sunday",
+   "week"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics: blend sound by sound, then read decodable text",
+  "Heart words / orthographic mapping (Dolch) with spaced review",
+  "PPP: present the language in a picture, practise in games, produce in talk and writing",
+  "Songs and chants for sequences (days of the week)",
+  "Writing: modelled → shared → guided, with sentence frames"
+ ],
+ "sources": [
+  "Oxford Phonics World 2 (preview): wh, qu",
+  "Start Reading 2 — wh/qu decodable text",
+  "Cambridge Pre A1 Starters topic: time / days",
+  "Peach sight-word flashcards (soon, went)"
+ ],
+ "teacher_notes": "wh = /w/ (blow out a candle: wh). qu = /kw/ — q never goes without u. Days: in the region the weekend is Friday–Saturday; use their real week! Capital letter for every day. 'went' is the past of go — keep it to the story only.",
+ "differentiation": "Need help: say days with the song, then one sentence (On Monday I play.). Stretch: When is ___? questions + past: On Friday I went to the park.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Hello + mime",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Sing hello. What are you doing? Show me!",
+   "tip": "Retrieval: Hasna says an action, children mime, then say 'I'm ___ing'.",
+   "lines": [
+    "Hello, hello, how are you?",
+    "I'm fine, thank you. How are you?",
+    "What are you doing?",
+    "I'm jumping!",
+    "I'm singing!"
+   ],
+   "questions": [
+    "What day is it today?",
+    "What are you doing now?",
+    "What's the weather like?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "wh and qu",
+   "minutes": 7,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "wh says w — blow a candle! qu says kw — quack, quack!",
+   "tip": "Hold a hand in front of the mouth: feel the air for wh. Duck hands for qu (TPR). Note: the blend buttons spell q·u — we say /kw/ together.",
+   "focus": "wh qu",
+   "sound": "/w/ /kw/",
+   "say_sound": "wh, wh, when. qu, qu, quick.",
+   "chant": "When? Which? Whiz, whiz, whiz! Quick, quick, quack! A quiz, a quiz!",
+   "words": [
+    {
+     "w": "whale",
+     "e": "🐳",
+     "ar": "حوت"
+    },
+    {
+     "w": "wheel",
+     "e": "🛞",
+     "ar": "عجلة"
+    },
+    {
+     "w": "whip",
+     "e": "🍦",
+     "ar": "كريمة مخفوقة"
+    },
+    {
+     "w": "whisk",
+     "e": "🥄",
+     "ar": "مخفقة"
+    },
+    {
+     "w": "queen",
+     "e": "👸",
+     "ar": "ملكة"
+    },
+    {
+     "w": "quack",
+     "e": "🦆",
+     "ar": "بطبطة"
+    },
+    {
+     "w": "quiz",
+     "e": "❓",
+     "ar": "مسابقة"
+    },
+    {
+     "w": "quilt",
+     "e": "🛌",
+     "ar": "لحاف"
+    },
+    {
+     "w": "quick",
+     "e": "⚡",
+     "ar": "سريع"
+    }
+   ],
+   "blend": [
+    "when",
+    "which",
+    "whip",
+    "whiz",
+    "whack",
+    "quick",
+    "quiz",
+    "quit",
+    "quack",
+    "quill"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the heart word. Then hear it in a sentence.",
+   "tip": "New: soon, went. 'soon' — oo long. 'went' = past of go: I go to school today. I went to the park on Friday (point behind).",
+   "cards": [
+    {
+     "w": "soon",
+     "s": "See you soon!"
+    },
+    {
+     "w": "went",
+     "s": "I went to the park."
+    },
+    {
+     "w": "say",
+     "s": "Say the days!"
+    },
+    {
+     "w": "so",
+     "s": "I am so happy!"
+    },
+    {
+     "w": "please",
+     "s": "Quick, please!"
+    },
+    {
+     "w": "saw",
+     "s": "I saw a whale."
+    }
+   ],
+   "review": [
+    "our",
+    "out",
+    "was",
+    "now",
+    "they",
+    "come",
+    "play"
+   ]
+  },
+  {
+   "type": "vocab",
+   "title": "Days of the week",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Click to hear. Sing the days with me!",
+   "tip": "Sing the days to a simple tune (clap on each day). Ask: What day is it today? What day is English? Use the children's real week (school days and weekend).",
+   "words": [
+    {
+     "w": "Monday",
+     "e": "1️⃣",
+     "ar": "الاثنين",
+     "s": "On Monday I go to school."
+    },
+    {
+     "w": "Tuesday",
+     "e": "2️⃣",
+     "ar": "الثلاثاء",
+     "s": "On Tuesday I have English."
+    },
+    {
+     "w": "Wednesday",
+     "e": "3️⃣",
+     "ar": "الأربعاء",
+     "s": "On Wednesday I draw."
+    },
+    {
+     "w": "Thursday",
+     "e": "4️⃣",
+     "ar": "الخميس",
+     "s": "On Thursday I play football."
+    },
+    {
+     "w": "Friday",
+     "e": "5️⃣",
+     "ar": "الجمعة",
+     "s": "On Friday I see my grandma."
+    },
+    {
+     "w": "Saturday",
+     "e": "6️⃣",
+     "ar": "السبت",
+     "s": "On Saturday I go to the park."
+    },
+    {
+     "w": "Sunday",
+     "e": "7️⃣",
+     "ar": "الأحد",
+     "s": "On Sunday I read."
+    },
+    {
+     "w": "week",
+     "e": "📅",
+     "ar": "أسبوع",
+     "s": "There are seven days in a week."
+    }
+   ]
+  },
+  {
+   "type": "reading",
+   "title": "Quick Duck's Week",
+   "minutes": 7,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "I do / we do / you do. Children hold up fingers for each day (1 = Monday). Find wh and qu words.",
+   "story_title": "Quick Duck's Week",
+   "pic": "🦆📅🛁❓🎵",
+   "text_intro": "This is Quick Duck. Quack! What does she do every day?",
+   "highlight": [
+    "on",
+    "she",
+    "went",
+    "to",
+    "the",
+    "a",
+    "had",
+    "soon",
+    "when",
+    "which",
+    "said",
+    "is",
+    "so",
+    "with",
+    "I"
+   ],
+   "text": [
+    "On Monday, Quick Duck went to the pond.",
+    "On Tuesday, she had a bath in a tub.",
+    "On Wednesday, she had a quiz. Quack!",
+    "On Thursday, she went to the shop with Hen.",
+    "On Friday, she sang a long song.",
+    "On Saturday, she had a picnic.",
+    "On Sunday, Quick Duck had a nap.",
+    "'When is the next quiz?' said Hen. 'Soon!' said Quick Duck."
+   ],
+   "questions": [
+    {
+     "q": "When did Quick Duck have a quiz?",
+     "a": "On Wednesday."
+    },
+    {
+     "q": "Which day did she go to the shop?",
+     "a": "On Thursday."
+    },
+    {
+     "q": "What did she do on Sunday?",
+     "a": "She had a nap."
+    },
+    {
+     "q": "When is the next quiz?",
+     "a": "Soon!"
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "Days and words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Click the missing word.",
+   "tip": "Check the capital letter on the days. Read each sentence aloud.",
+   "items": [
+    {
+     "text": "Monday, Tuesday, ___",
+     "answer": "Wednesday",
+     "options": [
+      "Wednesday",
+      "Sunday",
+      "Friday"
+     ]
+    },
+    {
+     "text": "Friday, ___, Sunday",
+     "answer": "Saturday",
+     "options": [
+      "Saturday",
+      "Monday"
+     ]
+    },
+    {
+     "text": "___ is the quiz? On Monday.",
+     "answer": "When",
+     "options": [
+      "When",
+      "Which"
+     ]
+    },
+    {
+     "text": "A duck says ___!",
+     "answer": "quack",
+     "options": [
+      "quack",
+      "quick"
+     ]
+    },
+    {
+     "text": "I ___ to the park on Friday.",
+     "answer": "went",
+     "options": [
+      "went",
+      "soon"
+     ]
+    },
+    {
+     "text": "See you ___!",
+     "answer": "soon",
+     "options": [
+      "soon",
+      "went"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Talk about my week",
+   "minutes": 7,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then tell us about your week!",
+   "tip": "Children ask each other with When? and What do you do on ___? Encourage real answers (school, mosque, grandma, football, park).",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Jana",
+     "line": "What do you do on Monday, Yusuf?"
+    },
+    {
+     "who": "B",
+     "name": "Yusuf",
+     "line": "On Monday I go to school."
+    },
+    {
+     "who": "A",
+     "name": "Jana",
+     "line": "When is your English lesson?"
+    },
+    {
+     "who": "B",
+     "name": "Yusuf",
+     "line": "On Monday and Thursday!"
+    },
+    {
+     "who": "A",
+     "name": "Jana",
+     "line": "What do you do on Friday?"
+    },
+    {
+     "who": "B",
+     "name": "Yusuf",
+     "line": "On Friday I see my grandma."
+    }
+   ],
+   "frames": [
+    "On ___ I ___.",
+    "When is ___?",
+    "What do you do on ___?",
+    "I like ___ (day)."
+   ],
+   "prompts": [
+    "What day is it today?",
+    "What do you do on Friday?",
+    "When is your English lesson?",
+    "Which day do you like? Why?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "My week",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 4 sentences about your week.",
+   "tip": "Guided writing. Each sentence starts with On + day (capital letter). Children can draw a little picture next to each day.",
+   "model": "On Monday I go to school. On Tuesday I have English. On Friday I see my grandma. On Saturday I play.",
+   "frames": [
+    "On ________ I ________.",
+    "On ________ I ________.",
+    "On ________ I ________.",
+    "On ________ I ________."
+   ],
+   "task": "Write 4 sentences. Draw a picture for one day. Show the camera!",
+   "checklist": [
+    "Capital letter for the days",
+    "On + day",
+    "Full stops"
+   ],
+   "pad": "On Monday I"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "read when, which, quick, quiz",
+    "read soon and went",
+    "say the 7 days"
+   ],
+   "homework": [
+    "Sing the days of the week to your family.",
+    "Read 'Quick Duck's Week'.",
+    "Make a week calendar and write one thing for each day."
+   ],
+   "goodbye": "Quick, quick! Goodbye, goodbye! See you soon!"
+  }
+ ],
+ "nav": {
+  "prev": "L43.html",
+  "next": "L45.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g1', name: 'Group 1', students: ['Jana', 'Yusuf', 'Ibrahim'], color: '#f26b4f', soft: '#ffe5dd' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

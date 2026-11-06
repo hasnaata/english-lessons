@@ -1,18 +1,494 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G2-L38 · Reading: Lost in Town</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G2-L38",
+ "group": "g2",
+ "lesson": 38,
+ "week": 19,
+ "month": 5,
+ "unit": "My Town",
+ "title": "Reading: Lost in Town",
+ "emoji": "🗺️",
+ "minutes": 45,
+ "kid_goals": [
+  "🔤 Review ar, or, er, ir, ur, air, are",
+  "❤️ Review heart words",
+  "📖 Read a story: Lost in Town",
+  "✍️ Write directions to my home"
+ ],
+ "objectives": [
+  "Can read a 150-word story with r-controlled words and answer literal and inference questions.",
+  "Can recognise and use month-5 grammar in context: prepositions, directions (imperatives), was / were.",
+  "Can ask for and give directions in a role-play.",
+  "Can write clear 5-step directions to my home."
+ ],
+ "focus": {
+  "sounds": [
+   "review: ar, or, er, ir, ur, air, are"
+  ],
+  "sight_words": [
+   "review: always, around, because, which, why, would, your"
+  ],
+  "language": "review: prepositions, directions, was / were in a story",
+  "vocabulary": [
+   "market",
+   "stall",
+   "corner",
+   "cage",
+   "worried",
+   "busy"
+  ]
+ },
+ "frameworks": [
+  "Scarborough's Reading Rope: decoding (r-controlled vowels) + comprehension (sequence, feelings)",
+  "Gradual release: I do → we do → you do",
+  "Role-play for speaking fluency",
+  "Spaced retrieval of all month-5 language"
+ ],
+ "sources": [
+  "Original story for this lesson (Group 2 curriculum map, lesson 38)",
+  "English Grammar in Use (simplified), Unit 5 — was / were (review)",
+  "English Conversation Made Natural (situation adapted: asking a stranger for directions)",
+  "Group 2 sight-word review"
+ ],
+ "teacher_notes": "Reading lesson. The story is told in the present (storytelling present) with was/were for the moments in the past ('Lina was next to me a minute ago'). Ask feeling questions (How does Duha feel? Why?). In the role-play, keep to safe language: we ask a shop worker or a police officer for help — a good moment for a short safety talk in Arabic if needed.",
+ "differentiation": "Support: read in three parts with two questions after each. Stretch: Duha retells the story from Lina's point of view (I was at the bird shop…).",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Yesterday chat",
+   "minutes": 4,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Tell Hasna about your homework: Where were your family yesterday?",
+   "tip": "Retrieval of was/were from L37. Then ask: Were you ever lost? (Have you ever… is too hard; keep 'Were you lost once?')",
+   "lines": [
+    "Where was your mum yesterday?",
+    "Where were you at 5 o'clock?",
+    "Was it a good day?"
+   ],
+   "questions": [
+    "Were you lost in a big place once? Where?",
+    "How do you feel when you are lost?"
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Which bossy r?",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Listen to the word from the story. Which letters make the vowel sound?",
+   "tip": "Month-5 sound review. Ask her to spell the full word after each answer.",
+   "items": [
+    {
+     "say": "market",
+     "options": [
+      "ar",
+      "or",
+      "ur"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "corner",
+     "options": [
+      "ar",
+      "or",
+      "ir"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "bird",
+     "options": [
+      "ir",
+      "ur",
+      "er"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "turn",
+     "options": [
+      "er",
+      "ir",
+      "ur"
+     ],
+     "answer": 2
+    },
+    {
+     "say": "hair",
+     "options": [
+      "are",
+      "air",
+      "ar"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "scared",
+     "options": [
+      "air",
+      "are",
+      "er"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "purple",
+     "options": [
+      "ur",
+      "or",
+      "er"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "her",
+     "options": [
+      "ir",
+      "er",
+      "ur"
+     ],
+     "answer": 1
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart word review",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read fast. Find each word in the story later!",
+   "tip": "Spaced review. Duha will look for these words in the story (they are underlined).",
+   "cards": [
+    {
+     "w": "always",
+     "s": "Lina always loves birds."
+    },
+    {
+     "w": "around",
+     "s": "Duha turns around."
+    },
+    {
+     "w": "because",
+     "s": "Dad is worried because Lina isn't there."
+    },
+    {
+     "w": "which",
+     "s": "Which way is the bird shop?"
+    },
+    {
+     "w": "why",
+     "s": "Why are you here, Lina?"
+    },
+    {
+     "w": "would",
+     "s": "Would you like to see the birds?"
+    },
+    {
+     "w": "your",
+     "s": "Hold your dad's hand."
+    }
+   ],
+   "review": [
+    "very",
+    "wash",
+    "wish",
+    "work",
+    "write"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Month 5 grammar toolbox",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Three tools for the story: where (prepositions), how to go (directions), the past (was / were).",
+   "tip": "Quick review before reading. Duha makes one new sentence for each row about her town.",
+   "rule": "Where? → prepositions (next to, opposite, between…). How do I go? → directions (Go straight on. Turn left.). In the past? → was / were.",
+   "table": [
+    [
+     "Tool",
+     "Example",
+     "Your turn"
+    ],
+    [
+     "Prepositions",
+     "The bird shop is opposite the park.",
+     "The ___ is next to the ___."
+    ],
+    [
+     "Directions",
+     "Go straight on and turn left at the corner.",
+     "Turn ___ at the ___."
+    ],
+    [
+     "was / were",
+     "Lina was next to me a minute ago.",
+     "Yesterday I was ___."
+    ],
+    [
+     "There was / were",
+     "There were purple birds in the cage.",
+     "There was a ___ in my street."
+    ]
+   ],
+   "examples": [
+    "The pharmacy is between the bank and the café.",
+    "Take the first street on the right.",
+    "We were at the market on Saturday.",
+    "There was a big crowd near the fruit stalls."
+   ],
+   "ar": "مراجعة: حروف الجر للمكان، الأمر للاتجاهات، was/were للماضي."
+  },
+  {
+   "type": "reading",
+   "title": "Lost in Town",
+   "minutes": 9,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "I do: read with feeling (worried voice!). We do: read together. You do: Duha reads paragraphs 4–6. Stop after paragraph 3 and ask: Where is Lina? What do you think?",
+   "story_title": "Lost in Town",
+   "pic": "🛒👧🐦🗺️",
+   "text_intro": "Duha, her little sister Lina and Dad are at the busy Saturday market. Listen and read.",
+   "text": [
+    "It is Saturday morning. Duha, her little sister Lina and Dad are at the market. It is very busy.",
+    "Suddenly, Duha turns around. Where is Lina? She isn't there! \"Lina was next to me a minute ago!\" she says. Dad is worried too.",
+    "Duha thinks. \"Lina always loves birds. There was a bird shop near the car park. Let's go there!\"",
+    "They go straight on, past the fruit stalls. They turn left at the corner and walk past the pharmacy. The bird shop is opposite the park.",
+    "And there is Lina! She is standing in front of a big cage with purple and green birds.",
+    "\"Lina! Where were you?\" asks Dad. \"We were very scared!\" \"I was here,\" says Lina. \"The birds were so beautiful. I'm sorry!\"",
+    "Now Lina always holds Dad's hand at the market. And Duha is the family's best map reader!"
+   ],
+   "highlight": [
+    "always",
+    "around",
+    "because",
+    "which",
+    "why",
+    "your",
+    "very"
+   ],
+   "questions": [
+    {
+     "q": "Where are Duha, Lina and Dad?",
+     "a": "They are at the market."
+    },
+    {
+     "q": "Why does Duha go to the bird shop?",
+     "a": "Because Lina always loves birds."
+    },
+    {
+     "q": "Where is the bird shop?",
+     "a": "It's opposite the park, past the pharmacy."
+    },
+    {
+     "q": "What is Lina doing when they find her?",
+     "a": "She is standing in front of a cage of birds."
+    },
+    {
+     "q": "How do Dad and Duha feel? How does Lina feel?",
+     "a": "They were scared/worried; Lina is sorry."
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "Directions from the story",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Put the words in order. Then say them in the right story order!",
+   "tip": "Writing practice + sequencing: ask which happens first.",
+   "items": [
+    [
+     "Go",
+     "straight",
+     "on",
+     "past",
+     "the",
+     "fruit",
+     "stalls."
+    ],
+    [
+     "Turn",
+     "left",
+     "at",
+     "the",
+     "corner."
+    ],
+    [
+     "Walk",
+     "past",
+     "the",
+     "pharmacy."
+    ],
+    [
+     "The",
+     "bird",
+     "shop",
+     "is",
+     "opposite",
+     "the",
+     "park."
+    ],
+    [
+     "Lina",
+     "was",
+     "in",
+     "front",
+     "of",
+     "a",
+     "big",
+     "cage."
+    ]
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "I'm lost! Can you help me?",
+   "minutes": 7,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then role-play: Hasna is lost in your town. Help her!",
+   "tip": "Round 1: read the model. Round 2: Duha is the shop worker and gives directions to her own house from a place she knows. Round 3: swap.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Excuse me, can you help me? I'm lost."
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Of course. Where would you like to go?"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "I'm looking for the park. My son was there a minute ago."
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "The park? Go straight on and turn right at the corner."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Right at the corner. And then?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Walk past the pharmacy. The park is on your left, opposite the bird shop."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Thank you so much!"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "You're welcome. I hope you find him!"
+    }
+   ],
+   "frames": [
+    "Excuse me, I'm lost. Where's the ___?",
+    "Go straight on and turn ___ at the ___.",
+    "It's on your left / right, opposite the ___.",
+    "You're welcome!"
+   ],
+   "prompts": [
+    "You are at your school. How do I get to your house?",
+    "Where were you last Saturday morning?",
+    "What do you do if you are lost? Who can help you?",
+    "Which place in your town is very busy? Why?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Directions to my home",
+   "minutes": 7,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 5 directions to your home from a place (school, mosque, shop). Then describe your house.",
+   "tip": "Guided writing. Duha draws the route first on the pad, then writes. Check left/right and verb-first sentences.",
+   "model": "Start at the big mosque. First, go straight on to the traffic lights and turn left. Then go past the bakery and the pharmacy. Next, take the second street on the right. My house is on your left, between the park and a small shop. It has a green door and there are flowers in front of it.",
+   "frames": [
+    "Start at the ________.",
+    "First, go straight on and turn ________ at the ________.",
+    "Then go past the ________.",
+    "Next, take the ________ street on the ________.",
+    "My house is on your ________, next to / opposite the ________."
+   ],
+   "task": "Write 5–6 sentences. Give them to someone at home: can they follow your directions?",
+   "checklist": [
+    "5 direction sentences",
+    "First / Then / Next",
+    "left / right / on your left",
+    "a preposition to find the house"
+   ],
+   "pad": "Draw the route to your home"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "read the whole story",
+    "talk about the past with was / were",
+    "give directions"
+   ],
+   "homework": [
+    "Read 'Lost in Town' to someone at home and ask them two questions.",
+    "Start planning your Dream Town: think of 6 places you want in it.",
+    "Write 3 sentences: Last Saturday I was…"
+   ],
+   "goodbye": "You are a great map reader too, Duha! Next lesson: your Dream Town. Goodbye!"
+  }
+ ],
+ "nav": {
+  "prev": "L37.html",
+  "next": "L39.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g2', name: 'Group 2', students: ['Duha'], color: '#159a8c', soft: '#d8f2ee' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

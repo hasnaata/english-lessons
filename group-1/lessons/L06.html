@@ -1,18 +1,534 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G1-L06 · First blending! (a–k)</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G1-L06",
+ "group": "g1",
+ "lesson": 6,
+ "week": 3,
+ "month": 1,
+ "unit": "Me and My Family",
+ "title": "First blending! (a–k)",
+ "emoji": "🧩",
+ "minutes": 45,
+ "kid_goals": [
+  "🧩 Blend sounds into words: b-a-g, bag!",
+  "❤️ Read big, is, little",
+  "🐘 Say: My dad is big!",
+  "✍️ Build and write words"
+ ],
+ "objectives": [
+  "Can blend 3 sounds (a–k) into a CVC word and read it (bag, big, dig, fed, hid).",
+  "Can segment a CVC word into sounds to spell it.",
+  "Can read the sight words big, is, little.",
+  "Can describe things with big / little: My dad is big. The cat is little."
+ ],
+ "focus": {
+  "sounds": [
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h",
+   "i",
+   "j",
+   "k"
+  ],
+  "sight_words": [
+   "big",
+   "is",
+   "little"
+  ],
+  "language": "big / little: My dad is big. The cat is little.",
+  "vocabulary": [
+   "bag",
+   "bed",
+   "cab",
+   "dig",
+   "kid",
+   "egg"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics (sound first, then letter name) — blending and segmenting CVC",
+  "Heart words / orthographic mapping (Peach sight-word order)",
+  "Gradual release: I do → we do → you do",
+  "TPR: actions for sounds and words (arms wide for big, pinch for little)",
+  "PPP: present → practise → produce",
+  "Spaced retrieval: old heart words come back in stories and games"
+ ],
+ "sources": [
+  "Oxford Phonics World 1 SB, Units 1–4 (a–k) — Story pages",
+  "Start Reading 1 (first word-reading pages)",
+  "Peach sight-word flashcards (big, is, little)",
+  "My First Grammar 1 — Adjectives big / little"
+ ],
+ "teacher_notes": "Today is the big step from sounds to words. Use the 'robot talk' game: say b-a-g slowly like a robot, children say 'bag!'. Then reverse it: say 'dig', children robot-talk d-i-g. Use your fingers: one finger per sound. Listen for vowels — i/e confusion (big/beg) is normal; go back to the i-e contrast from lesson 4.",
+ "differentiation": "Need help: blend just the first two sounds first (b-a… bag), then add the last. Fast finishers: read the blend words without the sound buttons, then make new words by changing one letter (bag → big → dig).",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Hello + sound chant a–k",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Sing hello. Then say all our sounds from a to k!",
+   "tip": "Quick-fire letter chant with actions from earlier lessons (fish, goat horns, warm breath, insect wiggle, jump, kite). Then ask: Have you got a brother? (lesson 5 review).",
+   "lines": [
+    "Hello, hello, how are you?",
+    "I'm fine, thank you. How are you?",
+    "a, b, c, d, e, f, g!",
+    "h, i, j, k — hooray!",
+    "I've got a brother.",
+    "Have you got a sister?"
+   ],
+   "questions": [
+    "Have you got a kite?",
+    "Who's this? (show 👵)"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Robot blending: a to k",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Say each sound like a robot, then push them together: b-a-g → bag!",
+   "tip": "I do: click 'bag' and blend with your fingers (one finger per sound). We do: blend together. You do: each child blends 2 words alone. Then segment: Hasna says 'kid', children say k-i-d.",
+   "focus": "a–k",
+   "sound": "b-a-g → bag",
+   "say_sound": "b, a, g. bag!",
+   "chant": "Sound, sound, sound — push them together! b-a-g, bag! d-i-g, dig!",
+   "words": [
+    {
+     "w": "bag",
+     "e": "👜",
+     "ar": "حقيبة"
+    },
+    {
+     "w": "bed",
+     "e": "🛏️",
+     "ar": "سرير"
+    },
+    {
+     "w": "cab",
+     "e": "🚕",
+     "ar": "سيارة أجرة"
+    },
+    {
+     "w": "dad",
+     "e": "👨",
+     "ar": "أب"
+    },
+    {
+     "w": "dig",
+     "e": "⛏️",
+     "ar": "يحفر"
+    },
+    {
+     "w": "kid",
+     "e": "🧒",
+     "ar": "طفل"
+    },
+    {
+     "w": "egg",
+     "e": "🥚",
+     "ar": "بيضة"
+    },
+    {
+     "w": "hid",
+     "e": "🙈",
+     "ar": "اختبأ"
+    }
+   ],
+   "blend": [
+    "bad",
+    "bag",
+    "big",
+    "dig",
+    "fig",
+    "had",
+    "hid",
+    "did",
+    "beg",
+    "fed",
+    "cab",
+    "kid"
+   ],
+   "trace": "bag big dig"
+  },
+  {
+   "type": "choose",
+   "title": "Which word?",
+   "minutes": 3,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Listen. Click the word you hear.",
+   "tip": "These are minimal pairs — the middle sound is the only difference. Say the word twice and stretch the vowel.",
+   "items": [
+    {
+     "say": "big",
+     "options": [
+      "bag",
+      "big",
+      "beg"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "dig",
+     "options": [
+      "dig",
+      "dad",
+      "did"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "bed",
+     "options": [
+      "bad",
+      "bid",
+      "bed"
+     ],
+     "answer": 2
+    },
+    {
+     "say": "had",
+     "options": [
+      "hid",
+      "had",
+      "him"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "fed",
+     "options": [
+      "fed",
+      "fig",
+      "bed"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "kid",
+     "options": [
+      "kid",
+      "did",
+      "hid"
+     ],
+     "answer": 0
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words: big, is, little",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the heart words. Click 💬 for a sentence.",
+   "tip": "'big' can be sounded out — show that! 'is' sounds like 'iz'. 'little' has two t's. TPR: arms wide for big, finger-and-thumb pinch for little.",
+   "cards": [
+    {
+     "w": "big",
+     "s": "My dad is big."
+    },
+    {
+     "w": "is",
+     "s": "This is my bag."
+    },
+    {
+     "w": "little",
+     "s": "The baby is little."
+    },
+    {
+     "w": "big",
+     "s": "A big egg!"
+    },
+    {
+     "w": "little",
+     "s": "I've got a little cat."
+    },
+    {
+     "w": "here",
+     "s": "Here is my bed."
+    }
+   ],
+   "review": [
+    "all",
+    "here",
+    "want",
+    "you",
+    "do",
+    "the",
+    "not",
+    "and"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Big and little",
+   "minutes": 4,
+   "skills": [
+    "Speaking",
+    "Reading"
+   ],
+   "text": "🐘 is big. 🐭 is little. Show it with your arms!",
+   "tip": "Present with TPR, then play 'Big or little?': Hasna names a thing (elephant, ant, bus, egg), children show big arms or little fingers.",
+   "rule": "🐘 The elephant is big.   🐭 The mouse is little.",
+   "ar": "big = كبير   little = صغير   is = يكون (The cat is little = القطة صغيرة)",
+   "table": [
+    [
+     "",
+     "",
+     ""
+    ],
+    [
+     "The elephant 🐘",
+     "is",
+     "big."
+    ],
+    [
+     "The mouse 🐭",
+     "is",
+     "little."
+    ],
+    [
+     "My dad 👨",
+     "is",
+     "big."
+    ],
+    [
+     "The baby 👶",
+     "is",
+     "little."
+    ]
+   ],
+   "examples": [
+    "My dad is big.",
+    "The baby is little.",
+    "The bed is big.",
+    "The egg is little."
+   ]
+  },
+  {
+   "type": "reading",
+   "title": "Big and Little",
+   "minutes": 7,
+   "skills": [
+    "Reading"
+   ],
+   "text": [
+    "Dad is big.",
+    "Hiba is little.",
+    "Dad can dig.",
+    "Hiba can dig.",
+    "Dad had a big bag.",
+    "Hiba had a little bag.",
+    "Dad and Hiba dig and dig!"
+   ],
+   "tip": "Almost every word can be blended! Before reading, blend dig, had, bag together. I do → we do → you do. Then children act it: big Dad (arms wide), little Hiba (crouch down), everyone digs.",
+   "story_title": "Big and Little",
+   "pic": "👨⛏️👧👜",
+   "text_intro": "Blend the words with me. Who is big? Who is little?",
+   "highlight": [
+    "big",
+    "is",
+    "little",
+    "a",
+    "can",
+    "and"
+   ],
+   "questions": [
+    {
+     "q": "Who is big?",
+     "a": "Dad is big."
+    },
+    {
+     "q": "Who is little?",
+     "a": "Hiba is little."
+    },
+    {
+     "q": "Who had a little bag?",
+     "a": "Hiba had a little bag."
+    },
+    {
+     "q": "Can you dig?",
+     "a": "Yes, I can!"
+    }
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Build the word",
+   "minutes": 4,
+   "skills": [
+    "Writing",
+    "Reading"
+   ],
+   "text": "Listen. Say the sounds. Click the letters!",
+   "tip": "Segmenting: children say the sounds out loud and hold up a finger for each one before clicking.",
+   "items": [
+    {
+     "word": "bag",
+     "e": "👜",
+     "letters": "bagd"
+    },
+    {
+     "word": "bed",
+     "e": "🛏️",
+     "letters": "bedi"
+    },
+    {
+     "word": "cab",
+     "e": "🚕",
+     "letters": "cabe"
+    },
+    {
+     "word": "dig",
+     "e": "⛏️",
+     "letters": "digb"
+    },
+    {
+     "word": "kid",
+     "e": "🧒",
+     "letters": "kide"
+    },
+    {
+     "word": "egg",
+     "e": "🥚",
+     "letters": "egga"
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Big or little?",
+   "minutes": 5,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to Yusuf. Then find something big and something little at home!",
+   "tip": "Show and tell: each child finds one big and one little thing in the room and holds it to the camera.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Yusuf, show me something big!"
+    },
+    {
+     "who": "B",
+     "name": "Yusuf",
+     "line": "This is my bed. It is big."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Now show me something little."
+    },
+    {
+     "who": "B",
+     "name": "Yusuf",
+     "line": "This is my pencil. It is little."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Is your dad big?"
+    },
+    {
+     "who": "B",
+     "name": "Yusuf",
+     "line": "Yes! My dad is big."
+    }
+   ],
+   "frames": [
+    "This is my ___.",
+    "It is big.",
+    "It is little.",
+    "My ___ is big."
+   ],
+   "prompts": [
+    "Show me something big.",
+    "Show me something little.",
+    "Is a cat big or little?",
+    "Is your brother big or little?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Big and little sentences",
+   "minutes": 6,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Copy the words. Then write about big and little things.",
+   "tip": "Guided writing: children first copy 3 blend words on the pad, then write 2 sentences in the notebook with the frames.",
+   "model": "bag  big  dig\nMy dad is big.\nThe cat is little.",
+   "frames": [
+    "My ________ is big.",
+    "The ________ is little."
+   ],
+   "task": "Copy bag, big, dig. Then write 2 sentences: one big thing and one little thing. Draw them!",
+   "checklist": [
+    "Capital letter at the start",
+    "Full stop at the end",
+    "Finger spaces between words"
+   ],
+   "pad": "bag big dig"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "blend b-a-g → bag",
+    "read big, is, little",
+    "say: My dad is big."
+   ],
+   "homework": [
+    "Blend 5 words to your family: bag, big, dig, bed, kid.",
+    "Find something big and something little at home.",
+    "Write: My ___ is big. The ___ is little."
+   ],
+   "goodbye": "Goodbye, goodbye! Big claps for you!"
+  }
+ ],
+ "nav": {
+  "prev": "L05.html",
+  "next": "L07.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g1', name: 'Group 1', students: ['Jana', 'Yusuf', 'Ibrahim'], color: '#f26b4f', soft: '#ffe5dd' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

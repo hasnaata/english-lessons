@@ -1,18 +1,557 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G1-L39 · Story: The Fish Shop</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G1-L39",
+ "group": "g1",
+ "lesson": 39,
+ "week": 20,
+ "month": 5,
+ "unit": "My Home & Toys",
+ "title": "Story: The Fish Shop",
+ "emoji": "🐟",
+ "minutes": 45,
+ "kid_goals": [
+  "📖 Read the story The Fish Shop",
+  "🗣️ Retell the story with pictures",
+  "❤️ Read all our month 5 heart words",
+  "✍️ Write about my home"
+ ],
+ "objectives": [
+  "Can read a decodable story with short u, short e, sh and ch words and month 5 heart words.",
+  "Can put story events in order and retell the story in simple sentences (Pre-A1 spoken production).",
+  "Can answer who/what/where questions about a story.",
+  "Can write 3–4 sentences about own home using frames (rooms, things, people)."
+ ],
+ "focus": {
+  "sounds": [
+   "u",
+   "e",
+   "sh",
+   "ch",
+   "review"
+  ],
+  "sight_words": [
+   "good",
+   "any",
+   "or",
+   "read",
+   "have",
+   "did",
+   "too",
+   "they",
+   "that",
+   "was",
+   "yes",
+   "now"
+  ],
+  "language": "review: rooms, There's a ___, I've got a ___, possessive 's, this/that, these/those",
+  "vocabulary": [
+   "fish",
+   "chips",
+   "shop",
+   "hut",
+   "tub",
+   "bench",
+   "men"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics: blend sound by sound, then read decodable text",
+  "Story retelling with picture prompts",
+  "Spaced repetition & retrieval practice",
+  "Gradual release: I do → we do → you do",
+  "Writing: modelled → shared → guided, with sentence frames"
+ ],
+ "sources": [
+  "Start Reading 2 — review story (short u, e, sh, ch)",
+  "Oxford Phonics World 2 (preview): sh, ch review",
+  "Peach sight-word flashcards (month 5 review)"
+ ],
+ "teacher_notes": "Story & review day before the month check. Retelling: children use the emoji pictures as prompts — First… Then… At the end… Accept short sentences. Writing about home recycles L33–34 — keep the vocab cards visible.",
+ "differentiation": "Need help: retell with one picture each, Hasna gives the first word. Stretch: retell the whole story alone and add a feeling (The cat was happy!).",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Hello + this or these?",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Sing hello. Then show me one thing — and then two things!",
+   "tip": "Retrieval of this/that/these/those: children hold up 1 pen (This is a pen) then 2 pens (These are pens), then point far (That is… / Those are…).",
+   "lines": [
+    "Hello, hello, how are you?",
+    "I'm fine, thank you. How are you?",
+    "This is a pen. These are pens.",
+    "That is a door. Those are windows."
+   ],
+   "questions": [
+    "Do you like fish?",
+    "Do you like chips?",
+    "Is there a shop near your house?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "u, e, sh, ch mix",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Blend the word. Which sound do you hear: u, e, sh or ch?",
+   "tip": "Children show signals: u = point up, e = smile, sh = finger on lips, ch = train arms. All these words are in today's story.",
+   "focus": "u e sh ch",
+   "sound": "/ʌ/ /e/ /ʃ/ /tʃ/",
+   "say_sound": "hut, ten, fish, chips",
+   "chant": "Fish and chips in a red hut! Ten men on a bench — munch, munch, munch!",
+   "words": [
+    {
+     "w": "fish",
+     "e": "🐟",
+     "ar": "سمكة"
+    },
+    {
+     "w": "chips",
+     "e": "🍟",
+     "ar": "بطاطس مقلية"
+    },
+    {
+     "w": "shop",
+     "e": "🏪",
+     "ar": "متجر"
+    },
+    {
+     "w": "ship",
+     "e": "🚢",
+     "ar": "سفينة"
+    },
+    {
+     "w": "hut",
+     "e": "🛖",
+     "ar": "كوخ"
+    },
+    {
+     "w": "tub",
+     "e": "🛁",
+     "ar": "حوض"
+    },
+    {
+     "w": "bench",
+     "e": "🪑",
+     "ar": "مقعد"
+    },
+    {
+     "w": "ten",
+     "e": "🔟",
+     "ar": "عشرة"
+    },
+    {
+     "w": "hen",
+     "e": "🐔",
+     "ar": "دجاجة"
+    },
+    {
+     "w": "cat",
+     "e": "🐱",
+     "ar": "قطة"
+    }
+   ],
+   "blend": [
+    "fish",
+    "shop",
+    "ship",
+    "chip",
+    "much",
+    "lunch",
+    "bench",
+    "hut",
+    "tub",
+    "fun",
+    "ten",
+    "men",
+    "red",
+    "yes"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Month 5 heart words",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read fast! How many can you read?",
+   "tip": "Spaced retrieval before the month check: show each card 2 seconds. Note which words each child misses.",
+   "cards": [
+    {
+     "w": "good",
+     "s": "Good lunch!"
+    },
+    {
+     "w": "any",
+     "s": "Did Ben have any fish?"
+    },
+    {
+     "w": "or",
+     "s": "Fish or chips?"
+    },
+    {
+     "w": "read",
+     "s": "I can read the story."
+    },
+    {
+     "w": "have",
+     "s": "We have a fish shop."
+    },
+    {
+     "w": "did",
+     "s": "Did you see the cat?"
+    },
+    {
+     "w": "too",
+     "s": "There are chips too."
+    },
+    {
+     "w": "they",
+     "s": "They sat on the bench."
+    },
+    {
+     "w": "that",
+     "s": "That bad cat!"
+    },
+    {
+     "w": "was",
+     "s": "The fish was in the tub."
+    },
+    {
+     "w": "yes",
+     "s": "Yes, sit on the bench."
+    },
+    {
+     "w": "now",
+     "s": "The fish is not there now!"
+    }
+   ],
+   "review": [
+    "help",
+    "keep",
+    "this",
+    "on",
+    "ran",
+    "away",
+    "can't"
+   ]
+  },
+  {
+   "type": "reading",
+   "title": "The Fish Shop",
+   "minutes": 8,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "Read 3 times (I do, we do, you do). Stop at line 6 and ask: Where is the fish? (prediction). Children find sh and ch words in a different colour on the pad.",
+   "story_title": "The Fish Shop",
+   "pic": "🛖🐟🍟🚢🐱",
+   "text_intro": "Ben and his dad have a fish shop. It is a red hut.",
+   "highlight": [
+    "have",
+    "is",
+    "a",
+    "there",
+    "are",
+    "too",
+    "they",
+    "said",
+    "yes",
+    "on",
+    "did",
+    "any",
+    "was",
+    "that",
+    "now",
+    "good",
+    "the",
+    "can",
+    "we"
+   ],
+   "text": [
+    "Ben and his dad have a fish shop. It is a red hut.",
+    "There are fish in a big tub. There are chips too.",
+    "A ship got to the shop. Ten men ran in.",
+    "'Can we have fish and chips, please?' they said.",
+    "'Yes! Sit on the bench,' said Ben.",
+    "But did Ben have any fish? The fish was in the tub. Now it is not!",
+    "A cat sat on the shop mat. The cat had the fish!",
+    "'That bad cat!' said Ben.",
+    "The men had chips and eggs. 'Good lunch!' they said."
+   ],
+   "questions": [
+    {
+     "q": "What is the shop?",
+     "a": "A fish shop. It is a red hut."
+    },
+    {
+     "q": "Who ran in?",
+     "a": "Ten men."
+    },
+    {
+     "q": "What did the men want?",
+     "a": "Fish and chips."
+    },
+    {
+     "q": "Who had the fish?",
+     "a": "The cat."
+    },
+    {
+     "q": "What did the men have for lunch?",
+     "a": "Chips and eggs."
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "What happened?",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read the question. Click the right answer.",
+   "tip": "Story order and details. After each answer, the child says the full sentence — this prepares the retell.",
+   "items": [
+    {
+     "q": "What happened first?",
+     "options": [
+      "A ship got to the shop.",
+      "The cat had the fish."
+     ],
+     "answer": 0
+    },
+    {
+     "q": "What is in the shop too?",
+     "options": [
+      "🍟",
+      "🧀",
+      "🍞"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "How many men ran in?",
+     "options": [
+      "5",
+      "10",
+      "3"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Where did the men sit?",
+     "options": [
+      "on the bench",
+      "in the tub",
+      "on the ship"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Who had the fish?",
+     "options": [
+      "🐶",
+      "🐱",
+      "🐔"
+     ],
+     "answer": 1
+    }
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Story words",
+   "minutes": 4,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Listen. Build the word from the story.",
+   "tip": "Remind: sh and ch are two letters together.",
+   "items": [
+    {
+     "word": "fish",
+     "e": "🐟",
+     "letters": [
+      "f",
+      "i",
+      "s",
+      "h",
+      "c"
+     ]
+    },
+    {
+     "word": "chip",
+     "e": "🍟",
+     "letters": [
+      "c",
+      "h",
+      "i",
+      "p",
+      "s"
+     ]
+    },
+    {
+     "word": "shop",
+     "e": "🏪",
+     "letters": [
+      "s",
+      "h",
+      "o",
+      "p",
+      "e"
+     ]
+    },
+    {
+     "word": "hut",
+     "e": "🛖",
+     "letters": [
+      "h",
+      "u",
+      "t",
+      "a"
+     ]
+    },
+    {
+     "word": "ten",
+     "e": "🔟",
+     "letters": [
+      "t",
+      "e",
+      "n",
+      "i"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Retell the story",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then tell the story with the pictures!",
+   "tip": "Each child retells 2–3 events using First / Then / At the end. Point to the emoji pictures as prompts: 🛖 → 🚢 → 🐟🐱 → 🍟.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "What is the story about, Jana?"
+    },
+    {
+     "who": "B",
+     "name": "Jana",
+     "line": "It is about a fish shop."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "What happened first?"
+    },
+    {
+     "who": "B",
+     "name": "Jana",
+     "line": "First, ten men ran in. They want fish and chips."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Then what?"
+    },
+    {
+     "who": "B",
+     "name": "Jana",
+     "line": "Then the cat had the fish! The men had chips and eggs."
+    }
+   ],
+   "frames": [
+    "First, ___.",
+    "Then, ___.",
+    "At the end, ___.",
+    "I like the ___."
+   ],
+   "prompts": [
+    "Who has the fish shop?",
+    "What happened first?",
+    "What did the cat do?",
+    "Do you like the story? Why?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "About my home",
+   "minutes": 7,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 4 sentences about your home.",
+   "tip": "Guided writing — recycle L33–L34 frames. Children may write about any room. Bonus for using 's (Mum's kitchen) or this/these.",
+   "model": "This is my home. There is a kitchen and a bedroom. Mum is in the kitchen. There's a lamp in my room.",
+   "frames": [
+    "This is my home.",
+    "There is a ________ and a ________.",
+    "________ is in the ________.",
+    "There's a ________ in my room."
+   ],
+   "task": "Write 4 sentences. Draw your home. Show the camera!",
+   "checklist": [
+    "4 sentences",
+    "Room words spelled right",
+    "Capital letters",
+    "Full stops"
+   ],
+   "pad": "This is my home."
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "read The Fish Shop",
+    "retell the story",
+    "write 4 sentences about my home"
+   ],
+   "homework": [
+    "Retell 'The Fish Shop' to your family in English.",
+    "Read the month 5 heart words — next lesson is our Star challenge!",
+    "Finish your 'My home' picture."
+   ],
+   "goodbye": "Goodbye, goodbye! Good reading! See you soon!"
+  }
+ ],
+ "nav": {
+  "prev": "L38.html",
+  "next": "L40.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g1', name: 'Group 1', students: ['Jana', 'Yusuf', 'Ibrahim'], color: '#f26b4f', soft: '#ffe5dd' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

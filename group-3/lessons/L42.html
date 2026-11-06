@@ -1,18 +1,553 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L42 · Superlatives</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L42",
+ "group": "g3",
+ "lesson": 42,
+ "week": 21,
+ "month": 6,
+ "unit": "Comparing, Plans & Trips",
+ "title": "Superlatives",
+ "emoji": "🏆",
+ "minutes": 45,
+ "kid_goals": [
+  "🏆 Talk about records: the biggest, the best",
+  "🔤 Spell -est words",
+  "🌍 Read a world records quiz",
+  "✍️ Write 4 superlative sentences"
+ ],
+ "objectives": [
+  "Can form superlatives: the + -est / -iest, the most + long adjective, the best / the worst (A2).",
+  "Can talk about records and extremes in a group (in my family, in the world) (A2).",
+  "Can read short factual texts about records and find the information.",
+  "Can write 4 sentences with superlatives.",
+  "Can read and use the key words life, always, those, both."
+ ],
+ "focus": {
+  "sounds": [
+   "-est /ɪst/"
+  ],
+  "sight_words": [
+   "life",
+   "always",
+   "those",
+   "both"
+  ],
+  "language": "superlatives: the biggest, the happiest, the most…, the best, the worst + in / of",
+  "vocabulary": [
+   "the biggest",
+   "the tallest",
+   "the fastest",
+   "the longest",
+   "the highest",
+   "the coldest",
+   "the most beautiful",
+   "the best"
+  ]
+ },
+ "frameworks": [
+  "PPP: present → practise → produce",
+  "Comprehensible input: emoji pictures + short Arabic hints",
+  "Spaced retrieval: key words and older words come back in the reading",
+  "Writing: modelled → guided → independent",
+  "CEFR A1 → A2 can-do objectives",
+  "Quiz/game format for retrieval"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Unit 108 — Superlative (the longest, the most enjoyable)",
+  "Fry high-frequency words 101–300: life, always, those, both",
+  "Cambridge A2 Flyers grammar list: superlative adjectives"
+ ],
+ "teacher_notes": "Superlative = 3 or more things, or a whole group. Always \"the\" before it. After it, use \"in\" for places/groups (in the world, in my class) and \"of\" for time/lists (of my life, of the three). Facts in the reading are well-known records; Saja may know some — let her be the expert.",
+ "differentiation": "Support: give her the comparative → superlative pairs (bigger → the biggest). Stretch: one of the… (one of the tallest buildings) and \"ever\" (the best film I have ever seen — just as a chunk).",
+ "arabic": [
+  {
+   "en": "record",
+   "ar": "رقم قياسي"
+  },
+  {
+   "en": "kilometres an hour",
+   "ar": "كيلومتر في الساعة"
+  },
+  {
+   "en": "depend on",
+   "ar": "يعتمد على"
+  },
+  {
+   "en": "Antarctica",
+   "ar": "القارة القطبية الجنوبية"
+  }
+ ],
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Warm-up chat",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Listen, then answer in full sentences.",
+   "tip": "Bridge from lesson 41: compare 2 things, then 3. Write on screen: bigger → the biggest.",
+   "lines": [
+    "Hi Saja!",
+    "Let's compare! Which is bigger: a cat or a horse?",
+    "And which is the biggest: a cat, a horse or an elephant?",
+    "Who is the oldest person in your family?",
+    "Who is the youngest?"
+   ],
+   "questions": [
+    "Who is the oldest in your family?",
+    "Who is the funniest?",
+    "What is the best day of the week? Why?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 5,
+   "skills": [
+    "Listening",
+    "Speaking",
+    "Reading"
+   ],
+   "text": "Listen, repeat and notice the pattern. Click a word to hear it.",
+   "tip": "Same spelling rules as -er: big → biggest (double), happy → happiest (y → iest). The -est is weak /ɪst/. \"The\" is /ðə/ — tongue between the teeth!",
+   "focus": "-est",
+   "sound": "/ɪst/",
+   "say_sound": "the biggest, the tallest, the happiest",
+   "chant": "The tallest, the fastest, the biggest of all — the happiest giraffe is the one that is tall!",
+   "words": [
+    {
+     "w": "the biggest",
+     "e": "🐘",
+     "ar": "الأكبر"
+    },
+    {
+     "w": "the tallest",
+     "e": "🦒",
+     "ar": "الأطول"
+    },
+    {
+     "w": "the fastest",
+     "e": "🐆",
+     "ar": "الأسرع"
+    },
+    {
+     "w": "the longest",
+     "e": "🐍",
+     "ar": "الأطول (طولًا)"
+    },
+    {
+     "w": "the hottest",
+     "e": "🔥",
+     "ar": "الأسخن"
+    },
+    {
+     "w": "the coldest",
+     "e": "🥶",
+     "ar": "الأبرد"
+    },
+    {
+     "w": "the highest",
+     "e": "🏔️",
+     "ar": "الأعلى"
+    },
+    {
+     "w": "the happiest",
+     "e": "😄",
+     "ar": "الأسعد"
+    }
+   ],
+   "blend": [
+    "biggest",
+    "hottest"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word, hear it, say it. Click 💬 for the sentence.",
+   "tip": "Those = far + plural (lesson 4: this / that / these / those). Both = the two together. Life — plural lives (like shelf → shelves).",
+   "cards": [
+    {
+     "w": "life",
+     "s": "This is the best day of my life!"
+    },
+    {
+     "w": "always",
+     "s": "Grandpa always tells the funniest stories."
+    },
+    {
+     "w": "those",
+     "s": "Those are the tallest buildings in the city."
+    },
+    {
+     "w": "both",
+     "s": "Both cats are cute, but Snow is the laziest."
+    }
+   ],
+   "review": [
+    "hard",
+    "open",
+    "example",
+    "begin",
+    "next",
+    "close"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "The biggest, the best",
+   "minutes": 6,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read the rule and the table. Listen to the examples.",
+   "tip": "Quick chain: Hasna says \"tall\", Saja: \"taller, the tallest\". Speed up!",
+   "rule": "Use superlatives to compare one thing with ALL the others in a group. Always use \"the\". Short adjectives: the + -est. -y adjectives: the + -iest. Long adjectives: the most + adjective. Irregular: good → the best, bad → the worst, far → the furthest. After the superlative, use in (in the world, in my family) or of (of my life, of the year).",
+   "table": [
+    [
+     "adjective",
+     "comparative",
+     "superlative"
+    ],
+    [
+     "tall",
+     "taller",
+     "the tallest"
+    ],
+    [
+     "big",
+     "bigger",
+     "the biggest"
+    ],
+    [
+     "happy",
+     "happier",
+     "the happiest"
+    ],
+    [
+     "beautiful",
+     "more beautiful",
+     "the most beautiful"
+    ],
+    [
+     "good",
+     "better",
+     "the best"
+    ],
+    [
+     "bad",
+     "worse",
+     "the worst"
+    ]
+   ],
+   "examples": [
+    "The cheetah is the fastest land animal in the world.",
+    "Mina is the youngest in our family.",
+    "That was the best day of my life!",
+    "Maths is the most difficult subject for me."
+   ],
+   "ar": "صيغة التفضيل العليا: the + est أو the most + الصفة الطويلة، لمقارنة شيء بمجموعة كاملة (الأكبر، الأفضل). good → the best و bad → the worst."
+  },
+  {
+   "type": "reading",
+   "title": "World Records Quiz",
+   "minutes": 8,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": [
+    "Are you ready for some amazing records? Read and learn!",
+    "The cheetah is the fastest land animal in the world. It can run at more than 100 kilometres an hour — but only for a short time. A cheetah always gets tired quickly!",
+    "The blue whale is the biggest animal that has ever lived on Earth. It is bigger than the biggest dinosaur. Its heart is as big as a small car!",
+    "Mount Everest is the highest mountain in the world. It is almost 9 kilometres high. Climbing it is one of the hardest things in life, and only a few people do it every year.",
+    "Antarctica is the coldest place on Earth. In winter, it can be colder than minus 80 degrees. Brrr!",
+    "The Nile is the longest river in Africa. It goes through eleven countries, and both Egypt and Sudan depend on its water.",
+    "Which record do you think is the most interesting? Those are only a few — the world is full of surprises!"
+   ],
+   "tip": "\"has ever lived\" — just a chunk (= in all history). Before reading: Saja guesses the answers to the 5 questions; then she reads to check her guesses.",
+   "story_title": "World Records Quiz",
+   "pic": "🌍🏆🐆🏔️",
+   "text_intro": "Listen first. Then read it aloud with Hasna. Then answer the questions.",
+   "highlight": [
+    "life",
+    "always",
+    "those",
+    "both",
+    "the",
+    "most"
+   ],
+   "questions": [
+    {
+     "q": "What is the fastest land animal?",
+     "a": "The cheetah."
+    },
+    {
+     "q": "How big is the blue whale's heart?",
+     "a": "As big as a small car."
+    },
+    {
+     "q": "How high is Mount Everest?",
+     "a": "Almost 9 kilometres."
+    },
+    {
+     "q": "What is the coldest place on Earth?",
+     "a": "Antarctica."
+    },
+    {
+     "q": "Which record is the most interesting for you? Why?",
+     "a": "Saja's own answer + because…"
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Record quiz",
+   "minutes": 3,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read or listen. Choose the right answer.",
+   "tip": "After each answer, Saja makes the full sentence: \"The giraffe is the tallest animal.\"",
+   "items": [
+    {
+     "q": "Which is the tallest animal?",
+     "options": [
+      "🦒 giraffe",
+      "🐘 elephant",
+      "🐪 camel"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Which is the biggest planet?",
+     "options": [
+      "🌍 Earth",
+      "🪐 Jupiter",
+      "🔴 Mars"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Which is the coldest place?",
+     "options": [
+      "🏜️ the Sahara",
+      "🌴 Hawaii",
+      "🧊 Antarctica"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Which is the slowest?",
+     "options": [
+      "🐌 a snail",
+      "🐢 a turtle",
+      "🐇 a rabbit"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Which is the longest river in Africa?",
+     "options": [
+      "the Congo",
+      "the Nile",
+      "the Niger"
+     ],
+     "answer": 1
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "Make the superlative",
+   "minutes": 2,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Choose the right word for each gap.",
+   "tip": "Point at \"the\" — always there.",
+   "items": [
+    {
+     "text": "Mina is ___ person in our family. (young)",
+     "answer": "the youngest",
+     "options": [
+      "the youngest",
+      "the most young",
+      "younger"
+     ]
+    },
+    {
+     "text": "This is ___ film of the year! (good)",
+     "answer": "the best",
+     "options": [
+      "the best",
+      "the goodest",
+      "the better"
+     ]
+    },
+    {
+     "text": "That was ___ day of my life. (happy)",
+     "answer": "the happiest",
+     "options": [
+      "the happiest",
+      "the happyest",
+      "the most happy"
+     ]
+    },
+    {
+     "text": "Science is ___ subject for me. (interesting)",
+     "answer": "the most interesting",
+     "options": [
+      "the most interesting",
+      "the interestingest",
+      "more interesting"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Family and class records",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to the dialogue. Then take a part. Then answer about YOU.",
+   "tip": "Record quiz: Saja interviews Hasna with 3 questions, then answers Hasna's. Each answer needs a reason.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Saja, who is the tallest person in your family?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "My father is the tallest. He is almost two metres!"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Wow! Who is the funniest?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "My grandpa. He always tells the funniest stories."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "What is the best day of your life so far?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "I think it was the day at the science museum."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "What is the most difficult subject at school?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Maths is the hardest for me, but science is the most interesting."
+    }
+   ],
+   "frames": [
+    "The tallest / oldest / youngest in my family is ___.",
+    "The funniest person I know is ___.",
+    "The best ___ is ___ because ___.",
+    "The most ___ is ___."
+   ],
+   "prompts": [
+    "Who is the tallest / oldest / youngest in your family?",
+    "What is the most interesting subject at school?",
+    "What is the best film or series you know?",
+    "What is the most beautiful place you know?",
+    "What was the best day of your life?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Records in my world",
+   "minutes": 6,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Read the model. Plan with the frames. Then write your own.",
+   "tip": "Mark spelling and \"the\". Saja reads her sentences aloud as \"My personal records\".",
+   "model": "The oldest person in my family is my grandma. She is 72. The youngest is my little sister Mina. The most delicious food in the world is my mum's stuffed vine leaves. The best day of my life was my 10th birthday party.",
+   "frames": [
+    "The oldest / youngest person in my family is ___.",
+    "The most ___ is ___.",
+    "The best ___ of my life was ___.",
+    "The ___est place in my town is ___."
+   ],
+   "task": "Write 4 sentences with superlatives about your family, your town or your life.",
+   "checklist": [
+    "🏆 4 superlatives",
+    "✅ \"the\" before every superlative",
+    "✅ -est / -iest spelled correctly",
+    "✅ in / of after the superlative"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Wrap-up",
+   "minutes": 1,
+   "tip": "Count the stars together. Saja ticks the exit list honestly — anything not ticked goes into the next warm-up.",
+   "exit": [
+    "I can make superlatives: the biggest, the most interesting.",
+    "I can say the best and the worst.",
+    "I can talk about records.",
+    "I can write 4 superlative sentences."
+   ],
+   "homework": [
+    "Make a \"Family Records\" poster: the tallest, the funniest, the best cook… (6 sentences).",
+    "Find 2 world records online or in a book and write them in English.",
+    "Spell: the biggest, the happiest, the most beautiful, the best."
+   ],
+   "goodbye": "You are the best student of the day! Goodbye, Saja!"
+  }
+ ],
+ "nav": {
+  "prev": "L41.html",
+  "next": "L43.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

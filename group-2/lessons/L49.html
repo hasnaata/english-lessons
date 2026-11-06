@@ -1,18 +1,637 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G2-L49 · Big review: sounds &amp; words</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G2-L49",
+ "group": "g2",
+ "lesson": 49,
+ "week": 25,
+ "month": 7,
+ "unit": "Final review",
+ "title": "Big review: sounds & words",
+ "emoji": "🔤",
+ "minutes": 45,
+ "kid_goals": [
+  "🔤 Play sound games with all our patterns",
+  "🐝 Have a spelling bee",
+  "❤️ Race through the heart words",
+  "✍️ Write a silly sentence with many patterns"
+ ],
+ "objectives": [
+  "Can read and spell words with all the year's patterns: digraphs, blends, magic e, vowel teams, r-controlled vowels, -ed, -ing, compounds.",
+  "Can read the year's sight words quickly and accurately.",
+  "Can apply the spelling rules for -s/-es, -ed, -ing and -er.",
+  "Can spell words aloud (How do you spell…?) in a game."
+ ],
+ "focus": {
+  "sounds": [
+   "all patterns: sh ch th wh ck ng, blends, magic e, ee ea ai ay oa ow oo igh, ar or er ir ur air are, -ed, -ing, compounds"
+  ],
+  "sight_words": [
+   "all sight words (mixed review)"
+  ],
+  "language": "spelling rules for endings: -s/-es, -ed, -ing, -er; How do you spell…?"
+ },
+ "frameworks": [
+  "Spaced retrieval & interleaving: all phonics patterns mixed",
+  "Game-based learning: spelling bee, races, stars",
+  "Heart words / orthographic mapping (speed review)",
+  "Formative assessment: note any pattern that is still weak"
+ ],
+ "sources": [
+  "Group 2 curriculum map, sounds column (lessons 1–48)",
+  "Dolch primer and first-grade lists (review)",
+  "English Conversation Made Natural (situation adapted: a quiz game)"
+ ],
+ "teacher_notes": "Game lesson! Keep score with stars and make it fast and fun. Use the month-check notes: give extra items on the patterns Duha found hard. 'How do you spell…?' is a Cambridge Movers speaking task — practise letter names (not sounds) for spelling aloud: A (ei), E (ii), I (ai), R (aa), W (double-u), Y (wai).",
+ "differentiation": "Support: give the first letter. Stretch: Duha makes her own spelling-bee list for Hasna.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Sound-pattern chant",
+   "minutes": 3,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Say the chant! One word for each pattern.",
+   "tip": "Fast retrieval of the whole year's patterns. Clap on each word.",
+   "lines": [
+    "sh — fish, ch — chair, th — think!",
+    "Magic e — cake, bike, home, cube!",
+    "ee — tree, ai — rain, oa — boat, igh — night!",
+    "ar — park, or — fork, ir — bird, air — chair!"
+   ],
+   "questions": [
+    "Which pattern is easy for you?",
+    "Which pattern is difficult?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "All our patterns",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read each word. Say its pattern!",
+   "tip": "Interleaved review: Duha reads the word and names the pattern (e.g. 'sheep — sh and ee'). Some words have two patterns!",
+   "focus": "All patterns",
+   "sound": "review",
+   "say_sound": "The sheep sleeps in the shade by the shore.",
+   "chant": "Digraphs, blends, magic e — vowel teams and bossy r! Read the word and say the sound — you're a phonics star!",
+   "words": [
+    {
+     "w": "sheep",
+     "e": "🐑",
+     "ar": "خروف"
+    },
+    {
+     "w": "chick",
+     "e": "🐥",
+     "ar": "كتكوت"
+    },
+    {
+     "w": "frog",
+     "e": "🐸",
+     "ar": "ضفدع"
+    },
+    {
+     "w": "snake",
+     "e": "🐍",
+     "ar": "ثعبان"
+    },
+    {
+     "w": "train",
+     "e": "🚆",
+     "ar": "قطار"
+    },
+    {
+     "w": "boat",
+     "e": "🚤",
+     "ar": "قارب"
+    },
+    {
+     "w": "spoon",
+     "e": "🥄",
+     "ar": "ملعقة"
+    },
+    {
+     "w": "night",
+     "e": "🌃",
+     "ar": "ليل"
+    },
+    {
+     "w": "shark",
+     "e": "🦈",
+     "ar": "قرش"
+    },
+    {
+     "w": "horse",
+     "e": "🐴",
+     "ar": "حصان"
+    },
+    {
+     "w": "bird",
+     "e": "🐦",
+     "ar": "طائر"
+    },
+    {
+     "w": "chair",
+     "e": "🪑",
+     "ar": "كرسي"
+    }
+   ],
+   "blend": [
+    "sheep",
+    "frog",
+    "snake",
+    "shark",
+    "bird"
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Pattern detective",
+   "minutes": 5,
+   "skills": [
+    "Listening"
+   ],
+   "text": "Listen. Which pattern do you hear?",
+   "tip": "Mixed listening. Give a star for each correct answer; 2 stars if she spells the word too.",
+   "items": [
+    {
+     "say": "rain",
+     "options": [
+      "ai",
+      "ay",
+      "ee"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "light",
+     "options": [
+      "y",
+      "igh",
+      "ee"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "snow",
+     "options": [
+      "oa",
+      "ow",
+      "oo"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "turn",
+     "options": [
+      "ur",
+      "ir",
+      "or"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "cube",
+     "options": [
+      "u_e",
+      "oo",
+      "ew"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "thumb",
+     "options": [
+      "sh",
+      "ch",
+      "th"
+     ],
+     "answer": 2
+    },
+    {
+     "say": "stairs",
+     "options": [
+      "are",
+      "air",
+      "ar"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "looked",
+     "options": [
+      "/t/",
+      "/d/",
+      "/ɪd/"
+     ],
+     "answer": 0
+    }
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Spelling bee",
+   "minutes": 4,
+   "skills": [
+    "Writing",
+    "Listening"
+   ],
+   "text": "Listen and spell. One star for each word!",
+   "tip": "Harder words from the whole year. Before clicking, Duha spells aloud with letter NAMES.",
+   "items": [
+    {
+     "word": "beach",
+     "e": "🏖️",
+     "letters": [
+      "b",
+      "e",
+      "a",
+      "c",
+      "h",
+      "e"
+     ]
+    },
+    {
+     "word": "cheese",
+     "e": "🧀",
+     "letters": [
+      "c",
+      "h",
+      "e",
+      "e",
+      "s",
+      "e",
+      "a"
+     ]
+    },
+    {
+     "word": "square",
+     "e": "🟥",
+     "letters": [
+      "s",
+      "q",
+      "u",
+      "a",
+      "r",
+      "e",
+      "i"
+     ]
+    },
+    {
+     "word": "butterfly",
+     "e": "🦋",
+     "letters": [
+      "b",
+      "u",
+      "t",
+      "t",
+      "e",
+      "r",
+      "f",
+      "l",
+      "y",
+      "e"
+     ]
+    },
+    {
+     "word": "swimming",
+     "e": "🏊",
+     "letters": [
+      "s",
+      "w",
+      "i",
+      "m",
+      "m",
+      "i",
+      "n",
+      "g",
+      "e"
+     ]
+    },
+    {
+     "word": "thirsty",
+     "e": "🥤",
+     "letters": [
+      "t",
+      "h",
+      "i",
+      "r",
+      "s",
+      "t",
+      "y",
+      "e"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart-word race",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the words as fast as you can! Hasna counts the seconds.",
+   "tip": "Shuffle and time her (one round, then try to beat the time). These come from the whole year; put slow words on the homework list.",
+   "cards": [
+    {
+     "w": "because",
+     "s": "I'm happy because it's the last month!"
+    },
+    {
+     "w": "would",
+     "s": "Would you like to play a game?"
+    },
+    {
+     "w": "their",
+     "s": "The children love their teacher."
+    },
+    {
+     "w": "which",
+     "s": "Which word is the hardest?"
+    },
+    {
+     "w": "know",
+     "s": "Now I know all the sounds!"
+    },
+    {
+     "w": "always",
+     "s": "I always read before bed."
+    },
+    {
+     "w": "every",
+     "s": "We have English every week."
+    },
+    {
+     "w": "could",
+     "s": "I could read only a little in November."
+    },
+    {
+     "w": "these",
+     "s": "These words are tricky."
+    },
+    {
+     "w": "found",
+     "s": "I found the answer!"
+    }
+   ],
+   "review": [
+    "were",
+    "once",
+    "many",
+    "goes",
+    "write",
+    "upon"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Spelling rules for endings",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "When we add -s, -ed, -ing or -er, sometimes the spelling changes!",
+   "tip": "This grammar section is about spelling. Ask Duha to give one more example for each row.",
+   "rule": "Most words: just add the ending. But watch out: -es after s, sh, ch, x; drop the magic e; double the last letter in short words; y → i.",
+   "table": [
+    [
+     "Rule",
+     "-s / -es",
+     "-ed",
+     "-ing",
+     "-er"
+    ],
+    [
+     "just add",
+     "cats, plays",
+     "played",
+     "playing",
+     "faster"
+    ],
+    [
+     "s, sh, ch, x → -es",
+     "buses, watches",
+     "—",
+     "—",
+     "—"
+    ],
+    [
+     "magic e: drop e",
+     "—",
+     "liked",
+     "riding",
+     "later"
+    ],
+    [
+     "short word: double",
+     "—",
+     "stopped",
+     "swimming",
+     "bigger"
+    ],
+    [
+     "consonant + y → i",
+     "babies, flies",
+     "studied",
+     "studying (keep y!)",
+     "happier"
+    ]
+   ],
+   "examples": [
+    "One bus, two buses.",
+    "I like → I liked → I'm riding.",
+    "swim → swimming, big → bigger.",
+    "study → studied, happy → happier."
+   ],
+   "ar": "عند إضافة النهايات: نضيف es بعد s/sh/ch/x، نحذف e الصامتة، نضاعف الحرف الأخير في الكلمات القصيرة، y تصبح i."
+  },
+  {
+   "type": "reading",
+   "title": "The Great Spelling Race",
+   "minutes": 7,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "I do → we do → you do. Duha finds a word for each pattern in the story (chair = air, flight = igh, shark = ar…). Ask: How did Duha feel at the start and at the end?",
+   "story_title": "The Great Spelling Race",
+   "pic": "🐝🏆📚⭐",
+   "text_intro": "There was a spelling race at Duha's school. Who won? Read and find out!",
+   "text": [
+    "On Thursday, there was a spelling race at Duha's school. Ten children stood in a line on the stage. Duha was nervous, but she smiled.",
+    "The first word was \"chair\". \"C-H-A-I-R,\" said Duha. \"Right!\" said the teacher.",
+    "Then the words got harder: \"flight\", \"shark\", \"toothbrush\", \"turned\". Hana spelled \"flight\" with no G, so she sat down. Ziad forgot the R in \"shark\", so he sat down too.",
+    "At the end, there were only two children: Duha and a tall boy called Malik. The last word was \"butterfly\". Malik started: \"B-U-T-E-R…\" Oh no, only one T!",
+    "Duha breathed slowly. \"B-U-T-T-E-R-F-L-Y.\" Everyone cheered! Duha won a gold star and a new dictionary. She felt so proud."
+   ],
+   "highlight": [
+    "because",
+    "would",
+    "their",
+    "which",
+    "always",
+    "every",
+    "could"
+   ],
+   "questions": [
+    {
+     "q": "When was the spelling race?",
+     "a": "On Thursday."
+    },
+    {
+     "q": "How did Duha feel at the start?",
+     "a": "She was nervous, but she smiled."
+    },
+    {
+     "q": "Why did Hana sit down?",
+     "a": "Because she spelled 'flight' with no G."
+    },
+    {
+     "q": "What was Malik's mistake?",
+     "a": "He spelled 'butterfly' with only one T."
+    },
+    {
+     "q": "What did Duha win?",
+     "a": "A gold star and a new dictionary."
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "How do you spell…?",
+   "minutes": 5,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then have a spelling bee with Hasna — you ask too!",
+   "tip": "Practise letter names. Duha asks Hasna 3 words (Hasna makes one 'mistake' for Duha to catch).",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Duha, how do you spell 'night'?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "N-I-G-H-T."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Well done! How do you spell 'purple'?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "P-U-R-P-L-E."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Perfect! Now you ask me."
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "How do you spell 'sunflower'?"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "S-U-N-F-L-O-W-E-R."
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Correct!"
+    }
+   ],
+   "frames": [
+    "How do you spell ___?",
+    "It's ___ (letters).",
+    "Is it double ___?",
+    "Well done! / Not quite!"
+   ],
+   "prompts": [
+    "Spell your name and your town.",
+    "Spell 3 animals.",
+    "Spell your favourite food.",
+    "Which word from this year is the hardest to spell?",
+    "Ask me to spell 3 words."
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Silly sentences",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 3 silly sentences. Use as many patterns as you can! Hasna counts the patterns.",
+   "tip": "Fun and creative. One point per pattern used; underline them together.",
+   "model": "The green sheep in a purple shirt sailed a boat to the moon at night. A shark with a toothbrush is eating cheese on the beach. My horse liked swimming, but he hated cupcakes!",
+   "frames": [
+    "The ________ in a ________ ________ the ________.",
+    "A ________ with a ________ is ________ing ________.",
+    "My ________ liked ________ing, but ________."
+   ],
+   "task": "Write 3 silly sentences and draw one of them.",
+   "checklist": [
+    "many sound patterns",
+    "correct spelling of endings",
+    "capital letters and full stops"
+   ],
+   "pad": "Draw your silliest sentence"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "read all our patterns",
+    "spell words aloud",
+    "read heart words fast"
+   ],
+   "homework": [
+    "Practise the heart words from your 'slow list' every day.",
+    "Ask your family to give you a spelling bee (10 words).",
+    "Start planning your final presentation: What did you learn this year?"
+   ],
+   "goodbye": "You are a spelling star, Duha! Next lesson: the grammar quest. Goodbye!"
+  }
+ ],
+ "nav": {
+  "prev": "L48.html",
+  "next": "L50.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g2', name: 'Group 2', students: ['Duha'], color: '#159a8c', soft: '#d8f2ee' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

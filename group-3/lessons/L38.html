@@ -1,18 +1,562 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L38 · Conversation: Changing plans</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L38",
+ "group": "g3",
+ "lesson": 38,
+ "week": 19,
+ "month": 5,
+ "unit": "Past Times & Stories",
+ "title": "Conversation: Changing plans",
+ "emoji": "🔄",
+ "minutes": 45,
+ "kid_goals": [
+  "🔄 Talk about changing my plans",
+  "🤔 Say maybe with might",
+  "🔊 Say -ight words: might, light, right",
+  "✍️ Write a diary entry"
+ ],
+ "objectives": [
+  "Can talk about past plans and present feelings in a natural dialogue (past + present review) (A2).",
+  "Can use might to talk about possibility: I might try the art club (A2).",
+  "Can use phrases to show uncertainty and give support: I'm not sure… That's normal. Why don't you…?",
+  "Can write a short diary entry mixing past and present tenses.",
+  "Can read and use the key words few, while, along, might."
+ ],
+ "focus": {
+  "sounds": [
+   "-ight /aɪt/"
+  ],
+  "sight_words": [
+   "few",
+   "while",
+   "along",
+   "might"
+  ],
+  "language": "past + present review in dialogue; I wanted to… but…; I'm not sure; I might…; Why don't you…?",
+  "vocabulary": [
+   "club",
+   "join",
+   "quit",
+   "decide",
+   "change your mind",
+   "not sure",
+   "try"
+  ]
+ },
+ "frameworks": [
+  "Dialogue model → controlled role-play → personalised role-play (gradual release)",
+  "Comprehensible input: a real teen situation (school clubs)",
+  "Spaced retrieval: present simple, present continuous and past simple in one text",
+  "Writing: modelled → guided diary entry",
+  "CEFR A1 → A2 can-do objectives"
+ ],
+ "sources": [
+  "English Conversation Made Natural — Chapter 1: Changing Majors, adapted to \"changing plans\" (situation only; original A1–A2 dialogue)",
+  "English Grammar in Use (simplified), Units 1, 2, 5 — present continuous, present simple, past simple (review)",
+  "English Grammar in Use (simplified), Unit 29 — may and might (possibility, simplified)",
+  "Fry high-frequency words 101–300: few, while, along, might"
+ ],
+ "teacher_notes": "The original chapter is about a university student changing his subject. Here it becomes a 12-year-old changing her after-school club — the feeling (\"I'm not sure what I want\") is the same, and normal at her age. Keep it light and positive. Main goal: mixing tenses correctly in one conversation (last month I joined… / now I'm thinking… / I usually… / I might…).",
+ "differentiation": "Support: colour-code tenses (past = blue, present = green, might = orange) in the dialogue. Stretch: Saja adds a reason with because and a time phrase (in a few weeks, for a while).",
+ "arabic": [
+  {
+   "en": "counsellor",
+   "ar": "مرشدة طلابية"
+  },
+  {
+   "en": "robotics",
+   "ar": "الروبوتات"
+  },
+  {
+   "en": "change your mind",
+   "ar": "تغيّر رأيك"
+  },
+  {
+   "en": "nervous",
+   "ar": "متوتر"
+  }
+ ],
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Warm-up chat",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Listen, then answer in full sentences.",
+   "tip": "Tense check: ask one present simple, one past simple and one \"want to\" question. Note which tense she mixes up — it is today's focus.",
+   "lines": [
+    "Hello, Saja!",
+    "Do you go to any clubs after school?",
+    "What do you do after school on Mondays?",
+    "Did you ever change your mind about a hobby?",
+    "What do you want to try next?"
+   ],
+   "questions": [
+    "What do you usually do after school?",
+    "What did you do after school yesterday?",
+    "Is there a hobby you want to try?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 5,
+   "skills": [
+    "Listening",
+    "Speaking",
+    "Reading"
+   ],
+   "text": "Listen, repeat and notice the pattern. Click a word to hear it.",
+   "tip": "igh = /aɪ/ and the gh is silent (like bought, thought from lessons 35–36 — but different sound!). Saja finds the \"odd one out\": might, light, bought, night.",
+   "focus": "-ight",
+   "sound": "/aɪt/",
+   "say_sound": "might, light, night, right",
+   "chant": "Tonight might be the night — turn on the light, everything's all right!",
+   "words": [
+    {
+     "w": "night",
+     "e": "🌙",
+     "ar": "ليل"
+    },
+    {
+     "w": "light",
+     "e": "💡",
+     "ar": "ضوء"
+    },
+    {
+     "w": "right",
+     "e": "✅",
+     "ar": "صحيح / يمين"
+    },
+    {
+     "w": "might",
+     "e": "🤔",
+     "ar": "ربما"
+    },
+    {
+     "w": "bright",
+     "e": "🌟",
+     "ar": "ساطع"
+    },
+    {
+     "w": "flight",
+     "e": "✈️",
+     "ar": "رحلة طيران"
+    },
+    {
+     "w": "tonight",
+     "e": "🌃",
+     "ar": "الليلة"
+    },
+    {
+     "w": "fight",
+     "e": "🥊",
+     "ar": "قتال / شجار"
+    }
+   ],
+   "blend": [
+    "night",
+    "light",
+    "right"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word, hear it, say it. Click 💬 for the sentence.",
+   "tip": "A few = a small number (a few weeks, a few friends). Might = maybe (50%). While = at the same time. Along = from one end towards the other (along the river, along the street).",
+   "cards": [
+    {
+     "w": "few",
+     "s": "I joined the club a few weeks ago."
+    },
+    {
+     "w": "while",
+     "s": "I listen to music while I draw."
+    },
+    {
+     "w": "along",
+     "s": "We walked along the river after school."
+    },
+    {
+     "w": "might",
+     "s": "I might try the art club next month."
+    }
+   ],
+   "review": [
+    "story",
+    "saw",
+    "left",
+    "don't",
+    "thought",
+    "start"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Past, present and might",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read the rule and the table. Listen to the examples.",
+   "tip": "Timeline on screen: LAST MONTH — NOW — NEXT MONTH. Saja puts each example sentence on the timeline.",
+   "rule": "In real conversations we mix tenses. Use the past simple for finished events (Last month I joined…). Use the present simple for habits and feelings (I don't enjoy it). Use the present continuous for now (I'm thinking about…). Use might + base verb for a possible future (I might try…).",
+   "table": [
+    [
+     "time",
+     "form",
+     "example"
+    ],
+    [
+     "finished past",
+     "past simple",
+     "Last month, I joined the robotics club."
+    ],
+    [
+     "habit / feeling now",
+     "present simple",
+     "I don't enjoy it. I love drawing."
+    ],
+    [
+     "happening now",
+     "present continuous",
+     "I'm thinking about the art club."
+    ],
+    [
+     "maybe in the future",
+     "might + base verb",
+     "I might change clubs."
+    ],
+    [
+     "advice",
+     "Why don't you + base verb?",
+     "Why don't you try it for a few weeks?"
+    ]
+   ],
+   "examples": [
+    "I wanted to be a scientist, but now I'm not sure.",
+    "I might try the art club.",
+    "Why don't you talk to your teacher?"
+   ],
+   "ar": "نخلط الأزمنة في الحديث الطبيعي: الماضي للأحداث المنتهية، المضارع البسيط للعادات والمشاعر، المضارع المستمر لما يحدث الآن، و might + الفعل للاحتمال (ربما)."
+  },
+  {
+   "type": "reading",
+   "title": "A Change of Plan",
+   "minutes": 8,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": [
+    "Last month, I joined the robotics club at school. My brother Adam loves robots, and everybody said, \"You're good at science. You should try it!\" So I did.",
+    "For the first few weeks, it was OK. We built a small robot car, and it moved along a black line on the floor. But I didn't really enjoy it. While the others were busy with cables and code, I was drawing robots in my notebook!",
+    "Yesterday I talked to Ms Dina, the school counsellor. \"I'm not sure what I want to do,\" I said. \"Is that bad?\" She smiled. \"Not at all. That's normal at your age. Clubs are for trying things.\"",
+    "Now I'm thinking about the art club. It meets on Tuesdays, and they are making a big painting for the school wall. I might join next week. I might not be the best artist, but I think I might be happier there."
+   ],
+   "tip": "\"While the others were busy… I was drawing\" is past continuous — just meaning today. Ask Saja to find one sentence in each tense and colour it (past / present / might).",
+   "story_title": "A Change of Plan",
+   "pic": "🤖🎨📓🔄",
+   "text_intro": "Listen first. Then read it aloud with Hasna. Then answer the questions.",
+   "highlight": [
+    "few",
+    "while",
+    "along",
+    "might",
+    "joined",
+    "thinking"
+   ],
+   "questions": [
+    {
+     "q": "Which club did Saja join last month?",
+     "a": "The robotics club."
+    },
+    {
+     "q": "Did she enjoy it? How do you know?",
+     "a": "No, she didn't — she was drawing robots while the others were working."
+    },
+    {
+     "q": "Who did she talk to yesterday?",
+     "a": "Ms Dina, the school counsellor."
+    },
+    {
+     "q": "What did Ms Dina say?",
+     "a": "Not at all — it's normal at your age; clubs are for trying things."
+    },
+    {
+     "q": "What might Saja do next week?",
+     "a": "She might join the art club."
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "Which form?",
+   "minutes": 3,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Choose the right word for each gap.",
+   "tip": "Ask for the time clue each time: \"last month\" → past; \"now\" → present continuous; \"not sure\" → might.",
+   "items": [
+    {
+     "text": "Last month, I ___ the robotics club.",
+     "answer": "joined",
+     "options": [
+      "joined",
+      "join",
+      "am joining"
+     ]
+    },
+    {
+     "text": "Now I ___ about the art club.",
+     "answer": "'m thinking",
+     "options": [
+      "'m thinking",
+      "thought",
+      "think"
+     ]
+    },
+    {
+     "text": "I ___ join next week. I'm not sure yet.",
+     "answer": "might",
+     "options": [
+      "might",
+      "did",
+      "was"
+     ]
+    },
+    {
+     "text": "I ___ really enjoy robotics.",
+     "answer": "didn't",
+     "options": [
+      "didn't",
+      "don't",
+      "wasn't"
+     ]
+    },
+    {
+     "text": "Why don't you ___ the art club?",
+     "answer": "try",
+     "options": [
+      "try",
+      "tried",
+      "trying"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "Make useful sentences",
+   "minutes": 2,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Click the words in the right order to make a sentence.",
+   "tip": "These are chunks for the role-play — read each one aloud when it is finished.",
+   "items": [
+    [
+     "I'm",
+     "not",
+     "sure",
+     "what",
+     "I",
+     "want",
+     "to",
+     "do."
+    ],
+    [
+     "I",
+     "might",
+     "join",
+     "the",
+     "art",
+     "club",
+     "next",
+     "week."
+    ],
+    [
+     "Why",
+     "don't",
+     "you",
+     "try",
+     "it",
+     "for",
+     "a",
+     "few",
+     "weeks?"
+    ],
+    [
+     "I",
+     "joined",
+     "the",
+     "club",
+     "a",
+     "few",
+     "weeks",
+     "ago."
+    ]
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "I'm not sure what I want",
+   "minutes": 7,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to the dialogue. Then take a part. Then answer about YOU.",
+   "tip": "Situation adapted from \"English Conversation Made Natural\", Ch. 1 — the dialogue is original. Read → swap roles → Saja changes the details to a real plan of her own (a sport, a hobby, a holiday plan).",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Ms Dina",
+     "line": "Hi Saja, come in. How can I help you?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Hi, Ms Dina. I want to change my club, but I'm not sure."
+    },
+    {
+     "who": "A",
+     "name": "Ms Dina",
+     "line": "OK. Which club are you in now?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "The robotics club. I joined a few weeks ago, but I don't really enjoy it."
+    },
+    {
+     "who": "A",
+     "name": "Ms Dina",
+     "line": "That's fine. What do you enjoy?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "I love drawing. I draw all the time — even while I'm in robotics!"
+    },
+    {
+     "who": "A",
+     "name": "Ms Dina",
+     "line": "Why don't you try the art club? It meets on Tuesdays."
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "I might! But what if I change my mind again?"
+    },
+    {
+     "who": "A",
+     "name": "Ms Dina",
+     "line": "That's OK. School is the perfect time to try different things."
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Thanks, Ms Dina. I feel much better now."
+    }
+   ],
+   "frames": [
+    "I joined ___ ago, but ___.",
+    "I'm not sure. I might ___.",
+    "Why don't you ___?",
+    "That's normal. / That's OK.",
+    "I feel better now."
+   ],
+   "prompts": [
+    "Did you ever change your mind about a hobby or a club? What happened?",
+    "What might you try next year?",
+    "Give Hasna advice: \"I want to learn a new sport, but I'm not sure which one.\" (Why don't you…?)",
+    "What do you do while you listen to music?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "A diary entry",
+   "minutes": 6,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Read the model. Plan with the frames. Then write your own.",
+   "tip": "A diary is personal: give Saja the choice to keep it private and only show the grammar ticks.",
+   "model": "Dear Diary, Today was a big day. After school, I talked to Ms Dina about the robotics club. I told her I didn't enjoy it. She was really kind. Now I'm sitting at my desk and I'm drawing a poster for the art club. I might join it next Tuesday. I feel excited and a little nervous! Saja",
+   "frames": [
+    "Dear Diary,",
+    "Today was ___.",
+    "In the morning / After school, I ___.",
+    "Now I'm ___.",
+    "I might ___.",
+    "I feel ___."
+   ],
+   "task": "Write a diary entry (6–7 sentences) about a day when you changed a plan — real or invented.",
+   "checklist": [
+    "📓 Starts with \"Dear Diary,\" and the date",
+    "⏪ 2 past simple sentences",
+    "⏺️ 1 present continuous sentence (Now I'm…)",
+    "🤔 1 sentence with might",
+    "😊 How you feel"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Wrap-up",
+   "minutes": 1,
+   "tip": "Count the stars together. Saja ticks the exit list honestly — anything not ticked goes into the next warm-up.",
+   "exit": [
+    "I can talk about changing a plan.",
+    "I can say maybe with might.",
+    "I can say -ight words.",
+    "I can write a diary entry."
+   ],
+   "homework": [
+    "Write a diary entry for 3 days this week (3–4 sentences each).",
+    "Write 3 sentences with might about next weekend.",
+    "Act the dialogue with someone at home — change the club to a new one."
+   ],
+   "goodbye": "You might be tired now, but you did great! Goodbye, Saja!"
+  }
+ ],
+ "nav": {
+  "prev": "L37.html",
+  "next": "L39.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

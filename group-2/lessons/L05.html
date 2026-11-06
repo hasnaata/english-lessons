@@ -1,18 +1,572 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G2-L05 · sh &amp; ch — Questions with have got</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G2-L05",
+ "group": "g2",
+ "lesson": 5,
+ "week": 3,
+ "month": 1,
+ "unit": "Me, My Home & My Family",
+ "title": "sh & ch — Questions with have got",
+ "emoji": "🐟",
+ "minutes": 45,
+ "kid_goals": [
+  "🔤 Read words with sh and ch",
+  "❤️ Learn: ran, saw, say, so",
+  "❓ Ask Have you got…? and answer",
+  "✍️ Write questions and answers"
+ ],
+ "objectives": [
+  "Can read and spell the digraphs sh /ʃ/ and ch /tʃ/ (shop, fish, chair, lunch).",
+  "Can read the sight words ran, saw, say, so.",
+  "Can ask and answer Have you got…? / Has he got…? with short answers (Yes, I have. / No, she hasn't.).",
+  "Can take part in a short interview about possessions (A1 spoken interaction).",
+  "Can write 3 questions with have got and answer them."
+ ],
+ "focus": {
+  "sounds": [
+   "sh",
+   "ch"
+  ],
+  "sight_words": [
+   "ran",
+   "saw",
+   "say",
+   "so"
+  ],
+  "language": "Have you got…? Yes, I have. / No, I haven't. Has she got…? Yes, she has. / No, she hasn't.",
+  "vocabulary": [
+   "shop",
+   "fish",
+   "shell",
+   "chair",
+   "cheese",
+   "chick",
+   "lunch",
+   "chips"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics: digraphs (two letters, one sound)",
+  "Heart words / orthographic mapping",
+  "PPP: present → practise → produce",
+  "Spaced retrieval (have got from L4)",
+  "Information-gap speaking (interview game)"
+ ],
+ "sources": [
+  "My First Grammar 1, Unit 5 Lesson 3 (Do/Does + Have…? → taught here as Have you got…?)",
+  "English Grammar in Use (simplified), Unit 17 (have got questions)",
+  "Dolch sight words: primer (ran, saw, say, so)"
+ ],
+ "teacher_notes": "sh vs ch: Arabic has ش (sh) so sh is easy; ch (تش) can come out as sh — \"shair\" for chair. Practise: \"sh\" is a long quiet sound (finger on lips), \"ch\" is a short sneeze sound (ch!). Grammar: in questions have/has moves to the front and \"got\" stays. Short answers do NOT repeat got: Yes, I have (not Yes, I have got).",
+ "differentiation": "Support: give her the answer cards (Yes, I have / No, I haven't) to point at. Stretch: add a follow-up question: What colour is it? How many have you got?",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "What have I got?",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Hasna has got a bag. Guess what is in it! Ask: Have you got a…?",
+   "tip": "Hold up a real bag (or a box). Duha guesses with \"Have you got a pen?\" You answer \"Yes, I have / No, I haven't.\" This presents today's grammar naturally.",
+   "lines": [
+    "I have got a bag. What is in my bag?",
+    "Have you got a pen? Yes, I have!",
+    "Have you got a fish? No, I haven't! A fish in a bag? Ha ha!"
+   ],
+   "questions": [
+    "Have you got a pencil case?",
+    "Has your brother got a phone?",
+    "What have you got in your school bag?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "sh & ch",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Two letters, one sound! sh says /ʃ/ (shhh!). ch says /tʃ/ (choo-choo!).",
+   "tip": "Sort orally: say a word, she says \"sh\" or \"ch\". Point out sh/ch can be at the start (shop, chair) or the end (fish, lunch).",
+   "focus": "sh / ch",
+   "sound": "/ʃ/ and /tʃ/",
+   "say_sound": "sh, sh, ship. ch, ch, chair.",
+   "chant": "Shh, shh, a fish in a dish! Ch, ch, a chick on a chair, munch, munch, lunch!",
+   "words": [
+    {
+     "w": "ship",
+     "e": "🚢",
+     "ar": "سفينة"
+    },
+    {
+     "w": "shop",
+     "e": "🏪",
+     "ar": "متجر"
+    },
+    {
+     "w": "fish",
+     "e": "🐟",
+     "ar": "سمكة"
+    },
+    {
+     "w": "shell",
+     "e": "🐚",
+     "ar": "صدفة"
+    },
+    {
+     "w": "dish",
+     "e": "🍽️",
+     "ar": "طبق"
+    },
+    {
+     "w": "sheep",
+     "e": "🐑",
+     "ar": "خروف"
+    },
+    {
+     "w": "chair",
+     "e": "🪑",
+     "ar": "كرسي"
+    },
+    {
+     "w": "cheese",
+     "e": "🧀",
+     "ar": "جبن"
+    },
+    {
+     "w": "chick",
+     "e": "🐥",
+     "ar": "كتكوت"
+    },
+    {
+     "w": "chips",
+     "e": "🍟",
+     "ar": "بطاطس مقلية"
+    },
+    {
+     "w": "lunch",
+     "e": "🥪",
+     "ar": "غداء"
+    },
+    {
+     "w": "watch",
+     "e": "⌚",
+     "ar": "ساعة يد"
+    }
+   ],
+   "blend": [
+    "ship",
+    "shop",
+    "fish",
+    "dish",
+    "chip",
+    "chin",
+    "much",
+    "lunch"
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Spell sh & ch words",
+   "minutes": 3,
+   "skills": [
+    "Writing",
+    "Listening"
+   ],
+   "text": "Listen and spell. Remember: sh and ch are two letters!",
+   "tip": "She says the sounds first (sh-i-p = 3 sounds, 4 letters). Good moment to show: sounds ≠ letters.",
+   "items": [
+    {
+     "word": "ship",
+     "e": "🚢",
+     "letters": [
+      "d",
+      "p",
+      "h",
+      "s",
+      "i",
+      "t"
+     ]
+    },
+    {
+     "word": "fish",
+     "e": "🐟",
+     "letters": [
+      "h",
+      "d",
+      "a",
+      "s",
+      "f",
+      "i"
+     ]
+    },
+    {
+     "word": "shop",
+     "e": "🏪",
+     "letters": [
+      "p",
+      "o",
+      "b",
+      "h",
+      "r",
+      "s"
+     ]
+    },
+    {
+     "word": "chip",
+     "e": "🍟",
+     "letters": [
+      "n",
+      "i",
+      "c",
+      "s",
+      "p",
+      "h"
+     ]
+    },
+    {
+     "word": "chop",
+     "e": "🔪",
+     "letters": [
+      "g",
+      "o",
+      "c",
+      "b",
+      "h",
+      "p"
+     ]
+    },
+    {
+     "word": "lunch",
+     "e": "🥪",
+     "letters": [
+      "o",
+      "c",
+      "l",
+      "h",
+      "n",
+      "g",
+      "u"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words: ran, saw, say, so",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word, then the sentence.",
+   "tip": "\"ran\" and \"saw\" are past words — tell her: ran = run yesterday, saw = see yesterday. No grammar lesson, just meaning.",
+   "cards": [
+    {
+     "w": "ran",
+     "s": "The cat ran into the kitchen."
+    },
+    {
+     "w": "saw",
+     "s": "I saw a big fish at the shop."
+    },
+    {
+     "w": "say",
+     "s": "What do you say? Say \"please\"!"
+    },
+    {
+     "w": "so",
+     "s": "The fish is so beautiful!"
+    }
+   ],
+   "review": [
+    "now",
+    "our",
+    "out",
+    "please",
+    "get",
+    "new"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Have you got…? Has she got…?",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "To ask a question, put have or has first.",
+   "tip": "Show the \"jump\": You have got a pet → Have you got a pet? Then practise short answers in a chant: \"Yes, I have! No, I haven't! Yes, she has! No, she hasn't!\"",
+   "rule": "Questions: Have + I / you / we / they + got…? Has + he / she / it + got…? Short answers: Yes, I have. / No, I haven't. Yes, she has. / No, she hasn't.",
+   "table": [
+    [
+     "Question",
+     "Yes",
+     "No"
+    ],
+    [
+     "Have you got a pet?",
+     "Yes, I have.",
+     "No, I haven't."
+    ],
+    [
+     "Has she got a bike?",
+     "Yes, she has.",
+     "No, she hasn't."
+    ],
+    [
+     "Have they got a shop?",
+     "Yes, they have.",
+     "No, they haven't."
+    ]
+   ],
+   "examples": [
+    "Have you got a brother? Yes, I have.",
+    "Has Lina got a fish? No, she hasn't.",
+    "Has the shop got cheese? Yes, it has.",
+    "What have you got in your bag?"
+   ],
+   "ar": "في السؤال نضع Have أو Has في أول الجملة. الجواب القصير بدون got: Yes, I have / No, she hasn't."
+  },
+  {
+   "type": "reading",
+   "title": "At the Pet Shop",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text_intro": "Lina wants a pet. Will she get one? Read the story. Then answer the questions.",
+   "tip": "We do: read it in two voices — Hasna is Mum, Duha is Lina and the shop man. Find all sh and ch words (shop, fish, shell, chair, much, lunch…).",
+   "story_title": "At the Pet Shop",
+   "pic": "🏪🐟🐚",
+   "highlight": [
+    "ran",
+    "saw",
+    "say",
+    "so",
+    "now",
+    "please"
+   ],
+   "text": [
+    "On Saturday, Mum, Lina and Duha went to a pet shop near their home.",
+    "Lina ran to the fish tank. She saw a little orange fish with a long tail. \"It's so cute!\" she said.",
+    "Mum asked the man, \"Have you got a small fish tank?\" \"Yes, I have,\" he said.",
+    "\"Has it got shells and plants?\" asked Duha. \"No, it hasn't, but we've got shells here.\"",
+    "\"What do you say, Lina?\" asked Mum. \"Thank you so much!\" said Lina. Now she has got a fish!"
+   ],
+   "questions": [
+    {
+     "q": "Where did they go?",
+     "a": "They went to a pet shop."
+    },
+    {
+     "q": "What did Lina see?",
+     "a": "She saw a little orange fish."
+    },
+    {
+     "q": "Has the tank got shells?",
+     "a": "No, it hasn't."
+    },
+    {
+     "q": "What has Lina got now?",
+     "a": "She has got a fish."
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Choose the right answer",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Listen to the question. Choose the right short answer.",
+   "tip": "If she chooses \"Yes, I have got\", remind her: short answers stop at have / has.",
+   "items": [
+    {
+     "say": "Have you got a pencil?",
+     "options": [
+      "Yes, I have.",
+      "Yes, I has.",
+      "Yes, I am."
+     ],
+     "answer": 0
+    },
+    {
+     "say": "Has Lina got a phone?",
+     "options": [
+      "No, she hasn't.",
+      "No, she haven't.",
+      "No, she isn't."
+     ],
+     "answer": 0
+    },
+    {
+     "say": "Have your grandparents got a garden?",
+     "options": [
+      "Yes, they have.",
+      "Yes, they has.",
+      "Yes, they are."
+     ],
+     "answer": 0
+    },
+    {
+     "say": "Has the shop got chips?",
+     "options": [
+      "No, it isn't.",
+      "No, it hasn't.",
+      "No, it haven't."
+     ],
+     "answer": 1
+    },
+    {
+     "say": "Has Adam got a bike?",
+     "options": [
+      "Yes, he has.",
+      "Yes, he have.",
+      "Yes, he got."
+     ],
+     "answer": 0
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Interview game",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then interview Hasna — and Hasna interviews you!",
+   "tip": "Give Duha a list of 5 things (a pet, a bike, a watch, a big bag, a shell). She asks, you answer truthfully, then swap. Make her ask one \"Has your … got…?\" question about family.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Duha, have you got a watch?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "No, I haven't. Have you got a watch?"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Yes, I have. It's black. Has your sister got a fish now?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Yes, she has! It's orange and so cute."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Has it got a name?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Yes, it has. Its name is Chip!"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Ha ha, Chip the fish! Have you got a pet, too?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Yes, we've got a cat, so the fish must be careful!"
+    }
+   ],
+   "frames": [
+    "Have you got a ___?",
+    "Has your ___ got a ___?",
+    "Yes, I have. / No, I haven't.",
+    "Yes, she has. / No, she hasn't."
+   ],
+   "prompts": [
+    "Have you got a bike?",
+    "Has your mum got a car?",
+    "Have you got a shell from the sea?",
+    "Has your best friend got a pet?",
+    "Ask me 3 questions with Have you got…?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Questions & answers",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 3 questions with have got and answer them about YOU.",
+   "tip": "Check the question mark (?), have/has at the start, and short answers without got.",
+   "model": "Have you got a pet? Yes, I have. We've got a cat.\nHas your brother got a phone? No, he hasn't.\nHave you got a watch? No, I haven't, but I want one!",
+   "frames": [
+    "Have you got a ___? Yes, I have. / No, I haven't.",
+    "Has your ___ got a ___? Yes, he/she has. / No, he/she hasn't."
+   ],
+   "task": "Write 3 questions and 3 answers.",
+   "checklist": [
+    "Have / Has at the start of the question",
+    "Question mark at the end",
+    "Short answer without \"got\"",
+    "Capital letters"
+   ],
+   "pad": "Have you got"
+  },
+  {
+   "type": "wrapup",
+   "title": "Stars & goodbye",
+   "minutes": 1,
+   "exit": [
+    "I can read sh and ch words",
+    "I can read ran, saw, say, so",
+    "I can ask Have you got…?",
+    "I can answer Yes, I have / No, I haven't"
+   ],
+   "homework": [
+    "Read \"At the Pet Shop\" in two voices with someone at home.",
+    "Ask 3 family members: Have you got a ___? Write their answers.",
+    "Find 3 sh words and 3 ch words at home."
+   ],
+   "goodbye": "Have you got a smile? Yes, you have! Bye, Duha!"
+  }
+ ],
+ "nav": {
+  "prev": "L04.html",
+  "next": "L06.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g2', name: 'Group 2', students: ['Duha'], color: '#159a8c', soft: '#d8f2ee' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

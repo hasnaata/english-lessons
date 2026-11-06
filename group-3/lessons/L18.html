@@ -1,18 +1,532 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L18 · Some and any</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L18",
+ "group": "g3",
+ "lesson": 18,
+ "week": 9,
+ "month": 3,
+ "unit": "Food & Shopping",
+ "title": "Some and any",
+ "emoji": "🛒",
+ "minutes": 45,
+ "kid_goals": [
+  "🛒 Use some and any",
+  "🔤 Spell ee and ea words",
+  "🍳 Play a kitchen quiz",
+  "✍️ Write 4 sentences about my kitchen"
+ ],
+ "objectives": [
+  "Can use some in positive sentences and any in negatives and questions (A1).",
+  "Can use some in offers and requests (Would you like some…? Can I have some…?).",
+  "Can spell common ee / ea words.",
+  "Can read and use the key words large, must, big, even."
+ ],
+ "focus": {
+  "sounds": [
+   "ee / ea review"
+  ],
+  "sight_words": [
+   "large",
+   "must",
+   "big",
+   "even"
+  ],
+  "language": "There's some milk. There isn't any juice. Have we got any eggs? Would you like some tea?"
+ },
+ "frameworks": [
+  "CEFR A1 → A2 can-do statements (Cambridge A2 Flyers topics)",
+  "PPP: present → practise → produce",
+  "Spelling & pronunciation patterns: vowel teams (spelling)",
+  "Game-based practice (kitchen quiz)",
+  "Spaced retrieval: countable / uncountable (lesson 17)"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Unit 77 (some and any — simplified)",
+  "Coursebook unit 3 style: some / any",
+  "Fry high-frequency words 201–225 (large, must, big, even)"
+ ],
+ "teacher_notes": "The simple rule: some (+), any (− and ?). The exception she needs now: offers and requests use some (\"Would you like some cake?\"). \"Must\" is introduced as a word only (\"You must try it!\"). \"Large\" = big (on menus and sizes: a large pizza).",
+ "differentiation": "Support: practise + and − only. Stretch: offers and requests with some; \"not any\" vs \"no\".",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Fridge report",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Tell me about your fridge homework.",
+   "tip": "The questions already use \"any\" — let her answer naturally, then point out the word \"any\" on screen.",
+   "lines": [
+    "Is there any milk in your fridge?",
+    "Are there any eggs?",
+    "Is there any chocolate?",
+    "What do you need from the shop?"
+   ],
+   "questions": [
+    "Which ee or ea words did you find on food packets?",
+    "Is bread countable or uncountable?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Reading",
+    "Speaking"
+   ],
+   "text": "ee and ea sound the same. To spell them, you must learn the word! Tip: many food words have ea (meat, peach, beans, tea).",
+   "tip": "Spelling check: Hasna says, Saja writes on the pad. Group words in \"ee family\" and \"ea family\". \"Coffee\" ends in ee but sounds /i/ (weak) — a small exception.",
+   "focus": "ee  ea",
+   "sound": "spelling: ee or ea? Both say /iː/",
+   "say_sound": "green beans, sweet peach, cheese and meat",
+   "chant": "Green tea, sweet cheese — e, e! Meat, peach, beans — e, a!",
+   "words": [
+    {
+     "w": "green",
+     "e": "🟢",
+     "ar": "أخضر"
+    },
+    {
+     "w": "sweet",
+     "e": "🍬",
+     "ar": "حلو"
+    },
+    {
+     "w": "cheese",
+     "e": "🧀",
+     "ar": "جبن"
+    },
+    {
+     "w": "coffee",
+     "e": "☕",
+     "ar": "قهوة"
+    },
+    {
+     "w": "three",
+     "e": "3️⃣",
+     "ar": "ثلاثة"
+    },
+    {
+     "w": "meat",
+     "e": "🥩",
+     "ar": "لحم"
+    },
+    {
+     "w": "peach",
+     "e": "🍑",
+     "ar": "خوخ"
+    },
+    {
+     "w": "cream",
+     "e": "🍦",
+     "ar": "كريمة"
+    },
+    {
+     "w": "beans",
+     "e": "🫘",
+     "ar": "فاصولياء"
+    },
+    {
+     "w": "tea",
+     "e": "🍵",
+     "ar": "شاي"
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word. Click 💬 to hear it in a sentence. Then say your own sentence with it.",
+   "tip": "\"Large\" and \"big\" mean the same; \"large\" is more formal (sizes, menus). \"Even\" shows surprise.",
+   "cards": [
+    {
+     "w": "large",
+     "s": "Can I have a large pizza, please?"
+    },
+    {
+     "w": "must",
+     "s": "You must try my mum's cake!"
+    },
+    {
+     "w": "big",
+     "s": "We have a big lunch on Fridays."
+    },
+    {
+     "w": "even",
+     "s": "My brother eats everything — even onions!"
+    }
+   ],
+   "review": [
+    "end",
+    "does",
+    "another",
+    "well",
+    "three",
+    "put"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "some and any",
+   "minutes": 6,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "tip": "Traffic lights: green card = some, red = any (−), yellow = any (?). Hasna says a sentence with a gap; Saja holds up a colour.",
+   "rule": "some → positive sentences (+). any → negative sentences (−) and questions (?). BUT use some in offers and requests: Would you like some…? Can I have some…?",
+   "table": [
+    [
+     "",
+     "Countable (plural)",
+     "Uncountable"
+    ],
+    [
+     "+",
+     "There are some eggs.",
+     "There's some milk."
+    ],
+    [
+     "−",
+     "There aren't any eggs.",
+     "There isn't any milk."
+    ],
+    [
+     "?",
+     "Are there any eggs?",
+     "Is there any milk?"
+    ],
+    [
+     "offer / request",
+     "Would you like some grapes?",
+     "Can I have some water?"
+    ]
+   ],
+   "examples": [
+    "We've got some cheese, but we haven't got any bread.",
+    "Are there any tomatoes in the fridge?",
+    "There isn't any juice. Let's buy some.",
+    "Would you like some tea? Yes, please!"
+   ],
+   "ar": "some في الجمل المثبتة، و any في النفي والسؤال. لكن عند العرض أو الطلب نستخدم some: Would you like some tea?"
+  },
+  {
+   "type": "reading",
+   "title": "Grandma's Kitchen",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "tip": "The text is in the past (was/were, went, made) — Saja only needs to understand; past simple comes in month 5. Focus on some/any: she underlines them in two colours.",
+   "story_title": "Grandma's Kitchen",
+   "pic": "👵🍲🍰",
+   "text_intro": "Listen first. Then read with me. Then you read alone!",
+   "text": [
+    "Every Friday, we go to Grandma's house for lunch. She has a large kitchen and a big table for all the family.",
+    "Last Friday, Grandma said, \"Saja, help me, please! We must make lunch for twelve people!\"",
+    "First, we checked the cupboards. There was some rice and some flour, but there wasn't any sugar. \"Are there any eggs?\" Grandma asked. Yes, there were six.",
+    "My cousin went to the shop for some sugar and some lemons. Grandma made rice with chicken, and I made a cake.",
+    "Everybody loved the lunch. My little cousin even had three pieces of cake! \"Would you like some more?\" Grandma asked. \"Yes, please!\""
+   ],
+   "highlight": [
+    "large",
+    "must",
+    "big",
+    "even",
+    "some",
+    "any"
+   ],
+   "questions": [
+    {
+     "q": "How many people came for lunch?",
+     "a": "Twelve."
+    },
+    {
+     "q": "Was there any sugar?",
+     "a": "No, there wasn't."
+    },
+    {
+     "q": "How many eggs were there?",
+     "a": "Six."
+    },
+    {
+     "q": "What did Saja make?",
+     "a": "A cake."
+    },
+    {
+     "q": "What did Grandma ask at the end?",
+     "a": "Would you like some more?"
+    }
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Spell the food",
+   "minutes": 3,
+   "skills": [
+    "Listening",
+    "Writing"
+   ],
+   "text": "Listen. Spell the word. ee or ea?",
+   "tip": "One extra e or a in each set — she must choose the right vowel team.",
+   "items": [
+    {
+     "word": "cheese",
+     "e": "🧀",
+     "letters": [
+      "c",
+      "h",
+      "e",
+      "e",
+      "s",
+      "e",
+      "e",
+      "a"
+     ]
+    },
+    {
+     "word": "peach",
+     "e": "🍑",
+     "letters": [
+      "p",
+      "e",
+      "a",
+      "c",
+      "h",
+      "e"
+     ]
+    },
+    {
+     "word": "meat",
+     "e": "🥩",
+     "letters": [
+      "m",
+      "e",
+      "a",
+      "t",
+      "e"
+     ]
+    },
+    {
+     "word": "sweet",
+     "e": "🍬",
+     "letters": [
+      "s",
+      "w",
+      "e",
+      "e",
+      "t",
+      "a"
+     ]
+    },
+    {
+     "word": "beans",
+     "e": "🫘",
+     "letters": [
+      "b",
+      "e",
+      "a",
+      "n",
+      "s",
+      "e"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "some or any?",
+   "minutes": 3,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Choose some or any.",
+   "tip": "Item 4: offer → some. Item 5: ask her why the second part says \"some\" (positive).",
+   "items": [
+    {
+     "text": "There are ___ apples on the table.",
+     "answer": "some",
+     "options": [
+      "some",
+      "any"
+     ]
+    },
+    {
+     "text": "We haven't got ___ bread.",
+     "answer": "any",
+     "options": [
+      "some",
+      "any"
+     ]
+    },
+    {
+     "text": "Is there ___ juice in the fridge?",
+     "answer": "any",
+     "options": [
+      "some",
+      "any"
+     ]
+    },
+    {
+     "text": "Would you like ___ tea?",
+     "answer": "some",
+     "options": [
+      "some",
+      "any"
+     ]
+    },
+    {
+     "text": "There isn't ___ sugar. Let's buy some!",
+     "answer": "any",
+     "options": [
+      "some",
+      "any"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Kitchen quiz",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then play the kitchen quiz with Hasna!",
+   "tip": "Point system: 1 point for each correct some/any. Hasna can make silly mistakes for Saja to catch.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Kitchen quiz! Is there any rice in your kitchen?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Yes, there's some rice in the cupboard."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Are there any lemons?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "No, there aren't any lemons."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Is there any chocolate?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Hmm… there isn't any now. My brother ate it!"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Oh no! Would you like some of mine?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Yes, please!"
+    }
+   ],
+   "frames": [
+    "Is there any ___?",
+    "Are there any ___?",
+    "Yes, there's some ___. / No, there isn't any ___.",
+    "Yes, there are some ___. / No, there aren't any ___.",
+    "Would you like some ___? Yes, please! / No, thanks."
+   ],
+   "prompts": [
+    "Ask me 4 questions about my kitchen (Is there any…? Are there any…?).",
+    "Answer my questions about your kitchen.",
+    "Offer me something to eat or drink!"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "My kitchen",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Read the example. Then write about your kitchen.",
+   "tip": "Check that \"there is\" goes with uncountable / singular and \"there are\" with plural.",
+   "model": "In our kitchen there is some rice and some pasta. There are some apples, but there aren't any bananas. There isn't any juice. Is there any chocolate? No, there isn't!",
+   "frames": [
+    "There is some ___.",
+    "There are some ___, but there aren't any ___.",
+    "There isn't any ___.",
+    "Is there any ___? ___."
+   ],
+   "task": "Write 4 sentences about your kitchen. Use some (2 times) and any (2 times).",
+   "checklist": [
+    "some in positive sentences",
+    "any in negatives and questions",
+    "Uncountable nouns with no -s",
+    "Spelling of ee / ea words"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Stars, exit ticket & homework",
+   "minutes": 1,
+   "exit": [
+    "I can use some and any",
+    "I can offer: Would you like some…?",
+    "I can spell ee and ea words",
+    "I can read large, must, big, even"
+   ],
+   "homework": [
+    "Write 5 questions with any for your family. Ask them at dinner!",
+    "Spell 8 ee/ea food words from memory.",
+    "Read \"Grandma's Kitchen\" aloud."
+   ],
+   "goodbye": "Would you like some homework? Yes, please! Ha ha. Goodbye, Saja!"
+  }
+ ],
+ "nav": {
+  "prev": "L17.html",
+  "next": "L19.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

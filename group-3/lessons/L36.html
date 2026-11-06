@@ -1,18 +1,545 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L36 · Did you…? I didn&#x27;t…</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L36",
+ "group": "g3",
+ "lesson": 36,
+ "week": 18,
+ "month": 5,
+ "unit": "Past Times & Stories",
+ "title": "Did you…? I didn't…",
+ "emoji": "🔍",
+ "minutes": 45,
+ "kid_goals": [
+  "🔍 Ask \"Did you…?\" questions",
+  "❌ Say what I didn't do",
+  "🎵 Make my voice go up and down in questions",
+  "✍️ Write an interview (Q&A)"
+ ],
+ "objectives": [
+  "Can ask and answer past simple yes/no and wh- questions: Did you…? Where did you…? (A1+/A2).",
+  "Can make past simple negatives with didn't + verb (A1+/A2).",
+  "Can use rising intonation for yes/no questions and falling intonation for wh- questions.",
+  "Can follow a short detective-style dialogue and find key information.",
+  "Can read and use the key words light, thought, head, under."
+ ],
+ "focus": {
+  "sounds": [
+   "question intonation ↗ ↘",
+   "did you /dɪdʒə/"
+  ],
+  "sight_words": [
+   "light",
+   "thought",
+   "head",
+   "under"
+  ],
+  "language": "past questions & negatives: Did you…? Yes, I did. / No, I didn't. Where did you go? I didn't go out.",
+  "vocabulary": [
+   "detective",
+   "clue",
+   "missing",
+   "find",
+   "lose",
+   "search"
+  ]
+ },
+ "frameworks": [
+  "PPP: present → practise → produce",
+  "Comprehensible input: emoji pictures + short Arabic hints",
+  "Spaced retrieval: key words and older words come back in the reading",
+  "Writing: modelled → guided → independent",
+  "CEFR A1 → A2 can-do objectives",
+  "Information gap: detective interview"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Unit 5 — Past simple: questions and negatives (did / didn't)",
+  "English Grammar in Use (simplified), Unit 49 — Questions 1",
+  "Fry high-frequency words 101–300: light, thought, head, under"
+ ],
+ "teacher_notes": "Golden rule: did / didn't + BASE verb. The past is shown ONCE (by did). Typical errors: \"Did you went?\", \"I didn't saw\", \"Where you went?\". Intonation: yes/no questions usually rise ↗, wh- questions fall ↘. \"Did you\" links to /dɪdʒə/ in fast speech — teach it for listening.",
+ "differentiation": "Support: give the question frame \"Did you ___ yesterday?\" and a list of base verbs. Stretch: follow-up wh- questions after every \"Yes, I did\" (Where? Who with? What time?).",
+ "arabic": [
+  {
+   "en": "detective",
+   "ar": "محقق"
+  },
+  {
+   "en": "cushion",
+   "ar": "وسادة الكنبة"
+  },
+  {
+   "en": "case",
+   "ar": "قضية"
+  },
+  {
+   "en": "thief",
+   "ar": "لص"
+  }
+ ],
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Warm-up chat",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Listen, then answer in full sentences.",
+   "tip": "Answer modelling: accept \"Yes\" then recast: \"Yes, I did.\" Quick retrieval of 10 irregular verbs from lesson 35 (Hasna says go, Saja says went).",
+   "lines": [
+    "Hi Saja!",
+    "I have a question for you. Did you sleep well last night?",
+    "Did you have breakfast this morning?",
+    "What did you have?",
+    "Did you do your homework?"
+   ],
+   "questions": [
+    "Did you sleep well last night?",
+    "What did you have for breakfast?",
+    "Did you watch anything good yesterday?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Speaking",
+    "Reading"
+   ],
+   "text": "Listen, repeat and notice the pattern. Click a word to hear it.",
+   "tip": "Draw arrows with your hand in the air: yes/no questions go UP at the end ↗, wh- questions go DOWN ↘. Listen to \"did you\" in fast speech: /dɪdʒə/ — \"Didja go out?\" Saja copies the melody, not just the words.",
+   "focus": "question intonation",
+   "sound": "↗ yes/no · ↘ wh-",
+   "say_sound": "Did you go out? Where did you go?",
+   "chant": "Did you go? ↗ Yes, I did! Where did you go? ↘ To the park with the kids!",
+   "words": [
+    {
+     "w": "Did you go out?",
+     "e": "↗️",
+     "ar": "هل خرجت؟"
+    },
+    {
+     "w": "Yes, I did.",
+     "e": "✅",
+     "ar": "نعم، فعلت"
+    },
+    {
+     "w": "No, I didn't.",
+     "e": "❌",
+     "ar": "لا، لم أفعل"
+    },
+    {
+     "w": "Where did you go?",
+     "e": "↘️",
+     "ar": "إلى أين ذهبت؟"
+    },
+    {
+     "w": "What did you eat?",
+     "e": "🍝",
+     "ar": "ماذا أكلت؟"
+    },
+    {
+     "w": "Who did you see?",
+     "e": "👀",
+     "ar": "من رأيت؟"
+    },
+    {
+     "w": "Did you like it?",
+     "e": "👍",
+     "ar": "هل أعجبك؟"
+    },
+    {
+     "w": "I didn't see it.",
+     "e": "🙈",
+     "ar": "لم أره"
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word, hear it, say it. Click 💬 for the sentence.",
+   "tip": "Thought = past of think (another irregular verb!) — /θɔːt/ like bought. Light: igh = /aɪ/ (night, right). Head: ea = /e/ here (bread, head).",
+   "cards": [
+    {
+     "w": "light",
+     "s": "Who turned off the light?"
+    },
+    {
+     "w": "thought",
+     "s": "I thought my phone was in my bag."
+    },
+    {
+     "w": "head",
+     "s": "He hit his head on the door."
+    },
+    {
+     "w": "under",
+     "s": "The keys were under the sofa."
+    }
+   ],
+   "review": [
+    "start",
+    "city",
+    "earth",
+    "eyes",
+    "never",
+    "keep"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Did you…? I didn't…",
+   "minutes": 6,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read the rule and the table. Listen to the examples.",
+   "tip": "Transformation drill: Hasna says \"I went to the mall.\" → Saja: \"Did you go to the mall?\" → \"I didn't go to the mall.\" Correct \"went\" after did immediately.",
+   "rule": "For questions and negatives in the past simple, use did / didn't + the BASE verb (no -ed, no went!). The past is shown only once — in did.",
+   "table": [
+    [
+     "",
+     "form",
+     "example"
+    ],
+    [
+     "+",
+     "subject + past verb",
+     "I went to the park."
+    ],
+    [
+     "−",
+     "subject + didn't + base verb",
+     "I didn't go to the park."
+    ],
+    [
+     "? yes/no",
+     "Did + subject + base verb?",
+     "Did you go to the park?"
+    ],
+    [
+     "short answers",
+     "Yes, I did. / No, I didn't.",
+     "Yes, she did. / No, they didn't."
+    ],
+    [
+     "? wh-",
+     "Wh- + did + subject + base verb?",
+     "Where did you go? What did she buy?"
+    ]
+   ],
+   "examples": [
+    "Did you see my phone? No, I didn't.",
+    "I didn't take it to school.",
+    "Where did you put it?",
+    "What did Adam do after dinner?"
+   ],
+   "ar": "في السؤال والنفي في الماضي نستخدم did / didn't ثم الفعل في المصدر (بدون ed): Did you go? وليس Did you went?"
+  },
+  {
+   "type": "reading",
+   "title": "The Case of the Missing Phone",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": [
+    "Last night, Adam couldn't find his phone. He looked everywhere. \"Saja, you're good at puzzles. Please help me!\" he said. So I became a detective.",
+    "\"Did you take it to school?\" I asked. \"Yes, I did, but I brought it home. I thought it was in my bag.\" \"Did you check your bag?\" \"Yes, I did. It wasn't there.\"",
+    "\"What did you do after school?\" \"I watched TV on the sofa and then I had dinner.\" \"Did you use your phone at dinner?\" \"No, I didn't. Mum doesn't let us.\"",
+    "\"Where did you go after dinner?\" \"I went to bed early. I turned off the light at nine because my head hurt.\"",
+    "I thought for a minute. Then I went to the living room and looked under the sofa cushions. There it was! \"Detective Saja does it again!\" I laughed.",
+    "Adam didn't say much, but the next day he bought me a chocolate bar."
+   ],
+   "tip": "Two voices: Saja (detective) and Adam. Ask Saja to predict BEFORE the last paragraph: \"Where is the phone? Why do you think so?\" She must give a clue from the text.",
+   "story_title": "The Case of the Missing Phone",
+   "pic": "🔍📱🛋️💡",
+   "text_intro": "Listen to the detective story. Can you solve the case before Saja does?",
+   "highlight": [
+    "light",
+    "thought",
+    "head",
+    "under",
+    "did",
+    "didn't"
+   ],
+   "questions": [
+    {
+     "q": "What was the problem?",
+     "a": "Adam couldn't find his phone."
+    },
+    {
+     "q": "Did Adam take his phone to school?",
+     "a": "Yes, he did (and he brought it home)."
+    },
+    {
+     "q": "Did he use his phone at dinner? Why not?",
+     "a": "No, he didn't — Mum doesn't let them."
+    },
+    {
+     "q": "Where was the phone?",
+     "a": "Under the sofa cushions."
+    },
+    {
+     "q": "How did Adam say thank you?",
+     "a": "He bought Saja a chocolate bar."
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "did or didn't + base verb",
+   "minutes": 3,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Choose the right word for each gap.",
+   "tip": "Point at \"did\" every time: \"Did is already past — so the verb is…?\" (base).",
+   "items": [
+    {
+     "text": "___ you see my keys? No, I didn't.",
+     "answer": "Did",
+     "options": [
+      "Did",
+      "Do",
+      "Was"
+     ]
+    },
+    {
+     "text": "I didn't ___ to the party.",
+     "answer": "go",
+     "options": [
+      "go",
+      "went",
+      "going"
+     ]
+    },
+    {
+     "text": "Where did you ___ your phone?",
+     "answer": "put",
+     "options": [
+      "put",
+      "puted",
+      "putting"
+     ]
+    },
+    {
+     "text": "Adam ___ have his phone at dinner.",
+     "answer": "didn't",
+     "options": [
+      "didn't",
+      "doesn't",
+      "wasn't"
+     ]
+    },
+    {
+     "text": "Did she ___ a cake? Yes, she did.",
+     "answer": "make",
+     "options": [
+      "make",
+      "made",
+      "makes"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "Make detective questions",
+   "minutes": 2,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Click the words in the right order to make a sentence.",
+   "tip": "Say each question with the right arrow ↗ or ↘.",
+   "items": [
+    [
+     "Did",
+     "you",
+     "take",
+     "it",
+     "to",
+     "school?"
+    ],
+    [
+     "Where",
+     "did",
+     "you",
+     "go",
+     "after",
+     "dinner?"
+    ],
+    [
+     "I",
+     "didn't",
+     "use",
+     "my",
+     "phone",
+     "at",
+     "dinner."
+    ],
+    [
+     "What",
+     "did",
+     "you",
+     "do",
+     "last",
+     "night?"
+    ]
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Detective interview",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to the dialogue. Then take a part. Then answer about YOU.",
+   "tip": "Information gap: Hasna secretly writes 5 things she did yesterday. Saja asks Did-you questions to find all 5 (max 10 questions). Then swap.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Saja, you are the detective. Where were you yesterday at five o'clock?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "I was at home."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Did you go out after that?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "No, I didn't. I stayed at home and did my homework."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Did you eat anything?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Yes, I did. I had a sandwich."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "What did you watch?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "I didn't watch TV. I read a book."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "OK, you are not the thief! Now you ask me."
+    }
+   ],
+   "frames": [
+    "Did you ___ yesterday?",
+    "Yes, I did. / No, I didn't.",
+    "Where / What / Who did you ___?",
+    "I didn't ___. I ___."
+   ],
+   "prompts": [
+    "Did you go out yesterday? Where did you go?",
+    "Did you eat anything sweet? What?",
+    "What did you do after school?",
+    "Did you talk to a friend? Who? What about?",
+    "Now interview Hasna with 5 questions."
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Interview a family member",
+   "minutes": 6,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Read the model. Plan with the frames. Then write your own.",
+   "tip": "Saja writes the questions now and the answers at home (homework).",
+   "model": "Q: Did you go out yesterday? A: Yes, I did. I went to the supermarket. Q: What did you buy? A: I bought fruit and bread. Q: Did you watch TV in the evening? A: No, I didn't. I read the newspaper. Q: What time did you go to bed? A: I went to bed at eleven.",
+   "frames": [
+    "Q: Did you ___ yesterday?",
+    "A: Yes, I did. / No, I didn't. I ___.",
+    "Q: Where / What / Who did you ___?",
+    "A: I ___."
+   ],
+   "task": "Write 4 questions and answers (Q&A). Ask Hasna now, and a family member at home tonight.",
+   "checklist": [
+    "❓ 2 yes/no questions with Did…?",
+    "❓ 2 wh- questions (Where / What / Who…?)",
+    "✅ Base verb after did",
+    "✅ Short answers: Yes, I did. / No, I didn't.",
+    "✅ Question marks"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Wrap-up",
+   "minutes": 1,
+   "tip": "Count the stars together. Saja ticks the exit list honestly — anything not ticked goes into the next warm-up.",
+   "exit": [
+    "I can ask Did you…? questions.",
+    "I can say what I didn't do.",
+    "I can make my voice go up ↗ and down ↘.",
+    "I can write an interview."
+   ],
+   "homework": [
+    "Interview a family member with your 4 questions. Write the answers.",
+    "Write 3 things you didn't do yesterday.",
+    "Read \"The Case of the Missing Phone\" with someone at home — you are the detective!"
+   ],
+   "goodbye": "Case closed! Great detective work today, Saja. Bye!"
+  }
+ ],
+ "nav": {
+  "prev": "L35.html",
+  "next": "L37.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

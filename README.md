@@ -1,3 +1,3 @@
 # English lessons
 
-A password-protected lesson website. Pages and audio are encrypted.
+A lesson website. The main page is password protected.

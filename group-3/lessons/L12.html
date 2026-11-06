@@ -1,18 +1,514 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L12 · Do you…? Does she…?</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L12",
+ "group": "g3",
+ "lesson": 12,
+ "week": 6,
+ "month": 2,
+ "unit": "Daily Life & Routines",
+ "title": "Do you…? Does she…?",
+ "emoji": "🙋",
+ "minutes": 45,
+ "kid_goals": [
+  "🙋 Ask Do you…? and Does she…? questions",
+  "🎵 Use the right question tune ↗ ↘",
+  "📊 Read a class survey",
+  "✍️ Write survey questions and answers"
+ ],
+ "objectives": [
+  "Can ask and answer present simple yes/no questions and wh- questions (A1 spoken interaction).",
+  "Can use rising intonation for yes/no questions and falling intonation for wh- questions.",
+  "Can read and use the key words old, any, same, tell.",
+  "Can write questions and short answers from a survey."
+ ],
+ "focus": {
+  "sounds": [
+   "yes/no question ↗",
+   "wh- question ↘"
+  ],
+  "sight_words": [
+   "old",
+   "any",
+   "same",
+   "tell"
+  ],
+  "language": "Do you…? Yes, I do. / No, I don't. Does she…? Yes, she does. / No, she doesn't. Where do you…? What does he…?"
+ },
+ "frameworks": [
+  "CEFR A1 → A2 can-do statements (Cambridge A2 Flyers topics)",
+  "PPP: present → practise → produce",
+  "Pronunciation: intonation patterns",
+  "Survey task (real information gap)",
+  "Spaced retrieval: don't / doesn't (lesson 11)"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Unit 7 (present simple questions)",
+  "Coursebook unit 2 style: questions & short answers",
+  "Fry high-frequency words 126–150 (old, any, same, tell)"
+ ],
+ "teacher_notes": "Same s-rule as last lesson: \"Does she likes?\" ✗ → \"Does she like?\" ✓. Short answers repeat do/does: \"Yes, I do.\" Arabic yes/no questions often just use rising intonation (\"You like pizza?\") — that is OK in casual English, but she needs the do/does form for writing and exams.",
+ "differentiation": "Support: drill only Do you…? first. Stretch: add wh- questions (What time do you…? Where does she…?) and a follow-up question.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Quick questions",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Answer yes or no — then say a full sentence!",
+   "tip": "Accept \"yes/no\" first, then ask for \"Yes, I do / No, I don't\". This shows what she already knows.",
+   "lines": [
+    "Do you like pizza?",
+    "Do you get up early?",
+    "Does your brother play football?",
+    "Does your mum drink coffee?",
+    "Do you have English on Monday?"
+   ],
+   "questions": [
+    "Read me one negative sentence from your homework.",
+    "What's a contraction you found?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Reading",
+    "Speaking"
+   ],
+   "text": "English questions have a tune. Yes/no questions go UP at the end ↗. Wh- questions go DOWN ↘. Listen and copy with your hand!",
+   "tip": "Hasna says each question with an exaggerated tune and draws the arrow in the air; Saja copies with her hand. Then hum the tune without words — teens find it funny and remember it.",
+   "focus": "↗ ↘",
+   "sound": "intonation: yes/no questions go UP ↗ · wh- questions go DOWN ↘",
+   "say_sound": "Do you like music? ↗  Where do you live? ↘",
+   "chant": "Do you like it? ↗ Yes, I do! What do you like? ↘ I like you!",
+   "words": [
+    {
+     "w": "Do you like music? ↗",
+     "e": "🎵",
+     "ar": "هل تحبين الموسيقى؟"
+    },
+    {
+     "w": "Does she play tennis? ↗",
+     "e": "🎾",
+     "ar": "هل تلعب التنس؟"
+    },
+    {
+     "w": "Do they live here? ↗",
+     "e": "🏠",
+     "ar": "هل يسكنون هنا؟"
+    },
+    {
+     "w": "Where do you live? ↘",
+     "e": "📍",
+     "ar": "أين تسكنين؟"
+    },
+    {
+     "w": "What does he eat? ↘",
+     "e": "🍽️",
+     "ar": "ماذا يأكل؟"
+    },
+    {
+     "w": "When do you get up? ↘",
+     "e": "⏰",
+     "ar": "متى تستيقظين؟"
+    },
+    {
+     "w": "Yes, I do.",
+     "e": "✅",
+     "ar": "نعم"
+    },
+    {
+     "w": "No, she doesn't.",
+     "e": "❌",
+     "ar": "لا"
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word. Click 💬 to hear it in a sentence. Then say your own sentence with it.",
+   "tip": "\"Any\" in questions: \"Have you got any pets?\" (more in lesson 18). \"Tell me about…\" is a great speaking starter.",
+   "cards": [
+    {
+     "w": "old",
+     "s": "How old is your grandma?"
+    },
+    {
+     "w": "any",
+     "s": "Have you got any brothers?"
+    },
+    {
+     "w": "same",
+     "s": "We are in the same class."
+    },
+    {
+     "w": "tell",
+     "s": "Tell me about your best friend."
+    }
+   ],
+   "review": [
+    "line",
+    "right",
+    "too",
+    "mean",
+    "help",
+    "before"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Present simple questions",
+   "minutes": 6,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "tip": "Turn 3 sentences from \"Two Very Different Sisters\" into questions together: \"Does Huda get up early?\"",
+   "rule": "Do + I / you / we / they + verb? Does + he / she / it + verb (no s)? Short answers: Yes, I do. / No, she doesn't. Wh- word + do/does + subject + verb?",
+   "table": [
+    [
+     "Question",
+     "Yes",
+     "No"
+    ],
+    [
+     "Do you like sport?",
+     "Yes, I do.",
+     "No, I don't."
+    ],
+    [
+     "Does she play tennis?",
+     "Yes, she does.",
+     "No, she doesn't."
+    ],
+    [
+     "Do they live here?",
+     "Yes, they do.",
+     "No, they don't."
+    ],
+    [
+     "Where do you live?",
+     "I live in a flat.",
+     "—"
+    ],
+    [
+     "What time does he get up?",
+     "He gets up at six.",
+     "—"
+    ]
+   ],
+   "examples": [
+    "Do you play an instrument? No, I don't.",
+    "Does your sister like cats? Yes, she does.",
+    "Where does your cousin live? She lives in Amman.",
+    "What do you do after school?"
+   ],
+   "ar": "السؤال في المضارع البسيط: Do / Does في البداية. مع he / she / it نستخدم Does والفعل بدون s. الإجابة القصيرة: Yes, I do. / No, she doesn't."
+  },
+  {
+   "type": "reading",
+   "title": "The Class Survey",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "tip": "Before reading: \"What questions do you think are in the survey?\" After: Saja asks Hasna the four survey questions.",
+   "story_title": "The Class Survey",
+   "pic": "📊📝🙋",
+   "text_intro": "Listen first. Then read with me. Then you read alone!",
+   "text": [
+    "Last week, our English teacher said, \"Make a survey! Ask the people in your class four questions and tell us the answers.\"",
+    "My questions were: Do you have any pets? Do you play a sport? Does anyone in your family speak English? How old is your oldest grandparent?",
+    "Here are the results. Twelve students have pets — mostly cats! Fifteen students play a sport. Football is the most popular, then swimming.",
+    "Eight students say someone in their family speaks English. Mariam's mum is an English teacher at the same school!",
+    "The oldest grandparent is ninety-one. It's Karim's great-grandmother, and she still walks every day.",
+    "Surveys are fun. What questions do you want to ask?"
+   ],
+   "highlight": [
+    "old",
+    "oldest",
+    "any",
+    "anyone",
+    "same",
+    "tell"
+   ],
+   "questions": [
+    {
+     "q": "How many students have pets?",
+     "a": "Twelve."
+    },
+    {
+     "q": "What is the most popular sport?",
+     "a": "Football."
+    },
+    {
+     "q": "Who is an English teacher?",
+     "a": "Mariam's mum."
+    },
+    {
+     "q": "How old is Karim's great-grandmother?",
+     "a": "She's ninety-one."
+    },
+    {
+     "q": "Does she walk every day?",
+     "a": "Yes, she does."
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Choose the right question or answer",
+   "minutes": 3,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Read and choose.",
+   "tip": "Ask her to say each correct question with the right tune ↗.",
+   "items": [
+    {
+     "q": "___ you like music?",
+     "options": [
+      "Do",
+      "Does",
+      "Are"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "___ your brother play football?",
+     "options": [
+      "Do",
+      "Does",
+      "Is"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Does she like cats?",
+     "options": [
+      "Yes, she likes.",
+      "Yes, she does.",
+      "Yes, she do."
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Do they live in Amman?",
+     "options": [
+      "No, they don't.",
+      "No, they doesn't.",
+      "No, they aren't."
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Which is correct?",
+     "options": [
+      "Does he likes pizza?",
+      "Does he like pizza?",
+      "Do he like pizza?"
+     ],
+     "answer": 1
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "Make the question",
+   "minutes": 3,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Choose do or does, or the right verb.",
+   "tip": "Remind her: a plural subject (your friends) takes do.",
+   "items": [
+    {
+     "text": "Where ___ you live?",
+     "answer": "do",
+     "options": [
+      "do",
+      "does"
+     ]
+    },
+    {
+     "text": "What time ___ your dad get up?",
+     "answer": "does",
+     "options": [
+      "do",
+      "does"
+     ]
+    },
+    {
+     "text": "___ your friends play games online?",
+     "answer": "Do",
+     "options": [
+      "Do",
+      "Does"
+     ]
+    },
+    {
+     "text": "Does Mariam ___ the piano?",
+     "answer": "play",
+     "options": [
+      "play",
+      "plays"
+     ]
+    },
+    {
+     "text": "What ___ your cat eat?",
+     "answer": "does",
+     "options": [
+      "do",
+      "does"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Survey",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then do a real survey with Hasna!",
+   "tip": "Real survey: Saja asks, Hasna answers truthfully, Saja notes answers. Correct intonation with the hand arrow.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Saja",
+     "line": "Hi Hasna, can I ask you some survey questions?"
+    },
+    {
+     "who": "B",
+     "name": "Hasna",
+     "line": "Sure!"
+    },
+    {
+     "who": "A",
+     "name": "Saja",
+     "line": "Do you have any pets?"
+    },
+    {
+     "who": "B",
+     "name": "Hasna",
+     "line": "Yes, I do. I've got a cat."
+    },
+    {
+     "who": "A",
+     "name": "Saja",
+     "line": "Do you play a sport?"
+    },
+    {
+     "who": "B",
+     "name": "Hasna",
+     "line": "No, I don't. But I walk every day."
+    },
+    {
+     "who": "A",
+     "name": "Saja",
+     "line": "Does anyone in your family speak English?"
+    },
+    {
+     "who": "B",
+     "name": "Hasna",
+     "line": "Yes, my sister does. Tell me — what's the next question?"
+    }
+   ],
+   "frames": [
+    "Do you ___?",
+    "Does your ___ ___?",
+    "Where / What / When do you ___?",
+    "Yes, I do. / No, I don't.",
+    "Yes, he / she does. / No, he / she doesn't."
+   ],
+   "prompts": [
+    "Ask me the 4 survey questions from the text.",
+    "Make 2 new survey questions and ask me.",
+    "Now I ask you: Do you play a sport? Does your mum speak English?",
+    "Tell me one surprising answer from our survey."
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Survey: questions and answers",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Use the notes from your survey.",
+   "tip": "She writes the questions she asked and the answers she heard — a real reporting task.",
+   "model": "Do you have any pets? — Yes, I do. I've got a cat.\nDoes your sister play a sport? — No, she doesn't.",
+   "frames": [
+    "Do you ___? — Yes, I do. / No, I don't.",
+    "Does your ___ ___? — Yes, he/she does. / No, he/she doesn't.",
+    "Where / What time do you ___? — I ___."
+   ],
+   "task": "Write 4 questions and Hasna's answers from your survey.",
+   "checklist": [
+    "Do with I/you/we/they, Does with he/she/it",
+    "No s on the verb in questions",
+    "Question marks",
+    "Short answers with do / does"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Stars, exit ticket & homework",
+   "minutes": 1,
+   "exit": [
+    "I can ask Do you…? and Does she…?",
+    "I can give short answers",
+    "I can read old, any, same, tell",
+    "I can use the right question tune"
+   ],
+   "homework": [
+    "Ask 3 people at home your 4 survey questions. Write their answers.",
+    "Write 3 wh- questions with do / does.",
+    "Read \"The Class Survey\" aloud."
+   ],
+   "goodbye": "Do you know how good you are? Yes, you do! Goodbye, Saja!"
+  }
+ ],
+ "nav": {
+  "prev": "L11.html",
+  "next": "L13.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

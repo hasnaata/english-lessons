@@ -1,18 +1,549 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L16 · Month 2 check</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L16",
+ "group": "g3",
+ "lesson": 16,
+ "week": 8,
+ "month": 2,
+ "unit": "Daily Life & Routines",
+ "title": "Month 2 check",
+ "emoji": "✅",
+ "minutes": 45,
+ "kid_goals": [
+  "✅ Show what I learned this month",
+  "👂 Listen to times and routines",
+  "📖 Read and answer",
+  "🗣️✍️ Talk and write about my day"
+ ],
+ "objectives": [
+  "Listening: can understand times, routines and frequency in short spoken sentences (A1).",
+  "Reading: can understand a short text about daily life and complete present simple sentences.",
+  "Writing: can order words into correct sentences and write a short paragraph about a daily routine.",
+  "Speaking: can talk about routines, times, likes and habits and ask present simple questions."
+ ],
+ "focus": {
+  "sounds": [
+   "review"
+  ],
+  "sight_words": [
+   "think",
+   "say",
+   "great",
+   "where",
+   "help",
+   "through",
+   "much",
+   "before",
+   "line",
+   "right",
+   "too",
+   "mean",
+   "old",
+   "any",
+   "same",
+   "tell",
+   "boy",
+   "follow",
+   "came",
+   "want",
+   "show",
+   "also",
+   "around",
+   "form",
+   "three",
+   "small",
+   "set",
+   "put"
+  ],
+  "language": "present simple (+ / − / ?), telling the time, adverbs of frequency, likes + because"
+ },
+ "frameworks": [
+  "Formative assessment: monthly 4-skill check (/25 per skill)",
+  "Spaced retrieval of month 2 words and grammar",
+  "CEFR A1 can-do statements"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Units 5–7, 110 (review)",
+  "English Conversation Made Natural — Chapter \"Chatting with Classmates\" (review)",
+  "Fry high-frequency words 126–175 (month 2 review)"
+ ],
+ "teacher_notes": "Friendly \"Month 2 challenge\". Score each skill /25 (see tips) and record in the Google Sheet \"Assessments\" and in Saja's student page. Compare with Month 1 and tell her what improved. Reward at the end.",
+ "differentiation": "Support: instructions may be explained in Arabic. Stretch: extra writing sentences if she finishes early.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Ready for the challenge?",
+   "minutes": 3,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Relax! A few easy questions.",
+   "tip": "Not scored. Check sound and microphone.",
+   "lines": [
+    "Hi Saja! How are you today?",
+    "What time did you get up? What time is it now?",
+    "What do you usually do on Saturdays?",
+    "What's your favourite subject?"
+   ],
+   "questions": [
+    "What was easy this month?",
+    "What was difficult?"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 2,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Quick review: read the month 2 key words.",
+   "tip": "Warm-up for reading, not scored.",
+   "cards": [
+    {
+     "w": "think",
+     "s": "I think English is fun."
+    },
+    {
+     "w": "much",
+     "s": "I don't have much time."
+    },
+    {
+     "w": "right",
+     "s": "You're right!"
+    },
+    {
+     "w": "any",
+     "s": "Have you got any pets?"
+    },
+    {
+     "w": "follow",
+     "s": "Follow me, please."
+    },
+    {
+     "w": "also",
+     "s": "I also like music."
+    },
+    {
+     "w": "small",
+     "s": "My room is small."
+    },
+    {
+     "w": "put",
+     "s": "Put your phone in your bag."
+    }
+   ],
+   "review": [
+    "say",
+    "great",
+    "where",
+    "help",
+    "through",
+    "before",
+    "line",
+    "too",
+    "mean",
+    "old",
+    "same",
+    "tell",
+    "boy",
+    "came",
+    "want",
+    "show",
+    "around",
+    "form",
+    "three",
+    "set"
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "👂 Listening (25 points)",
+   "minutes": 8,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Listen. You can hear each one 2 times. Choose the answer.",
+   "tip": "SCORING Listening /25: 10 items × 2.5 points. Note errors with -teen/-ty and with time.",
+   "items": [
+    {
+     "say": "I get up at quarter to seven.",
+     "q": "What time does Saja get up?",
+     "options": [
+      "6:15",
+      "6:45",
+      "7:45"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "thirty",
+     "q": "Which number?",
+     "options": [
+      "13",
+      "30"
+     ],
+     "answer": 1,
+     "keep_order": true
+    },
+    {
+     "say": "Hamza plays basketball twice a week.",
+     "q": "When does Hamza play basketball?",
+     "options": [
+      "every day",
+      "once a week",
+      "twice a week"
+     ],
+     "answer": 2
+    },
+    {
+     "say": "Huda doesn't get up early. She stays in bed.",
+     "q": "What doesn't Huda do?",
+     "options": [
+      "get up early",
+      "eat breakfast",
+      "watch videos"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "School finishes at two o'clock.",
+     "q": "What time does school finish?",
+     "options": [
+      "2:00",
+      "12:00",
+      "2:30"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "My dad sometimes cooks dinner on Fridays.",
+     "q": "How often does Dad cook?",
+     "options": [
+      "always",
+      "sometimes",
+      "never"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "I love science because I want to be a doctor.",
+     "q": "Why does Lara love science?",
+     "options": [
+      "It's easy.",
+      "She wants to be a doctor.",
+      "The teacher is funny."
+     ],
+     "answer": 1
+    },
+    {
+     "say": "Does your sister like music?",
+     "q": "Which is the answer?",
+     "options": [
+      "Yes, she does.",
+      "Yes, she is.",
+      "Yes, she has."
+     ],
+     "answer": 0
+    },
+    {
+     "say": "fifteen",
+     "q": "Which number?",
+     "options": [
+      "15",
+      "50"
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "say": "Maya plays the violin and she loves music.",
+     "q": "What does Maya play?",
+     "options": [
+      "🎻 the violin",
+      "🎸 the guitar",
+      "🎹 the piano"
+     ],
+     "answer": 0
+    }
+   ]
+  },
+  {
+   "type": "reading",
+   "title": "Grandpa's Day",
+   "minutes": 8,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "tip": "SCORING Reading part 1: 5 questions × 3 = 15. Accept short answers with the right meaning.",
+   "story_title": "Grandpa's Day",
+   "pic": "👴⏰🌳",
+   "text_intro": "Read the text alone. Then answer the questions.",
+   "text": [
+    "My grandpa is seventy-two, but he is never tired! He always gets up at five o'clock.",
+    "First, he has tea and reads the news. Then, at six, he walks through the park with his friend. They walk for an hour and they talk about football.",
+    "Grandpa doesn't like watching TV. He thinks it is boring. He usually works in his small garden in the afternoon. He has got tomatoes and three lemon trees.",
+    "In the evening, he sometimes comes to our house for dinner. He always tells funny stories about when he was a boy.",
+    "He goes to bed at nine o'clock. \"Early to bed, early to rise!\" he says."
+   ],
+   "highlight": [
+    "through",
+    "small",
+    "three",
+    "tells",
+    "boy",
+    "thinks"
+   ],
+   "questions": [
+    {
+     "q": "What time does Grandpa get up?",
+     "a": "At five o'clock."
+    },
+    {
+     "q": "What does he do at six?",
+     "a": "He walks through the park with his friend."
+    },
+    {
+     "q": "Does he like watching TV? Why?",
+     "a": "No, he doesn't. He thinks it is boring."
+    },
+    {
+     "q": "What has he got in his garden?",
+     "a": "Tomatoes and three lemon trees."
+    },
+    {
+     "q": "What time does he go to bed?",
+     "a": "At nine o'clock."
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "📖 Reading part 2: complete the sentences",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Choose the right word.",
+   "tip": "SCORING Reading part 2: 5 × 2 = 10. Reading total /25.",
+   "items": [
+    {
+     "text": "My brother ___ football every Saturday.",
+     "answer": "plays",
+     "options": [
+      "play",
+      "plays",
+      "playing"
+     ]
+    },
+    {
+     "text": "We ___ go to school on Fridays.",
+     "answer": "don't",
+     "options": [
+      "don't",
+      "doesn't",
+      "aren't"
+     ]
+    },
+    {
+     "text": "___ your mum drink coffee?",
+     "answer": "Does",
+     "options": [
+      "Do",
+      "Does",
+      "Is"
+     ]
+    },
+    {
+     "text": "School starts ___ eight o'clock.",
+     "answer": "at",
+     "options": [
+      "in",
+      "on",
+      "at"
+     ]
+    },
+    {
+     "text": "I'm ___ late for school.",
+     "answer": "never",
+     "options": [
+      "never",
+      "don't",
+      "not never"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "✍️ Writing part 1: make sentences",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Click the words in the right order.",
+   "tip": "SCORING Writing part 1: 5 × 2 = 10 (first try 2, second try 1).",
+   "items": [
+    [
+     "She",
+     "doesn't",
+     "like",
+     "getting",
+     "up",
+     "early."
+    ],
+    [
+     "What",
+     "time",
+     "do",
+     "you",
+     "have",
+     "lunch?"
+    ],
+    [
+     "I",
+     "usually",
+     "walk",
+     "to",
+     "school."
+    ],
+    [
+     "My",
+     "dad",
+     "always",
+     "drinks",
+     "tea."
+    ],
+    [
+     "Does",
+     "your",
+     "brother",
+     "play",
+     "a",
+     "sport?"
+    ]
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "🗣️ Speaking (25 points)",
+   "minutes": 7,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Answer Hasna's questions in full sentences.",
+   "tip": "SCORING Speaking /25: 5 prompts × 5 (2 task, 2 grammar/vocabulary — especially -s and do/does, 1 pronunciation & fluency).",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "What time do you get up?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "I get up at quarter to seven."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "How often do you play games?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Sometimes, usually on Friday."
+    }
+   ],
+   "frames": [
+    "I get up at ___.",
+    "I always / usually / sometimes / never ___.",
+    "My ___ doesn't ___.",
+    "I like ___ because ___.",
+    "Do you ___? / What time do you ___?"
+   ],
+   "prompts": [
+    "1. Tell me about your morning (5 things, with times).",
+    "2. Tell me 3 things you always, sometimes and never do.",
+    "3. Tell me about one person in your family: what does he / she do every day? (+s)",
+    "4. What's your favourite subject? Why? Which subject don't you like?",
+    "5. Ask me 3 questions about my day (Do you…? What time…? How often…?)"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "✍️ Writing part 2: my Saturday",
+   "minutes": 7,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write alone. You have 7 minutes.",
+   "tip": "SCORING Writing part 2: 15 (5 sentences × 2 for meaning + grammar, + 5 for punctuation and spelling). Writing total = 10 + 15 = /25.",
+   "model": "On Saturday I get up at nine o'clock. I usually have a big breakfast with my family. In the afternoon I sometimes meet my friends. My brother doesn't get up early — he sleeps until eleven! I always go to bed at ten.",
+   "frames": [
+    "On Saturday I get up at ___.",
+    "I usually ___.",
+    "In the afternoon I sometimes ___.",
+    "My ___ doesn't ___.",
+    "I always / never ___."
+   ],
+   "task": "Write 5–6 sentences about your Saturday. Use times, how often words and one he/she sentence.",
+   "checklist": [
+    "Times with at",
+    "Frequency words in the right place",
+    "One he/she sentence with -s or doesn't",
+    "Capital letters and full stops"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Stars, exit ticket & homework",
+   "minutes": 2,
+   "exit": [
+    "I did my Month 2 listening check",
+    "I did my reading check",
+    "I did my writing check",
+    "I did my speaking check"
+   ],
+   "homework": [
+    "Write 3 corrected sentences from your mistakes.",
+    "Choose your reward!",
+    "Tell your family 3 things you can do in English now."
+   ],
+   "goodbye": "Two months done, Saja! Amazing progress. Here is your reward!"
+  }
+ ],
+ "nav": {
+  "prev": "L15.html",
+  "next": "L17.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

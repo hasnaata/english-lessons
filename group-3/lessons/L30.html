@@ -1,18 +1,535 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L30 · Conversation: Gaming Session</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L30",
+ "group": "g3",
+ "lesson": 30,
+ "week": 15,
+ "month": 4,
+ "unit": "Home, Town & Right Now",
+ "title": "Conversation: Gaming Session",
+ "emoji": "🎮",
+ "minutes": 45,
+ "kid_goals": [
+  "🎮 Talk about playing games with a friend",
+  "🙌 Invite a friend and make suggestions with Let's…",
+  "🔊 Hear can and can't clearly",
+  "✍️ Write an invitation message"
+ ],
+ "objectives": [
+  "Can talk about ability with can / can't (A1+).",
+  "Can make suggestions with Let's… and What if we…? and respond (A2).",
+  "Can invite a friend and accept or refuse politely (A2 Key for Schools: invitations).",
+  "Can hear the difference between weak /kən/ and strong /kɑːnt/.",
+  "Can write a short invitation message."
+ ],
+ "focus": {
+  "sounds": [
+   "weak form /kən/",
+   "can't /kɑːnt/",
+   "linking"
+  ],
+  "sight_words": [
+   "high",
+   "every",
+   "near",
+   "add"
+  ],
+  "language": "can / can't; Let's…; What if we…?; Would you like to…? I'd love to! / Sorry, I can't.",
+  "vocabulary": [
+   "level",
+   "team",
+   "score",
+   "win",
+   "lose",
+   "boss",
+   "controller",
+   "snack"
+  ]
+ },
+ "frameworks": [
+  "Dialogue model → controlled role-play → personalised role-play (gradual release)",
+  "Comprehensible input: a real teen situation",
+  "Spaced retrieval: key words come back in the reading and dialogue",
+  "Writing: modelled → guided (sentence frames)",
+  "CEFR A1 → A2 can-do objectives"
+ ],
+ "sources": [
+  "English Conversation Made Natural — Chapter 2: Gaming Session, adapted (situation only; original A1–A2 dialogue)",
+  "English Grammar in Use (simplified), Unit 26 — can, could and (be) able to",
+  "English Grammar in Use (simplified), Unit 37 — invitations (Would you like…?)",
+  "Fry high-frequency words 101–300: high, every, near, add"
+ ],
+ "teacher_notes": "If Saja does not play video games, switch the topic to a board game or a phone puzzle game — the language is the same. Keep it fun and real. Weak form: in \"I can play\" the vowel almost disappears (/aɪ kən pleɪ/); in \"I can't play\" the a is long and clear. This is a big listening problem in exams.",
+ "differentiation": "Support: keep the invitation frames on screen. Stretch: add a reason when refusing (\"Sorry, I can't because I have to…\") and suggest another day.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Warm-up chat",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Listen, then answer in full sentences.",
+   "tip": "Recycle the starter unit: into / good at / favourite (\"I'm into…\", \"I'm good at…\"). Let Saja teach you the name of a game she likes.",
+   "lines": [
+    "Hey Saja! Do you play games?",
+    "What is your favourite game?",
+    "I like puzzle games on my phone.",
+    "Do you play alone or with friends?",
+    "Are you good at it?"
+   ],
+   "questions": [
+    "What games do you like?",
+    "Who do you play with?",
+    "Can you win against your friends?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Speaking",
+    "Reading"
+   ],
+   "text": "Listen, repeat and notice the pattern. Click a word to hear it.",
+   "tip": "Weak form: can is short /kən/ in a sentence; can't is long /kɑːnt/ and stressed — often the t is almost silent, so the LONG vowel is the clue. Linking: \"add_a friend\", \"an_easy level\", \"play_again\" join together. Saja listens and shows 👍 for can, 👎 for can't.",
+   "focus": "can / can't",
+   "sound": "/kən/ vs /kɑːnt/",
+   "say_sound": "I can play. I can't win.",
+   "chant": "I can play, I can play — but I can't win today!",
+   "words": [
+    {
+     "w": "I can play",
+     "e": "🎮",
+     "ar": "أستطيع أن ألعب"
+    },
+    {
+     "w": "I can't win",
+     "e": "😩",
+     "ar": "لا أستطيع الفوز"
+    },
+    {
+     "w": "Can you help me?",
+     "e": "🙋",
+     "ar": "هل تساعدني؟"
+    },
+    {
+     "w": "Let's add a friend",
+     "e": "➕",
+     "ar": "لنضف صديقًا"
+    },
+    {
+     "w": "an easy level",
+     "e": "🟢",
+     "ar": "مرحلة سهلة"
+    },
+    {
+     "w": "play again",
+     "e": "🔁",
+     "ar": "العب مرة أخرى"
+    },
+    {
+     "w": "a high score",
+     "e": "🏆",
+     "ar": "نتيجة عالية"
+    },
+    {
+     "w": "come on in",
+     "e": "🚪",
+     "ar": "تفضل بالدخول"
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word, hear it, say it. Click 💬 for the sentence.",
+   "tip": "High: high score, high level, the opposite of low. Every + singular noun: every day, every Friday (NOT every days).",
+   "cards": [
+    {
+     "w": "high",
+     "s": "My high score is nine thousand points!"
+    },
+    {
+     "w": "every",
+     "s": "We play together every Friday evening."
+    },
+    {
+     "w": "near",
+     "s": "My friend lives near my house."
+    },
+    {
+     "w": "add",
+     "s": "Can you add me as a friend in the game?"
+    }
+   ],
+   "review": [
+    "learn",
+    "should",
+    "world",
+    "still",
+    "answer",
+    "study"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Can, Let's and invitations",
+   "minutes": 6,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read the rule and the table. Listen to the examples.",
+   "tip": "Common error: \"Let's to play\" / \"Can you to help\". Quick drill: Hasna says a problem (\"I'm bored\"), Saja answers with Let's… (\"Let's play a game!\").",
+   "rule": "Use can / can't + verb for ability (I can play) and permission (Can I play?). Use Let's + verb to make a suggestion for you AND me. Use Would you like to + verb to invite someone politely. The verb after can, let's and would like to has no -s and no -ing.",
+   "table": [
+    [
+     "use",
+     "example",
+     "answer"
+    ],
+    [
+     "ability",
+     "I can beat this level. I can't win alone.",
+     "—"
+    ],
+    [
+     "question",
+     "Can you help me?",
+     "Yes, I can. / No, I can't."
+    ],
+    [
+     "suggestion",
+     "Let's try again!",
+     "OK, let's do it! / Good idea!"
+    ],
+    [
+     "idea",
+     "What if we work as a team?",
+     "That's a great idea!"
+    ],
+    [
+     "invitation",
+     "Would you like to play on Saturday?",
+     "I'd love to! / Sorry, I can't. I have to…"
+    ]
+   ],
+   "examples": [
+    "I can't beat the boss alone.",
+    "Let's work together!",
+    "Would you like to come to my house on Friday?",
+    "Sorry, I can't. I have to visit my grandmother."
+   ],
+   "ar": "can = يستطيع، Let's = هيا بنا (اقتراح)، Would you like to = هل تود أن (دعوة مهذبة). بعدها الفعل في المصدر بدون s ولا ing."
+  },
+  {
+   "type": "reading",
+   "title": "Two Mice and a Big Boss",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": [
+    "Saja and her friend Nour play an online game together every Friday evening. Nour lives near Saja — right next door! — but they play from their own rooms and talk on headphones.",
+    "Last Friday, they were stuck on level ten. The boss at the end was huge and very fast. \"I can't beat him!\" Nour said. \"I lose every time!\"",
+    "Saja had an idea. \"We aren't a team. We're playing alone. What if I run around and the boss follows me? Then you can attack him from behind.\"",
+    "\"Like a cat and two mice?\" Nour laughed. \"OK, let's try it!\"",
+    "It worked! The boss chased Saja, and Nour attacked. After three minutes, the boss fell down. They won, and they got a new high score.",
+    "\"We can do anything together!\" said Saja. \"Let's add this to our list of great moments. Now, would you like to get a snack to celebrate?\"",
+    "\"I'd love to!\" said Nour."
+   ],
+   "tip": "Past tense appears as chunks only (was, said, worked) — do not teach it yet, just check meaning. Read as a story with two voices for the quotes; Saja reads Nour's lines.",
+   "story_title": "Two Mice and a Big Boss",
+   "pic": "🎮🐭👾🏆",
+   "text_intro": "Listen to the story. Then read Saja's and Nour's words with feeling!",
+   "highlight": [
+    "high",
+    "every",
+    "near",
+    "add",
+    "can",
+    "can't",
+    "let's"
+   ],
+   "questions": [
+    {
+     "q": "When do Saja and Nour play?",
+     "a": "Every Friday evening."
+    },
+    {
+     "q": "What was the problem on level ten?",
+     "a": "The boss was huge and very fast; Nour lost every time."
+    },
+    {
+     "q": "What was Saja's idea?",
+     "a": "She runs around and the boss follows her; Nour attacks from behind (teamwork)."
+    },
+    {
+     "q": "Did it work? How do you know?",
+     "a": "Yes — the boss fell down, they won and got a new high score."
+    },
+    {
+     "q": "What do you think \"We can do anything together\" means?",
+     "a": "Teamwork makes us strong."
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "Can, can't or let's?",
+   "minutes": 3,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Choose the right word for each gap.",
+   "tip": "After each answer, Saja reads the whole sentence aloud with the right stress (can't = long and strong).",
+   "items": [
+    {
+     "text": "This level is too hard. I ___ win!",
+     "answer": "can't",
+     "options": [
+      "can",
+      "can't",
+      "let's"
+     ]
+    },
+    {
+     "text": "___ work as a team!",
+     "answer": "Let's",
+     "options": [
+      "Can",
+      "Let's",
+      "Would"
+     ]
+    },
+    {
+     "text": "___ you help me with this boss?",
+     "answer": "Can",
+     "options": [
+      "Can",
+      "Let's",
+      "Every"
+     ]
+    },
+    {
+     "text": "Would you like ___ play on Saturday?",
+     "answer": "to",
+     "options": [
+      "to",
+      "for",
+      "—"
+     ]
+    },
+    {
+     "text": "We play together ___ Friday.",
+     "answer": "every",
+     "options": [
+      "every",
+      "all",
+      "near"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "Make invitations and answers",
+   "minutes": 2,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Click the words in the right order to make a sentence.",
+   "tip": "Say each finished sentence with friendly intonation — invitations go up at the end.",
+   "items": [
+    [
+     "Would",
+     "you",
+     "like",
+     "to",
+     "play",
+     "on",
+     "Saturday?"
+    ],
+    [
+     "Let's",
+     "work",
+     "as",
+     "a",
+     "team."
+    ],
+    [
+     "Sorry,",
+     "I",
+     "can't.",
+     "I",
+     "have",
+     "to",
+     "study."
+    ],
+    [
+     "I'd",
+     "love",
+     "to",
+     "come",
+     "to",
+     "your",
+     "house!"
+    ]
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Gaming session",
+   "minutes": 7,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to the dialogue. Then take a part. Then answer about YOU.",
+   "tip": "Situation adapted from \"English Conversation Made Natural\", Ch. 2 — dialogue is original. Read, swap roles, then hide the text (🙈 button) and act it from memory with a fake controller!",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Nour",
+     "line": "Oh no! I lost again. This level is too hard."
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Don't worry. I think we need a plan. We aren't working as a team."
+    },
+    {
+     "who": "A",
+     "name": "Nour",
+     "line": "You're right. What can we do?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "What if I go first? The boss follows me, and you attack from behind."
+    },
+    {
+     "who": "A",
+     "name": "Nour",
+     "line": "Like a cat and two mice! OK, let's try it."
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Yes! We did it! That was amazing!"
+    },
+    {
+     "who": "A",
+     "name": "Nour",
+     "line": "I can't believe it worked! Let's add this to our high scores."
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Would you like to get a snack to celebrate?"
+    },
+    {
+     "who": "A",
+     "name": "Nour",
+     "line": "I'd love to! Let's go!"
+    }
+   ],
+   "frames": [
+    "Let's ___!",
+    "What if we ___?",
+    "Would you like to ___ on ___?",
+    "I'd love to! / Sorry, I can't. I have to ___.",
+    "I can ___, but I can't ___."
+   ],
+   "prompts": [
+    "What can you do well in your favourite game (or sport)?",
+    "What can't you do yet?",
+    "Invite me to play something with you on Saturday.",
+    "Say no politely to my invitation and give a reason."
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "An invitation message",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Read the model. Plan with the frames. Then write your own.",
+   "tip": "A2 Key for Schools writing Part 6 style (a short message with 3 points). Tick the 3 content points: what, when, what we can do.",
+   "model": "Hi Nour! Would you like to come to my house on Saturday afternoon? We can play the new puzzle game and have pizza. My mum says it's OK. Let's start at four o'clock. Please answer by Thursday. See you soon! Saja",
+   "frames": [
+    "Hi ___!",
+    "Would you like to ___ on ___?",
+    "We can ___ and ___.",
+    "Let's start at ___ o'clock.",
+    "Please answer by ___.",
+    "See you soon! / Love, ___"
+   ],
+   "task": "Write an invitation (5–6 sentences) to a friend: what, when, where, and what you can do together.",
+   "checklist": [
+    "👋 Greeting and name",
+    "❓ Would you like to…?",
+    "🎮 2 things you can do",
+    "🕓 Day and time",
+    "🙏 Ask for an answer + goodbye"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Wrap-up",
+   "minutes": 1,
+   "tip": "Count the stars together. Saja ticks the exit list honestly — anything not ticked goes into the next warm-up.",
+   "exit": [
+    "I can say what I can and can't do.",
+    "I can suggest with Let's… and What if we…?",
+    "I can invite a friend and answer an invitation.",
+    "I can hear can and can't."
+   ],
+   "homework": [
+    "Write a reply to your own invitation: say no politely and suggest another day.",
+    "Act the gaming dialogue with someone at home.",
+    "Write 3 sentences: I can… / I can't… / Let's…"
+   ],
+   "goodbye": "Game over — you win today, Saja! See you next lesson!"
+  }
+ ],
+ "nav": {
+  "prev": "L29.html",
+  "next": "L31.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

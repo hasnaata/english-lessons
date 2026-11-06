@@ -1,18 +1,555 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G2-L43 · Irregular past — I went…</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G2-L43",
+ "group": "g2",
+ "lesson": 43,
+ "week": 22,
+ "month": 6,
+ "unit": "Weekends & Hobbies",
+ "title": "Irregular past — I went…",
+ "emoji": "🏖️",
+ "minutes": 45,
+ "kid_goals": [
+  "🔤 Review -ed endings",
+  "🧠 Learn 7 special past verbs: went, ate, had, saw, got, made, came",
+  "📖 Read about a holiday by the sea",
+  "✍️ Write about my last holiday"
+ ],
+ "objectives": [
+  "Can recognise and use the irregular past forms went, ate, had, saw, got, made, came (A1 Movers).",
+  "Can review -ed spelling and pronunciation.",
+  "Can understand a 150-word holiday story and answer questions.",
+  "Can take part in a story chain and write a 5-sentence paragraph about a holiday."
+ ],
+ "focus": {
+  "sounds": [
+   "review: -ed /t/ /d/ /ɪd/"
+  ],
+  "sight_words": [
+   "review: went, saw, had, made, gave, found, ran, came"
+  ],
+  "language": "irregular past: go → went, eat → ate, have → had, see → saw, get → got, make → made, come → came",
+  "vocabulary": [
+   "went",
+   "ate",
+   "had",
+   "saw",
+   "got",
+   "made",
+   "came",
+   "beach",
+   "sandcastle",
+   "shell"
+  ]
+ },
+ "frameworks": [
+  "Heart words / orthographic mapping (irregular verbs learned like sight words)",
+  "PPP: present (holiday story) → practise (unscramble) → produce (story chain)",
+  "Spaced retrieval: went, saw, had, made, gave, found, ran were sight words in months 1–4",
+  "Writing: modelled → guided"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Unit 5 — past simple (irregular verbs)",
+  "Cambridge A1 Movers grammar list: past simple irregular",
+  "English Conversation Made Natural (situation adapted: telling a friend about a holiday)",
+  "Group 2 sight-word review (went L7, saw L5, had L13, made L27, gave/found L26, ran L5)"
+ ],
+ "teacher_notes": "Good news for Duha: she already knows many irregular past forms as sight words (went, saw, had, made, gave, found, ran). Today we connect them to their present verbs. Teach them as pairs with actions (go → went: walk away). Common errors: 'goed', 'eated', 'I didn't went' (next lesson). Keep the list to 7 core verbs + the old sight words.",
+ "differentiation": "Support: go/went, eat/ate, see/saw only. Stretch: add buy → bought, take → took, swim → swam, and use them in the story chain.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Hobby check",
+   "minutes": 4,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Tell Hasna about the hobby survey you did at home!",
+   "tip": "Retrieval of L42. Then: 'Did you try a new hobby?' Model: 'Yesterday I went to the park.' — first exposure to 'went'.",
+   "lines": [
+    "What does your mum like doing?",
+    "Does your dad like cooking?",
+    "Yesterday I went to the beach. I saw a big ship!"
+   ],
+   "questions": [
+    "What does your family like doing?",
+    "Where did you go yesterday? (I went to…)"
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "-ed sound review",
+   "minutes": 3,
+   "skills": [
+    "Listening"
+   ],
+   "text": "Listen. Which -ed sound do you hear?",
+   "tip": "Quick review of L41 before the irregular verbs.",
+   "items": [
+    {
+     "say": "helped",
+     "options": [
+      "/t/",
+      "/d/",
+      "/ɪd/"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "played",
+     "options": [
+      "/t/",
+      "/d/",
+      "/ɪd/"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "painted",
+     "options": [
+      "/t/",
+      "/d/",
+      "/ɪd/"
+     ],
+     "answer": 2
+    },
+    {
+     "say": "listened",
+     "options": [
+      "/t/",
+      "/d/",
+      "/ɪd/"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "walked",
+     "options": [
+      "/t/",
+      "/d/",
+      "/ɪd/"
+     ],
+     "answer": 0
+    }
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Spell the special verbs",
+   "minutes": 3,
+   "skills": [
+    "Writing",
+    "Listening"
+   ],
+   "text": "These verbs don't use -ed. Listen and spell them!",
+   "tip": "Say the present first: 'go — went'. She builds the past form.",
+   "items": [
+    {
+     "word": "went",
+     "e": "🚶",
+     "letters": [
+      "w",
+      "e",
+      "n",
+      "t",
+      "o"
+     ]
+    },
+    {
+     "word": "ate",
+     "e": "🍽️",
+     "letters": [
+      "a",
+      "t",
+      "e",
+      "e"
+     ]
+    },
+    {
+     "word": "saw",
+     "e": "👀",
+     "letters": [
+      "s",
+      "a",
+      "w",
+      "e"
+     ]
+    },
+    {
+     "word": "came",
+     "e": "🏠",
+     "letters": [
+      "c",
+      "a",
+      "m",
+      "e",
+      "o"
+     ]
+    },
+    {
+     "word": "made",
+     "e": "🧁",
+     "letters": [
+      "m",
+      "a",
+      "d",
+      "e",
+      "k"
+     ]
+    },
+    {
+     "word": "got",
+     "e": "🎁",
+     "letters": [
+      "g",
+      "o",
+      "t",
+      "e"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Old friends: past heart words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "You know these words! Read them. What is the present verb? (went → go)",
+   "tip": "These are sight words from earlier months. Now Duha says the 'pair': went – go, saw – see, had – have, gave – give, found – find, ran – run, came – come.",
+   "cards": [
+    {
+     "w": "went",
+     "s": "We went to the beach last summer."
+    },
+    {
+     "w": "saw",
+     "s": "I saw a big ship."
+    },
+    {
+     "w": "had",
+     "s": "We had lunch by the sea."
+    },
+    {
+     "w": "made",
+     "s": "Lina made a sandcastle."
+    },
+    {
+     "w": "gave",
+     "s": "Grandma gave me a shell."
+    },
+    {
+     "w": "found",
+     "s": "I found a starfish on the sand."
+    },
+    {
+     "w": "ran",
+     "s": "The dog ran into the water."
+    },
+    {
+     "w": "came",
+     "s": "My cousins came too."
+    }
+   ],
+   "review": [
+    "was",
+    "were",
+    "goes",
+    "always"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Special past verbs",
+   "minutes": 6,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Some verbs don't take -ed. Learn them like heart words!",
+   "tip": "Read the table as a chant: go – went, eat – ate… Do actions. Then cover the right column and test. Remember: same form for all persons.",
+   "rule": "Irregular verbs have a special past form. It is the same for I, you, he, she, we, they: I went, she went, they went.",
+   "table": [
+    [
+     "Present",
+     "Past",
+     "Example"
+    ],
+    [
+     "go",
+     "went",
+     "We went to the sea."
+    ],
+    [
+     "eat",
+     "ate",
+     "I ate fish and rice."
+    ],
+    [
+     "have",
+     "had",
+     "We had a great time."
+    ],
+    [
+     "see",
+     "saw",
+     "Lina saw a dolphin!"
+    ],
+    [
+     "get",
+     "got",
+     "I got a new swimsuit."
+    ],
+    [
+     "make",
+     "made",
+     "Dad made sandwiches."
+    ],
+    [
+     "come",
+     "came",
+     "My cousins came with us."
+    ]
+   ],
+   "examples": [
+    "Last summer we went to the beach.",
+    "We ate ice cream every day.",
+    "I saw a big ship near the port.",
+    "Lina got very wet!"
+   ],
+   "ar": "بعض الأفعال الماضية شاذة لا تأخذ ed، نحفظها: go → went، eat → ate، see → saw. ونفس الشكل مع كل الضمائر."
+  },
+  {
+   "type": "reading",
+   "title": "Our Holiday by the Sea",
+   "minutes": 8,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "I do → we do → you do. Duha finds the past verbs and sorts them: -ed verbs vs special verbs. Ask: What was the best part for you?",
+   "story_title": "Our Holiday by the Sea",
+   "pic": "🏖️🐬🏰🐚",
+   "text_intro": "Last summer, Duha's family went on holiday. Duha wrote about it for school.",
+   "text": [
+    "Last summer, my family and I went to the sea for a week. My aunt and my cousins came too. We stayed in a small house near the beach.",
+    "Every morning, we had breakfast outside. Then we played on the sand. Lina made a big sandcastle, and I found many beautiful shells.",
+    "One day, we went on a boat trip. The sea was blue and calm. Suddenly, I saw three dolphins! They jumped next to our boat. Everyone shouted, \"Look!\"",
+    "In the evenings, we ate fish and rice at a little restaurant. Dad got ice cream for everyone.",
+    "On the last day, Lina ran into the water with her clothes on. She got very wet, and we all laughed.",
+    "It was the best holiday ever. I want to go back next summer!"
+   ],
+   "highlight": [
+    "went",
+    "came",
+    "had",
+    "made",
+    "found",
+    "saw",
+    "ate",
+    "got",
+    "ran"
+   ],
+   "questions": [
+    {
+     "q": "Where did Duha's family go?",
+     "a": "They went to the sea for a week."
+    },
+    {
+     "q": "What did Lina make?",
+     "a": "She made a big sandcastle."
+    },
+    {
+     "q": "What did Duha see on the boat trip?",
+     "a": "She saw three dolphins."
+    },
+    {
+     "q": "What did they eat in the evenings?",
+     "a": "They ate fish and rice."
+    },
+    {
+     "q": "Why did everyone laugh on the last day?",
+     "a": "Because Lina ran into the water with her clothes on and got very wet."
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "Holiday sentences",
+   "minutes": 4,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Put the words in order.",
+   "tip": "After each sentence, ask: What's the present verb? (went → go).",
+   "items": [
+    [
+     "We",
+     "went",
+     "to",
+     "the",
+     "beach",
+     "last",
+     "summer."
+    ],
+    [
+     "I",
+     "saw",
+     "a",
+     "dolphin",
+     "near",
+     "the",
+     "boat."
+    ],
+    [
+     "Lina",
+     "made",
+     "a",
+     "big",
+     "sandcastle."
+    ],
+    [
+     "We",
+     "ate",
+     "ice",
+     "cream",
+     "every",
+     "day."
+    ],
+    [
+     "My",
+     "cousins",
+     "came",
+     "with",
+     "us."
+    ]
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Story chain",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to Hasna and Duha. Then make a crazy holiday story together — one sentence each!",
+   "tip": "Story chain: Hasna says a sentence, Duha adds the next one, each with a past verb (went, saw, ate, had, got, made, came). Go for 10 sentences. Then personal prompts.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Last summer I went to a big island."
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "On the island, I saw a pink elephant!"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "The elephant came to my hotel."
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "We ate pizza together in the garden."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Then we got on a boat."
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "And we had a party with the dolphins!"
+    }
+   ],
+   "frames": [
+    "Last ___ I went to ___.",
+    "I saw ___.",
+    "We ate ___.",
+    "We had ___.",
+    "Then ___ came / got / made ___."
+   ],
+   "prompts": [
+    "Where did you go last summer?",
+    "Who went with you?",
+    "What did you eat there?",
+    "What did you see?",
+    "Did you have a good time? Why?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "My last holiday",
+   "minutes": 6,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 5 sentences about your last holiday (or a great day out). Use special past verbs!",
+   "tip": "Guided writing. She needs at least 3 irregular verbs. Check: no 'goed / eated'.",
+   "model": "Last winter, I went to my grandma's village with my family. We stayed there for four days, and my cousins came too. We had lunch in the garden every day, and we ate delicious bread. One night, we saw many stars because there weren't any city lights. Then we made a fire and told stories. It was a great holiday!",
+   "frames": [
+    "Last ________, I went to ________ with ________.",
+    "We stayed ________, and ________ came too.",
+    "We had / ate ________.",
+    "One day, we saw ________ because ________.",
+    "Then we ________. It was ________!"
+   ],
+   "task": "Write 5–6 sentences. Draw your favourite moment.",
+   "checklist": [
+    "3 special past verbs (went, saw, ate…)",
+    "2 -ed verbs",
+    "a time word (last summer…)",
+    "and / because / then"
+   ],
+   "pad": "Last summer, I went to"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "say 7 special past verbs",
+    "read a holiday story",
+    "tell about my holiday"
+   ],
+   "homework": [
+    "Make flashcards for the 7 special verbs (go/went…) and test someone at home.",
+    "Finish your holiday paragraph and add a photo or drawing.",
+    "Tell your family a 5-sentence 'crazy holiday' story."
+   ],
+   "goodbye": "You went far today, Duha! See you next time. Goodbye!"
+  }
+ ],
+ "nav": {
+  "prev": "L42.html",
+  "next": "L44.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g2', name: 'Group 2', students: ['Duha'], color: '#159a8c', soft: '#d8f2ee' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

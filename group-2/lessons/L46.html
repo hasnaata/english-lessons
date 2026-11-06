@@ -1,18 +1,480 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G2-L46 · Reading: A Great Saturday</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G2-L46",
+ "group": "g2",
+ "lesson": 46,
+ "week": 23,
+ "month": 6,
+ "unit": "Weekends & Hobbies",
+ "title": "Reading: A Great Saturday",
+ "emoji": "📔",
+ "minutes": 45,
+ "kid_goals": [
+  "🔤 Review -ed, irregular verbs and compound words",
+  "📔 Read Duha's diary",
+  "❓ Ask and answer about the past",
+  "✍️ Write my own diary entry"
+ ],
+ "objectives": [
+  "Can read a 150-word diary entry with past simple verbs and answer literal and inference questions.",
+  "Can use the past simple in positive, negative and question forms (review).",
+  "Can recognise the diary genre (Dear Diary, date, feelings, closing).",
+  "Can write a short diary entry with linking words and feelings."
+ ],
+ "focus": {
+  "sounds": [
+   "review: -ed, irregular past, compound words"
+  ],
+  "sight_words": [
+   "review: went, came, got, made, had, saw, didn't, because"
+  ],
+  "language": "review past simple (+ / − / ?) in a diary",
+  "vocabulary": [
+   "diary",
+   "climbing wall",
+   "proud",
+   "surprise",
+   "pancakes",
+   "board games"
+  ]
+ },
+ "frameworks": [
+  "Scarborough's Reading Rope: decoding + genre knowledge + inference (feelings)",
+  "Gradual release: I do → we do → you do",
+  "Spaced retrieval of all month-6 grammar",
+  "Writing: modelled genre writing (diary)"
+ ],
+ "sources": [
+  "Original diary text for this lesson (Group 2 curriculum map, lesson 46)",
+  "English Grammar in Use (simplified), Units 5 and 49 — past simple review",
+  "English Conversation Made Natural (situation adapted: asking about a friend's day)",
+  "Group 2 sight-word review"
+ ],
+ "teacher_notes": "Reading lesson with a new genre: the diary. Show the features: date, 'Dear Diary', I-voice, past tense, feelings, sign-off. Ask feeling questions: How did Duha feel at the climbing wall? Why? The text uses 'felt' — teach as a chunk (feel → felt).",
+ "differentiation": "Support: read in three parts. Stretch: Duha rewrites one paragraph from Lina's point of view.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Linking-word ping-pong",
+   "minutes": 4,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Hasna starts a sentence. You finish it with and / but / because / so!",
+   "tip": "Retrieval of L45. Fast and fun; then reverse roles.",
+   "lines": [
+    "I was tired, so…",
+    "I wanted pizza, but…",
+    "I was happy because…",
+    "I did my homework, and then…"
+   ],
+   "questions": [
+    "Finish my sentence!",
+    "Now you start one, and I finish it."
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Past forms quiz",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Choose the right past form.",
+   "tip": "Mixed review: regular, irregular and did-questions.",
+   "items": [
+    {
+     "q": "Yesterday I ___ pancakes for breakfast.",
+     "options": [
+      "have",
+      "had",
+      "haved"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "We ___ to the sports centre by train.",
+     "options": [
+      "went",
+      "goed",
+      "go"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "I ___ to the top of the wall!",
+     "options": [
+      "climbed",
+      "climb",
+      "clumb"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Lina didn't ___.",
+     "options": [
+      "cried",
+      "cry",
+      "crys"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "___ you see the match? — Yes, I did.",
+     "options": [
+      "Do",
+      "Were",
+      "Did"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "I ___ very proud.",
+     "options": [
+      "feeled",
+      "felt",
+      "feel"
+     ],
+     "answer": 1
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart word review",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read fast. Find these words in the diary!",
+   "tip": "These words are underlined in the diary. Make a past sentence with two of them.",
+   "cards": [
+    {
+     "w": "went",
+     "s": "We went to the city by train."
+    },
+    {
+     "w": "came",
+     "s": "We came home at seven."
+    },
+    {
+     "w": "got",
+     "s": "I got up at eight o'clock."
+    },
+    {
+     "w": "made",
+     "s": "My aunt made a chocolate cake."
+    },
+    {
+     "w": "had",
+     "s": "I had pancakes for breakfast."
+    },
+    {
+     "w": "didn't",
+     "s": "I didn't fall!"
+    },
+    {
+     "w": "because",
+     "s": "I was scared because it was high."
+    }
+   ],
+   "review": [
+    "saw",
+    "found",
+    "then",
+    "before"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Past simple review",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "One table for the whole past simple!",
+   "tip": "Duha reads a row and makes a new example about her last Saturday.",
+   "rule": "Past simple: regular verb + ed (climbed), irregular verbs (went, had, made). Negative: didn't + verb. Question: Did + you + verb? Wh-: What did you do?",
+   "table": [
+    [
+     "Form",
+     "Example",
+     "Your example"
+    ],
+    [
+     "✅ regular",
+     "I climbed the wall.",
+     "I ___ed ___."
+    ],
+    [
+     "✅ irregular",
+     "We went to the city.",
+     "I went / had / made ___."
+    ],
+    [
+     "❌",
+     "I didn't fall.",
+     "I didn't ___."
+    ],
+    [
+     "❓",
+     "Did you have fun? — Yes, I did.",
+     "Did you ___?"
+    ],
+    [
+     "Wh- ❓",
+     "What did you eat?",
+     "Where did you ___?"
+    ]
+   ],
+   "examples": [
+    "I got up at eight o'clock.",
+    "We didn't take the car. We went by train.",
+    "Did Lina cry? — No, she didn't.",
+    "What did you do on Saturday?"
+   ],
+   "ar": "مراجعة الماضي البسيط: ed للأفعال المنتظمة، أفعال شاذة نحفظها، didn't للنفي، Did للسؤال والفعل يرجع لأصله."
+  },
+  {
+   "type": "reading",
+   "title": "A Great Saturday",
+   "minutes": 9,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "I do: read with feeling. We do: read together. You do: Duha reads paragraphs 3–5. Point out diary features: date, Dear Diary, I, feelings, name at the end.",
+   "story_title": "A Great Saturday — Duha's Diary",
+   "pic": "📔🧗🍔🎲",
+   "text_intro": "Duha writes a diary. Read what she wrote on Saturday night.",
+   "text": [
+    "Saturday, 10th April. Dear Diary,",
+    "Today was a great Saturday! I got up at eight o'clock and had pancakes for breakfast. Then Dad said, \"Get ready! We have a surprise for you.\"",
+    "We went to the sports centre in the city by train. There was a big climbing wall there! At first I was scared because it was very high, but the teacher helped me. I climbed to the top! I didn't fall, and I felt so proud.",
+    "After that, we had lunch at a burger café. Lina dropped her juice on her dress, but she didn't cry. She laughed!",
+    "In the afternoon, we visited Aunt Mona. She made a chocolate cake, and we played board games with my cousins. I won two games!",
+    "We came home at seven. I was very tired, but very happy. I want to go climbing again next weekend! Duha"
+   ],
+   "highlight": [
+    "went",
+    "came",
+    "got",
+    "made",
+    "had",
+    "didn't",
+    "because"
+   ],
+   "questions": [
+    {
+     "q": "What did Duha have for breakfast?",
+     "a": "She had pancakes."
+    },
+    {
+     "q": "How did they go to the city?",
+     "a": "They went by train."
+    },
+    {
+     "q": "How did Duha feel at the climbing wall? Why?",
+     "a": "At first she was scared because it was high; then she felt proud."
+    },
+    {
+     "q": "What happened to Lina at lunch?",
+     "a": "She dropped her juice on her dress, but she laughed."
+    },
+    {
+     "q": "Why was this a great Saturday? Give two reasons.",
+     "a": "She climbed to the top of the wall, and she won two games at Aunt Mona's (and ate cake)."
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "Diary questions",
+   "minutes": 4,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Complete the questions and answers about the diary.",
+   "tip": "Check: did + base verb; short answers.",
+   "items": [
+    {
+     "text": "Did Duha ___ up at eight? — Yes, she did.",
+     "answer": "get",
+     "options": [
+      "got",
+      "get",
+      "gets"
+     ]
+    },
+    {
+     "text": "Did they go by car? — No, they ___.",
+     "answer": "didn't",
+     "options": [
+      "didn't",
+      "don't",
+      "weren't"
+     ]
+    },
+    {
+     "text": "What ___ Aunt Mona make? — A chocolate cake.",
+     "answer": "did",
+     "options": [
+      "did",
+      "does",
+      "was"
+     ]
+    },
+    {
+     "text": "Lina didn't ___. She laughed!",
+     "answer": "cry",
+     "options": [
+      "cried",
+      "cry",
+      "crying"
+     ]
+    },
+    {
+     "text": "Duha was tired, ___ she was very happy.",
+     "answer": "but",
+     "options": [
+      "and",
+      "but",
+      "so"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Tell me about your Saturday",
+   "minutes": 7,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to Hana and Duha. Then answer Hasna's questions about your last Saturday.",
+   "tip": "Model, then swap. Then personal prompts — expect 2–3 sentences per answer with linking words.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hana",
+     "line": "Hi, Duha! How was your Saturday?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "It was great! I went climbing at the sports centre."
+    },
+    {
+     "who": "A",
+     "name": "Hana",
+     "line": "Climbing? Weren't you scared?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Yes, I was, at first. But I got to the top!"
+    },
+    {
+     "who": "A",
+     "name": "Hana",
+     "line": "Wow! Did you go alone?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "No, I didn't. I went with my dad and Lina. What did you do?"
+    },
+    {
+     "who": "A",
+     "name": "Hana",
+     "line": "I stayed at home and read a book. Your Saturday was better!"
+    }
+   ],
+   "frames": [
+    "My Saturday was ___ because ___.",
+    "I went to ___ with ___.",
+    "At first I was ___, but ___.",
+    "I didn't ___. I ___."
+   ],
+   "prompts": [
+    "How was your last Saturday?",
+    "What did you eat? Who did you see?",
+    "Did you feel proud of something last week? What?",
+    "What was the best part of your week? Why?",
+    "Do you write a diary? Would you like to?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "My diary",
+   "minutes": 7,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write a diary entry about a day last week. Start with the date and 'Dear Diary'.",
+   "tip": "Guided genre writing. Check: date, Dear Diary, past verbs, a feeling word, linking words, name at the end.",
+   "model": "Friday, 5th March. Dear Diary, Today was a good day. In the morning I went to the market with Mum, and we bought fresh fruit. Then I helped her in the kitchen. In the afternoon I wanted to play outside, but it was too hot, so I read my new book. I felt happy because I finished it! Duha",
+   "frames": [
+    "________ (day, date). Dear Diary,",
+    "Today was a ________ day.",
+    "In the morning I ________, and ________.",
+    "In the afternoon I wanted to ________, but ________.",
+    "I felt ________ because ________.",
+    "(your name)"
+   ],
+   "task": "Write a diary entry (5–6 sentences). Decorate the page!",
+   "checklist": [
+    "date + Dear Diary",
+    "past verbs (regular and irregular)",
+    "a feeling: happy, proud, scared, tired…",
+    "and / but / because / so / then"
+   ],
+   "pad": "Dear Diary,"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "read a diary",
+    "use the past simple (+ − ?)",
+    "write a diary entry"
+   ],
+   "homework": [
+    "Write a diary entry every day this week (3 sentences is OK!).",
+    "Read 'A Great Saturday' to your family.",
+    "Think about your BEST day ever — bring a photo or drawing next lesson for your project."
+   ],
+   "goodbye": "Dear Duha, today you were brilliant! Goodbye!"
+  }
+ ],
+ "nav": {
+  "prev": "L45.html",
+  "next": "L47.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g2', name: 'Group 2', students: ['Duha'], color: '#159a8c', soft: '#d8f2ee' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

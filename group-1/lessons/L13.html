@@ -1,18 +1,587 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G1-L13 · Rr — Animals can!</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G1-L13",
+ "group": "g1",
+ "lesson": 13,
+ "week": 7,
+ "month": 2,
+ "unit": "Animals & Colours",
+ "title": "Rr — Animals can!",
+ "emoji": "🐇",
+ "minutes": 45,
+ "kid_goals": [
+  "🐇 Say the sound r",
+  "❤️ Read am and me",
+  "🐟 Say: A fish can swim. A fish can't walk!",
+  "✍️ Write 2 can sentences"
+ ],
+ "objectives": [
+  "Can say the English /r/ (not rolled) and blend words with r (red, rag, frog, crab).",
+  "Can read the sight words am and me.",
+  "Can say what animals can and can't do: A rabbit can jump. A fish can't walk.",
+  "Can follow action commands (TPR) and write 2 sentences with can / can't."
+ ],
+ "focus": {
+  "sounds": [
+   "r"
+  ],
+  "sight_words": [
+   "am",
+   "me"
+  ],
+  "language": "can / can't: A rabbit can jump. A fish can't walk.",
+  "vocabulary": [
+   "jump",
+   "swim",
+   "fly",
+   "run",
+   "walk",
+   "climb",
+   "rabbit",
+   "bird"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics (sound first, then letter name)",
+  "Heart words / orthographic mapping (Peach sight-word order)",
+  "TPR: animal actions (jump, swim, fly, climb)",
+  "PPP: present → practise → produce",
+  "Gradual release: I do → we do → you do",
+  "Spaced retrieval: old heart words come back in stories and games"
+ ],
+ "sources": [
+  "Oxford Phonics World 1 SB, Unit 6 (Rr)",
+  "Peach sight-word flashcards (am, me)",
+  "My First Grammar 1 — can / can't (ability)",
+  "Cambridge Pre A1 Starters topic: animals, actions"
+ ],
+ "teacher_notes": "English /r/ is NOT the rolled Arabic ر: lips slightly round, tongue pulled back, it doesn't touch the top of the mouth. Model it in the camera, exaggerate. can't is said with a long, strong 'aa' (or 'can-t' with a clear t): make the difference big. Today is very physical — ask children to stand up.",
+ "differentiation": "Need help: answer with thumbs up (can) / thumbs down (can't) first, then say it. Fast finishers: say 3 things an animal can do and 1 it can't.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Hello + How many?",
+   "minutes": 4,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Sing hello. Then count: How many?",
+   "tip": "Retrieval of numbers and plurals: show 🐷🐷🐷 'How many pigs?'. Then stand up for action words: jump, run, sit down.",
+   "lines": [
+    "Hello, hello, how are you?",
+    "I'm fine, thank you. How are you?",
+    "How many pigs? Three pigs!",
+    "Stand up! Jump! Run! Sit down!"
+   ],
+   "questions": [
+    "How many fingers?",
+    "How old are you?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Rr says /r/",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Round lips, tongue back — rrr! It's not a rolled ر.",
+   "tip": "Model the mouth in the camera. Contrast English r with Arabic ر — 'a growling puppy' rrr. TPR: run your hands like a racing car for /r/.",
+   "focus": "r",
+   "sound": "/r/",
+   "say_sound": "r, r, rabbit",
+   "chant": "r, r, rabbit. r, r, robot. r, r, rainbow. A rabbit on a rainbow!",
+   "words": [
+    {
+     "w": "rabbit",
+     "e": "🐇",
+     "ar": "أرنب"
+    },
+    {
+     "w": "robot",
+     "e": "🤖",
+     "ar": "روبوت"
+    },
+    {
+     "w": "rainbow",
+     "e": "🌈",
+     "ar": "قوس قزح"
+    },
+    {
+     "w": "rocket",
+     "e": "🚀",
+     "ar": "صاروخ"
+    },
+    {
+     "w": "ring",
+     "e": "💍",
+     "ar": "خاتم"
+    },
+    {
+     "w": "rose",
+     "e": "🌹",
+     "ar": "وردة"
+    },
+    {
+     "w": "red",
+     "e": "🔴",
+     "ar": "أحمر"
+    },
+    {
+     "w": "frog",
+     "e": "🐸",
+     "ar": "ضفدع"
+    }
+   ],
+   "blend": [
+    "red",
+    "rag",
+    "ram",
+    "rim",
+    "rod",
+    "rob",
+    "rip",
+    "crab",
+    "frog"
+   ],
+   "trace": "Rr Rr"
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words: am, me",
+   "minutes": 3,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the heart words. Click 💬 for a sentence.",
+   "tip": "'am' — 'I am' (point to yourself). 'me' — 'Look at me!' Review make/will.",
+   "cards": [
+    {
+     "w": "am",
+     "s": "I am Jana."
+    },
+    {
+     "w": "me",
+     "s": "Look at me!"
+    },
+    {
+     "w": "am",
+     "s": "I am a rabbit."
+    },
+    {
+     "w": "me",
+     "s": "Can you jump with me?"
+    },
+    {
+     "w": "will",
+     "s": "I will make a cake."
+    }
+   ],
+   "review": [
+    "make",
+    "will",
+    "funny",
+    "are",
+    "he",
+    "she",
+    "with",
+    "little"
+   ]
+  },
+  {
+   "type": "vocab",
+   "title": "Animal actions",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Click the word. Do the action!",
+   "tip": "TPR: Hasna says the word, children do the action on camera. Then 'Hasna says' (Simon says) with animals: 'Hasna says: swim like a fish!'",
+   "words": [
+    {
+     "w": "jump",
+     "e": "🐇",
+     "ar": "يقفز",
+     "s": "A rabbit can jump."
+    },
+    {
+     "w": "swim",
+     "e": "🐟",
+     "ar": "يسبح",
+     "s": "A fish can swim."
+    },
+    {
+     "w": "fly",
+     "e": "🐦",
+     "ar": "يطير",
+     "s": "A bird can fly."
+    },
+    {
+     "w": "run",
+     "e": "🐆",
+     "ar": "يركض",
+     "s": "A cheetah can run."
+    },
+    {
+     "w": "walk",
+     "e": "🐘",
+     "ar": "يمشي",
+     "s": "An elephant can walk."
+    },
+    {
+     "w": "climb",
+     "e": "🐒",
+     "ar": "يتسلق",
+     "s": "A monkey can climb."
+    },
+    {
+     "w": "bird",
+     "e": "🐦",
+     "ar": "طائر",
+     "s": "A bird can fly."
+    },
+    {
+     "w": "rabbit",
+     "e": "🐇",
+     "ar": "أرنب",
+     "s": "A rabbit can jump."
+    }
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "can and can't",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "can ✅ = yes!  can't ❌ = no!",
+   "tip": "Thumbs up for can, thumbs down for can't. Say can't long and strong: 'caaan't'. Same form for every person: I can, he can, a fish can — no s!",
+   "rule": "✅ A rabbit can jump.   ❌ A fish can't walk.",
+   "ar": "can = يستطيع   can't = لا يستطيع (can not)",
+   "table": [
+    [
+     "",
+     "✅ can",
+     "❌ can't"
+    ],
+    [
+     "🐇 A rabbit",
+     "can jump.",
+     "can't fly."
+    ],
+    [
+     "🐟 A fish",
+     "can swim.",
+     "can't walk."
+    ],
+    [
+     "🐦 A bird",
+     "can fly.",
+     "can't swim."
+    ],
+    [
+     "🙋 I",
+     "can run.",
+     "can't fly."
+    ]
+   ],
+   "examples": [
+    "A rabbit can jump.",
+    "A fish can't walk.",
+    "A bird can fly.",
+    "I can't fly!"
+   ]
+  },
+  {
+   "type": "reading",
+   "title": "Rob and Fred",
+   "minutes": 7,
+   "skills": [
+    "Reading"
+   ],
+   "text": [
+    "I am Rob. I am a rabbit.",
+    "I can hop. I can dig.",
+    "I can not fly!",
+    "Here is Fred. Fred is a frog.",
+    "Fred can hop and dip in the pond.",
+    "\"Can you hop with me, Fred?\"",
+    "Rob and Fred hop, hop, hop!"
+   ],
+   "tip": "Blend Rob, Fred, frog, hop, pond, dip. Two voices: A = narrator, B = Rob the rabbit talking. Then children act it: hop, hop, hop!",
+   "story_title": "Rob and Fred",
+   "pic": "🐇🐸🌿",
+   "text_intro": "Rob is a rabbit. Fred is a frog. What can they do?",
+   "highlight": [
+    "am",
+    "me",
+    "I",
+    "a",
+    "can",
+    "not",
+    "is",
+    "and",
+    "the",
+    "with",
+    "you"
+   ],
+   "voices": [
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A"
+   ],
+   "questions": [
+    {
+     "q": "What can Rob do?",
+     "a": "He can hop and dig."
+    },
+    {
+     "q": "Can Rob fly?",
+     "a": "No, he can't."
+    },
+    {
+     "q": "Where can Fred dip?",
+     "a": "In the pond."
+    },
+    {
+     "q": "Can you hop?",
+     "a": "Yes, I can!"
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "can or can't?",
+   "minutes": 3,
+   "skills": [
+    "Reading"
+   ],
+   "text": "Read. Is it can or can't?",
+   "tip": "Children do thumbs up/down before clicking. Read the full sentence after.",
+   "items": [
+    {
+     "q": "🐟 A fish ___ walk.",
+     "options": [
+      "can",
+      "can't"
+     ],
+     "answer": 1,
+     "keep_order": true
+    },
+    {
+     "q": "🐦 A bird ___ fly.",
+     "options": [
+      "can",
+      "can't"
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "q": "🐇 A rabbit ___ jump.",
+     "options": [
+      "can",
+      "can't"
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "q": "🐘 An elephant ___ fly.",
+     "options": [
+      "can",
+      "can't"
+     ],
+     "answer": 1,
+     "keep_order": true
+    },
+    {
+     "q": "🐒 A monkey ___ climb.",
+     "options": [
+      "can",
+      "can't"
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "q": "🐸 A frog ___ swim.",
+     "options": [
+      "can",
+      "can't"
+     ],
+     "answer": 0,
+     "keep_order": true
+    }
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Build the r words",
+   "minutes": 3,
+   "skills": [
+    "Writing",
+    "Reading"
+   ],
+   "text": "Listen. Say the sounds. Click the letters!",
+   "tip": "Watch the r in frog and crab — two consonants together (f-r, c-r). Say them slowly.",
+   "items": [
+    {
+     "word": "red",
+     "e": "🔴",
+     "letters": "redn"
+    },
+    {
+     "word": "ram",
+     "e": "🐏",
+     "letters": "ramo"
+    },
+    {
+     "word": "frog",
+     "e": "🐸",
+     "letters": "froga"
+    },
+    {
+     "word": "crab",
+     "e": "🦀",
+     "letters": "crabe"
+    },
+    {
+     "word": "ring",
+     "e": "💍",
+     "letters": "ringa"
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Animal actions game",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to Ibrahim and Jana. Then play: Can you ___?",
+   "tip": "Ask each child: 'Can you swim? Can you fly?' — they answer and act. Then children are 'Hasna': one says 'I am a monkey. I can climb!' and acts, others guess.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Ibrahim",
+     "line": "Jana, can a fish walk?"
+    },
+    {
+     "who": "B",
+     "name": "Jana",
+     "line": "No! A fish can't walk. It can swim."
+    },
+    {
+     "who": "A",
+     "name": "Ibrahim",
+     "line": "Can a monkey climb?"
+    },
+    {
+     "who": "B",
+     "name": "Jana",
+     "line": "Yes, it can. Look at me — I am a monkey!"
+    },
+    {
+     "who": "A",
+     "name": "Ibrahim",
+     "line": "Can you fly?"
+    },
+    {
+     "who": "B",
+     "name": "Jana",
+     "line": "No, I can't. I can jump!"
+    }
+   ],
+   "frames": [
+    "Can you ___?",
+    "Yes, I can.",
+    "No, I can't.",
+    "A ___ can ___.",
+    "A ___ can't ___."
+   ],
+   "prompts": [
+    "Can you swim?",
+    "Can you fly?",
+    "Can a rabbit jump?",
+    "I am a ___. I can ___! (act it)"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "can and can't sentences",
+   "minutes": 4,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 2 sentences: one can ✅ and one can't ❌.",
+   "tip": "Shared: the group helps write 'A bird can fly.' Guided: each child chooses an animal and writes one can and one can't sentence.",
+   "model": "A fish can swim.\nA fish can't walk.",
+   "frames": [
+    "A ________ can ________.",
+    "A ________ can't ________."
+   ],
+   "task": "Choose an animal. Write what it can and can't do. Draw it!",
+   "checklist": [
+    "Capital letter at the start",
+    "Full stop at the end",
+    "Finger spaces between words",
+    "The ' in can't"
+   ],
+   "pad": "can  can't"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "say the English r",
+    "read 'am' and 'me'",
+    "say: A fish can swim. A fish can't walk."
+   ],
+   "homework": [
+    "Play 'Can you…?' with your family: Can you jump? Can you swim?",
+    "Draw your favourite animal. Write 2 sentences: can / can't.",
+    "Read Rob and Fred again."
+   ],
+   "goodbye": "Goodbye, goodbye! Hop, hop, hop — see you soon!"
+  }
+ ],
+ "nav": {
+  "prev": "L12.html",
+  "next": "L14.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g1', name: 'Group 1', students: ['Jana', 'Yusuf', 'Ibrahim'], color: '#f26b4f', soft: '#ffe5dd' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

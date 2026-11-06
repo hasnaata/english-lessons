@@ -1,18 +1,566 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G2-L20 · Magic e u_e — At the café</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G2-L20",
+ "group": "g2",
+ "lesson": 20,
+ "week": 10,
+ "month": 3,
+ "unit": "Food",
+ "title": "Magic e u_e — At the café",
+ "emoji": "☕",
+ "minutes": 45,
+ "kid_goals": [
+  "🪄 Read u_e words: cube, tune, huge",
+  "❤️ Learn: thank, them, then, think",
+  "☕ Order politely: Can I have…?",
+  "🗣️ Role-play at a café"
+ ],
+ "objectives": [
+  "Can read and spell u_e words (cube, tune, huge, cute).",
+  "Can read the sight words thank, them, then, think.",
+  "Can make and respond to polite requests and offers: Can I have…, please? Would you like…? I'd like…",
+  "Can order food and drink in a café role-play (A1 spoken interaction).",
+  "Can write a simple menu and an order."
+ ],
+ "focus": {
+  "sounds": [
+   "u_e"
+  ],
+  "sight_words": [
+   "thank",
+   "them",
+   "then",
+   "think"
+  ],
+  "language": "Can I have…, please? Would you like…? Yes, please. / No, thank you. I'd like…",
+  "vocabulary": [
+   "menu",
+   "tea",
+   "hot chocolate",
+   "lemonade",
+   "croissant",
+   "pancakes",
+   "ice cream",
+   "muffin",
+   "salad",
+   "waiter"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics: split digraph u_e",
+  "Heart words / orthographic mapping",
+  "PPP: present → practise → produce",
+  "Role-play (task-based)",
+  "Spaced retrieval (How much…?)"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Unit 37 (Can I…? Would you like…? — requests and offers)",
+  "English Conversation Made Natural, Ch. 18 \"Ordering Lunch\" and Ch. 23 \"Ice Cream Break\" (dialogue ideas, simplified)",
+  "Dolch sight words: first grade (thank, them, then, think)"
+ ],
+ "teacher_notes": "u_e says its name /juː/ (cube, cute, huge) or /uː/ (tune, rule, flute) — both are fine. Grammar: politeness matters in English. 'I want' sounds rude when ordering — teach 'I'd like…' and 'Can I have…, please?'. Answers to offers: 'Yes, please.' / 'No, thank you.' (not just 'yes' / 'no').",
+ "differentiation": "Support: two chunks only: Can I have ___, please? / Thank you. Stretch: add questions about the bill (How much is it altogether?) and a complaint (Excuse me, this tea is cold!).",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Price check",
+   "minutes": 4,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "How much is it? Guess the price!",
+   "tip": "Recycle L19: show emoji food, she guesses the price in pounds with \"It's…\". Then: \"Do you go to cafés? What do you order?\"",
+   "lines": [
+    "🍦 How much is an ice cream cone?",
+    "🧃 How much is a bottle of juice?",
+    "🍰 How much is a piece of cake?"
+   ],
+   "questions": [
+    "Do you go to cafés with your family?",
+    "What do you order?",
+    "What is your favourite drink?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Magic e: u_e",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Magic e makes u say its name: cub → cube!",
+   "tip": "Pairs: cub/cube, tub/tube, cut/cute, us/use. Then the tiles. Note two sounds: \"you\" (cube, cute) and \"oo\" (tune, flute) — both are u_e.",
+   "focus": "u_e",
+   "sound": "/juː/ and /uː/",
+   "say_sound": "u_e: cube, tune, huge.",
+   "chant": "A cute mule plays a tune on a flute in June — huge, huge, huge!",
+   "words": [
+    {
+     "w": "cube",
+     "e": "🧊",
+     "ar": "مكعّب"
+    },
+    {
+     "w": "tube",
+     "e": "🧪",
+     "ar": "أنبوب"
+    },
+    {
+     "w": "tune",
+     "e": "🎵",
+     "ar": "لحن"
+    },
+    {
+     "w": "huge",
+     "e": "🐘",
+     "ar": "ضخم"
+    },
+    {
+     "w": "cute",
+     "e": "🐹",
+     "ar": "لطيف"
+    },
+    {
+     "w": "mule",
+     "e": "🫏",
+     "ar": "بغل"
+    },
+    {
+     "w": "flute",
+     "e": "🪈",
+     "ar": "ناي / فلوت"
+    },
+    {
+     "w": "June",
+     "e": "📅",
+     "ar": "يونيو"
+    },
+    {
+     "w": "rule",
+     "e": "📏",
+     "ar": "قاعدة"
+    },
+    {
+     "w": "use",
+     "e": "🔧",
+     "ar": "يستخدم"
+    },
+    {
+     "w": "prune",
+     "e": "🫐",
+     "ar": "برقوق مجفّف"
+    },
+    {
+     "w": "dune",
+     "e": "🏜️",
+     "ar": "كثيب رملي"
+    }
+   ],
+   "blend": [
+    "cub",
+    "cube",
+    "cut",
+    "cute",
+    "tub",
+    "tube",
+    "tune",
+    "huge"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words: thank, them, then, think",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "All four start with th! Tongue out!",
+   "tip": "Two th sounds: thank / think (unvoiced, ث) and them / then (voiced, ذ).",
+   "cards": [
+    {
+     "w": "thank",
+     "s": "Thank you very much!"
+    },
+    {
+     "w": "them",
+     "s": "The cakes look nice. Can I have one of them?"
+    },
+    {
+     "w": "then",
+     "s": "First I order, then I pay."
+    },
+    {
+     "w": "think",
+     "s": "I think I'd like a lemonade."
+    }
+   ],
+   "review": [
+    "round",
+    "some",
+    "stop",
+    "take",
+    "once",
+    "open"
+   ]
+  },
+  {
+   "type": "vocab",
+   "title": "Café menu",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Click and say. What would you like?",
+   "tip": "For each, she says \"I'd like…\" or \"No, thank you.\"",
+   "words": [
+    {
+     "w": "menu",
+     "e": "📋",
+     "ar": "قائمة الطعام",
+     "s": "Can I see the menu, please?"
+    },
+    {
+     "w": "tea",
+     "e": "🍵",
+     "ar": "شاي",
+     "s": "Grandma drinks tea with mint."
+    },
+    {
+     "w": "hot chocolate",
+     "e": "☕",
+     "ar": "شوكولاتة ساخنة",
+     "s": "Hot chocolate is great in winter."
+    },
+    {
+     "w": "lemonade",
+     "e": "🍋",
+     "ar": "ليمونادة",
+     "s": "A cold lemonade, please."
+    },
+    {
+     "w": "croissant",
+     "e": "🥐",
+     "ar": "كرواسون",
+     "s": "I'd like a croissant with cheese."
+    },
+    {
+     "w": "pancakes",
+     "e": "🥞",
+     "ar": "فطائر بان كيك",
+     "s": "Pancakes with honey — yum!"
+    },
+    {
+     "w": "ice cream",
+     "e": "🍨",
+     "ar": "آيس كريم",
+     "s": "Two scoops of ice cream, please."
+    },
+    {
+     "w": "muffin",
+     "e": "🧁",
+     "ar": "كب كيك / مافن",
+     "s": "This chocolate muffin is huge!"
+    },
+    {
+     "w": "salad",
+     "e": "🥗",
+     "ar": "سلطة",
+     "s": "Mum always orders a salad."
+    },
+    {
+     "w": "waiter",
+     "e": "🤵",
+     "ar": "نادل",
+     "s": "The waiter brings the menu."
+    }
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Can I have…? Would you like…?",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Polite English at the café!",
+   "tip": "Contrast: \"I want tea!\" 😠 vs \"Can I have some tea, please?\" 😊. Practise offers and answers with gestures.",
+   "rule": "Ask for something: Can I have…, please? / I'd like… (= I would like). Offer something: Would you like…? Answer: Yes, please. / No, thank you.",
+   "table": [
+    [
+     "Ask (customer)",
+     "Offer (waiter)",
+     "Answer"
+    ],
+    [
+     "Can I have a lemonade, please?",
+     "Would you like some ice?",
+     "Yes, please."
+    ],
+    [
+     "I'd like a croissant, please.",
+     "Would you like anything else?",
+     "No, thank you."
+    ],
+    [
+     "Can I have the bill, please?",
+     "Here you are.",
+     "Thank you!"
+    ]
+   ],
+   "examples": [
+    "Can I have a hot chocolate, please?",
+    "I'd like two pancakes with honey.",
+    "Would you like some cake? Yes, please!",
+    "Would you like a drink? No, thank you."
+   ],
+   "ar": "للطلب بأدب: Can I have…, please? أو I'd like. للعرض: Would you like…؟ والرد: Yes, please / No, thank you."
+  },
+  {
+   "type": "reading",
+   "title": "At the Café",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text_intro": "Duha, Lina and Dad are at a café by the Nile. Read the conversation in two voices. What does everyone order?",
+   "tip": "Voices alternate (waiter / Duha). After reading, she writes the order like a waiter: 1 lemonade, 1 tea… Find the u_e word (huge, cute, tune).",
+   "story_title": "At the Café",
+   "pic": "☕🥞🍋",
+   "highlight": [
+    "thank",
+    "them",
+    "then",
+    "think",
+    "some",
+    "take"
+   ],
+   "voices": [
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A"
+   ],
+   "text": [
+    "Good evening! Here is the menu. What would you like?",
+    "Can I have a lemonade, please? And I think my sister would like a hot chocolate.",
+    "Of course. Would you like something to eat?",
+    "Yes, please. We'd like some pancakes. Then can my dad have a tea with mint?",
+    "Sure. The pancakes are huge — would you like one plate or two?",
+    "One plate, please. We can share them. Thank you!",
+    "You're welcome. Oh, and listen — there is music tonight. A man plays nice tunes on the oud!"
+   ],
+   "questions": [
+    {
+     "q": "What does Duha order?",
+     "a": "A lemonade."
+    },
+    {
+     "q": "What would Lina like?",
+     "a": "A hot chocolate."
+    },
+    {
+     "q": "What does Dad drink?",
+     "a": "Tea with mint."
+    },
+    {
+     "q": "Why do they want one plate of pancakes?",
+     "a": "Because the pancakes are huge — they can share them."
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "Polite sentences",
+   "minutes": 3,
+   "skills": [
+    "Writing",
+    "Reading"
+   ],
+   "text": "Put the words in order.",
+   "tip": "She reads each finished sentence in a polite voice!",
+   "items": [
+    [
+     "Can",
+     "I",
+     "have",
+     "a",
+     "tea,",
+     "please?"
+    ],
+    [
+     "Would",
+     "you",
+     "like",
+     "some",
+     "cake?"
+    ],
+    [
+     "I'd",
+     "like",
+     "a",
+     "lemonade,",
+     "please."
+    ],
+    [
+     "No,",
+     "thank",
+     "you."
+    ]
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Café role-play",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then role-play: Hasna is the waiter, you are the customer. Then swap!",
+   "tip": "Use the vocab menu with prices (recycle How much). Swap roles so Duha practises offers (\"Would you like…?\"). Bonus: be a little funny — the waiter forgets the order!",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Hello! Would you like to see the menu?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Yes, please. Thank you."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "What would you like to drink?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "I'd like a hot chocolate, please."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Would you like something to eat?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Can I have a croissant with cheese, please?"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Of course. Anything else?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "No, thank you. How much is it?"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "It's sixty pounds."
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Here you are. Thank you very much!"
+    }
+   ],
+   "frames": [
+    "I'd like ___, please.",
+    "Can I have ___, please?",
+    "Would you like ___?",
+    "Yes, please. / No, thank you.",
+    "How much is it?"
+   ],
+   "prompts": [
+    "Order a drink and something to eat.",
+    "Now you are the waiter. Offer me 3 things.",
+    "What do you think is the best café food?",
+    "Do you like to go to cafés? Who with?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "My café menu",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Make your own café menu on the pad (name, food, drinks, prices). Then write an order.",
+   "tip": "Let her be creative: café name, 3 drinks, 3 foods with prices. Then 3 sentences ordering from her own menu.",
+   "model": "Duha's Café\nDrinks: lemonade 15, hot chocolate 25, tea 10\nFood: pancakes 40, croissant 20, muffin 15\nOrder: Can I have a hot chocolate, please? I'd like some pancakes. Thank you!",
+   "frames": [
+    "___'s Café",
+    "Drinks: ___",
+    "Food: ___",
+    "Can I have ___, please?",
+    "I'd like ___."
+   ],
+   "task": "Make a menu with prices. Then write an order with 3 sentences.",
+   "checklist": [
+    "Menu has a name, drinks, food and prices",
+    "Polite order: Can I have…, please? / I'd like…",
+    "Capital letters and full stops",
+    "Question mark after Can I have…?"
+   ],
+   "pad": "My café menu"
+  },
+  {
+   "type": "wrapup",
+   "title": "Stars & goodbye",
+   "minutes": 1,
+   "exit": [
+    "I can read u_e words",
+    "I can read thank, them, then, think",
+    "I can say Can I have…? and I'd like…",
+    "I can order at a café"
+   ],
+   "homework": [
+    "Order your dinner at home in English: \"Can I have…, please?\"",
+    "Finish your café menu and colour it.",
+    "Spell: cube, tune, huge, cute, flute."
+   ],
+   "goodbye": "Thank you for coming to my café! See you soon, Duha!"
+  }
+ ],
+ "nav": {
+  "prev": "L19.html",
+  "next": "L21.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g2', name: 'Group 2', students: ['Duha'], color: '#159a8c', soft: '#d8f2ee' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

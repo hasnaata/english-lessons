@@ -1,18 +1,566 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G1-L43 · ng — What are you doing?</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G1-L43",
+ "group": "g1",
+ "lesson": 43,
+ "week": 22,
+ "month": 6,
+ "unit": "School, Weather & My Week",
+ "title": "ng — What are you doing?",
+ "emoji": "👑",
+ "minutes": 45,
+ "kid_goals": [
+  "👑 Read ng words: king, ring, song, long",
+  "❤️ Learn heart words say and so",
+  "🎤 Say: I'm singing. He's running.",
+  "✍️ Write 3 -ing sentences"
+ ],
+ "objectives": [
+  "Can hear and read the ng sound at the end of words (ring, sing, king, long, song, bang, wing).",
+  "Can read the sight words say and so.",
+  "Can say what people are doing now with the present continuous: I'm singing. He's running. What are you doing? (Pre-A1)",
+  "Can write 3 sentences with I'm / He's / She's + -ing."
+ ],
+ "focus": {
+  "sounds": [
+   "ng",
+   "-ing",
+   "-ang",
+   "-ong"
+  ],
+  "sight_words": [
+   "say",
+   "so"
+  ],
+  "language": "What are you doing? I'm singing. He's running. She's reading.",
+  "vocabulary": [
+   "singing",
+   "running",
+   "jumping",
+   "swimming",
+   "reading",
+   "eating",
+   "drawing",
+   "sleeping",
+   "king",
+   "ring"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics: blend sound by sound, then read decodable text",
+  "Heart words / orthographic mapping (Dolch) with spaced review",
+  "PPP: present the language in a picture, practise in games, produce in talk and writing",
+  "TPR mime game (charades)",
+  "Writing: modelled → shared → guided, with sentence frames"
+ ],
+ "sources": [
+  "Oxford Phonics World 2 (preview): ng",
+  "Start Reading 2 — ng decodable text",
+  "My First Grammar 1, Lesson: Present continuous (I'm -ing)",
+  "Peach sight-word flashcards (say, so)"
+ ],
+ "teacher_notes": "ng is ONE sound made at the back of the mouth (like humming with the mouth open) — Arabic speakers often add a hard g: 'sing-g'. Say 'singer' not 'fin-ger'. The -ing ending of verbs is the same ng — that links the phonics to the grammar today! Don't teach spelling rules for running/swimming; just show the words.",
+ "differentiation": "Need help: do the mime and say only the -ing word (singing!). Stretch: He's / She's sentences about friends and a question: Are you eating?",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Hello + weather check",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Sing hello. What's the weather like today?",
+   "tip": "Retrieval: weather report with actions. Then Hasna rings an imaginary bell: ding-dong! (intro to ng).",
+   "lines": [
+    "Hello, hello, how are you?",
+    "I'm fine, thank you. How are you?",
+    "What's the weather like?",
+    "It's sunny! It's windy!",
+    "Ding, dong! Ding, dong!"
+   ],
+   "questions": [
+    "What's the weather like now?",
+    "Do you like singing?",
+    "What is your best song?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "ng — ding-dong!",
+   "minutes": 7,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "n and g together make one sound: ng. Hum it!",
+   "tip": "Children hold their nose gently while saying ng — they feel the buzz (TPR). Families: -ing, -ang, -ong. No hard g at the end: sing, not sing-g.",
+   "focus": "ng",
+   "sound": "/ŋ/",
+   "say_sound": "ng, ng, king. ng, ng, song.",
+   "chant": "Ding, dong, a long, long song! The king can sing with a ring — bing, bang, bong!",
+   "words": [
+    {
+     "w": "king",
+     "e": "🤴",
+     "ar": "ملك"
+    },
+    {
+     "w": "ring",
+     "e": "💍",
+     "ar": "خاتم"
+    },
+    {
+     "w": "sing",
+     "e": "🎤",
+     "ar": "يغني"
+    },
+    {
+     "w": "wing",
+     "e": "🪽",
+     "ar": "جناح"
+    },
+    {
+     "w": "swing",
+     "e": "🛝",
+     "ar": "أرجوحة"
+    },
+    {
+     "w": "song",
+     "e": "🎵",
+     "ar": "أغنية"
+    },
+    {
+     "w": "long",
+     "e": "📏",
+     "ar": "طويل"
+    },
+    {
+     "w": "bang",
+     "e": "💥",
+     "ar": "دوي"
+    },
+    {
+     "w": "gong",
+     "e": "🔔",
+     "ar": "جرس كبير"
+    },
+    {
+     "w": "hang",
+     "e": "🧥",
+     "ar": "يعلّق"
+    }
+   ],
+   "blend": [
+    "ring",
+    "sing",
+    "king",
+    "wing",
+    "thing",
+    "bang",
+    "hang",
+    "sang",
+    "rang",
+    "long",
+    "song",
+    "gong"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the heart word. Then hear it in a sentence.",
+   "tip": "New: say, so. 'say' — ay says long a. 'so' — o says its name. Quick game: Hasna says 'Say ___!' and children repeat.",
+   "cards": [
+    {
+     "w": "say",
+     "s": "Say ding-dong!"
+    },
+    {
+     "w": "so",
+     "s": "The song is so long!"
+    },
+    {
+     "w": "please",
+     "s": "Sing, please!"
+    },
+    {
+     "w": "saw",
+     "s": "I saw the king."
+    },
+    {
+     "w": "our",
+     "s": "This is our song."
+    },
+    {
+     "w": "out",
+     "s": "The king is out."
+    }
+   ],
+   "review": [
+    "was",
+    "now",
+    "yes",
+    "they",
+    "read",
+    "good",
+    "jump"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "What are you doing?",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Now = am / is / are + -ing.",
+   "tip": "Present with mime: Hasna sings — 'I'm singing!' Points to a child jumping — 'He's jumping!' Children copy. The -ing at the end is our new ng sound!",
+   "rule": "I'm + -ing.   He's / She's + -ing.   What are you doing?",
+   "table": [
+    [
+     "Who?",
+     "be",
+     "doing"
+    ],
+    [
+     "I",
+     "'m (am)",
+     "singing 🎤"
+    ],
+    [
+     "He",
+     "'s (is)",
+     "running 🏃"
+    ],
+    [
+     "She",
+     "'s (is)",
+     "reading 📖"
+    ],
+    [
+     "We / They",
+     "'re (are)",
+     "eating 🍎"
+    ]
+   ],
+   "examples": [
+    "What are you doing?",
+    "I'm singing.",
+    "He's running.",
+    "She's reading a book.",
+    "They're eating chips."
+   ],
+   "ar": "نستخدم am / is / are + ing للحديث عمّا نفعله الآن."
+  },
+  {
+   "type": "vocab",
+   "title": "Action words",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Click to hear. Do the action!",
+   "tip": "TPR: children mime each action while the word plays. Then freeze game: Hasna says 'Freeze! What are you doing?'",
+   "words": [
+    {
+     "w": "singing",
+     "e": "🎤",
+     "ar": "يغني",
+     "s": "I'm singing."
+    },
+    {
+     "w": "running",
+     "e": "🏃",
+     "ar": "يركض",
+     "s": "He's running."
+    },
+    {
+     "w": "jumping",
+     "e": "🦘",
+     "ar": "يقفز",
+     "s": "She's jumping."
+    },
+    {
+     "w": "swimming",
+     "e": "🏊",
+     "ar": "يسبح",
+     "s": "I'm swimming."
+    },
+    {
+     "w": "reading",
+     "e": "📖",
+     "ar": "يقرأ",
+     "s": "She's reading."
+    },
+    {
+     "w": "eating",
+     "e": "🍽️",
+     "ar": "يأكل",
+     "s": "He's eating."
+    },
+    {
+     "w": "drawing",
+     "e": "🖍️",
+     "ar": "يرسم",
+     "s": "I'm drawing."
+    },
+    {
+     "w": "sleeping",
+     "e": "😴",
+     "ar": "ينام",
+     "s": "The cat is sleeping."
+    }
+   ]
+  },
+  {
+   "type": "reading",
+   "title": "The King Can Sing",
+   "minutes": 7,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "I do / we do / you do. Children mime each -ing action as they read it. Find ng words.",
+   "story_title": "The King Can Sing",
+   "pic": "🤴🎵💍🐶🛝",
+   "text_intro": "The king has a long song. What is everyone doing?",
+   "highlight": [
+    "the",
+    "is",
+    "a",
+    "so",
+    "say",
+    "said",
+    "with",
+    "on",
+    "and",
+    "can",
+    "what",
+    "doing",
+    "are",
+    "you"
+   ],
+   "text": [
+    "The king is singing a long song.",
+    "Ding, dong! Ding, dong!",
+    "The king's dog is jumping on the bed.",
+    "The king's cat is sleeping on a mat.",
+    "Then the king's ring fell. Bang!",
+    "'What are you doing?' said the cat.",
+    "'I'm singing!' said the king. 'Say ding, dong!'",
+    "'Ding, dong!' said the dog. The song is so long!"
+   ],
+   "questions": [
+    {
+     "q": "What is the king doing?",
+     "a": "He's singing a long song."
+    },
+    {
+     "q": "What is the dog doing?",
+     "a": "It's jumping on the bed."
+    },
+    {
+     "q": "What is the cat doing?",
+     "a": "It's sleeping on a mat."
+    },
+    {
+     "q": "What fell?",
+     "a": "The king's ring."
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Listen and choose",
+   "minutes": 4,
+   "skills": [
+    "Listening"
+   ],
+   "text": "Listen. Click the right picture.",
+   "tip": "Listening for -ing actions and ng words. After each, children mime it.",
+   "items": [
+    {
+     "say": "She's singing.",
+     "options": [
+      "🎤",
+      "🏃",
+      "😴"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "He's swimming.",
+     "options": [
+      "📖",
+      "🏊",
+      "🍽️"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "I'm reading.",
+     "options": [
+      "🖍️",
+      "🦘",
+      "📖"
+     ],
+     "answer": 2
+    },
+    {
+     "say": "ring",
+     "options": [
+      "🤴",
+      "💍",
+      "🎵"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "king",
+     "options": [
+      "🛝",
+      "🪽",
+      "🤴"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "I'm ___.",
+     "options": [
+      "singing",
+      "sing",
+      "song"
+     ],
+     "answer": 0
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Mime game",
+   "minutes": 4,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then mime an action. Your friends guess!",
+   "tip": "Charades: one child mimes, others ask 'Are you ___ing?' and the mimer says 'Yes, I am. / No, I'm not.' Then Hasna asks about other children: What's Yusuf doing? He's ___.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Yusuf",
+     "line": "What are you doing, Ibrahim?"
+    },
+    {
+     "who": "B",
+     "name": "Ibrahim",
+     "line": "Guess!"
+    },
+    {
+     "who": "A",
+     "name": "Yusuf",
+     "line": "Are you swimming?"
+    },
+    {
+     "who": "B",
+     "name": "Ibrahim",
+     "line": "No, I'm not."
+    },
+    {
+     "who": "A",
+     "name": "Yusuf",
+     "line": "Are you drawing?"
+    },
+    {
+     "who": "B",
+     "name": "Ibrahim",
+     "line": "Yes, I am! I'm drawing a king."
+    }
+   ],
+   "frames": [
+    "What are you doing?",
+    "I'm ___ing.",
+    "Are you ___ing?",
+    "Yes, I am. / No, I'm not.",
+    "He's / She's ___ing."
+   ],
+   "prompts": [
+    "What are you doing now?",
+    "What's Jana doing? (she mimes)",
+    "What is your mum doing now?",
+    "Are you sleeping? 😄"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "What are they doing?",
+   "minutes": 4,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 3 sentences: I'm… He's… She's…",
+   "tip": "Guided writing with frames. Check -ing at the end and the apostrophe.",
+   "model": "I'm reading. Yusuf is running. Jana is singing a song.",
+   "frames": [
+    "I'm ________ing.",
+    "________ is ________ing.",
+    "________ is ________ing."
+   ],
+   "task": "Write 3 sentences. Draw one of them. Show the camera!",
+   "checklist": [
+    "-ing at the end",
+    "I'm with '",
+    "Capital letters and full stops"
+   ],
+   "pad": "I'm"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "read king, ring, song, long",
+    "read say and so",
+    "say I'm ___ing"
+   ],
+   "homework": [
+    "Ask your family: What are you doing? Answer in English.",
+    "Read 'The King Can Sing'.",
+    "Write 3 ng words: _ing, _ang, _ong."
+   ],
+   "goodbye": "Ding, dong! Goodbye, goodbye! See you soon!"
+  }
+ ],
+ "nav": {
+  "prev": "L42.html",
+  "next": "L44.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g1', name: 'Group 1', students: ['Jana', 'Yusuf', 'Ibrahim'], color: '#f26b4f', soft: '#ffe5dd' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

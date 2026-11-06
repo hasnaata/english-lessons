@@ -1,18 +1,522 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G2-L31 · Project: My Animal Poster</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G2-L31",
+ "group": "g2",
+ "lesson": 31,
+ "week": 16,
+ "month": 4,
+ "unit": "Wild Animals",
+ "title": "Project: My Animal Poster",
+ "emoji": "🖼️",
+ "minutes": 45,
+ "kid_goals": [
+  "🐆 Learn words for habitats and animal bodies",
+  "❤️ Learn 4 heart words: those, upon, us, use",
+  "🖼️ Make and present my animal poster",
+  "✍️ Write a 5-sentence paragraph for the poster"
+ ],
+ "objectives": [
+  "Can describe an animal's habitat, body, food and abilities with simple fact sentences (present simple, has, can).",
+  "Can read the sight words those, upon, us, use.",
+  "Can give a short prepared presentation (about 1 minute) with a visual and answer simple questions (A1 spoken production).",
+  "Can write a 5-sentence fact paragraph using and, but, because."
+ ],
+ "focus": {
+  "sounds": [
+   "review: vowel teams in animal names"
+  ],
+  "sight_words": [
+   "those",
+   "upon",
+   "us",
+   "use"
+  ],
+  "language": "fact sentences: It lives in… It has… It eats… It can… It is bigger than…",
+  "vocabulary": [
+   "forest",
+   "desert",
+   "ocean",
+   "jungle",
+   "mountain",
+   "Arctic",
+   "fur",
+   "feathers",
+   "tail",
+   "claws",
+   "spots"
+  ]
+ },
+ "frameworks": [
+  "Project-based learning: research → write → present",
+  "PPP: present (model poster) → practise (frames) → produce (presentation)",
+  "Writing: modelled → guided → independent with frames",
+  "Heart words / orthographic mapping",
+  "Formative assessment: presentation checklist"
+ ],
+ "sources": [
+  "Cambridge A1 Movers topic list: animals (habitats, body parts)",
+  "My First Grammar 1 — have / has, can / can't (review)",
+  "English Conversation Made Natural (situation adapted: asking questions after a talk)",
+  "Dolch first-grade list: those, upon, us, use"
+ ],
+ "teacher_notes": "Project lesson. Before class, ask Duha to have paper and coloured pens ready (or she uses the drawing pad). Spend the most time on the presentation and the paragraph. Keep the presentation short (6–8 sentences) and praise eye contact and a loud, clear voice. Take a screenshot of the poster for her student page.",
+ "differentiation": "Support: Duha reads her sentences from the paper. Stretch: she presents without reading, adds a 'fun fact' and answers two questions from Hasna.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "20 questions",
+   "minutes": 3,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Hasna is thinking of an animal. Ask yes/no questions to find it!",
+   "tip": "Hasna's animal: snow leopard (it is in today's model poster). Help her ask: Does it live…? Can it…? Is it bigger than…? Has it got…?",
+   "lines": [
+    "Does it live in a hot place?",
+    "Can it climb?",
+    "Is it bigger than a cat?",
+    "Has it got spots?",
+    "Is it a snow leopard?"
+   ],
+   "questions": [
+    "Ask me 5 questions!",
+    "What is your poster animal?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Vowel teams in animal names",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read the animal names. Find the vowel team in each one!",
+   "tip": "Quick review of month 4: Duha reads, then says the vowel team (sheep → ee). Ask which animals can fly / swim.",
+   "focus": "ee · ea · ai · oa · ow · oo · igh",
+   "sound": "vowel teams",
+   "say_sound": "sheep, seal, snail, goat, crow, kangaroo",
+   "chant": "Sheep and seal, snail and goat, crow and kangaroo — all in the zoo!",
+   "words": [
+    {
+     "w": "sheep",
+     "e": "🐑",
+     "ar": "خروف"
+    },
+    {
+     "w": "seal",
+     "e": "🦭",
+     "ar": "فقمة"
+    },
+    {
+     "w": "eagle",
+     "e": "🦅",
+     "ar": "نسر"
+    },
+    {
+     "w": "snail",
+     "e": "🐌",
+     "ar": "حلزون"
+    },
+    {
+     "w": "goat",
+     "e": "🐐",
+     "ar": "ماعز"
+    },
+    {
+     "w": "toad",
+     "e": "🐸",
+     "ar": "علجوم"
+    },
+    {
+     "w": "crow",
+     "e": "🐦",
+     "ar": "غراب"
+    },
+    {
+     "w": "kangaroo",
+     "e": "🦘",
+     "ar": "كنغر"
+    },
+    {
+     "w": "raccoon",
+     "e": "🦝",
+     "ar": "راكون"
+    },
+    {
+     "w": "firefly",
+     "e": "✨",
+     "ar": "يراعة"
+    }
+   ],
+   "blend": [
+    "sheep",
+    "seal",
+    "snail",
+    "goat",
+    "crow"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read, spell, find the tricky part, say the sentence.",
+   "tip": "those (far, more than one) vs these (near, L30). upon (= on, in stories: once upon a time). us (me + others). use (u_e: magic e like cube!).",
+   "cards": [
+    {
+     "w": "those",
+     "s": "Look at those birds in the sky!"
+    },
+    {
+     "w": "upon",
+     "s": "Once upon a time, there was a fox."
+    },
+    {
+     "w": "us",
+     "s": "Please help us protect animals."
+    },
+    {
+     "w": "use",
+     "s": "Elephants use their trunks to drink."
+    }
+   ],
+   "review": [
+    "sleep",
+    "tell",
+    "their",
+    "these",
+    "right",
+    "many"
+   ]
+  },
+  {
+   "type": "vocab",
+   "title": "Poster words",
+   "minutes": 5,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Habitats (where animals live) and body words. Click each picture.",
+   "tip": "Ask after each word: Name an animal that lives in the desert. Which animals have feathers?",
+   "words": [
+    {
+     "w": "forest",
+     "e": "🌲",
+     "ar": "غابة",
+     "s": "Bears live in the forest."
+    },
+    {
+     "w": "desert",
+     "e": "🏜️",
+     "ar": "صحراء",
+     "s": "Camels live in the desert."
+    },
+    {
+     "w": "ocean",
+     "e": "🌊",
+     "ar": "محيط",
+     "s": "Whales live in the ocean."
+    },
+    {
+     "w": "jungle",
+     "e": "🌴",
+     "ar": "غابة استوائية",
+     "s": "Monkeys live in the jungle."
+    },
+    {
+     "w": "mountain",
+     "e": "🏔️",
+     "ar": "جبل",
+     "s": "Goats live on mountains."
+    },
+    {
+     "w": "Arctic",
+     "e": "🧊",
+     "ar": "القطب الشمالي",
+     "s": "Polar bears live in the Arctic."
+    },
+    {
+     "w": "fur",
+     "e": "🐻",
+     "ar": "فرو",
+     "s": "A bear has thick fur."
+    },
+    {
+     "w": "feathers",
+     "e": "🪶",
+     "ar": "ريش",
+     "s": "An eagle has brown feathers."
+    },
+    {
+     "w": "tail",
+     "e": "🐿️",
+     "ar": "ذيل",
+     "s": "A squirrel has a long tail."
+    },
+    {
+     "w": "claws",
+     "e": "🐾",
+     "ar": "مخالب",
+     "s": "A tiger has sharp claws."
+    },
+    {
+     "w": "spots",
+     "e": "🐆",
+     "ar": "بقع",
+     "s": "A leopard has black spots."
+    }
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Fact sentences",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Facts about animals use the present simple. Use it + verb + s.",
+   "tip": "This is the 'skeleton' of the poster. Duha fills each row for her own animal orally before writing.",
+   "rule": "Animal facts are always true, so we use the present simple: It lives… It eats… It has… We add can for abilities and -er + than to compare.",
+   "table": [
+    [
+     "Question",
+     "Answer frame",
+     "Example"
+    ],
+    [
+     "Where does it live?",
+     "It lives in / on ___.",
+     "It lives on high mountains."
+    ],
+    [
+     "What does it look like?",
+     "It has ___. It is ___.",
+     "It has thick fur. It is grey and white."
+    ],
+    [
+     "What does it eat?",
+     "It eats ___.",
+     "It eats wild goats."
+    ],
+    [
+     "What can it do?",
+     "It can ___ (fast / high / far).",
+     "It can jump very far."
+    ],
+    [
+     "Compare",
+     "It is ___er than ___.",
+     "It is smaller than a lion."
+    ]
+   ],
+   "examples": [
+    "The camel lives in the desert.",
+    "It has a big hump on its back.",
+    "It can walk for many days without water.",
+    "It is taller than a horse."
+   ],
+   "ar": "نستخدم المضارع البسيط للحقائق: It lives / It eats / It has (مع it نضيف s أو نستخدم has)."
+  },
+  {
+   "type": "reading",
+   "title": "Model poster: The Snow Leopard",
+   "minutes": 7,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "This is a model poster. Read it together and notice the headings (questions). Duha's poster will have the same headings.",
+   "story_title": "The Snow Leopard — a poster by Hasna",
+   "pic": "🐆🏔️❄️",
+   "text_intro": "Read the poster. Look at the questions — they help you plan YOUR poster.",
+   "text": [
+    "Where does it live? The snow leopard lives high in the mountains of Asia. It is very cold there, and there is a lot of snow.",
+    "What does it look like? It has thick white and grey fur with black spots. Its tail is very long. It uses its tail like a scarf when it sleeps!",
+    "What does it eat? It eats wild goats and sheep.",
+    "What can it do? It can jump very far. It can walk on snow because its feet are big, like snow shoes.",
+    "Fun fact: Snow leopards can't roar like lions. They make a soft sound.",
+    "Why I like it: It is beautiful and strong. Please help us protect these animals!"
+   ],
+   "highlight": [
+    "those",
+    "upon",
+    "us",
+    "use",
+    "these",
+    "their",
+    "sleep"
+   ],
+   "questions": [
+    {
+     "q": "Where does the snow leopard live?",
+     "a": "It lives high in the mountains of Asia."
+    },
+    {
+     "q": "What colour is its fur?",
+     "a": "It is white and grey with black spots."
+    },
+    {
+     "q": "How does it use its tail?",
+     "a": "It uses its tail like a scarf when it sleeps."
+    },
+    {
+     "q": "Why can it walk on snow?",
+     "a": "Because its feet are big, like snow shoes."
+    },
+    {
+     "q": "Can it roar like a lion?",
+     "a": "No, it can't. It makes a soft sound."
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Present your poster",
+   "minutes": 9,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to Duha's example talk. Then present YOUR poster to Hasna!",
+   "tip": "I do: Hasna presents the snow leopard (30 seconds). You do: Duha presents. Score kindly: ⭐ loud voice, ⭐ looks at camera, ⭐ 6 sentences, ⭐ answers a question. Ask 2 questions at the end.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Duha",
+     "line": "Hello! My poster is about the camel."
+    },
+    {
+     "who": "B",
+     "name": "Hasna",
+     "line": "Oh, nice! Where does it live?"
+    },
+    {
+     "who": "A",
+     "name": "Duha",
+     "line": "It lives in the desert. It is very hot and dry there."
+    },
+    {
+     "who": "B",
+     "name": "Hasna",
+     "line": "What does it look like?"
+    },
+    {
+     "who": "A",
+     "name": "Duha",
+     "line": "It is tall and brown. It has a big hump on its back."
+    },
+    {
+     "who": "B",
+     "name": "Hasna",
+     "line": "What can it do?"
+    },
+    {
+     "who": "A",
+     "name": "Duha",
+     "line": "It can walk for many days without water. It is taller than a horse!"
+    },
+    {
+     "who": "B",
+     "name": "Hasna",
+     "line": "Why do you like it?"
+    },
+    {
+     "who": "A",
+     "name": "Duha",
+     "line": "I like it because it is strong and it helps people. Thank you for listening!"
+    }
+   ],
+   "frames": [
+    "Hello! My poster is about the ___.",
+    "It lives in ___.",
+    "It has ___. It is ___.",
+    "It eats ___.",
+    "It can ___.",
+    "It is ___er than ___.",
+    "I like it because ___.",
+    "Thank you for listening! Any questions?"
+   ],
+   "prompts": [
+    "Present your poster (6–8 sentences).",
+    "What is the most interesting fact on your poster?",
+    "Is your animal bigger or smaller than a cat?",
+    "Is your animal in danger? How can we help it?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "My poster paragraph",
+   "minutes": 7,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 5 sentences for your poster. Then draw your animal.",
+   "tip": "Independent writing with frames. Check: it + verb-s, one can, one comparative, and/but/because. Then Duha draws on the pad or on paper and shows the camera.",
+   "model": "The camel lives in the desert, and it can live in very hot places. It is tall and brown, and it has a big hump. It eats plants and leaves. It can walk for many days without water because it stores fat in its hump. I like camels because they are strong and they help people.",
+   "frames": [
+    "The ________ lives in ________, and ________.",
+    "It has ________ and ________.",
+    "It eats ________.",
+    "It can ________ because ________.",
+    "I like ________ because ________."
+   ],
+   "task": "Write the paragraph on your poster. Add a picture and a 'Fun fact' box.",
+   "checklist": [
+    "5 sentences",
+    "present simple with -s",
+    "can + verb",
+    "and / but / because",
+    "a title and a picture"
+   ],
+   "pad": "Draw your animal here and write its name."
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "name 6 habitats",
+    "present my poster",
+    "read those, upon, us, use"
+   ],
+   "homework": [
+    "Finish your poster and show it to your family. Present it to them!",
+    "Write 3 questions about another animal for Hasna (Does it…? Can it…?).",
+    "Review the month-4 words for the check next lesson."
+   ],
+   "goodbye": "What a great poster, Duha! Next lesson is our Month 4 check. You are ready! Goodbye!"
+  }
+ ],
+ "nav": {
+  "prev": "L30.html",
+  "next": "L32.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g2', name: 'Group 2', students: ['Duha'], color: '#159a8c', soft: '#d8f2ee' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

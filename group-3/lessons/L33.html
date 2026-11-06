@@ -1,18 +1,549 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L33 · Was and were</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L33",
+ "group": "g3",
+ "lesson": 33,
+ "week": 17,
+ "month": 5,
+ "unit": "Past Times & Stories",
+ "title": "Was and were",
+ "emoji": "🕰️",
+ "minutes": 45,
+ "kid_goals": [
+  "🕰️ Talk about the past with was and were",
+  "🔊 Say the short /wəz/ sound",
+  "🏡 Read about Grandma's childhood",
+  "✍️ Write 5 sentences about when I was small"
+ ],
+ "objectives": [
+  "Can use was / were in positive, negative and question forms (A1+/A2).",
+  "Can use there was / there were to describe the past.",
+  "Can use past time expressions: yesterday, last week/year, when I was six, two years ago.",
+  "Can understand a short text about someone's childhood and answer questions (A2).",
+  "Can read and use the key words country, plant, last, school."
+ ],
+ "focus": {
+  "sounds": [
+   "weak form /wəz/",
+   "weak form /wə/"
+  ],
+  "sight_words": [
+   "country",
+   "plant",
+   "last",
+   "school"
+  ],
+  "language": "was / were + / − / ?; there was / there were; yesterday, last…, ago, when I was…",
+  "vocabulary": [
+   "yesterday",
+   "last night",
+   "last year",
+   "ago",
+   "childhood",
+   "village",
+   "toy",
+   "favourite"
+  ]
+ },
+ "frameworks": [
+  "PPP: present → practise → produce",
+  "Comprehensible input: emoji pictures + short Arabic hints",
+  "Spaced retrieval: key words and older words come back in the reading",
+  "Writing: modelled → guided → independent, hamburger paragraph",
+  "CEFR A1 → A2 can-do objectives"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Unit 5 — Past simple (section D: was/were)",
+  "English Grammar in Use (simplified), Unit 84 — there … (there was / there were)",
+  "Fry high-frequency words 101–300: country, plant, last, school"
+ ],
+ "teacher_notes": "First lesson of month 5 (the past). The reading has a few past simple verbs (asked, said, lived, had, helped) — treat them as vocabulary today; they are taught in lessons 34–35. Start from what she knows: am/is → was, are → were. Pronunciation: in sentences was is weak /wəz/ (\"It was cold\"), but in short answers it is strong /wɒz/ (\"Yes, it was.\"). Typical error: \"I were\", \"They was\", \"Did you was…?\". Grandparents visit on Fridays (lesson 2) — a natural link for the childhood chat.",
+ "differentiation": "Support: keep the table on screen; use only I/he/she (was) first, then you/we/they (were). Stretch: questions with Where/Who/What + was/were, and \"there wasn't any…\".",
+ "arabic": [
+  {
+   "en": "childhood",
+   "ar": "طفولة"
+  },
+  {
+   "en": "village",
+   "ar": "قرية"
+  },
+  {
+   "en": "strict",
+   "ar": "صارم"
+  },
+  {
+   "en": "fields",
+   "ar": "حقول"
+  }
+ ],
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Warm-up chat",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Listen, then answer in full sentences.",
+   "tip": "Present → past contrast: \"Today I am… Yesterday I was…\". Write two columns on the screen: NOW (am/is/are) | PAST (was/were). Ask about her homework question from lesson 32 (a family member's favourite place).",
+   "lines": [
+    "Hello, Saja! How are you today?",
+    "I am fine today. Yesterday I was very tired!",
+    "Where were you yesterday at six o'clock?",
+    "I was at home. My family was in the kitchen.",
+    "How was your weekend?"
+   ],
+   "questions": [
+    "Where are you now? Where were you yesterday at 6?",
+    "How was your weekend — good, boring, busy?",
+    "Who was with you?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Speaking",
+    "Reading"
+   ],
+   "text": "Listen, repeat and notice the pattern. Click a word to hear it.",
+   "tip": "Listen to the \"small\" was: /wəz/ — fast, no stress. At the END of a short answer it becomes strong: \"Yes, I WAS.\" Saja repeats with a tapping rhythm. Wasn't /wɒznt/ and weren't /wɜːnt/ are always strong.",
+   "focus": "was / were",
+   "sound": "/wəz/ /wə/ (weak) · /wɒz/ /wɜː/ (strong)",
+   "say_sound": "It was cold. Yes, it was.",
+   "chant": "It was cold, it was grey, we were in the park all day!",
+   "words": [
+    {
+     "w": "It was cold.",
+     "e": "🥶",
+     "ar": "كان الجو باردًا"
+    },
+    {
+     "w": "They were happy.",
+     "e": "😊",
+     "ar": "كانوا سعداء"
+    },
+    {
+     "w": "I was at school.",
+     "e": "🏫",
+     "ar": "كنت في المدرسة"
+    },
+    {
+     "w": "Yes, it was.",
+     "e": "✅",
+     "ar": "نعم، كان كذلك"
+    },
+    {
+     "w": "No, I wasn't.",
+     "e": "❌",
+     "ar": "لا، لم أكن"
+    },
+    {
+     "w": "There was a cat.",
+     "e": "🐈",
+     "ar": "كانت هناك قطة"
+    },
+    {
+     "w": "There were two plants.",
+     "e": "🪴",
+     "ar": "كان هناك نبتتان"
+    },
+    {
+     "w": "We were in the country.",
+     "e": "🌾",
+     "ar": "كنا في الريف"
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word, hear it, say it. Click 💬 for the sentence.",
+   "tip": "Country has two meanings: a nation (Egypt is a country) and the countryside (not the city). Plant = a noun (a plant) and a verb (to plant a tree). Last + time: last night, last week, last year (no \"the\").",
+   "cards": [
+    {
+     "w": "country",
+     "s": "My grandmother grew up in the country, not in the city."
+    },
+    {
+     "w": "plant",
+     "s": "There was a big plant next to the door."
+    },
+    {
+     "w": "last",
+     "s": "Last summer we were at the beach."
+    },
+    {
+     "w": "school",
+     "s": "My first school was very small."
+    }
+   ],
+   "review": [
+    "food",
+    "own",
+    "below",
+    "between",
+    "still",
+    "every"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "was and were",
+   "minutes": 6,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read the rule and the table. Listen to the examples.",
+   "tip": "Drill: Hasna says \"now\" sentences, Saja changes them to the past: \"I am tired\" → \"I was tired yesterday\". Then \"there is a park\" → \"there was a park\".",
+   "rule": "Was and were are the past of be. am / is → was; are → were. I, he, she, it → was. You, we, they → were. Make negatives with not (wasn't, weren't). For questions, put was / were first. Use there was (one thing) and there were (more than one) to describe the past.",
+   "table": [
+    [
+     "",
+     "+",
+     "−",
+     "?"
+    ],
+    [
+     "I / he / she / it",
+     "I was tired.",
+     "She wasn't at school.",
+     "Was it cold?"
+    ],
+    [
+     "you / we / they",
+     "We were at home.",
+     "They weren't happy.",
+     "Were you late?"
+    ],
+    [
+     "there",
+     "There was a park. / There were trees.",
+     "There wasn't a shop. / There weren't any cars.",
+     "Was there a…? / Were there any…?"
+    ],
+    [
+     "short answers",
+     "Yes, I was. / No, I wasn't.",
+     "Yes, they were. / No, they weren't.",
+     ""
+    ]
+   ],
+   "examples": [
+    "I was at school yesterday.",
+    "My grandparents were in the country last week.",
+    "There weren't any phones in Grandma's village.",
+    "Where were you last night? I was at my cousin's house."
+   ],
+   "ar": "was / were = كان / كانوا. was مع I, he, she, it — و were مع you, we, they. النفي: wasn't / weren't. السؤال: نقدّم was أو were. there was = كان يوجد."
+  },
+  {
+   "type": "reading",
+   "title": "Grandma's Childhood",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": [
+    "Every Friday my grandparents come to our flat. Last Friday, I asked my grandma about her childhood.",
+    "\"When I was your age, I lived in a small village in the country,\" she said. \"Life was very different. There weren't any phones or computers in our house, and there wasn't a television.\"",
+    "\"Was there a school?\" I asked. \"Yes, there was, but it was far away. It was a long walk every morning. There were only twelve children in my class, and our teacher was very strict.\"",
+    "\"Were you happy?\" \"Oh yes! My brothers and I were outside all day. There were fields, animals and a river. My mother had a big garden, and I always helped her plant tomatoes and mint.\"",
+    "Then Grandma laughed. \"But I wasn't a good student. I was always tired after all that playing!\"",
+    "I think her childhood was hard, but it was also beautiful."
+   ],
+   "tip": "Grandparents visiting on Fridays matches lesson 2. Before reading: \"What was life like 60 years ago? Guess 3 things.\" Two voices: narrator (Saja) and Grandma. After reading, Saja finds all the was/were/there was/there were.",
+   "story_title": "Grandma's Childhood",
+   "pic": "👵🌾🏫🪴",
+   "text_intro": "Listen first. Then read it aloud with Hasna. Then answer the questions.",
+   "highlight": [
+    "country",
+    "plant",
+    "last",
+    "school",
+    "was",
+    "were",
+    "there"
+   ],
+   "questions": [
+    {
+     "q": "Where was Grandma when she was 12?",
+     "a": "In a small village in the country."
+    },
+    {
+     "q": "Was there a television in her house?",
+     "a": "No, there wasn't."
+    },
+    {
+     "q": "How many children were in her class?",
+     "a": "Twelve."
+    },
+    {
+     "q": "What did she help her mother do?",
+     "a": "Plant tomatoes and mint in the garden."
+    },
+    {
+     "q": "Was Grandma a good student? Why / why not?",
+     "a": "No, she wasn't — she was always tired after playing."
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "was or were?",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Choose the right word for each gap.",
+   "tip": "Ask \"Who? One or more?\" each time. Then Saja reads the sentence with the weak /wəz/.",
+   "items": [
+    {
+     "text": "I ___ at school yesterday.",
+     "answer": "was",
+     "options": [
+      "was",
+      "were"
+     ]
+    },
+    {
+     "text": "My grandparents ___ in the country last week.",
+     "answer": "were",
+     "options": [
+      "was",
+      "were"
+     ]
+    },
+    {
+     "text": "There ___ any phones in Grandma's house.",
+     "answer": "weren't",
+     "options": [
+      "wasn't",
+      "weren't"
+     ]
+    },
+    {
+     "text": "___ the school far away? Yes, it was.",
+     "answer": "Was",
+     "options": [
+      "Was",
+      "Were"
+     ]
+    },
+    {
+     "text": "Where ___ you last night?",
+     "answer": "were",
+     "options": [
+      "was",
+      "were"
+     ]
+    },
+    {
+     "text": "There ___ a big garden behind the house.",
+     "answer": "was",
+     "options": [
+      "was",
+      "were"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "Make past sentences",
+   "minutes": 2,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Click the words in the right order to make a sentence.",
+   "tip": "Questions with was/were: the verb jumps to the front.",
+   "items": [
+    [
+     "Were",
+     "you",
+     "happy",
+     "at",
+     "your",
+     "first",
+     "school?"
+    ],
+    [
+     "There",
+     "was",
+     "a",
+     "big",
+     "tree",
+     "in",
+     "the",
+     "garden."
+    ],
+    [
+     "We",
+     "weren't",
+     "at",
+     "home",
+     "last",
+     "night."
+    ],
+    [
+     "My",
+     "first",
+     "teacher",
+     "was",
+     "very",
+     "kind."
+    ]
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "When you were small…",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to the dialogue. Then take a part. Then answer about YOU.",
+   "tip": "Childhood chat. If Saja's real answers are private or difficult, let her invent a \"character\". Then she interviews Hasna with the same questions (you/were).",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Saja, where were you when you were six?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "I was in Cairo. We were in a different flat."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Was it big?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "No, it wasn't. It was small, but there was a nice balcony."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Who was your best friend?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "My best friend was a girl called Salma. We were in the same class."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "What was your favourite toy?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "It was a pink bike. I was on it all the time!"
+    }
+   ],
+   "frames": [
+    "When I was ___, I was in ___.",
+    "My first school was ___.",
+    "My best friend was ___.",
+    "There was / There were ___.",
+    "My favourite toy was ___."
+   ],
+   "prompts": [
+    "Where were you when you were six?",
+    "What was your first school like?",
+    "Who was your best friend?",
+    "What was your favourite toy or game?",
+    "Where were you last Friday evening?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "When I was small",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Read the model. Plan with the frames. Then write your own.",
+   "tip": "Guided writing. Check only was/were agreement while she writes, then read it back together.",
+   "model": "When I was six, I was in a different flat. It was small, but there was a lovely balcony with a lot of plants. My first school was near our building. My teacher was kind and funny. My favourite toy was a big brown teddy bear.",
+   "frames": [
+    "When I was ___, I was ___.",
+    "There was / There were ___.",
+    "My first school was ___.",
+    "My teacher / best friend was ___.",
+    "My favourite ___ was ___."
+   ],
+   "task": "Write 5 sentences about when you were small. Use was, were and there was / there were.",
+   "checklist": [
+    "🕰️ 5 sentences in the past",
+    "✅ was with I / he / she / it",
+    "✅ were with you / we / they",
+    "🏡 one \"there was / there were\" sentence",
+    "✅ Capital letters and full stops"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Wrap-up",
+   "minutes": 1,
+   "tip": "Count the stars together. Saja ticks the exit list honestly — anything not ticked goes into the next warm-up.",
+   "exit": [
+    "I can use was and were.",
+    "I can say there was / there were.",
+    "I can say the short /wəz/.",
+    "I can write about when I was small."
+   ],
+   "homework": [
+    "Ask an older family member 3 questions: \"Where were you when you were 12? What was your school like? What was your favourite game?\" Write their answers.",
+    "Write 5 sentences: \"Last Friday I was… / There were…\".",
+    "Learn the key words country, plant, last, school."
+   ],
+   "goodbye": "That was a great lesson! Goodbye, Saja!"
+  }
+ ],
+ "nav": {
+  "prev": "L32.html",
+  "next": "L34.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

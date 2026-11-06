@@ -1,18 +1,549 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G1-L08 · Month 1 check</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G1-L08",
+ "group": "g1",
+ "lesson": 8,
+ "week": 4,
+ "month": 1,
+ "unit": "Me and My Family",
+ "title": "Month 1 check",
+ "emoji": "✅",
+ "minutes": 45,
+ "kid_goals": [
+  "👂 Listen and click",
+  "📖 Read words and a story",
+  "✍️ Write sentences",
+  "🗣️ Talk about my family",
+  "🏆 Get a reward!"
+ ],
+ "objectives": [
+  "Listening: can recognise the sounds a–k and understand short sentences about family (Pre-A1).",
+  "Reading: can read month 1 sight words and a short decodable text, and answer simple questions.",
+  "Writing: can order words into sentences and write 2–3 sentences about family.",
+  "Speaking: can answer personal questions (name, age, family, have got) with short sentences.",
+  "Teacher: score each skill out of 25 and record it in the student pages and the Google Sheet."
+ ],
+ "focus": {
+  "sounds": [
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h",
+   "i",
+   "j",
+   "k"
+  ],
+  "sight_words": [
+   "the",
+   "not",
+   "you",
+   "do",
+   "want",
+   "all",
+   "here",
+   "big",
+   "is",
+   "little"
+  ],
+  "language": "Month 1: This is my ___. Who's this? He/She is ___. I've got ___. big / little"
+ },
+ "frameworks": [
+  "Formative assessment: monthly 4-skill check (/25 per skill)",
+  "CEFR Pre-A1 can-do descriptors",
+  "Cambridge Pre A1 Starters task types (listen and tick, read and write)",
+  "Spaced retrieval: old heart words come back in stories and games"
+ ],
+ "sources": [
+  "Oxford Phonics World 1 SB, Reviews 1–2",
+  "Peach sight-word flashcards — month 1 set",
+  "Cambridge Pre A1 Starters sample tasks (format only)",
+  "My First Grammar 1 — be, have got, this is"
+ ],
+ "teacher_notes": "Make it feel like a game show, not a test: stars after each part, lots of praise. Test each child individually where the tip says (ask the others to draw quietly). Record scores out of 25 per skill: Listening, Reading, Writing, Speaking. A total of 75+/100 = ready to move on; under 50 = plan extra review in lessons 9–10.",
+ "differentiation": "Need help: repeat audio twice, allow pointing instead of saying. Do not give answers, but you may re-read a question. Fast finishers: read the story aloud with expression for a bonus star.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Hello + game show!",
+   "minutes": 3,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Sing hello. Today is a game show — let's win stars!",
+   "tip": "Relax the children: explain there are 4 games (listen, read, write, talk). Everyone gets a reward at the end.",
+   "lines": [
+    "Hello, hello, how are you?",
+    "I'm fine, thank you. How are you?",
+    "We can listen!",
+    "We can read!",
+    "We can write and talk!"
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Listening 1: Which sound?",
+   "minutes": 4,
+   "skills": [
+    "Listening"
+   ],
+   "text": "Listen to the word. Click the first sound.",
+   "tip": "LISTENING (part 1 of 2): 6 items. Each child answers in turn and Hasna clicks. Score 2 points each (max 12).",
+   "items": [
+    {
+     "say": "fish",
+     "options": [
+      "f",
+      "h",
+      "g"
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "say": "goat",
+     "options": [
+      "k",
+      "g",
+      "j"
+     ],
+     "answer": 1,
+     "keep_order": true
+    },
+    {
+     "say": "hat",
+     "options": [
+      "f",
+      "d",
+      "h"
+     ],
+     "answer": 2,
+     "keep_order": true
+    },
+    {
+     "say": "insect",
+     "options": [
+      "i",
+      "e",
+      "a"
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "say": "jam",
+     "options": [
+      "g",
+      "j",
+      "d"
+     ],
+     "answer": 1,
+     "keep_order": true
+    },
+    {
+     "say": "kite",
+     "options": [
+      "k",
+      "h",
+      "b"
+     ],
+     "answer": 0,
+     "keep_order": true
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Listening 2: Click the picture",
+   "minutes": 4,
+   "skills": [
+    "Listening"
+   ],
+   "text": "Listen to the sentence. Click the right picture.",
+   "tip": "LISTENING (part 2 of 2): 6 items × 2 points = 12, plus 1 point if the child followed all instructions. Listening total = /25.",
+   "items": [
+    {
+     "say": "This is my grandma.",
+     "options": [
+      "👵",
+      "👴",
+      "👶"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "He is big.",
+     "options": [
+      "🐭",
+      "🐘",
+      "🐛"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "I've got a kite.",
+     "options": [
+      "🔑",
+      "🎁",
+      "🪁"
+     ],
+     "answer": 2
+    },
+    {
+     "say": "She is little.",
+     "options": [
+      "👶",
+      "👨",
+      "👴"
+     ],
+     "answer": 0
+    },
+    {
+     "say": "This is my dad.",
+     "options": [
+      "👩",
+      "👨",
+      "👧"
+     ],
+     "answer": 1
+    },
+    {
+     "say": "I want a cake.",
+     "options": [
+      "🥚",
+      "🎂",
+      "👜"
+     ],
+     "answer": 1
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Reading 1: Heart words",
+   "minutes": 4,
+   "skills": [
+    "Reading"
+   ],
+   "text": "Read each word to Hasna!",
+   "tip": "READING (part 1 of 3): each child reads the 10 cards alone (the others look away). 1 point per word read within 3 seconds (max 10).",
+   "cards": [
+    {
+     "w": "the",
+     "s": "The cat is little."
+    },
+    {
+     "w": "not",
+     "s": "I am not a dog."
+    },
+    {
+     "w": "you",
+     "s": "I like you."
+    },
+    {
+     "w": "do",
+     "s": "Do you like jam?"
+    },
+    {
+     "w": "want",
+     "s": "I want to play."
+    },
+    {
+     "w": "all",
+     "s": "We all run."
+    },
+    {
+     "w": "here",
+     "s": "Here is my bag."
+    },
+    {
+     "w": "big",
+     "s": "A big dog."
+    },
+    {
+     "w": "is",
+     "s": "This is Jad."
+    },
+    {
+     "w": "little",
+     "s": "A little egg."
+    }
+   ],
+   "review": [
+    "we",
+    "can",
+    "play",
+    "like",
+    "and"
+   ]
+  },
+  {
+   "type": "reading",
+   "title": "Reading 2: Hiba and the Big Bag",
+   "minutes": 6,
+   "skills": [
+    "Reading"
+   ],
+   "text": [
+    "Here is Hiba.",
+    "Hiba is little.",
+    "Hiba had a big bag.",
+    "\"Do you want a fig, Dad?\"",
+    "\"I do not want a fig.\"",
+    "Hiba had a cake. Dad can have the cake!"
+   ],
+   "tip": "READING (part 2 of 3): each child reads 2 lines aloud (fluency, 1 point per line read well, max 4 — scale to 5). Then ask the questions — 1 point each (max 5). Do not read it to them first.",
+   "story_title": "Hiba and the Big Bag",
+   "pic": "👧👜🎂",
+   "text_intro": "Read the story by yourself. Then answer the questions.",
+   "highlight": [
+    "is",
+    "big",
+    "little",
+    "the",
+    "here",
+    "you",
+    "do",
+    "want",
+    "not",
+    "a",
+    "can"
+   ],
+   "questions": [
+    {
+     "q": "Is Hiba big or little?",
+     "a": "Hiba is little."
+    },
+    {
+     "q": "What did Hiba have?",
+     "a": "A big bag."
+    },
+    {
+     "q": "Does Dad want a fig?",
+     "a": "No, he does not."
+    },
+    {
+     "q": "What can Dad have?",
+     "a": "The cake."
+    },
+    {
+     "q": "Who is in the story?",
+     "a": "Hiba and Dad."
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "Reading 3: Finish the sentence",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Read. Click the right word.",
+   "tip": "READING (part 3 of 3): 6 items, 1 point each (max 6). Reading total = cards /10 + story /9 + gaps /6 = /25.",
+   "bank": [
+    "big",
+    "little",
+    "brother",
+    "got",
+    "Here",
+    "She"
+   ],
+   "items": [
+    {
+     "text": "🐘 The elephant is ___.",
+     "answer": "big"
+    },
+    {
+     "text": "🐭 The mouse is ___.",
+     "answer": "little"
+    },
+    {
+     "text": "👦 This is my ___.",
+     "answer": "brother"
+    },
+    {
+     "text": "I've ___ a kite. 🪁",
+     "answer": "got"
+    },
+    {
+     "text": "___ is my bag. 👜",
+     "answer": "Here"
+    },
+    {
+     "text": "👧 ___ is nine.",
+     "answer": "She"
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "Writing 1: Make sentences",
+   "minutes": 4,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Click the words in the right order.",
+   "tip": "WRITING (part 1 of 2): 5 sentences × 2 points = 10.",
+   "items": [
+    [
+     "This",
+     "is",
+     "my",
+     "mum."
+    ],
+    [
+     "He",
+     "is",
+     "big."
+    ],
+    [
+     "I've",
+     "got",
+     "a",
+     "sister."
+    ],
+    [
+     "Do",
+     "you",
+     "want",
+     "a",
+     "cake?"
+    ],
+    [
+     "We",
+     "all",
+     "like",
+     "to",
+     "play."
+    ]
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Writing 2: About my family",
+   "minutes": 6,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 3 sentences about your family in your notebook.",
+   "tip": "WRITING (part 2 of 2): 5 points per sentence (max 15): 2 = right words, 1 = capital letter, 1 = full stop, 1 = spaces/neat letters. Writing total = /25. Children show the notebook to the camera; take a photo for the student page.",
+   "model": "This is my brother.\nHe is big.\nI've got a little cat.",
+   "frames": [
+    "This is my ________.",
+    "He is ________. / She is ________.",
+    "I've got a ________."
+   ],
+   "task": "Write 3 sentences about your family. No help this time — you can do it!",
+   "checklist": [
+    "Capital letter at the start",
+    "Full stop at the end",
+    "Finger spaces between words"
+   ],
+   "pad": "This is my"
+  },
+  {
+   "type": "speaking",
+   "title": "Speaking: Talk to Hasna",
+   "minutes": 9,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Hasna asks you questions. Answer in sentences!",
+   "tip": "SPEAKING: 3 minutes per child, one at a time. Ask the 5 prompts. Score 5 points each (max 25): 5 = full sentence, clear sounds; 3 = one or two words; 1 = points or answers in Arabic; 0 = no answer.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "What's your name?"
+    },
+    {
+     "who": "B",
+     "name": "Jana",
+     "line": "My name is Jana."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "How old are you?"
+    },
+    {
+     "who": "B",
+     "name": "Jana",
+     "line": "I'm nine."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Have you got a brother?"
+    },
+    {
+     "who": "B",
+     "name": "Jana",
+     "line": "Yes, I have. He is big."
+    }
+   ],
+   "frames": [
+    "My name is ___.",
+    "I'm ___.",
+    "This is my ___.",
+    "Yes, I have. / No, I haven't.",
+    "He is ___. / She is ___."
+   ],
+   "prompts": [
+    "What's your name? How old are you?",
+    "Who's this? (show 👵)",
+    "Have you got a brother or a sister?",
+    "Tell me about your mum or dad.",
+    "Is an elephant big or little?"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "I listened well",
+    "I read words and a story",
+    "I wrote sentences",
+    "I talked to Hasna"
+   ],
+   "homework": [
+    "Show your family book and your stars to your family.",
+    "Read the story Hiba and the Big Bag to someone at home."
+   ],
+   "goodbye": "Fantastic! You finished Month 1! Here is your reward — see you next time for animals!"
+  }
+ ],
+ "nav": {
+  "prev": "L07.html",
+  "next": "L09.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g1', name: 'Group 1', students: ['Jana', 'Yusuf', 'Ibrahim'], color: '#f26b4f', soft: '#ffe5dd' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

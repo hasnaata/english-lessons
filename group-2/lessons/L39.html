@@ -1,18 +1,547 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G2-L39 · Project: My Dream Town</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G2-L39",
+ "group": "g2",
+ "lesson": 39,
+ "week": 20,
+ "month": 5,
+ "unit": "My Town",
+ "title": "Project: My Dream Town",
+ "emoji": "🏙️",
+ "minutes": 45,
+ "kid_goals": [
+  "🎢 Learn words for fun places",
+  "🏙️ Design my dream town on a map",
+  "🎤 Present my dream town",
+  "✍️ Write a paragraph about it"
+ ],
+ "objectives": [
+  "Can describe an imaginary town with there is / are, prepositions and adjectives.",
+  "Can name fun places in a town (A1 Movers topic: places).",
+  "Can give a short prepared presentation (about 1 minute) with a map and answer questions (A1 spoken production).",
+  "Can write a 5-sentence paragraph with and, but, because, so."
+ ],
+ "focus": {
+  "sounds": [
+   "review: r-controlled vowels"
+  ],
+  "sight_words": [
+   "review: would, which, why, very, around, because, always"
+  ],
+  "language": "review month 5: There's a big water park next to the beach. You can go there by bike. I would like to live there because…",
+  "vocabulary": [
+   "skate park",
+   "water park",
+   "aquarium",
+   "theme park",
+   "zoo",
+   "sports centre",
+   "ice rink",
+   "beach",
+   "museum",
+   "bookshop",
+   "bakery",
+   "playground"
+  ]
+ },
+ "frameworks": [
+  "Project-based learning: plan → draw → write → present",
+  "PPP: model text → frames → own presentation",
+  "Writing: modelled → guided → independent",
+  "Spaced retrieval of all month-5 language (places, prepositions, transport)",
+  "Formative assessment: presentation checklist"
+ ],
+ "sources": [
+  "Cambridge A1 Movers topic list: places, transport",
+  "My First Grammar 1 — there is / there are; prepositions (review)",
+  "English Conversation Made Natural (situation adapted: showing a friend around)",
+  "Group 2 sight-word review"
+ ],
+ "teacher_notes": "Project lesson: let Duha be creative — a town in space, under the sea, anything! Ask her to have paper and colours ready. The map should have at least 6 places. The presentation is 6–8 sentences. 'Would like' (I would like to live there) is used as a chunk; she met it in L20 and L34. Take a screenshot of the map for her student page.",
+ "differentiation": "Support: she reads from her paper and uses only there is / there are + next to. Stretch: no paper, add transport and a 'rule' of her town (There aren't any cars because…).",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Would you like to live…?",
+   "minutes": 3,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Answer Hasna: Yes, I would / No, I wouldn't — and say why!",
+   "tip": "Opens the 'dream' topic. Accept short answers, then extend with because.",
+   "lines": [
+    "Would you like to live near the sea?",
+    "Would you like to live on a farm?",
+    "Would you like to live in a very big city?",
+    "Would you like to live on the moon?"
+   ],
+   "questions": [
+    "Yes, I would, because…",
+    "No, I wouldn't, because…"
+   ]
+  },
+  {
+   "type": "word_builder",
+   "title": "Bossy-r words for my town",
+   "minutes": 3,
+   "skills": [
+    "Writing",
+    "Listening"
+   ],
+   "text": "Listen and spell these town words.",
+   "tip": "Word-study review from month 5. Ask: which bossy-r team is it?",
+   "items": [
+    {
+     "word": "park",
+     "e": "🏞️",
+     "letters": [
+      "p",
+      "a",
+      "r",
+      "k",
+      "o"
+     ]
+    },
+    {
+     "word": "market",
+     "e": "🛒",
+     "letters": [
+      "m",
+      "a",
+      "r",
+      "k",
+      "e",
+      "t",
+      "o"
+     ]
+    },
+    {
+     "word": "sport",
+     "e": "⚽",
+     "letters": [
+      "s",
+      "p",
+      "o",
+      "r",
+      "t",
+      "a"
+     ]
+    },
+    {
+     "word": "square",
+     "e": "🟥",
+     "letters": [
+      "s",
+      "q",
+      "u",
+      "a",
+      "r",
+      "e",
+      "i"
+     ]
+    },
+    {
+     "word": "burger",
+     "e": "🍔",
+     "letters": [
+      "b",
+      "u",
+      "r",
+      "g",
+      "e",
+      "r",
+      "i"
+     ]
+    },
+    {
+     "word": "corner",
+     "e": "📐",
+     "letters": [
+      "c",
+      "o",
+      "r",
+      "n",
+      "e",
+      "r",
+      "a"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "vocab",
+   "title": "Fun places",
+   "minutes": 5,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Click each place. Which ones do you want in your dream town?",
+   "tip": "Duha picks her favourites as you go (write them down — they go on the map).",
+   "words": [
+    {
+     "w": "skate park",
+     "e": "🛹",
+     "ar": "حديقة التزلج",
+     "s": "I skate at the skate park."
+    },
+    {
+     "w": "water park",
+     "e": "💦",
+     "ar": "حديقة مائية",
+     "s": "The water park has big slides."
+    },
+    {
+     "w": "aquarium",
+     "e": "🐠",
+     "ar": "حوض أسماك كبير",
+     "s": "There are sharks in the aquarium."
+    },
+    {
+     "w": "theme park",
+     "e": "🎢",
+     "ar": "مدينة ملاهٍ",
+     "s": "The theme park has a big roller coaster."
+    },
+    {
+     "w": "zoo",
+     "e": "🦁",
+     "ar": "حديقة حيوان",
+     "s": "There are lions at the zoo."
+    },
+    {
+     "w": "sports centre",
+     "e": "🏟️",
+     "ar": "مركز رياضي",
+     "s": "We swim at the sports centre."
+    },
+    {
+     "w": "ice rink",
+     "e": "⛸️",
+     "ar": "حلبة تزلج على الجليد",
+     "s": "It is cold at the ice rink."
+    },
+    {
+     "w": "beach",
+     "e": "🏖️",
+     "ar": "شاطئ",
+     "s": "We play on the beach."
+    },
+    {
+     "w": "museum",
+     "e": "🏛️",
+     "ar": "متحف",
+     "s": "There are old things in the museum."
+    },
+    {
+     "w": "bookshop",
+     "e": "📚",
+     "ar": "متجر كتب",
+     "s": "I buy books at the bookshop."
+    },
+    {
+     "w": "bakery",
+     "e": "🥐",
+     "ar": "مخبز",
+     "s": "The bakery smells of fresh bread."
+    },
+    {
+     "w": "playground",
+     "e": "🛝",
+     "ar": "ملعب أطفال",
+     "s": "Small children play in the playground."
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart word review",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read fast. Use each word in a sentence about your dream town!",
+   "tip": "Spaced review. Model: 'In my town, there is a very big zoo.'",
+   "cards": [
+    {
+     "w": "would",
+     "s": "I would like to live by the sea."
+    },
+    {
+     "w": "which",
+     "s": "Which place is your favourite?"
+    },
+    {
+     "w": "why",
+     "s": "Why is there a zoo in your town?"
+    },
+    {
+     "w": "very",
+     "s": "The water park is very big."
+    },
+    {
+     "w": "around",
+     "s": "There are trees around the square."
+    },
+    {
+     "w": "because",
+     "s": "I love my town because it's green."
+    },
+    {
+     "w": "always",
+     "s": "The library is always open."
+    }
+   ],
+   "review": [
+    "your",
+    "wish",
+    "work",
+    "write"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Describing my town",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Put it all together: what there is + where it is + how you go + why.",
+   "tip": "This table is the plan for the presentation. Duha fills each row orally for her town before writing.",
+   "rule": "What? There is / There are + adjective + place. Where? + preposition. How? You can go by… What can you do? You can + verb. Why? I would like to live there because…",
+   "table": [
+    [
+     "Question",
+     "Frame",
+     "Example"
+    ],
+    [
+     "What is there?",
+     "There's a ___. There are ___.",
+     "There's a huge theme park."
+    ],
+    [
+     "Where is it?",
+     "It's next to / opposite / between ___.",
+     "It's next to the beach."
+    ],
+    [
+     "What can you do there?",
+     "You can ___ there.",
+     "You can swim with dolphins there."
+    ],
+    [
+     "How do people travel?",
+     "People go by ___ / on foot.",
+     "People go by bike or on foot."
+    ],
+    [
+     "Why do you like it?",
+     "I would like to live there because ___.",
+     "…because it is fun and safe."
+    ]
+   ],
+   "examples": [
+    "There's a big aquarium opposite the museum.",
+    "There are three playgrounds in the park.",
+    "You can skate at the ice rink.",
+    "There aren't any cars, so the air is clean."
+   ],
+   "ar": "لوصف المدينة: There is/are (يوجد) + مكان + حرف جر. You can = تستطيع. I would like = أودّ."
+  },
+  {
+   "type": "reading",
+   "title": "Model: Starville",
+   "minutes": 7,
+   "skills": [
+    "Reading"
+   ],
+   "tip": "Model text for the project. Read it together and find: 5 places, 4 prepositions, 1 'so', 1 'because'. Ask: Would you like to live in Starville?",
+   "story_title": "Starville — My Dream Town",
+   "pic": "⭐🏖️🛹📚",
+   "text_intro": "Hasna's dream town is called Starville. Read about it. Then plan yours!",
+   "text": [
+    "Welcome to Starville! This is my dream town.",
+    "Starville is near the sea, so there is a long, clean beach. There is a big water park next to the beach, and there are three ice-cream cafés.",
+    "In the middle of the town, there is a square with a fountain. The library is opposite the square. It is always open, so you can read there when you can't sleep!",
+    "There's a skate park between the school and the sports centre. Children can go there after school.",
+    "There aren't any cars in Starville. People go by bike, by tram or on foot, so the air is very clean.",
+    "I would like to live in Starville because it is fun, safe and green. Would you like to visit it?"
+   ],
+   "highlight": [
+    "would",
+    "which",
+    "very",
+    "always",
+    "around",
+    "because"
+   ],
+   "questions": [
+    {
+     "q": "What is next to the beach?",
+     "a": "A big water park."
+    },
+    {
+     "q": "Where is the library?",
+     "a": "It's opposite the square."
+    },
+    {
+     "q": "When can you go to the library?",
+     "a": "Any time — it is always open."
+    },
+    {
+     "q": "Why is the air clean?",
+     "a": "Because there aren't any cars. People go by bike, by tram or on foot."
+    },
+    {
+     "q": "Would you like to live in Starville? Why?",
+     "a": "Personal answer: Yes, I would / No, I wouldn't, because…"
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Present my dream town",
+   "minutes": 9,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Show your map. Present your dream town to Hasna!",
+   "tip": "I do: Hasna presents Starville (30 sec). You do: Duha presents with her map. Stars: ⭐ clear voice ⭐ 6+ sentences ⭐ prepositions ⭐ answers 2 questions. Use the dialogue as the Q&A model.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Duha",
+     "line": "Welcome to my dream town! It's called Sunny Bay."
+    },
+    {
+     "who": "B",
+     "name": "Hasna",
+     "line": "What a nice name! What is there in Sunny Bay?"
+    },
+    {
+     "who": "A",
+     "name": "Duha",
+     "line": "There's a big aquarium next to the beach, and there's a theme park opposite the aquarium."
+    },
+    {
+     "who": "B",
+     "name": "Hasna",
+     "line": "How do people travel?"
+    },
+    {
+     "who": "A",
+     "name": "Duha",
+     "line": "They go by boat or by bike. There aren't any buses."
+    },
+    {
+     "who": "B",
+     "name": "Hasna",
+     "line": "Which place is your favourite?"
+    },
+    {
+     "who": "A",
+     "name": "Duha",
+     "line": "The aquarium, because I love sharks and turtles!"
+    },
+    {
+     "who": "B",
+     "name": "Hasna",
+     "line": "Would you like to live there?"
+    },
+    {
+     "who": "A",
+     "name": "Duha",
+     "line": "Yes, I would! Thank you for listening!"
+    }
+   ],
+   "frames": [
+    "Welcome to my dream town! It's called ___.",
+    "There's a ___ next to / opposite the ___.",
+    "There are ___.",
+    "You can ___ there.",
+    "People go by ___.",
+    "I would like to live there because ___.",
+    "Thank you for listening!"
+   ],
+   "prompts": [
+    "Present your dream town (6–8 sentences).",
+    "Which place is your favourite? Why?",
+    "Is there a school in your dream town? Where is it?",
+    "What is different from your real town?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "My dream town paragraph",
+   "minutes": 8,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 5 sentences about your dream town. Use and, but, so, because. Draw the map on the pad.",
+   "tip": "Independent writing with frames. Check There's / There are, prepositions and the linking words.",
+   "model": "My dream town is called Sunny Bay, and it is next to the sea. There's a big aquarium on the beach, and there's a theme park opposite it. There aren't any buses, so people go by boat or by bike. There is a small library between the bakery and the school, but it is always busy. I would like to live in Sunny Bay because it is fun and beautiful.",
+   "frames": [
+    "My dream town is called ________, and it is ________.",
+    "There's a ________ next to / opposite the ________.",
+    "There aren't any ________, so ________.",
+    "There is ________, but ________.",
+    "I would like to live in ________ because ________."
+   ],
+   "task": "Write the paragraph under your map. Give your town a name!",
+   "checklist": [
+    "5 sentences",
+    "3 prepositions",
+    "and / but / so / because",
+    "a name with a capital letter",
+    "a map with 6 places"
+   ],
+   "pad": "Draw the map of your dream town"
+  },
+  {
+   "type": "wrapup",
+   "minutes": 1,
+   "exit": [
+    "name 10 fun places",
+    "present my dream town",
+    "write a 5-sentence paragraph"
+   ],
+   "homework": [
+    "Present your dream town to your family.",
+    "Review month 5: places, prepositions, directions, was / were — the check is next lesson!",
+    "Read 'Lost in Town' once more."
+   ],
+   "goodbye": "What a wonderful town! I want to visit it. Goodbye, Duha!"
+  }
+ ],
+ "nav": {
+  "prev": "L38.html",
+  "next": "L40.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g2', name: 'Group 2', students: ['Duha'], color: '#159a8c', soft: '#d8f2ee' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

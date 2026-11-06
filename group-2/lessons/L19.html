@@ -1,18 +1,557 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G2-L19 · Magic e o_e — How much? How many?</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G2-L19",
+ "group": "g2",
+ "lesson": 19,
+ "week": 10,
+ "month": 3,
+ "unit": "Food",
+ "title": "Magic e o_e — How much? How many?",
+ "emoji": "🍦",
+ "minutes": 45,
+ "kid_goals": [
+  "🪄 Read o_e words: home, bone, cone",
+  "❤️ Learn: round, some, stop, take",
+  "🛒 Ask How much? and How many?",
+  "✍️ Write shop questions and answers"
+ ],
+ "objectives": [
+  "Can read and spell o_e words (home, bone, cone, rose).",
+  "Can read the sight words round, some, stop, take.",
+  "Can ask How many…? (countable) and How much…? (uncountable and prices).",
+  "Can take part in a simple shopping exchange (A1 spoken interaction).",
+  "Can write 4 questions with How much / How many and answer them."
+ ],
+ "focus": {
+  "sounds": [
+   "o_e"
+  ],
+  "sight_words": [
+   "round",
+   "some",
+   "stop",
+   "take"
+  ],
+  "language": "How much…? / How many…? How much is it? It's 20 pounds.",
+  "vocabulary": [
+   "bottle",
+   "box",
+   "bag",
+   "jar",
+   "loaf",
+   "kilo",
+   "price",
+   "money"
+  ]
+ },
+ "frameworks": [
+  "Systematic synthetic phonics: split digraph o_e",
+  "Heart words / orthographic mapping",
+  "PPP: present → practise → produce",
+  "Role-play: shop",
+  "Spaced retrieval (countable / uncountable, some / any)"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Unit 87 (much, many, a lot)",
+  "English Conversation Made Natural, Ch. 3 \"Convenience Store\" (dialogue idea, simplified)",
+  "Dolch sight words: first grade (round, some, stop, take)"
+ ],
+ "teacher_notes": "o_e says /oʊ/: hop → hope, not → note, rob → robe. Grammar link: How many + countable plural (How many eggs?), How much + uncountable (How much milk?) and prices (How much is it? / How much are they?). Use Egyptian pounds or her local currency — real prices make it meaningful.",
+ "differentiation": "Support: only How many with numbers. Stretch: a lot of / not much / not many in answers.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Fridge memory",
+   "minutes": 4,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Remember the story? What was in the fridge?",
+   "tip": "Recycle L18: Is there any…? / Are there any…? Then count something real: \"How many pens have you got?\"",
+   "lines": [
+    "There are some eggs.",
+    "There isn't any chicken.",
+    "Is there any bread? Yes, there is."
+   ],
+   "questions": [
+    "How many pens have you got?",
+    "How many people live in your home?",
+    "Do you go to the shop with your family?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Magic e: o_e",
+   "minutes": 5,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Magic e makes o say its name: hop → hope!",
+   "tip": "Pairs: hop/hope, not/note, rob/robe, cod/code. Then the \"o_e\" tiles. Duha reads, you mime (bone = dog!).",
+   "focus": "o_e",
+   "sound": "/oʊ/",
+   "say_sound": "o_e says oh: home, bone, cone.",
+   "chant": "A dog at home with a bone, an ice cream cone, a rose and a stone — oh, oh, oh!",
+   "words": [
+    {
+     "w": "home",
+     "e": "🏠",
+     "ar": "بيت"
+    },
+    {
+     "w": "bone",
+     "e": "🦴",
+     "ar": "عظمة"
+    },
+    {
+     "w": "cone",
+     "e": "🍦",
+     "ar": "كوز آيس كريم"
+    },
+    {
+     "w": "rose",
+     "e": "🌹",
+     "ar": "وردة"
+    },
+    {
+     "w": "nose",
+     "e": "👃",
+     "ar": "أنف"
+    },
+    {
+     "w": "rope",
+     "e": "🪢",
+     "ar": "حبل"
+    },
+    {
+     "w": "stone",
+     "e": "🪨",
+     "ar": "حجر"
+    },
+    {
+     "w": "phone",
+     "e": "📱",
+     "ar": "هاتف"
+    },
+    {
+     "w": "globe",
+     "e": "🌍",
+     "ar": "كرة أرضية"
+    },
+    {
+     "w": "hole",
+     "e": "🕳️",
+     "ar": "حفرة"
+    },
+    {
+     "w": "note",
+     "e": "📝",
+     "ar": "ملاحظة"
+    },
+    {
+     "w": "smoke",
+     "e": "💨",
+     "ar": "دخان"
+    }
+   ],
+   "blend": [
+    "hop",
+    "hope",
+    "not",
+    "note",
+    "home",
+    "bone",
+    "cone",
+    "rose"
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Heart words: round, some, stop, take",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the words and sentences.",
+   "tip": "some has an o, but it sounds like \"sum\" — a heart word! round rhymes with sound.",
+   "cards": [
+    {
+     "w": "round",
+     "s": "Oranges are round."
+    },
+    {
+     "w": "some",
+     "s": "I want some milk, please."
+    },
+    {
+     "w": "stop",
+     "s": "Stop at the shop, please!"
+    },
+    {
+     "w": "take",
+     "s": "Take a bag for the apples."
+    }
+   ],
+   "review": [
+    "once",
+    "open",
+    "over",
+    "put",
+    "live",
+    "of"
+   ]
+  },
+  {
+   "type": "vocab",
+   "title": "At the shop",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Click and say. What can you buy?",
+   "tip": "Make phrases: a bottle of water, a box of eggs, a bag of rice, a jar of honey, a loaf of bread, a kilo of oranges.",
+   "words": [
+    {
+     "w": "bottle",
+     "e": "🍾",
+     "ar": "زجاجة",
+     "s": "a bottle of water"
+    },
+    {
+     "w": "box",
+     "e": "📦",
+     "ar": "علبة / صندوق",
+     "s": "a box of eggs"
+    },
+    {
+     "w": "bag",
+     "e": "🛍️",
+     "ar": "كيس",
+     "s": "a bag of rice"
+    },
+    {
+     "w": "jar",
+     "e": "🫙",
+     "ar": "برطمان",
+     "s": "a jar of honey"
+    },
+    {
+     "w": "loaf",
+     "e": "🍞",
+     "ar": "رغيف",
+     "s": "a loaf of bread"
+    },
+    {
+     "w": "kilo",
+     "e": "⚖️",
+     "ar": "كيلو",
+     "s": "a kilo of oranges"
+    },
+    {
+     "w": "price",
+     "e": "🏷️",
+     "ar": "سعر",
+     "s": "What is the price?"
+    },
+    {
+     "w": "money",
+     "e": "💵",
+     "ar": "نقود",
+     "s": "I have got some money."
+    }
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "How much? How many?",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "How many + things we count. How much + things we can't count — and money!",
+   "tip": "Quick sort: say a food, she says \"How many…?\" or \"How much…?\" Then prices: How much is it? (one) / How much are they? (more than one).",
+   "rule": "How many + plural countable nouns (How many eggs?). How much + uncountable nouns (How much milk?). For prices: How much is it? / How much are they?",
+   "table": [
+    [
+     "How many…? (count)",
+     "How much…? (can't count)"
+    ],
+    [
+     "How many apples do you want?",
+     "How much rice do you want?"
+    ],
+    [
+     "How many eggs are there?",
+     "How much milk is there?"
+    ],
+    [
+     "Price: How much is the cake?",
+     "It's 50 pounds."
+    ],
+    [
+     "Price: How much are the roses?",
+     "They're 10 pounds each."
+    ]
+   ],
+   "examples": [
+    "How many oranges do you need? — Six, please.",
+    "How much water is in the bottle? — Not much.",
+    "How much is the ice cream cone? — It's 15 pounds."
+   ],
+   "ar": "How many للأشياء المعدودة (بالجمع)، و How much لغير المعدود وللسؤال عن السعر."
+  },
+  {
+   "type": "reading",
+   "title": "At the Shop",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text_intro": "Mum gives Duha a shopping list and some money. Read the story. How much money does Duha spend?",
+   "tip": "She lists everything Duha buys and adds the prices (quick Maths link!). Find o_e words (home, cone, stone, nose).",
+   "story_title": "At the Shop",
+   "pic": "🛒🍦🍊",
+   "highlight": [
+    "round",
+    "some",
+    "stop",
+    "take",
+    "once",
+    "put"
+   ],
+   "text": [
+    "Mum gives Duha a list and 100 pounds. \"Take a bag, and don't stop to play!\" she says.",
+    "At the shop, Duha asks, \"How much is a loaf of bread?\" \"It's ten pounds,\" says the man.",
+    "\"How many eggs do you want?\" \"Twelve, please. A box of eggs.\" That's forty pounds.",
+    "\"And how much rice?\" \"One bag, please.\" The rice is thirty pounds.",
+    "Then she sees some round, orange ice cream cones. \"How much are they?\" \"Fifteen pounds each.\"",
+    "Duha has twenty pounds. She buys one cone and walks home. Her nose is cold, but she is happy!"
+   ],
+   "questions": [
+    {
+     "q": "How much is the bread?",
+     "a": "It's ten pounds."
+    },
+    {
+     "q": "How many eggs does she buy?",
+     "a": "Twelve — a box of eggs."
+    },
+    {
+     "q": "How much is the rice?",
+     "a": "Thirty pounds."
+    },
+    {
+     "q": "What does Duha buy with the last money?",
+     "a": "An ice cream cone."
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "How much or How many?",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Choose How much or How many.",
+   "tip": "She says \"count\" or \"can't count\" before choosing.",
+   "items": [
+    {
+     "q": "___ eggs do you want?",
+     "options": [
+      "How much",
+      "How many"
+     ],
+     "answer": 1,
+     "keep_order": true
+    },
+    {
+     "q": "___ milk is there?",
+     "options": [
+      "How much",
+      "How many"
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "q": "___ is the cake?",
+     "options": [
+      "How much",
+      "How many"
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "q": "___ apples are in the bag?",
+     "options": [
+      "How much",
+      "How many"
+     ],
+     "answer": 1,
+     "keep_order": true
+    },
+    {
+     "q": "___ rice do we need?",
+     "options": [
+      "How much",
+      "How many"
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "q": "___ brothers have you got?",
+     "options": [
+      "How much",
+      "How many"
+     ],
+     "answer": 1,
+     "keep_order": true
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Shop quiz & role-play",
+   "minutes": 6,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then play the shop: Hasna is the shop assistant, Duha is the customer. Then swap!",
+   "tip": "Give her a list (3 items) and 100 pounds. Make prices on the pad. After, swap roles: Duha sells and invents prices.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Hello! Can I help you?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Yes, please. How much is a bottle of water?"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "It's five pounds."
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "OK. I'd like two bottles, please. And how much are the oranges?"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "They're twenty pounds a kilo. How many kilos do you want?"
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "One kilo, please. How much is that?"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "That's thirty pounds, please."
+    },
+    {
+     "who": "B",
+     "name": "Duha",
+     "line": "Here you are. Thank you!"
+    }
+   ],
+   "frames": [
+    "How much is ___?",
+    "How much are ___?",
+    "How many ___ do you want?",
+    "It's ___ pounds. / They're ___ pounds.",
+    "I'd like ___, please."
+   ],
+   "prompts": [
+    "How many people are in your family?",
+    "How much water do you drink every day?",
+    "How much is a cone of ice cream near your home?",
+    "How many books are in your bag?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Shop questions & answers",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Write 4 questions with How much / How many and answer them.",
+   "tip": "Check: How many + plural, How much + uncountable or price, question marks.",
+   "model": "How many eggs do you want? I want twelve eggs.\nHow much milk is there? There is a little milk.\nHow much is the cake? It's fifty pounds.\nHow many apples are there? There are six apples.",
+   "frames": [
+    "How many ___ do you want?",
+    "How much ___ is there?",
+    "How much is the ___?",
+    "How many ___ are there?"
+   ],
+   "task": "Write 4 questions and 4 answers.",
+   "checklist": [
+    "How many + plural (-s)",
+    "How much + rice / milk / water or price",
+    "Question marks",
+    "Full answers"
+   ],
+   "pad": "🛒 My shopping list"
+  },
+  {
+   "type": "wrapup",
+   "title": "Stars & goodbye",
+   "minutes": 1,
+   "exit": [
+    "I can read o_e words",
+    "I can read round, some, stop, take",
+    "I can ask How much? and How many?",
+    "I can buy things in a shop role-play"
+   ],
+   "homework": [
+    "Go shopping with your family. Ask (in English, at home!) How much was it?",
+    "Write a shopping list with a bottle of / a box of / a bag of.",
+    "Spell: home, bone, cone, rose, phone."
+   ],
+   "goodbye": "How many stars today? Lots! See you next time, Duha!"
+  }
+ ],
+ "nav": {
+  "prev": "L18.html",
+  "next": "L20.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g2', name: 'Group 2', students: ['Duha'], color: '#159a8c', soft: '#d8f2ee' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

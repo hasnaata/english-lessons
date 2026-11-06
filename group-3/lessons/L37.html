@@ -1,18 +1,539 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L37 · Telling a story</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L37",
+ "group": "g3",
+ "lesson": 37,
+ "week": 19,
+ "month": 5,
+ "unit": "Past Times & Stories",
+ "title": "Telling a story",
+ "emoji": "📖",
+ "minutes": 45,
+ "kid_goals": [
+  "📖 Tell a story in the right order",
+  "⏭️ Use first, then, after that, suddenly, finally",
+  "🌧️ Read \"The Rainy Picnic\"",
+  "✍️ Write a picture story"
+ ],
+ "objectives": [
+  "Can use sequencing words (first, then, after that, suddenly, finally, in the end) to order events (A2).",
+  "Can tell a short story in the past simple from pictures (A2 Flyers speaking style).",
+  "Can understand the sequence of a short story and put events in order.",
+  "Can write a short picture story of 6–8 sentences.",
+  "Can read and use the key words story, saw, left, don't."
+ ],
+ "focus": {
+  "sounds": [
+   "time words: first, then, after that"
+  ],
+  "sight_words": [
+   "story",
+   "saw",
+   "left",
+   "don't"
+  ],
+  "language": "past simple + sequencing words: First…, Then…, After that…, Suddenly…, Finally…",
+  "vocabulary": [
+   "first",
+   "then",
+   "next",
+   "after that",
+   "suddenly",
+   "later",
+   "finally",
+   "in the end"
+  ]
+ },
+ "frameworks": [
+  "PPP: present → practise → produce",
+  "Comprehensible input: emoji pictures + short Arabic hints",
+  "Spaced retrieval: key words and older words come back in the reading",
+  "Writing: modelled → guided → independent",
+  "CEFR A1 → A2 can-do objectives",
+  "Storytelling with picture prompts (A2 Flyers speaking Part 3 style)"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Unit 5 — Past simple (stories)",
+  "Cambridge A2 Flyers Speaking Part 3 / Writing Part 7 — picture stories (original practice)",
+  "Fry high-frequency words 101–300: story, saw, left, don't"
+ ],
+ "teacher_notes": "This lesson moves from sentences to TEXT. Sequencing words go at the start of the sentence with a comma (First, …). \"Suddenly\" adds drama — teens love it. Remind: left is also the past of leave (we left the house) — not only the direction!",
+ "differentiation": "Support: give the 6 emoji pictures and the sequencers in order. Stretch: add feelings (I was scared / we were surprised) and one line of direct speech.",
+ "arabic": [
+  {
+   "en": "picnic",
+   "ar": "نزهة"
+  },
+  {
+   "en": "blanket",
+   "ar": "بطانية"
+  },
+  {
+   "en": "autograph",
+   "ar": "توقيع"
+  },
+  {
+   "en": "plaster",
+   "ar": "لاصق جروح"
+  }
+ ],
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Warm-up chat",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Listen, then answer in full sentences.",
+   "tip": "Retrieval of lesson 36: 3 quick Did-you questions about yesterday. Then talk about stories she likes (series, books, games with stories).",
+   "lines": [
+    "Hi Saja!",
+    "Do you like stories?",
+    "What is your favourite film or book?",
+    "Is it funny, scary or exciting?",
+    "Tell me the beginning in one sentence."
+   ],
+   "questions": [
+    "What is your favourite story, film or series?",
+    "Who is the main character?",
+    "How does it start?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 6,
+   "skills": [
+    "Listening",
+    "Speaking",
+    "Reading"
+   ],
+   "text": "Listen, repeat and notice the pattern. Click a word to hear it.",
+   "tip": "Storytellers PAUSE after a time word: \"First, (pause) we went…\". Stress: SUDdenly, FInally, AFter that. \"Then\" has the voiced /ð/ — tongue between teeth. Saja reads the chant like a storyteller, slowly and with drama.",
+   "focus": "time words",
+   "sound": "stress & pause",
+   "say_sound": "First, … Then, … After that, … Finally, …",
+   "chant": "First we went, then we ate. After that — SUDDENLY — we were late! Finally, we ran, and in the end, we were fine!",
+   "words": [
+    {
+     "w": "first",
+     "e": "1️⃣",
+     "ar": "أولًا"
+    },
+    {
+     "w": "then",
+     "e": "➡️",
+     "ar": "ثم"
+    },
+    {
+     "w": "next",
+     "e": "⏭️",
+     "ar": "بعد ذلك"
+    },
+    {
+     "w": "after that",
+     "e": "⏩",
+     "ar": "بعد ذلك"
+    },
+    {
+     "w": "suddenly",
+     "e": "⚡",
+     "ar": "فجأة"
+    },
+    {
+     "w": "later",
+     "e": "🕒",
+     "ar": "لاحقًا"
+    },
+    {
+     "w": "finally",
+     "e": "🏁",
+     "ar": "أخيرًا"
+    },
+    {
+     "w": "in the end",
+     "e": "🔚",
+     "ar": "في النهاية"
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word, hear it, say it. Click 💬 for the sentence.",
+   "tip": "Saw = past of see (lesson 35). Left = past of leave — and also the opposite of right. Don't + verb = a negative order (imperative, lesson 21).",
+   "cards": [
+    {
+     "w": "story",
+     "s": "Tell me a story about your holiday."
+    },
+    {
+     "w": "saw",
+     "s": "I saw a shooting star last night."
+    },
+    {
+     "w": "left",
+     "s": "We left the house at seven o'clock."
+    },
+    {
+     "w": "don't",
+     "s": "Don't forget your umbrella!"
+    }
+   ],
+   "review": [
+    "light",
+    "thought",
+    "head",
+    "under",
+    "start",
+    "eyes"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Telling a story in order",
+   "minutes": 5,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read the rule and the table. Listen to the examples.",
+   "tip": "Mix up 5 sentences on screen; Saja orders them using the time words as clues.",
+   "rule": "Use the past simple to tell a story. Use time words to show the order. Put them at the start of the sentence and add a comma. Use \"suddenly\" when something surprising happens.",
+   "table": [
+    [
+     "time word",
+     "use",
+     "example"
+    ],
+    [
+     "First,",
+     "the first event",
+     "First, we packed the food."
+    ],
+    [
+     "Then, / Next,",
+     "the next event",
+     "Then, we took the bus to the park."
+    ],
+    [
+     "After that,",
+     "one more event",
+     "After that, we played volleyball."
+    ],
+    [
+     "Suddenly,",
+     "a surprise!",
+     "Suddenly, it started to rain."
+    ],
+    [
+     "Finally, / In the end,",
+     "the last event",
+     "In the end, we had our picnic at home."
+    ]
+   ],
+   "examples": [
+    "First, we left the house at ten.",
+    "Then, we walked to the park.",
+    "Suddenly, we saw a big black cloud.",
+    "In the end, everybody laughed."
+   ],
+   "ar": "كلمات الترتيب: First (أولًا)، Then (ثم)، After that (بعد ذلك)، Suddenly (فجأة)، Finally / In the end (أخيرًا / في النهاية). نضعها في أول الجملة وبعدها فاصلة."
+  },
+  {
+   "type": "reading",
+   "title": "The Rainy Picnic",
+   "minutes": 8,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": [
+    "Last Friday was a sunny day, so my family decided to have a picnic in the big park near the river.",
+    "First, Mum and I made sandwiches and packed some fruit and juice. Then, we left the flat at eleven and took the bus. Grandpa said, \"Don't forget the umbrella!\" But nobody listened.",
+    "After that, we found a perfect place under a tree. Adam and I played volleyball, and Mina fed the ducks.",
+    "Suddenly, I saw a big black cloud. Two minutes later, it started to rain — really hard! We picked up everything and ran to the bus stop. We were all wet, and the sandwiches were too!",
+    "Finally, we got home. Mum put a blanket on the living room floor, and we had our picnic there. Grandpa smiled and said, \"Next time, take the umbrella!\"",
+    "In the end, it was a funny story, and it was still a great day."
+   ],
+   "tip": "After reading, close the text: Saja retells the story using only the time words on screen (First… Then… Suddenly… Finally…).",
+   "story_title": "The Rainy Picnic",
+   "pic": "🧺🌧️☂️🏠",
+   "text_intro": "Listen first. Then read it aloud with Hasna. Then answer the questions.",
+   "highlight": [
+    "story",
+    "saw",
+    "left",
+    "don't",
+    "first",
+    "then",
+    "suddenly",
+    "finally"
+   ],
+   "questions": [
+    {
+     "q": "Why did the family decide to have a picnic?",
+     "a": "Because it was a sunny day."
+    },
+    {
+     "q": "What did they do first?",
+     "a": "They made sandwiches and packed fruit and juice."
+    },
+    {
+     "q": "What did Saja see suddenly?",
+     "a": "A big black cloud."
+    },
+    {
+     "q": "Where did they have their picnic in the end?",
+     "a": "On a blanket on the living room floor."
+    },
+    {
+     "q": "What did Grandpa say at the start and at the end?",
+     "a": "\"Don't forget the umbrella!\" and \"Next time, take the umbrella!\""
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "What happened first?",
+   "minutes": 2,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "text": "Read or listen. Choose the right answer.",
+   "tip": "Story order check — let Saja answer from memory first, then check in the text.",
+   "items": [
+    {
+     "q": "Which came first?",
+     "options": [
+      "They made sandwiches.",
+      "They took the bus."
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "q": "Which came first?",
+     "options": [
+      "It started to rain.",
+      "Saja saw a black cloud."
+     ],
+     "answer": 1,
+     "keep_order": true
+    },
+    {
+     "q": "Which came first?",
+     "options": [
+      "They played volleyball.",
+      "They ran to the bus stop."
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "q": "Which came last?",
+     "options": [
+      "They had a picnic at home.",
+      "They found a place under a tree."
+     ],
+     "answer": 0,
+     "keep_order": true
+    }
+   ]
+  },
+  {
+   "type": "fill",
+   "title": "Choose the time word",
+   "minutes": 2,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Choose the right word for each gap.",
+   "tip": "Sometimes two answers are possible (Then / Next) — the options here have only one good choice.",
+   "items": [
+    {
+     "text": "___, we packed the food.",
+     "answer": "First",
+     "options": [
+      "First",
+      "Finally",
+      "Suddenly"
+     ]
+    },
+    {
+     "text": "___, we took the bus to the park.",
+     "answer": "Then",
+     "options": [
+      "Then",
+      "In the end",
+      "First"
+     ]
+    },
+    {
+     "text": "We were happy. ___, it started to rain!",
+     "answer": "Suddenly",
+     "options": [
+      "Suddenly",
+      "First",
+      "Next"
+     ]
+    },
+    {
+     "text": "___, we got home and had our picnic there.",
+     "answer": "Finally",
+     "options": [
+      "Finally",
+      "First",
+      "Suddenly"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Tell the story!",
+   "minutes": 7,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen to the dialogue. Then take a part. Then answer about YOU.",
+   "tip": "Picture story: put the 5 emojis on screen. Saja tells the story with the time words; Hasna asks \"And then?\" to keep her going. Praise drama and feelings.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Lina",
+     "line": "Saja, you won't believe what happened yesterday!"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "What happened? Tell me the story!"
+    },
+    {
+     "who": "A",
+     "name": "Lina",
+     "line": "First, I went to the mall with my friend Dana. Then, we bought some ice cream."
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "That sounds nice. And then?"
+    },
+    {
+     "who": "A",
+     "name": "Lina",
+     "line": "After that, we went into a shop. Suddenly, I saw a famous singer!"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "No way! What did you do?"
+    },
+    {
+     "who": "A",
+     "name": "Lina",
+     "line": "I took a selfie with her! Finally, she gave us her autograph."
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "That's an amazing story!"
+    }
+   ],
+   "frames": [
+    "First, I / we ___.",
+    "Then, ___.",
+    "After that, ___.",
+    "Suddenly, ___!",
+    "Finally / In the end, ___."
+   ],
+   "prompts": [
+    "Tell the picture story: 🚲 ☀️ → 🐶 → 💥 → 🩹 → 😊 (a bike ride).",
+    "Tell me about a funny or surprising day in your life.",
+    "What happened first? What happened suddenly?",
+    "How did the story end?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "A picture story",
+   "minutes": 6,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Read the model. Plan with the frames. Then write your own.",
+   "tip": "Guided: Saja can copy the frames. Mark only time words and past verbs today.",
+   "model": "Last Sunday, I went for a bike ride in the park. First, the weather was sunny and I was happy. Then, a small dog ran in front of my bike. Suddenly, I fell off! After that, a kind woman helped me and gave me a plaster. Finally, the dog's owner said sorry. In the end, I went home with a new friend — the dog!",
+   "frames": [
+    "Last ___, I ___.",
+    "First, ___.",
+    "Then, ___.",
+    "Suddenly, ___!",
+    "After that, ___.",
+    "Finally / In the end, ___."
+   ],
+   "task": "Write the bike-ride story (🚲 ☀️ → 🐶 → 💥 → 🩹 → 😊) or your own story in 6–8 sentences.",
+   "checklist": [
+    "⏭️ 4 time words with commas",
+    "✅ Past simple verbs (regular and irregular)",
+    "⚡ One \"Suddenly\" moment",
+    "😊 A clear ending",
+    "✅ Capital letters and full stops"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Wrap-up",
+   "minutes": 1,
+   "tip": "Count the stars together. Saja ticks the exit list honestly — anything not ticked goes into the next warm-up.",
+   "exit": [
+    "I can use first, then, after that, suddenly, finally.",
+    "I can tell a story from pictures.",
+    "I can put a story in order.",
+    "I can write a short story."
+   ],
+   "homework": [
+    "Finish your story and draw 4 pictures for it, like a comic.",
+    "Tell \"The Rainy Picnic\" to someone at home with the time words.",
+    "Learn: story, saw, left, don't."
+   ],
+   "goodbye": "And in the end… the lesson finished! Goodbye, Saja!"
+  }
+ ],
+ "nav": {
+  "prev": "L36.html",
+  "next": "L38.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>

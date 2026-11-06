@@ -1,18 +1,515 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Hasna's English 🔒</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdf8f1;color:#2b2a33;font-family:Andika,"Comic Neue",Nunito,"Segoe UI",system-ui,sans-serif}
-form{background:#fff;border:3px solid #ece5da;border-radius:28px;padding:32px 28px;margin:16px;max-width:380px;text-align:center}
-.em{font-size:56px}h1{margin:6px 0;font-size:28px}p{color:#6b6878;margin:6px 0 16px}
-input{font:inherit;font-size:26px;letter-spacing:6px;text-align:center;width:100%;box-sizing:border-box;padding:10px;border:3px solid #ece5da;border-radius:16px}
-input:focus{outline:none;border-color:#7b5cff}
-button{font:inherit;font-size:22px;font-weight:700;margin-top:14px;padding:10px 30px;border:0;border-radius:99px;background:#7b5cff;color:#fff;cursor:pointer}
-#hz-msg{min-height:24px;margin:12px 0 0}
-</style></head><body>
-<form id="hz-form" hidden><div class="em">🔒📚</div><h1>Hasna's English Lessons</h1><p>Type the password to open the lessons.</p>
-<input id="hz-pw" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Password">
-<button type="submit">Open ▶</button><p id="hz-msg"></p></form>
-<script type="text/plain" id="hz-payload">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</script>
-<script src="../../shared/lock.js"></script>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>G3-L26 · Now or every day?</title>
+<link rel="stylesheet" href="../../shared/lesson.css">
+</head>
+<body>
+<noscript>Please turn on JavaScript to use this lesson.</noscript>
+<div id="app"></div>
+<!-- LESSON CONTENT (edit this JSON; schema: wiki/lesson-schema.md) -->
+<script type="application/json" id="lesson-data">
+{
+ "id": "G3-L26",
+ "group": "g3",
+ "lesson": 26,
+ "week": 13,
+ "month": 4,
+ "unit": "Home, Town & Right Now",
+ "title": "Now or every day?",
+ "emoji": "🔄",
+ "minutes": 45,
+ "kid_goals": [
+  "🔄 Choose: present simple or present continuous?",
+  "🔤 Review -ing spelling",
+  "📖 Read about a different day",
+  "✍️ Write a hamburger paragraph: usually vs today"
+ ],
+ "objectives": [
+  "Can choose between the present simple (habits) and the present continuous (now) (A1/A2).",
+  "Can recognise time words for each tense: every day, usually, on Fridays vs now, today, at the moment.",
+  "Can read and use the key words air, away, animal, house.",
+  "Can write a paragraph comparing a usual day and today."
+ ],
+ "focus": {
+  "sounds": [
+   "-ing review"
+  ],
+  "sight_words": [
+   "air",
+   "away",
+   "animal",
+   "house"
+  ],
+  "language": "Present simple (usually, every day) vs present continuous (now, today, at the moment): I usually walk to school, but today I'm going by car."
+ },
+ "frameworks": [
+  "CEFR A1 → A2 can-do statements (Cambridge A2 Flyers topics)",
+  "PPP: present → practise → produce",
+  "Concept checking with timelines (habit vs now)",
+  "Sort & explain task",
+  "Writing: \"hamburger\" paragraph (guided → independent)"
+ ],
+ "sources": [
+  "English Grammar in Use (simplified), Unit 8 (present continuous and present simple)",
+  "Coursebook unit 4 style: habits vs now",
+  "Fry high-frequency words 251–275 (air, away, animal, house)"
+ ],
+ "teacher_notes": "Many learners overuse the continuous (\"I am going to school every day\") because it feels \"more English\". Teach with two pictures: a calendar (every day → simple) and a clock/camera (now → continuous). Signal words do most of the work. Some verbs are not used in the continuous (like, love, want, know) — just mention \"I like\" (not \"I'm liking\").",
+ "differentiation": "Support: give the signal words with every sentence. Stretch: use \"but today…\" sentences and explain the choice aloud.",
+ "sections": [
+  {
+   "type": "warmup",
+   "title": "Habits and now",
+   "minutes": 4,
+   "skills": [
+    "Listening",
+    "Speaking"
+   ],
+   "text": "Answer two questions each time.",
+   "tip": "Check present continuous homework. Each pair of questions contrasts habit vs now — ask her what is different in the questions (do vs are…ing).",
+   "lines": [
+    "What do you usually do on Saturday?",
+    "What are you doing now?",
+    "What does your mum usually do in the morning?",
+    "What is she doing right now?"
+   ],
+   "questions": [
+    "Read me 2 sentences from your homework.",
+    "Is today a normal day for you or a different day?"
+   ]
+  },
+  {
+   "type": "phonics",
+   "title": "Word study & pronunciation",
+   "minutes": 5,
+   "skills": [
+    "Listening",
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Review the 3 -ing spelling rules. Then find which rule each word follows.",
+   "tip": "Quick spelling dictation on the pad: take, sit, stop, ride, fly. Then she reads all 10 fast.",
+   "focus": "-ing",
+   "sound": "-ing review: + ing · drop the e · double the letter",
+   "say_sound": "going, taking, getting",
+   "words": [
+    {
+     "w": "going",
+     "e": "🚶",
+     "ar": "يذهب"
+    },
+    {
+     "w": "eating",
+     "e": "🍽️",
+     "ar": "يأكل"
+    },
+    {
+     "w": "taking",
+     "e": "📸",
+     "ar": "يأخذ / يلتقط"
+    },
+    {
+     "w": "riding",
+     "e": "🚲",
+     "ar": "يركب"
+    },
+    {
+     "w": "smiling",
+     "e": "😊",
+     "ar": "يبتسم"
+    },
+    {
+     "w": "getting",
+     "e": "🎁",
+     "ar": "يحصل على"
+    },
+    {
+     "w": "sitting",
+     "e": "🪑",
+     "ar": "يجلس"
+    },
+    {
+     "w": "stopping",
+     "e": "🛑",
+     "ar": "يتوقف"
+    },
+    {
+     "w": "flying",
+     "e": "✈️",
+     "ar": "يطير"
+    },
+    {
+     "w": "feeding",
+     "e": "🥕",
+     "ar": "يُطعم"
+    }
+   ]
+  },
+  {
+   "type": "flashcards",
+   "title": "Key words",
+   "minutes": 4,
+   "skills": [
+    "Reading",
+    "Speaking"
+   ],
+   "text": "Read the word. Click 💬 to hear it in a sentence. Then say your own sentence with it.",
+   "tip": "\"Air\" /eə/ — like \"hair\" without h. \"Away\": a + way (ay = /eɪ/, lesson 20!). \"House\" — ou = /aʊ/.",
+   "cards": [
+    {
+     "w": "air",
+     "s": "The air is fresh and clean in the mountains."
+    },
+    {
+     "w": "away",
+     "s": "The farm is far away from the city."
+    },
+    {
+     "w": "animal",
+     "s": "My favourite animal is the horse."
+    },
+    {
+     "w": "house",
+     "s": "My grandparents live in a big house."
+    }
+   ],
+   "review": [
+    "change",
+    "off",
+    "play",
+    "spell",
+    "kind",
+    "again"
+   ]
+  },
+  {
+   "type": "grammar",
+   "title": "Present simple or present continuous?",
+   "minutes": 6,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "tip": "Two pictures on the pad: 📅 and 🎥. Hasna says a sentence; Saja points to the right picture and explains the signal word.",
+   "rule": "Present simple = habits and routines (every day, usually, always, on Fridays). Present continuous = actions now or today only (now, right now, today, at the moment).",
+   "table": [
+    [
+     "",
+     "Present simple 📅",
+     "Present continuous 🎥"
+    ],
+    [
+     "Use",
+     "habits, routines, facts",
+     "now / today / at the moment"
+    ],
+    [
+     "Example",
+     "I usually walk to school.",
+     "Today I'm going by bus."
+    ],
+    [
+     "he / she",
+     "She plays tennis on Mondays.",
+     "She's playing tennis now."
+    ],
+    [
+     "Signal words",
+     "every day, usually, never, on Fridays",
+     "now, today, at the moment, Look!"
+    ],
+    [
+     "❌",
+     "I'm liking pizza.",
+     "✅ I like pizza."
+    ]
+   ],
+   "examples": [
+    "Saja usually walks to school, but today she's going by bus.",
+    "My dad works in an office. Right now he's working at home.",
+    "We don't usually eat outside, but today we're having a picnic.",
+    "Look! The birds are flying away."
+   ],
+   "ar": "المضارع البسيط للعادات (every day, usually)، والمضارع المستمر لما يحدث الآن (now, today). أفعال مثل like و want و know لا تأتي عادةً بصيغة ing."
+  },
+  {
+   "type": "reading",
+   "title": "A Different Day",
+   "minutes": 7,
+   "skills": [
+    "Reading",
+    "Listening"
+   ],
+   "tip": "Saja underlines present simple in one colour and present continuous in another. Then she explains 2 choices with the signal word.",
+   "story_title": "A Different Day",
+   "pic": "🚌🐐🌄",
+   "text_intro": "Listen first. Then read with me. Then you read alone!",
+   "text": [
+    "Every school day is the same for me. I usually get up at quarter to seven, I walk to school with Mariam, and I sit at my desk next to the window.",
+    "But today is different! Today our class is on a school trip to a farm. It's far away from the city.",
+    "Right now, I'm sitting on the bus next to Mariam. We're eating sandwiches and looking out of the window. The air is fresh, and we can see mountains.",
+    "Our teacher usually wears a suit, but today she's wearing jeans and boots! She's taking pictures of everything.",
+    "At the farm there is an old stone house and a lot of animals. A farmer is feeding the goats, and a little boy is riding a horse. I love every animal here. What a great day!"
+   ],
+   "highlight": [
+    "air",
+    "away",
+    "animal",
+    "house",
+    "usually",
+    "today"
+   ],
+   "questions": [
+    {
+     "q": "How does Saja usually go to school?",
+     "a": "She walks with Mariam."
+    },
+    {
+     "q": "Where is the class going today?",
+     "a": "On a school trip to a farm."
+    },
+    {
+     "q": "What are Saja and Mariam doing right now?",
+     "a": "They're sitting on the bus, eating sandwiches and looking out of the window."
+    },
+    {
+     "q": "What does the teacher usually wear? And today?",
+     "a": "Usually a suit; today jeans and boots."
+    },
+    {
+     "q": "What is the farmer doing?",
+     "a": "He's feeding the goats."
+    }
+   ]
+  },
+  {
+   "type": "choose",
+   "title": "Sort it: habit or now?",
+   "minutes": 3,
+   "skills": [
+    "Listening",
+    "Reading"
+   ],
+   "text": "Choose the right form. Look for the signal word!",
+   "tip": "After each item, ask \"Why?\" — she names the signal word (every Friday, Look!, usually, at the moment, like).",
+   "items": [
+    {
+     "q": "My brother ___ football every Friday.",
+     "options": [
+      "plays",
+      "is playing"
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "q": "Look! It ___.",
+     "options": [
+      "rains",
+      "is raining"
+     ],
+     "answer": 1,
+     "keep_order": true
+    },
+    {
+     "q": "I usually ___ to school.",
+     "options": [
+      "walk",
+      "am walking"
+     ],
+     "answer": 0,
+     "keep_order": true
+    },
+    {
+     "q": "Shh! The baby ___ at the moment.",
+     "options": [
+      "sleeps",
+      "is sleeping"
+     ],
+     "answer": 1,
+     "keep_order": true
+    },
+    {
+     "q": "I ___ pizza. It's my favourite!",
+     "options": [
+      "like",
+      "am liking"
+     ],
+     "answer": 0,
+     "keep_order": true
+    }
+   ]
+  },
+  {
+   "type": "unscramble",
+   "title": "Usually… but today…",
+   "minutes": 3,
+   "skills": [
+    "Reading",
+    "Writing"
+   ],
+   "text": "Click the words in the right order.",
+   "tip": "Long sentences — let her read them aloud slowly first and find the two halves.",
+   "items": [
+    [
+     "I",
+     "usually",
+     "walk,",
+     "but",
+     "today",
+     "I'm",
+     "taking",
+     "the",
+     "bus."
+    ],
+    [
+     "She",
+     "doesn't",
+     "usually",
+     "cook,",
+     "but",
+     "today",
+     "she's",
+     "making",
+     "lunch."
+    ],
+    [
+     "We",
+     "often",
+     "play",
+     "outside,",
+     "but",
+     "now",
+     "we're",
+     "reading."
+    ]
+   ]
+  },
+  {
+   "type": "speaking",
+   "title": "Sort & explain",
+   "minutes": 7,
+   "skills": [
+    "Speaking",
+    "Listening"
+   ],
+   "text": "Listen. Then talk about your usual day and today!",
+   "tip": "End with the \"sort & explain\" game: Hasna says 6 sentences (some wrong), Saja says if they are correct and explains.",
+   "dialogue": [
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "What do you usually do on Friday, Saja?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "I usually visit my grandparents."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "And what are you doing today?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Today I'm having an English lesson with you!"
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "Ha ha! Does your brother usually study on Fridays?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "No, he doesn't. He usually plays football."
+    },
+    {
+     "who": "A",
+     "name": "Hasna",
+     "line": "What is he doing right now?"
+    },
+    {
+     "who": "B",
+     "name": "Saja",
+     "line": "Right now he's sleeping, I think!"
+    }
+   ],
+   "frames": [
+    "I usually ___ on ___.",
+    "But today I'm ___ing.",
+    "My ___ usually ___, but right now he / she's ___ing.",
+    "I use the present simple / continuous because ___."
+   ],
+   "prompts": [
+    "Tell me 3 things you usually do on Friday, and 3 things you are doing today.",
+    "Describe a member of your family: usually… but right now…",
+    "I say a sentence — you tell me: habit or now? Why?",
+    "Ask me: What do you usually do…? What are you doing now?"
+   ]
+  },
+  {
+   "type": "writing",
+   "title": "Usually vs today",
+   "minutes": 5,
+   "skills": [
+    "Writing"
+   ],
+   "text": "Think of a special day. Compare it with a usual day.",
+   "tip": "Independent hamburger writing. Check the tense choice in each detail sentence.",
+   "model": "Today is a very different day for me. Usually I walk to school, but today I'm going on a school trip by bus. Also, I usually sit at my desk, but right now I'm sitting next to Mariam on the bus. Another thing is that our teacher is wearing jeans today! That's why this is my favourite day of the year.",
+   "frames": [
+    "🍞 Today is a very different day for me.",
+    "🥬 Usually I ___, but today I'm ___ing.",
+    "🍅 Also, I usually ___, but right now I'm ___ing.",
+    "🥩 Another thing is that ___.",
+    "🍞 That's why ___."
+   ],
+   "task": "Write a hamburger paragraph (5 sentences): a usual day vs a different day (a trip, a holiday, Eid…).",
+   "checklist": [
+    "🍞 Top bun: a topic sentence that says what the paragraph is about",
+    "🥬 Three details (First, … Also, … Another thing is …)",
+    "🍞 Bottom bun: a closing sentence that says the main idea again",
+    "Capital letters and full stops in every sentence",
+    "I read it again and checked the spelling of my key words",
+    "Present simple for usual things, present continuous for today"
+   ]
+  },
+  {
+   "type": "wrapup",
+   "title": "Stars, exit ticket & homework",
+   "minutes": 1,
+   "exit": [
+    "I can choose present simple or continuous",
+    "I can find the signal words",
+    "I can read air, away, animal, house",
+    "I can write a usually vs today paragraph"
+   ],
+   "homework": [
+    "Write 4 \"usually… but today…\" sentences about your family.",
+    "Find 5 -ing words in a book or song title and say the spelling rule.",
+    "Read \"A Different Day\" aloud."
+   ],
+   "goodbye": "You usually work hard, and today you are working very hard! Goodbye, Saja!"
+  }
+ ],
+ "nav": {
+  "prev": "L25.html",
+  "next": "L27.html"
+ }
+}
+</script>
+<script>
+// Group settings used by every lesson in this folder. Edit names/colours here.
+window.HZ_GROUP = { id: 'g3', name: 'Group 3', students: ['Saja'], color: '#7b5cff', soft: '#ebe6ff' };
+</script>
+<script src="../../shared/audio/index.js"></script>
+<script src="../../shared/lesson.js"></script>
+</body>
+</html>
